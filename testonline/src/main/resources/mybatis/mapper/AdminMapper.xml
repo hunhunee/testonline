@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.sie.domain.Admin">
+    <id column="adm_id" jdbcType="INTEGER" property="admId" />
+    <result column="adm_name" jdbcType="VARCHAR" property="admName" />
+    <result column="adm_password" jdbcType="VARCHAR" property="admPassword" />
+    <result column="adm_num" jdbcType="VARCHAR" property="admNum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    adm_id, adm_name, adm_password, adm_num
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where adm_id = #{admId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from admin
+    where adm_id = #{admId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sie.domain.Admin">
+    insert into admin (adm_id, adm_name, adm_password, 
+      adm_num)
+    values (#{admId,jdbcType=INTEGER}, #{admName,jdbcType=VARCHAR}, #{admPassword,jdbcType=VARCHAR}, 
+      #{admNum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sie.domain.Admin">
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="admId != null">
+        adm_id,
+      </if>
+      <if test="admName != null">
+        adm_name,
+      </if>
+      <if test="admPassword != null">
+        adm_password,
+      </if>
+      <if test="admNum != null">
+        adm_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="admId != null">
+        #{admId,jdbcType=INTEGER},
+      </if>
+      <if test="admName != null">
+        #{admName,jdbcType=VARCHAR},
+      </if>
+      <if test="admPassword != null">
+        #{admPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="admNum != null">
+        #{admNum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sie.domain.Admin">
+    update admin
+    <set>
+      <if test="admName != null">
+        adm_name = #{admName,jdbcType=VARCHAR},
+      </if>
+      <if test="admPassword != null">
+        adm_password = #{admPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="admNum != null">
+        adm_num = #{admNum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where adm_id = #{admId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sie.domain.Admin">
+    update admin
+    set adm_name = #{admName,jdbcType=VARCHAR},
+      adm_password = #{admPassword,jdbcType=VARCHAR},
+      adm_num = #{admNum,jdbcType=VARCHAR}
+    where adm_id = #{admId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,8 +1,164 @@
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sie.mapper.TestMapper">
-    <select id="test" parameterType="int" resultType="com.sie.domain.User">
-        SELECT * from user where  id=#{id}
-    </select>
+  <resultMap id="BaseResultMap" type="com.sie.domain.Test">
+    <id column="test_id" jdbcType="INTEGER" property="testId" />
+    <result column="test_content" jdbcType="VARCHAR" property="testContent" />
+    <result column="test_ans1" jdbcType="VARCHAR" property="testAns1" />
+    <result column="test_ans2" jdbcType="VARCHAR" property="testAns2" />
+    <result column="test_ans3" jdbcType="VARCHAR" property="testAns3" />
+    <result column="test_ans4" jdbcType="VARCHAR" property="testAns4" />
+    <result column="rightans" jdbcType="VARCHAR" property="rightans" />
+    <result column="test_course" jdbcType="VARCHAR" property="testCourse" />
+    <result column="pub" jdbcType="INTEGER" property="pub" />
+    <result column="test_xxx1" jdbcType="VARCHAR" property="testXxx1" />
+    <result column="test_xxx2" jdbcType="VARCHAR" property="testXxx2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    test_id, test_content, test_ans1, test_ans2, test_ans3, test_ans4, rightans, test_course, 
+    pub, test_xxx1, test_xxx2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from test
+    where test_id = #{testId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from test
+    where test_id = #{testId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sie.domain.Test">
+    insert into test (test_id, test_content, test_ans1, 
+      test_ans2, test_ans3, test_ans4, 
+      rightans, test_course, pub, 
+      test_xxx1, test_xxx2)
+    values (#{testId,jdbcType=INTEGER}, #{testContent,jdbcType=VARCHAR}, #{testAns1,jdbcType=VARCHAR}, 
+      #{testAns2,jdbcType=VARCHAR}, #{testAns3,jdbcType=VARCHAR}, #{testAns4,jdbcType=VARCHAR}, 
+      #{rightans,jdbcType=VARCHAR}, #{testCourse,jdbcType=VARCHAR}, #{pub,jdbcType=INTEGER}, 
+      #{testXxx1,jdbcType=VARCHAR}, #{testXxx2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sie.domain.Test">
+    insert into test
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="testId != null">
+        test_id,
+      </if>
+      <if test="testContent != null">
+        test_content,
+      </if>
+      <if test="testAns1 != null">
+        test_ans1,
+      </if>
+      <if test="testAns2 != null">
+        test_ans2,
+      </if>
+      <if test="testAns3 != null">
+        test_ans3,
+      </if>
+      <if test="testAns4 != null">
+        test_ans4,
+      </if>
+      <if test="rightans != null">
+        rightans,
+      </if>
+      <if test="testCourse != null">
+        test_course,
+      </if>
+      <if test="pub != null">
+        pub,
+      </if>
+      <if test="testXxx1 != null">
+        test_xxx1,
+      </if>
+      <if test="testXxx2 != null">
+        test_xxx2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="testId != null">
+        #{testId,jdbcType=INTEGER},
+      </if>
+      <if test="testContent != null">
+        #{testContent,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns1 != null">
+        #{testAns1,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns2 != null">
+        #{testAns2,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns3 != null">
+        #{testAns3,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns4 != null">
+        #{testAns4,jdbcType=VARCHAR},
+      </if>
+      <if test="rightans != null">
+        #{rightans,jdbcType=VARCHAR},
+      </if>
+      <if test="testCourse != null">
+        #{testCourse,jdbcType=VARCHAR},
+      </if>
+      <if test="pub != null">
+        #{pub,jdbcType=INTEGER},
+      </if>
+      <if test="testXxx1 != null">
+        #{testXxx1,jdbcType=VARCHAR},
+      </if>
+      <if test="testXxx2 != null">
+        #{testXxx2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sie.domain.Test">
+    update test
+    <set>
+      <if test="testContent != null">
+        test_content = #{testContent,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns1 != null">
+        test_ans1 = #{testAns1,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns2 != null">
+        test_ans2 = #{testAns2,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns3 != null">
+        test_ans3 = #{testAns3,jdbcType=VARCHAR},
+      </if>
+      <if test="testAns4 != null">
+        test_ans4 = #{testAns4,jdbcType=VARCHAR},
+      </if>
+      <if test="rightans != null">
+        rightans = #{rightans,jdbcType=VARCHAR},
+      </if>
+      <if test="testCourse != null">
+        test_course = #{testCourse,jdbcType=VARCHAR},
+      </if>
+      <if test="pub != null">
+        pub = #{pub,jdbcType=INTEGER},
+      </if>
+      <if test="testXxx1 != null">
+        test_xxx1 = #{testXxx1,jdbcType=VARCHAR},
+      </if>
+      <if test="testXxx2 != null">
+        test_xxx2 = #{testXxx2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where test_id = #{testId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sie.domain.Test">
+    update test
+    set test_content = #{testContent,jdbcType=VARCHAR},
+      test_ans1 = #{testAns1,jdbcType=VARCHAR},
+      test_ans2 = #{testAns2,jdbcType=VARCHAR},
+      test_ans3 = #{testAns3,jdbcType=VARCHAR},
+      test_ans4 = #{testAns4,jdbcType=VARCHAR},
+      rightans = #{rightans,jdbcType=VARCHAR},
+      test_course = #{testCourse,jdbcType=VARCHAR},
+      pub = #{pub,jdbcType=INTEGER},
+      test_xxx1 = #{testXxx1,jdbcType=VARCHAR},
+      test_xxx2 = #{testXxx2,jdbcType=VARCHAR}
+    where test_id = #{testId,jdbcType=INTEGER}
+  </update>
 </mapper>

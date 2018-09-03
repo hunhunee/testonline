@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e998f31-8b41-4f3d-940e-14449b68c055" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/LessonMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/StudentAnswerMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/StudentMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TeacherMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TestMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/LessonMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/StudentAnswerMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/StudentMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TeacherMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestMapper.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper/TeacherManageMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_13_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/t1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/pom.xml" afterPath="$PROJECT_DIR$/testonline/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/testonline/src/main/resources/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/testonline/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,22 +22,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testonline/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1745">
-              <caret line="78" column="77" lean-forward="false" selection-start-line="78" selection-start-column="77" selection-end-line="78" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -63,10 +50,18 @@
         <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestMapper.xml" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Teacher.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Student.java" />
-        <option value="$PROJECT_DIR$/testonline/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/config/MybatisGeneratorConfig.java" />
-        <option value="$PROJECT_DIR$/testonline/pom.xml" />
         <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManage.java" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageTest.java" />
+        <option value="$PROJECT_DIR$/testonline/pom.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/TestonlineApplication.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TeacherManageMapper.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper/TeacherManageMapper.xml" />
       </list>
     </option>
   </component>
@@ -168,15 +163,48 @@
               <item name="testonline" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
               <item name="testonline" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminMapperTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -195,6 +223,12 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper\AdminMapper" />
+      <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -207,7 +241,132 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestonlineApplication">
+  <component name="RunManager" selected="JUnit.TeacherManageMapperTest.addTeacherTest">
+    <configuration name="TeacherManageMapperTest.addTeacherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="testonline" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
+      <option name="METHOD_NAME" value="addTeacherTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeacherManageMapperTest.deleteTeacherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="testonline" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
+      <option name="METHOD_NAME" value="deleteTeacherTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeacherManageMapperTest.findAllTeacher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="testonline" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
+      <option name="METHOD_NAME" value="findAllTeacher" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeacherManageMapperTest.findTeacherByNumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="testonline" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
+      <option name="METHOD_NAME" value="findTeacherByNumTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeacherManageMapperTest.updateTeacherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="testonline" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
+      <option name="METHOD_NAME" value="updateTeacherTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="TestonlineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sie.TestonlineApplication" />
@@ -295,6 +454,23 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.TestonlineApplication" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findAllTeacher" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findTeacherByNumTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.updateTeacherTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.deleteTeacherTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.addTeacherTest" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.addTeacherTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.deleteTeacherTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.updateTeacherTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findTeacherByNumTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findAllTeacher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -307,28 +483,60 @@
       <option name="presentableId" value="Default" />
       <updated>1535936124792</updated>
       <workItem from="1535936127252" duration="302000" />
-      <workItem from="1535936505167" duration="8192000" />
+      <workItem from="1535936505167" duration="16424000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TeacherManageMapperTest_addTeacherTest - 2018.09.03 at 16h 51m 45s.xml">
+      <configuration name="TeacherManageMapperTest.addTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_addTeacherTest - 2018.09.03 at 16h 52m 19s.xml">
+      <configuration name="TeacherManageMapperTest.addTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_addTeacherTest - 2018.09.03 at 16h 56m 16s.xml">
+      <configuration name="TeacherManageMapperTest.addTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_deleteTeacherTest - 2018.09.03 at 16h 46m 25s.xml">
+      <configuration name="TeacherManageMapperTest.deleteTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_findTeacherByNumTest - 2018.09.03 at 16h 26m 13s.xml">
+      <configuration name="TeacherManageMapperTest.findTeacherByNumTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_findTeacherByNumTest - 2018.09.03 at 16h 27m 34s.xml">
+      <configuration name="TeacherManageMapperTest.findTeacherByNumTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_findTeacherByNumTest - 2018.09.03 at 16h 29m 52s.xml">
+      <configuration name="TeacherManageMapperTest.findTeacherByNumTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_updateTeacherTest - 2018.09.03 at 16h 40m 05s.xml">
+      <configuration name="TeacherManageMapperTest.updateTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_updateTeacherTest - 2018.09.03 at 16h 41m 08s.xml">
+      <configuration name="TeacherManageMapperTest.updateTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherManageMapperTest_updateTeacherTest - 2018.09.03 at 16h 42m 33s.xml">
+      <configuration name="TeacherManageMapperTest.updateTeacherTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8494000" />
+    <option name="totallyTimeSpent" value="16726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15745501" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.084190235" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18034993" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31493944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25192803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -339,7 +547,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6137281" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -355,7 +563,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -383,14 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestonlineApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -407,52 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/TestonlineApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/testonline.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -465,22 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-261">
@@ -489,11 +633,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/ttt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/yyy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminTest/s.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1745">
-          <caret line="78" column="77" lean-forward="false" selection-start-line="78" selection-start-column="77" selection-end-line="78" selection-end-column="77" />
+        <state relative-caret-position="131">
+          <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/TestonlineApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestonlineApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/CourseManageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-test/4.3.6.RELEASE/spring-test-4.3.6.RELEASE.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper/TeacherManageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="27" column="127" lean-forward="false" selection-start-line="27" selection-start-column="127" selection-end-line="27" selection-end-column="127" />
+          <folding>
+            <marker date="1535964962513" expanded="true" signature="278:319" ph="SELECT * FRO... teacher" />
+            <marker date="1535964962513" expanded="true" signature="396:417" ph="SELECT * FRO... teacher" />
+            <marker date="1535964962513" expanded="true" signature="488:516" ph="SELECT COUNT... teacher" />
+            <marker date="1535964962513" expanded="true" signature="598:712" ph="UPDATE teach... " />
+            <marker date="1535964962513" expanded="true" signature="793:839" ph="DELETE from " />
+            <marker date="1535964962513" expanded="true" signature="916:1036" ph="INSERT INTO teacher... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

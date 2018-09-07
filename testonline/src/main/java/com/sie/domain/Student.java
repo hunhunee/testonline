@@ -11,7 +11,7 @@ public class Student {
 
     private String stuNum;
 
-    private String stuXxx2;
+    private String stuClass;
 
     public Integer getStuId() {
         return stuId;
@@ -53,11 +53,11 @@ public class Student {
         this.stuNum = stuNum == null ? null : stuNum.trim();
     }
 
-    public String getStuXxx2() {
-        return stuXxx2;
+    public String getStuClass() {
+        return stuClass;
     }
 
-    public void setStuXxx2(String stuXxx2) {
-        this.stuXxx2 = stuXxx2 == null ? null : stuXxx2.trim();
+    public void setStuClass(String stuClass) {
+        this.stuClass = stuClass == null ? null : stuClass.trim();
     }
 }

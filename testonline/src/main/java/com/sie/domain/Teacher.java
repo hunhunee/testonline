@@ -11,7 +11,7 @@ public class Teacher {
 
     private String teaNum;
 
-    private String teaXxx2;
+    private String teaClass;
 
     public Integer getTeaId() {
         return teaId;
@@ -53,11 +53,11 @@ public class Teacher {
         this.teaNum = teaNum == null ? null : teaNum.trim();
     }
 
-    public String getTeaXxx2() {
-        return teaXxx2;
+    public String getTeaClass() {
+        return teaClass;
     }
 
-    public void setTeaXxx2(String teaXxx2) {
-        this.teaXxx2 = teaXxx2 == null ? null : teaXxx2.trim();
+    public void setTeaClass(String teaClass) {
+        this.teaClass = teaClass == null ? null : teaClass.trim();
     }
 }

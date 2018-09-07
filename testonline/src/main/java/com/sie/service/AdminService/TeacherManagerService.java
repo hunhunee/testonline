@@ -1,7 +1,6 @@
 package com.sie.service.AdminService;
 
 import com.sie.domain.Teacher;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

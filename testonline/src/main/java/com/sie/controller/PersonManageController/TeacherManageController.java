@@ -1,7 +1,7 @@
-package com.sie.controller.AdminController;
+package com.sie.controller.PersonManageController;
 
 import com.sie.domain.Teacher;
-import com.sie.service.AdminService.TeacherManagerService;
+import com.sie.service.PersonManageService.TeacherManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

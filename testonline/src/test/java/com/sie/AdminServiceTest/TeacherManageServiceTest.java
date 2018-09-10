@@ -2,7 +2,7 @@ package com.sie.AdminServiceTest;
 
 
 import com.sie.domain.Teacher;
-import com.sie.service.AdminService.TeacherManagerService;
+import com.sie.service.PersonManageService.TeacherManagerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

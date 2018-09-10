@@ -1,4 +1,4 @@
-package com.sie.service.AdminService;
+package com.sie.service.PersonManageService;
 
 import com.sie.domain.Teacher;
 

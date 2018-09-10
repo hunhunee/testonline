@@ -1,4 +1,4 @@
-package com.sie.mapper.AdminMapper;
+package com.sie.mapper.PersonManageMapper;
 
 import com.sie.domain.Teacher;
 

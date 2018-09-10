@@ -1,8 +1,8 @@
-package com.sie.service.AdminService.AdminServiceImpl;
+package com.sie.service.PersonManageService.PersonManageServiceImpl;
 
 import com.sie.domain.Teacher;
-import com.sie.mapper.AdminMapper.TeacherManageMapper;
-import com.sie.service.AdminService.TeacherManagerService;
+import com.sie.mapper.PersonManageMapper.TeacherManageMapper;
+import com.sie.service.PersonManageService.TeacherManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

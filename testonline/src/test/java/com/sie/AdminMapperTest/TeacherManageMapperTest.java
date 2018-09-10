@@ -1,7 +1,7 @@
 package com.sie.AdminMapperTest;
 
 import com.sie.domain.Teacher;
-import com.sie.mapper.AdminMapper.TeacherManageMapper;
+import com.sie.mapper.PersonManageMapper.TeacherManageMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

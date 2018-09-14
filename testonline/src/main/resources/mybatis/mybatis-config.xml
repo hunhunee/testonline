@@ -15,5 +15,8 @@
 
     <mappers>
         <mapper resource="mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml"/>
+        <mapper resource="mybatis/mapper/TestManageMapper/TestManageMapper.xml"/>
+        <mapper resource="mybatis/mapper/LoginMapper/LoginMapper.xml"/>
+
     </mappers>
 </configuration>

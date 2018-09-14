@@ -5,7 +5,7 @@
 <template>
   <div>
     <div id="layout" :style="{width: '600px', height: '500px'}"></div>
-    <div id="layout1" :style="{width: '300px', height: '500px' }"></div>
+    <div id="layout1" :style="{bottom:'500px',left:'600px',width: '300px', height: '500px' }"></div>
   </div>
 </template>
 <script>

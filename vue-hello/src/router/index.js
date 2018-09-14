@@ -4,13 +4,25 @@ import HelloWorld from '@/components/HelloWorld'
 
 import AdminIndex from '@/components/AdminIndex'
 import AdminMessage from '@/components/AdminMessage'
-import AdminTest from '@/components/AdminTest'
-import AdminPersion from '@/components/AdminPersion'
+import AdminPersonTeacher from '@/components/AdminPersonTeacher'
+import AdminPersonStudent from '@/components/AdminPersonStudent'
+import AdminPersonTeacherAOU from '@/components/AdminPersonTeacherAOU'
+import AdminTestSingle from '@/components/AdminTestSingle'
+import AdminTestMultiple from '@/components/AdminTestMultiple'
+import AdminTestJudge from '@/components/AdminTestJudge'
+import AdminTestCompute from '@/components/AdminTestCompute'
 
 import TeacherIndex from '@/components/TeacherIndex'
 import TeacherMessage from '@/components/TeacherMessage'
-import TeacherTest from '@/components/TeacherTest'
 import TeacherTestResult from '@/components/TeacherTestResult'
+import TeacherTestSingle from '@/components/TeacherTestSingle'
+import TeacherTestMultiple from '@/components/TeacherTestMultiple'
+import TeacherTestJudge from '@/components/TeacherTestJudge'
+import TeacherTestCompute from '@/components/TeacherTestCompute'
+import TeacherTestSingleAOU from '@/components/TeacherTestSingleAOU'
+import TeacherTestMultipleAOU from '@/components/TeacherTestMultipleAOU'
+import TeacherTestJudgeAOU from '@/components/TeacherTestJudgeAOU'
+import TeacherTestComputeAOU from '@/components/TeacherTestComputeAOU'
 
 import StudentIndex from '@/components/StudentIndex'
 import StudentMessage from '@/components/StudentMessage'
@@ -42,18 +54,31 @@ export default new Router({
       component: TeacherIndex,
       children: [
         { path: 'teacher_message', component: TeacherMessage },            //教师对个人信息进行管理
-        { path: 'teacher_test', component: TeacherTest },                  //教师对考试试题进行管理
-        { path: 'teacher_test_result', component: TeacherTestResult }     //教师对考试结果进行查看
+        { path: 'teacher_test_single', component: TeacherTestSingle },                  //教师对考试试题进行管理
+        { path: 'teacher_test_multiple', component: TeacherTestMultiple },                  //教师对考试试题进行管理
+        { path: 'teacher_test_judge', component: TeacherTestJudge},                  //教师对考试试题进行管理
+        { path: 'teacher_test_compute', component: TeacherTestCompute },                  //教师对考试试题进行管理
+        { path: 'teacher_test_result', component: TeacherTestResult },     //教师对考试结果进行查看
+        { path: 'teacher_test_single_aou', component: TeacherTestSingleAOU },
+        { path: 'teacher_test_multiple_aou', component: TeacherTestMultipleAOU },
+        { path: 'teacher_test_judge_aou', component: TeacherTestJudgeAOU },
+        { path: 'teacher_test_compute_aou', component: TeacherTestComputeAOU },
       ]
-    },
+    }
+    ,
     {
       path: '/admin_index',
       name: 'admin_index',
       component: AdminIndex,
       children: [
         { path: 'admin_message', component: AdminMessage },              //管理员对个人信息进行管理
-        { path: 'admin_test', component: AdminTest },                   //管理员对试题进行管理
-        { path: 'admin_persion', component: AdminPersion }             //管理员对人事信息管理
+        { path: 'admin_test_single', component: AdminTestSingle },                  //教师对考试试题进行管理
+        { path: 'admin_test_multiple', component:AdminTestMultiple },                  //教师对考试试题进行管理
+        { path: 'admin_test_judge', component: AdminTestJudge},                  //教师对考试试题进行管理
+        { path: 'admin_test_compute', component: AdminTestCompute },                  //教师对考试试题进行管理
+        { path: 'admin_person_teacher', component: AdminPersonTeacher },             //管理员对人事信息管理--教师
+        { path: 'admin_person_student', component: AdminPersonStudent },             //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU }             //管理员对人事信息管理--学生
       ]
     }
   ]

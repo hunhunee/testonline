@@ -10,9 +10,9 @@ public interface TeacherManagerService {
 
     public Teacher findTeacherByNum(String num);
 
-    public void addTeacher(Teacher teacher);
+    public List<Teacher> addTeacher(Teacher teacher);
 
-    public void updateTeacher(Teacher teacher);
+    public Teacher updateTeacher(Teacher teacher);
 
-    public void deleteTeacher(String num);
+    public List<Teacher> deleteTeacher(String num);
 }

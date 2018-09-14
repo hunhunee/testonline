@@ -6,12 +6,12 @@
 
           <FormItem prop="user" >
               <Input type="text"  v-model="formInline.user" placeholder="Username" style="width: 200px" clearable>
-                  <Icon type="ios-person-outline" slot="prepend"></Icon>
+                  <Icon type="ios-person-outline" slot="center"></Icon>
               </Input>
           </FormItem>
           <FormItem prop="password">
               <Input type="password" v-model="formInline.password" placeholder="Password" style="width: 200px" clearable>
-                  <Icon type="ios-lock-outline" slot="prepend"></Icon>
+                  <Icon type="ios-lock-outline" slot="center"></Icon>
               </Input>
           </FormItem>
 
@@ -49,7 +49,7 @@ export default {
                     ],
                     password: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-                        { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
+
                     ]
                 }
             }
@@ -60,11 +60,10 @@ export default {
 
                 const axios = require('axios');
                 let data = {
-                    "username": this.formInline.user,
+                    "usernum": this.formInline.user,
                     "password":this.formInline.password,
                     "identity":this.formInline.radio
                 }
-
                       //
                       // this.$api.login(data)
                       // .then((response) => {
@@ -87,6 +86,7 @@ export default {
 <style scoped>
 .userLogin{
 text-align: center;
+background-color: inherit;
  }
 
 

@@ -28,17 +28,26 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
     }
 
     @Override
-    public void addTeacher(Teacher teacher) {
+    public List<Teacher> addTeacher(Teacher teacher) {
+
         teacherManageMapper.addTeacher(teacher);
+        List<Teacher> teacherList=teacherManageMapper.findAllTeacher();
+        return teacherList;
     }
 
     @Override
-    public void updateTeacher(Teacher teacher) {
+    public Teacher  updateTeacher(Teacher teacher) {
+
         teacherManageMapper.updateTeacher(teacher);
+       Teacher t = teacherManageMapper.findTeacherByNum(teacher.getTeaNum());
+        return t;
     }
 
     @Override
-    public void deleteTeacher(String num) {
+    public List<Teacher> deleteTeacher(String num) {
+
         teacherManageMapper.deleteTeacher(num);
+        List<Teacher> teacherList=teacherManageMapper.findAllTeacher();
+        return teacherList;
     }
 }

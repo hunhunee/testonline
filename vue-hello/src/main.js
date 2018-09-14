@@ -15,6 +15,7 @@ import api from './api/global.js'
 Vue.prototype.$api = api
 //vuex
 import store from './vuex/store'
+
 Vue.config.productionTip = false
 //echarts
 import echarts from 'echarts'

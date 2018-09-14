@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e998f31-8b41-4f3d-940e-14449b68c055" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/AdminController/TeacherManageController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/CourseManageMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/InformaintionMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/StudentManageMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/AdminServiceImpl/TeacherManagerServiceImpl.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/LoginController/LoginController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestManageController/TestManageController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/LoginMapper/LoginMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TestManageMapper/TestManageMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginServiceImpl/loginServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageServiceImpl/TestManageServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/LoginMapper/LoginMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestManageMapper/TestManageMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testonline/src/test/java/com/sie/LoginTest/mapper/LoginTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/t.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Admin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Lesson.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Student.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/StudentAnswer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Teacher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Test.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" afterPath="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java" afterPath="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/AdminController/TeacherManageController.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/PersonManageMapper/TeacherManageMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/AdminServiceImpl/TeacherManagerServiceImpl.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/TeacherManagerService.java" afterPath="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper/TeacherManageMapper.xml" afterPath="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/testonline/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,42 +39,101 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TeacherManageMapperTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/LoginController/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestManageMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestManageMapper/TestManageMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1536549713980" expanded="true" signature="265:556" ph="insert into test... " />
+                <marker date="1536549713980" expanded="true" signature="629:670" ph="DELETE FROM " />
+                <marker date="1536549713980" expanded="true" signature="762:1057" ph="UPDATE test " />
+                <marker date="1536549713980" expanded="true" signature="1179:1255" ph="SELECT * fro... test" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeacherManageMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml">
+      <file leaf-file-name="TestManageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestManageController/TestManageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-              <folding>
-                <marker date="1536542327103" expanded="true" signature="285:326" ph="SELECT * FRO... teacher" />
-                <marker date="1536542327103" expanded="true" signature="403:424" ph="SELECT * FRO... teacher" />
-                <marker date="1536542327103" expanded="true" signature="495:523" ph="SELECT COUNT... teacher" />
-                <marker date="1536542327103" expanded="true" signature="605:719" ph="UPDATE teach... " />
-                <marker date="1536542327103" expanded="true" signature="800:846" ph="DELETE from " />
-                <marker date="1536542327103" expanded="true" signature="923:1043" ph="INSERT INTO teacher... " />
-              </folding>
+            <state relative-caret-position="864">
+              <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestManageService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestManageTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestManageTest/mapper/TestManageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+            <state relative-caret-position="336">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestManageServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageServiceImpl/TestManageServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+              <folding>
+                <element signature="e#624#625#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,9 +143,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -104,19 +176,38 @@
         <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/AdminMapper/TeacherManageMapper.xml" />
         <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminController/TeacherControllerTest.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java" />
-        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/t.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/AdminMapper/TeacherManageMapper.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/TeacherManagerService.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/AdminServiceImpl/TeacherManagerServiceImpl.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/AdminController/TeacherManageController.java" />
-        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/InfoMapper.fxml" />
-        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageMapper/TeacherManageMapper.java" />
         <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageMapper/TeacherManageMapper.java" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/PersonManageMapper/TeacherManageMapper.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/t.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TestManageMapper/TestManageMapper.java" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/TestManageTest/mapper/TestManageTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestManageMapper/TestManageMapper.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/LoginTest/mapper/TestManageTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/LoginMapper/LoginMapper.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginService.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginServiceImpl/loginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/LoginMapper/LoginMapper.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/LoginTest/mapper/LoginTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/LoginController/LoginController.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageServiceImpl/TestManageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageService.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Test.java" />
+        <option value="$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestManageController/TestManageController.java" />
       </list>
     </option>
   </component>
@@ -176,8 +267,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +306,40 @@
               <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
               <item name="testonline" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="LoginController" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,6 +348,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="TestManageTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testonline" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testonline" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sie" type="462c0819:PsiDirectoryNode" />
+              <item name="TestManageTest" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,15 +396,17 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workspace\git\testonline\testonline\src\main\java\com\sie\controller" />
-      <recent name="D:\workspace\git\testonline\testonline\src\main\java\com\sie\service" />
-      <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper\PersonManageMapper" />
       <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper\AdminMapper" />
       <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\git\testonline\testonline\src\test\java\com\sie" />
+      <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper\LoginMapper" />
+      <recent name="D:\workspace\git\testonline\testonline\src\main\resources\mybatis\mapper\TestManageMapper" />
+      <recent name="D:\workspace\git\testonline\testonline\src\main\java\com\sie\controller" />
+      <recent name="D:\workspace\git\testonline\testonline\src\main\java\com\sie\service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,20 +421,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TeacherManageMapperTest.findCountTest">
-    <configuration name="TeacherManageMapperTest.findAllTeacherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.TestonlineApplication">
+    <configuration name="LoginTest.adminLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="PATTERN" value="com.sie.LoginTest.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="testonline" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
-      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
-      <option name="METHOD_NAME" value="findAllTeacherTest" />
+      <option name="PACKAGE_NAME" value="com.sie.LoginTest.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.LoginTest.mapper.LoginTest" />
+      <option name="METHOD_NAME" value="adminLoginTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -293,19 +447,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TeacherManageMapperTest.findCountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.studentLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sie.AdminMapperTest.*" />
+          <option name="PATTERN" value="com.sie.LoginTest.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="testonline" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sie.AdminMapperTest" />
-      <option name="MAIN_CLASS_NAME" value="com.sie.AdminMapperTest.TeacherManageMapperTest" />
-      <option name="METHOD_NAME" value="findCountTest" />
+      <option name="PACKAGE_NAME" value="com.sie.LoginTest.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.sie.LoginTest.mapper.LoginTest" />
+      <option name="METHOD_NAME" value="studentLoginTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -482,19 +636,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.TestonlineApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.addTeacherTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.updateTeacherTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LoginTest.adminLoginTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.LoginTest.studentLoginTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.deleteTeacherTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findCountTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findAllTeacherTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.addTeacherTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.updateTeacherTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findCountTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherManageMapperTest.findAllTeacherTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.updateTeacherTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.addTeacherTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.deleteTeacherTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.updateTeacherTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TeacherManageServiceTest.addTeacherTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LoginTest.adminLoginTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LoginTest.studentLoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -512,77 +666,81 @@
       <workItem from="1535936505167" duration="20262000" />
       <workItem from="1536131109104" duration="4962000" />
       <workItem from="1536209054754" duration="6807000" />
-      <workItem from="1536470954245" duration="2123000" />
+      <workItem from="1536470954245" duration="11650000" />
+      <workItem from="1536649159482" duration="1292000" />
+      <workItem from="1536711972669" duration="4351000" />
+      <workItem from="1536716405112" duration="26763000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TeacherManageMapperTest_findCountTest - 2018.09.07 at 09h 35m 03s.xml">
-      <configuration name="TeacherManageMapperTest.findCountTest" configurationId="JUnit" />
+    <history-entry file="LoginTest_teacherLoginTest - 2018.09.12 at 08h 54m 26s.xml">
+      <configuration name="LoginTest.teacherLoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageMapperTest_findCountTest - 2018.09.07 at 10h 12m 16s.xml">
-      <configuration name="TeacherManageMapperTest.findCountTest" configurationId="JUnit" />
+    <history-entry file="LoginTest_teacherLoginTest - 2018.09.12 at 08h 55m 24s.xml">
+      <configuration name="LoginTest.teacherLoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageMapperTest_findCountTest - 2018.09.07 at 11h 45m 40s.xml">
-      <configuration name="TeacherManageMapperTest.findCountTest" configurationId="JUnit" />
+    <history-entry file="TeacherManageServiceTest_addTeacherTest - 2018.09.12 at 16h 33m 33s.xml">
+      <configuration name="TeacherManageServiceTest.addTeacherTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageMapperTest_findCountTest - 2018.09.10 at 09h 20m 20s.xml">
-      <configuration name="TeacherManageMapperTest.findCountTest" configurationId="JUnit" />
+    <history-entry file="TeacherManageServiceTest_addTeacherTest - 2018.09.12 at 16h 34m 13s.xml">
+      <configuration name="TeacherManageServiceTest.addTeacherTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageMapperTest_findCountTest - 2018.09.10 at 09h 22m 35s.xml">
-      <configuration name="TeacherManageMapperTest.findCountTest" configurationId="JUnit" />
+    <history-entry file="TeacherManageServiceTest_addTeacherTest - 2018.09.12 at 16h 35m 38s.xml">
+      <configuration name="TeacherManageServiceTest.addTeacherTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageServiceTest_findAllTeacherTest - 2018.09.03 at 17h 22m 58s.xml">
-      <configuration name="TeacherManageServiceTest.findAllTeacherTest" configurationId="JUnit" />
+    <history-entry file="TeacherManageServiceTest_deleteTeacherTest - 2018.09.12 at 14h 41m 01s.xml">
+      <configuration name="TeacherManageServiceTest.deleteTeacherTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TeacherManageServiceTest_findAllTeacherTest - 2018.09.03 at 17h 27m 33s.xml">
-      <configuration name="TeacherManageServiceTest.findAllTeacherTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TeacherManageServiceTest_findTeacherByNameTest - 2018.09.03 at 17h 37m 16s.xml">
-      <configuration name="TeacherManageServiceTest.findTeacherByNameTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TeacherManageServiceTest_findTeacherByNameTest - 2018.09.03 at 17h 37m 47s.xml">
-      <configuration name="TeacherManageServiceTest.findTeacherByNameTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TeacherManageServiceTest_updateTeacherTest - 2018.09.03 at 17h 38m 30s.xml">
+    <history-entry file="TeacherManageServiceTest_updateTeacherTest - 2018.09.12 at 17h 56m 22s.xml">
       <configuration name="TeacherManageServiceTest.updateTeacherTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestManageTest_updateTest - 2018.09.10 at 11h 08m 29s.xml">
+      <configuration name="TestManageTest.updateTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestManageTest_updateTest - 2018.09.10 at 11h 13m 44s.xml">
+      <configuration name="TestManageTest.updateTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestManageTest_updateTest - 2018.09.10 at 11h 16m 01s.xml">
+      <configuration name="TestManageTest.updateTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34456000" />
+    <option name="totallyTimeSpent" value="76389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15477793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47106326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1188946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1372813" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30955586" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21915168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27827764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6137281" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28532976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,42 +756,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminController/TeacherControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/config/DruidConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/config/DruidConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/BaiduNetdiskDownload/springboot/代码/spring-boot-06-data-mybatis/src/main/java/com/atguigu/springboot/controller/DeptController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestMapper.xml" />
     <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TestMapper.java" />
     <entry file="file://$PROJECT_DIR$/testonline/testonline.iml">
@@ -681,14 +803,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/a.java" />
     <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/AdminService/w.java" />
-    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestonlineApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminController/TeacherControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -696,38 +810,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#196#197#0" expanded="false" />
-            <element signature="e#244#245#0" expanded="false" />
-            <element signature="e#284#285#0" expanded="false" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#350#351#0" expanded="false" />
-            <element signature="e#398#399#0" expanded="false" />
-            <element signature="e#438#439#0" expanded="false" />
-            <element signature="e#473#474#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -735,146 +821,245 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/InfoMapper.fxml" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/PersonManageMapper/CourseManageMapper.java" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.java" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/TestonlineApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageMapper/TeacherManageMapper.java" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageMapper/TeacherManageMapper.java" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestManage/e.java" />
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/PersonManageMapper/TeacherManageMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/TestManageMapper/TestManageMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#1139#1140#0" expanded="false" />
-            <element signature="e#1193#1194#0" expanded="false" />
-          </folding>
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/InfoMapper.fxml">
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestonlineApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="52" />
-          <folding />
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/PersonManageMapper/CourseManageMapper.java">
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/t.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="264">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.java">
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginServiceImpl/loginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="771">
+          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/TestonlineApplication.java">
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/LoginService/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="267">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/mapper/LoginMapper/LoginMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="53" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/LoginMapper/LoginMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+          <folding>
+            <marker date="1536715062231" expanded="true" signature="293:366" ph="SELECT * fro... admin" />
+            <marker date="1536715062231" expanded="true" signature="499:574" ph="SELECT * fro... teacher" />
+            <marker date="1536715062231" expanded="true" signature="711:786" ph="SELECT * fro... student" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/LoginTest/mapper/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="27" column="148" lean-forward="false" selection-start-line="27" selection-start-column="148" selection-end-line="27" selection-end-column="148" />
           <folding>
-            <marker date="1536542327103" expanded="true" signature="285:326" ph="SELECT * FRO... teacher" />
-            <marker date="1536542327103" expanded="true" signature="403:424" ph="SELECT * FRO... teacher" />
-            <marker date="1536542327103" expanded="true" signature="495:523" ph="SELECT COUNT... teacher" />
-            <marker date="1536542327103" expanded="true" signature="605:719" ph="UPDATE teach... " />
-            <marker date="1536542327103" expanded="true" signature="800:846" ph="DELETE from " />
-            <marker date="1536542327103" expanded="true" signature="923:1043" ph="INSERT INTO teacher... " />
+            <marker date="1536741322183" expanded="true" signature="285:326" ph="SELECT * FRO... teacher" />
+            <marker date="1536741322183" expanded="true" signature="403:424" ph="SELECT * FRO... teacher" />
+            <marker date="1536741322183" expanded="true" signature="495:523" ph="SELECT COUNT... teacher" />
+            <marker date="1536741322183" expanded="true" signature="605:719" ph="UPDATE teach... " />
+            <marker date="1536741322183" expanded="true" signature="800:846" ph="DELETE from " />
+            <marker date="1536741322183" expanded="true" signature="923:1065" ph="INSERT INTO teacher... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/TeacherManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminServiceTest/TeacherManageServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageController/TeacherManageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="e#1099#1100#0" expanded="false" />
+            <element signature="e#1163#1164#0" expanded="false" />
+            <element signature="e#1243#1244#0" expanded="false" />
+            <element signature="e#1302#1303#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#260#261#0" expanded="false" />
+            <element signature="e#286#287#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageService/PersonManageServiceImpl/TeacherManagerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/domain/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageServiceImpl/TestManageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/LoginController/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/TestManageService/TestManageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/TestManageController/TestManageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mapper/TestManageMapper/TestManageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding>
+            <marker date="1536549713980" expanded="true" signature="265:556" ph="insert into test... " />
+            <marker date="1536549713980" expanded="true" signature="629:670" ph="DELETE FROM " />
+            <marker date="1536549713980" expanded="true" signature="762:1057" ph="UPDATE test " />
+            <marker date="1536549713980" expanded="true" signature="1179:1255" ph="SELECT * fro... test" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/TestManageTest/mapper/TestManageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testonline/src/main/resources/mybatis/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        <state relative-caret-position="336">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/service/PersonManageMapper/TeacherManageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/PersonManageMapper/TeacherManageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/main/java/com/sie/controller/t.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testonline/src/test/java/com/sie/AdminMapperTest/TeacherManageMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

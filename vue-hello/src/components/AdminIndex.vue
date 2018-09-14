@@ -35,18 +35,36 @@
     <div class="layout">
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-                <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
-                    <MenuItem name="1-1"  >
+                <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
+                    <Submenu name="1-1">
+                    <template slot="title">
                         <Icon type="ios-body" />
-                        <span>人事管理</span>
-                    </MenuItem>
-                    <MenuItem name="1-2" >
-                        <Icon type="ios-search" />
-                        <span>试题管理</span>
-                    </MenuItem>
+                        人事管理
+                    </template>
+                    <MenuItem name="1-1-1">教师管理</MenuItem>
+                    <MenuItem name="1-1-2">学生管理</MenuItem>
+                   </Submenu>
+
+                   <Submenu name="1-2">
+                   <template slot="title">
+                       <Icon type="ios-search" />
+                       试题管理
+                   </template>
+                   <MenuItem name="1-2-1">单选题</MenuItem>
+                   <MenuItem name="1-2-2">多选题</MenuItem>
+                   <MenuItem name="1-2-3">判断题</MenuItem>
+                   <MenuItem name="1-2-4">计算题</MenuItem>
+                  </Submenu>
+
+
                     <MenuItem name="1-3" >
                         <Icon type="md-person-add" />
                         <span>个人信息</span>
+                    </MenuItem>
+
+                    <MenuItem name="1-4" >
+                        <Icon type="md-person-add" />
+                        <span>科目管理</span>
                     </MenuItem>
                 </Menu>
             </Sider>
@@ -55,11 +73,6 @@
                  <div class="text">在线考试系统---管理员</div>
                 </Header>
                 <Content :style="{padding: '0 16px 16px'}">
-                    <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>Home</BreadcrumbItem>
-                        <BreadcrumbItem>Components</BreadcrumbItem>
-                        <BreadcrumbItem>Layout</BreadcrumbItem>
-                    </Breadcrumb>
                     <Card>
                         <div style="height: 600px">
                          <router-view/>
@@ -82,13 +95,29 @@
           test(name){
             switch (name) {
               case "1-1":
-              router.push({ path: '/admin_index/admin_persion' });
+              router.push({ path: '/admin_index/admin_person_teacher' });
                 break;
-              case "1-2":
-              router.push({ path: '/admin_index/admin_test' });
+              case "1-1-1":
+              router.push({ path: '/admin_index/admin_person_teacher' });
+                break;
+              case "1-1-2":
+              router.push({ path: '/admin_index/admin_person_student' });
+                break;
+              case "1-2-1":
+            
+              router.push({ path: '/admin_index/admin_test_single' });
+                break;
+              case "1-2-2":
+              router.push({ path: '/admin_index/admin_test_multiple' });
+                break;
+              case "1-2-3":
+              router.push({ path: '/admin_index/admin_test_judge' });
+                break;
+              case "1-2-4":
+              router.push({ path: '/admin_index/admin_test_compute' });
                 break;
               case "1-3":
-             router.push({ path: '/admin_index/admin_message' });
+              router.push({ path: '/admin_index/admin_message' });
                 break;
               default:
 

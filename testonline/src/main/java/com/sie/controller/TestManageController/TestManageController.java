@@ -44,4 +44,12 @@ public class TestManageController {
         System.out.println("查找的题型："+test.getTestType()+"数量："+testList.size());
         return testList;
     }
+
+
+    @PostMapping("/findAll")
+    public List<Test> findAllTest(Test test){
+        List<Test> testList= testManageService.findAllTest(test);
+        return testList;
+    }
+
 }

@@ -4,6 +4,10 @@
 <template>
 
     <div class="layout">
+      <Select v-model="lesson" style="width:200px">
+        <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+      </Select>
+      <Button type="primary" @click="find">查询科目单选题</Button>
       <div class="add">
         <Button type="primary" @click="add">添加单选题</Button>
       </div>
@@ -89,18 +93,31 @@ import router from '@/router/index'
                   }
               ],
               data:[],
+              lessonList: [
+                {
+                    value: '1',
+                    label: '英语'
+                },
+                {
+                    value: '2',
+                    label: '数学'
+                },
+                {
+                    value: '3',
+                    label: '物理'
+                },
+                {
+                    value: '4',
+                    label: '语文'
+                },
 
+                ],
+                lesson: ''
           }
       },
         created: function () {
-
-          let data={
-            testCourse:this.getLesson,
-            testType:this.$store.state.test.testType
-          }
-         this.$store.dispatch('findTest',{data});
-         this.data=this.$store.state.test.test
-         console.log(this.data);
+         
+           this.data=this.$store.state.test.test
        },
         methods:{
           change (index) {
@@ -116,7 +133,7 @@ import router from '@/router/index'
               testType:this.data[index].testType
             }
             this.$store.dispatch('updateBeforeTest',{data});
-            router.push({ path: '/teacher_index/teacher_test_single_aou' });
+            router.push({ path: '/admin_index/admin_test_single_aou' });
           },
           remove (index) {
             let data = {
@@ -127,14 +144,28 @@ import router from '@/router/index'
          },
          add() {
            this.$store.dispatch('addBeforeTest');
-           router.push({ path: '/teacher_index/teacher_test_single_aou' });
-         }
+           router.push({ path: '/admin_index/admin_test_single_aou' });
+         },
+
+         find() {
+
+           let data={
+             testCourse:this.lesson,
+             testType:this.getTestType
+           }
+
+          this.$store.dispatch('findTest',{data});
+          this.data=this.$store.state.test.test
+         },
 
         },
         computed: {
             getLesson:function(){
               return this.$store.getters.getLesson
-            }
+            },
+            getTestType:function(){
+              return this.$store.getters.getTestType
+            },
         }
     }
 </script>

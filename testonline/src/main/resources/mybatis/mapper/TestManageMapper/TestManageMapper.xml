@@ -19,4 +19,8 @@
     <select id="findTest" parameterType="com.sie.domain.Test" resultType="com.sie.domain.Test">
          SELECT * from test where test_type=#{testType} and test_course=#{testCourse}
     </select>
+
+    <select id="findAllTest" parameterType="com.sie.domain.Test" resultType="com.sie.domain.Test">
+        SELECT * from test where test_type=#{testType}
+    </select>
 </mapper>

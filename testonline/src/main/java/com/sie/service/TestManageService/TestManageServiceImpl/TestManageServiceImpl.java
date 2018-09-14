@@ -35,4 +35,11 @@ public class TestManageServiceImpl implements TestManageService{
         List<Test> testList =testManageMapper.findTest(test);
         return testList;
     }
+
+    @Override
+    public List<Test> findAllTest(Test test) {
+
+        List<Test> testList =testManageMapper.findAllTest(test);
+        return testList;
+    }
 }

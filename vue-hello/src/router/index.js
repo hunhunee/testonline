@@ -11,6 +11,10 @@ import AdminTestSingle from '@/components/AdminTestSingle'
 import AdminTestMultiple from '@/components/AdminTestMultiple'
 import AdminTestJudge from '@/components/AdminTestJudge'
 import AdminTestCompute from '@/components/AdminTestCompute'
+import AdminTestSingleAOU from '@/components/AdminTestSingleAOU'
+import AdminTestMultipleAOU from '@/components/AdminTestMultipleAOU'
+import  AdminTestJudgeAOU from '@/components/AdminTestJudgeAOU'
+import  AdminTestComputeAOU from '@/components/AdminTestComputeAOU'
 
 import TeacherIndex from '@/components/TeacherIndex'
 import TeacherMessage from '@/components/TeacherMessage'
@@ -19,10 +23,10 @@ import TeacherTestSingle from '@/components/TeacherTestSingle'
 import TeacherTestMultiple from '@/components/TeacherTestMultiple'
 import TeacherTestJudge from '@/components/TeacherTestJudge'
 import TeacherTestCompute from '@/components/TeacherTestCompute'
-import TeacherTestSingleAOU from '@/components/TeacherTestSingleAOU'
-import TeacherTestMultipleAOU from '@/components/TeacherTestMultipleAOU'
-import TeacherTestJudgeAOU from '@/components/TeacherTestJudgeAOU'
-import TeacherTestComputeAOU from '@/components/TeacherTestComputeAOU'
+import  TeacherTestSingleAOU from '@/components/TeacherTestSingleAOU'
+import  TeacherTestMultipleAOU from '@/components/TeacherTestMultipleAOU'
+import  TeacherTestJudgeAOU from '@/components/TeacherTestJudgeAOU'
+import  TeacherTestComputeAOU from '@/components/TeacherTestComputeAOU'
 
 import StudentIndex from '@/components/StudentIndex'
 import StudentMessage from '@/components/StudentMessage'
@@ -78,7 +82,11 @@ export default new Router({
         { path: 'admin_test_compute', component: AdminTestCompute },                  //教师对考试试题进行管理
         { path: 'admin_person_teacher', component: AdminPersonTeacher },             //管理员对人事信息管理--教师
         { path: 'admin_person_student', component: AdminPersonStudent },             //管理员对人事信息管理--学生
-        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU }             //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },             //管理员对人事信息管理--学生
+        { path: 'admin_test_single_aou', component: AdminTestSingleAOU },
+        { path: 'admin_test_multiple_aou', component: AdminTestMultipleAOU },
+        { path: 'admin_test_judge_aou', component: AdminTestJudgeAOU },
+        { path: 'admin_test_compute_aou', component: AdminTestComputeAOU },
       ]
     }
   ]

@@ -16,6 +16,9 @@ export default {
   getters: {
 		getLesson: state => {//通过方法访问
 		  return state.lesson
+		},
+    getIdentity: state => {//通过方法访问
+		  return state.identity
 		}
 	},
   actions:{

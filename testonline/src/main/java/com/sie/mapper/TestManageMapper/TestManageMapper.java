@@ -12,4 +12,6 @@ public interface TestManageMapper {
     public void updateTest(Test test);
 
     public List<Test> findTest(Test test);
-}
+
+    public List<Test> findAllTest(Test test);
+ }

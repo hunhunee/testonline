@@ -81,7 +81,18 @@ return axios({
    data:Qs.stringify(data)
 
  });
+},
 
+findAllTest: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/testManage/findAll',
+   data:Qs.stringify(data)
+
+ });
 },
 
 deleteTest: function (data) {

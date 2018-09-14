@@ -56,4 +56,12 @@ public class TestManageTest {
       List<com.sie.domain.Test> testList= testManageMapper.findTest(t);
         System.out.println(testList.size());
     }
+
+    @Test
+    public void findAllTest(){
+        com.sie.domain.Test t = new com.sie.domain.Test();
+        t.setTestType("4");
+        List<com.sie.domain.Test> testList= testManageMapper.findAllTest(t);
+        System.out.println(testList.size());
+    }
 }

@@ -47,7 +47,8 @@ export default {
                     rightans1: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
-                }
+                },
+ 
             }
         },
         methods: {
@@ -58,7 +59,6 @@ export default {
                   let data = {
                     testId:this.$store.state.test.utest.testId,
                     testContent:this.formInline.testContent,
-
                     rightans1:this.formInline.rightans1,
                     testType:this.getTestType,
                     testCourse:this.getLesson
@@ -69,7 +69,7 @@ export default {
                   const axios = require('axios');
                   let data = {
                       testContent:this.formInline.testContent,
-                     
+
                       rightans1:this.formInline.rightans1,
                       testType:this.getTestType,
                       testCourse:this.getLesson
@@ -93,7 +93,7 @@ export default {
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .userLogin{
 text-align: center;

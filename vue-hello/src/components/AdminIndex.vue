@@ -28,8 +28,6 @@
         vertical-align: middle;
         font-size: 22px;
     }
-
-
 </style>
 <template>
     <div class="layout">
@@ -88,7 +86,8 @@
     export default {
         data () {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+
             };
         },
         methods:{
@@ -104,17 +103,33 @@
               router.push({ path: '/admin_index/admin_person_student' });
                 break;
               case "1-2-1":
-            
-              router.push({ path: '/admin_index/admin_test_single' });
+              this.$store.dispatch('testType',{testType:1});
+              let data1 ={
+                testType:this.getTestType
+              }
+              this.$store.dispatch('findAllTest1',{data1});
                 break;
               case "1-2-2":
-              router.push({ path: '/admin_index/admin_test_multiple' });
+              this.$store.dispatch('testType',{testType:2});
+              let data2 ={
+                testType:this.getTestType
+              }
+              this.$store.dispatch('findAllTest2',{data2});
+
                 break;
               case "1-2-3":
-              router.push({ path: '/admin_index/admin_test_judge' });
+              this.$store.dispatch('testType',{testType:3});
+              let data3 ={
+                testType:this.getTestType
+              }
+              this.$store.dispatch('findAllTest3',{data3});
                 break;
               case "1-2-4":
-              router.push({ path: '/admin_index/admin_test_compute' });
+              this.$store.dispatch('testType',{testType:4});
+              let data4 ={
+                testType:this.getTestType
+              }
+              this.$store.dispatch('findAllTest4',{data4});
                 break;
               case "1-3":
               router.push({ path: '/admin_index/admin_message' });
@@ -130,7 +145,11 @@
                     'menu-item',
                     this.isCollapsed ? 'collapsed-menu' : ''
                 ]
-            }
+            },
+
+            getTestType:function(){
+              return this.$store.getters.getTestType
+            },
         }
     }
 </script>

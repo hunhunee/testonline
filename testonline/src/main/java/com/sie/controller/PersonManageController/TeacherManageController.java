@@ -3,42 +3,39 @@ package com.sie.controller.PersonManageController;
 import com.sie.domain.Teacher;
 import com.sie.service.PersonManageService.TeacherManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/personManage")
+@RequestMapping("/admin")
 public class TeacherManageController {
     @Autowired
     private TeacherManagerService teacherManagerService;
 
-    @PostMapping("/addTeacher")
-    public List<Teacher>  addTeacher(Teacher teacher){
-        List<Teacher> teacherList = teacherManagerService.addTeacher(teacher);
-        return teacherList;
+    @GetMapping("/addTeacher")
+    public String addTeacher(Teacher teacher){
+      return "添加教师信息成功！";
     }
 
-    @PostMapping("/deleteTeacher")
-    public List<Teacher> delTeacher(String num){
-
-        List<Teacher> teacherList= teacherManagerService.deleteTeacher(num);
-        return teacherList;
+    @GetMapping("/delTeacher/{num}")
+    public String delTeacher(@PathVariable("num") String num){
+        return "删除教师信息成功！";
     }
 
-    @PostMapping("/updateTeacher")
-    public Teacher updateTeacher(Teacher teacher){
-        Teacher t = teacherManagerService.updateTeacher(teacher);
-        return t;
+    @GetMapping("/updateTeacher")
+    public String updateTeacher(Teacher teacher){
+        return "修改教师信息成功";
     }
-
-
-    @PostMapping("/findTeacher")
-    public Teacher findTeacher(String num){
+    @GetMapping("/findTeacher/{num}")
+    public Teacher findTeacher(@PathVariable("num") String num){
       return teacherManagerService.findTeacherByNum(num);
     }
 
-    @PostMapping("/findAllTeacher")
+    @GetMapping("/findAllTeacher")
     public List<Teacher> findAllTeacher(){
       return teacherManagerService.findAllTeacher();
     }

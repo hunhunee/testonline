@@ -13,19 +13,13 @@ public class Test {
 
     private String testAns4;
 
-    private String rightans1;
-
-    private String rightans2;
-
-    private String rightans3;
-
-    private String rightans4;
+    private String rightans;
 
     private String testCourse;
 
-    private String testType;
-
     private Integer pub;
+
+    private String testXxx1;
 
     private String testXxx2;
 
@@ -77,36 +71,12 @@ public class Test {
         this.testAns4 = testAns4 == null ? null : testAns4.trim();
     }
 
-    public String getRightans1() {
-        return rightans1;
+    public String getRightans() {
+        return rightans;
     }
 
-    public void setRightans1(String rightans1) {
-        this.rightans1 = rightans1 == null ? null : rightans1.trim();
-    }
-
-    public String getRightans2() {
-        return rightans2;
-    }
-
-    public void setRightans2(String rightans2) {
-        this.rightans2 = rightans2 == null ? null : rightans2.trim();
-    }
-
-    public String getRightans3() {
-        return rightans3;
-    }
-
-    public void setRightans3(String rightans3) {
-        this.rightans3 = rightans3 == null ? null : rightans3.trim();
-    }
-
-    public String getRightans4() {
-        return rightans4;
-    }
-
-    public void setRightans4(String rightans4) {
-        this.rightans4 = rightans4 == null ? null : rightans4.trim();
+    public void setRightans(String rightans) {
+        this.rightans = rightans == null ? null : rightans.trim();
     }
 
     public String getTestCourse() {
@@ -117,20 +87,20 @@ public class Test {
         this.testCourse = testCourse == null ? null : testCourse.trim();
     }
 
-    public String getTestType() {
-        return testType;
-    }
-
-    public void setTestType(String testType) {
-        this.testType = testType == null ? null : testType.trim();
-    }
-
     public Integer getPub() {
         return pub;
     }
 
     public void setPub(Integer pub) {
         this.pub = pub;
+    }
+
+    public String getTestXxx1() {
+        return testXxx1;
+    }
+
+    public void setTestXxx1(String testXxx1) {
+        this.testXxx1 = testXxx1 == null ? null : testXxx1.trim();
     }
 
     public String getTestXxx2() {

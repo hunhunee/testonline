@@ -25,6 +25,6 @@
     </delete>
 
     <insert id="addTeacher" parameterType="teacher">
-        INSERT INTO teacher (tea_name,tea_password,tea_course,tea_num,tea_class) VALUES (#{teaName},#{teaPassword},#{teaCourse},#{teaNum},#{teaClass});
+        INSERT INTO teacher (tea_name,tea_password,tea_course,tea_num) VALUES (#{teaName},#{teaPassword},#{teaCourse},#{teaNum});
     </insert>
 </mapper>

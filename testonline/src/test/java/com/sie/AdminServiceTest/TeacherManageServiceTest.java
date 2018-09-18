@@ -38,17 +38,16 @@ public class TeacherManageServiceTest {
         Teacher teacher = new Teacher();
         teacher.setTeaName("t");
         teacher.setTeaCourse(1);
-        teacher.setTeaNum("t005");
+        teacher.setTeaNum("t003");
         teacher.setTeaPassword("123");
-        teacher.setTeaClass("1");
-       List<Teacher> teacherList= teacherManagerService.addTeacher(teacher);
-        System.out.println(teacherList.size());
+        teacherManagerService.addTeacher(teacher);
+
     }
 
     @Test
     public void deleteTeacherTest(){
-        List<Teacher> teacherList= teacherManagerService.deleteTeacher("t003");
-        System.out.println(teacherList.size());
+        teacherManagerService.deleteTeacher("t003");
+
     }
 
     @Test
@@ -58,7 +57,6 @@ public class TeacherManageServiceTest {
         teacher.setTeaCourse(1);
         teacher.setTeaNum("t003");
         teacher.setTeaPassword("123");
-      Teacher t= teacherManagerService.updateTeacher(teacher);
-        System.out.println(t.getTeaName());
+       teacherManagerService.updateTeacher(teacher);
     }
 }

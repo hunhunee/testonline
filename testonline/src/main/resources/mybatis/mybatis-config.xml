@@ -11,12 +11,11 @@
 
     <typeAliases>
         <typeAlias type="com.sie.domain.Teacher" alias="teacher"/>
+        <typeAlias type="com.sie.domain.Lesson" alias="lesson"/>
     </typeAliases>
 
     <mappers>
+        <mapper resource="mybatis/mapper/LessonManageMapper/LessonManageMapper.xml"/>
         <mapper resource="mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml"/>
-        <mapper resource="mybatis/mapper/TestManageMapper/TestManageMapper.xml"/>
-        <mapper resource="mybatis/mapper/LoginMapper/LoginMapper.xml"/>
-
     </mappers>
 </configuration>

@@ -56,11 +56,11 @@ export default {
 
                  testContent:this.$store.state.test.utest.testContent,
                  testAns1:this.$store.state.test.utest.testAns1,
-                 testAns2:this.$store.state.test.utest.testAns1,
-                 testAns3:this.$store.state.test.utest.testAns1,
-                 testAns4:this.$store.state.test.utest.testAns1,
-                 rightans1:this.$store.state.test.utest.rightans1
-
+                 testAns2:this.$store.state.test.utest.testAns2,
+                 testAns3:this.$store.state.test.utest.testAns3,
+                 testAns4:this.$store.state.test.utest.testAns4,
+                 rightans1:this.$store.state.test.utest.rightans1,
+                 testCourse:this.$store.state.test.utest.testCourse,
                 },
                 ruleInline: {
                     testContent: [
@@ -102,17 +102,18 @@ export default {
                   },
 
                   ],
-                  lesson: this.getLesson,
+                  lesson: this.$store.state.test.utest.testCourse,
 
             }
         },
         methods: {
 
               handleSubmit() {
-
-                if(this.$store.state.test.action=1){
+                 console.log("操作类型");
+                 console.log(this.$store.state.test.action);
+                if(this.$store.state.test.action=="1"){
                   let data = {
-                    testId:this.$store.state.test.utest.testId,
+
                     testContent:this.formInline.testContent,
                     testAns1:this.formInline.testAns1,
                     testAns2:this.formInline.testAns2,
@@ -125,20 +126,24 @@ export default {
                   this.$store.dispatch('addTest',{data});
 
                 }else{
-                  const axios = require('axios');
-                  let data = {
-                      testContent:this.formInline.testContent,
-                      testAns1:this.formInline.testAns1,
-                      testAns2:this.formInline.testAns2,
-                      testAns3:this.formInline.testAns3,
-                      testAns4:this.formInline.testAns4,
-                      rightans1:this.formInline.rightans1,
-                      testType:this.getTestType,
-                      testCourse:this.getLesson
-                  }
-                  this.$store.dispatch('updateTest',{data});
+                   const axios = require('axios');
+                   let data = {
+                       testId:this.$store.state.test.utest.testId,
+                       testContent:this.formInline.testContent,
+                       testAns1:this.formInline.testAns1,
+                       testAns2:this.formInline.testAns2,
+                       testAns3:this.formInline.testAns3,
+                       testAns4:this.formInline.testAns4,
+                       rightans1:this.formInline.rightans1,
+                       testType:this.getTestType,
+                       testCourse:this.lesson
+                   }
+                   this.$store.dispatch('updateTest',{data});
+                 }
 
-                }
+
+
+
             }
 
         },

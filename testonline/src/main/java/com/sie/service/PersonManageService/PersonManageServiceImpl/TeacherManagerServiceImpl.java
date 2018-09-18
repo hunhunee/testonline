@@ -36,11 +36,11 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
     }
 
     @Override
-    public Teacher  updateTeacher(Teacher teacher) {
+    public List<Teacher>  updateTeacher(Teacher teacher) {
 
         teacherManageMapper.updateTeacher(teacher);
-       Teacher t = teacherManageMapper.findTeacherByNum(teacher.getTeaNum());
-        return t;
+        List<Teacher> teacherList = teacherManageMapper.findAllTeacher();
+        return teacherList;
     }
 
     @Override

@@ -87,49 +87,43 @@
         data () {
             return {
                 isCollapsed: false,
-
+                data:{
+                  testType:this.getTestType
+                }
             };
         },
         methods:{
           test(name){
+            let data =this.data;
             switch (name) {
-              case "1-1":
-              router.push({ path: '/admin_index/admin_person_teacher' });
-                break;
+             
               case "1-1-1":
-              router.push({ path: '/admin_index/admin_person_teacher' });
+              this.$store.dispatch('findAllTeacher');
+
                 break;
               case "1-1-2":
               router.push({ path: '/admin_index/admin_person_student' });
                 break;
               case "1-2-1":
               this.$store.dispatch('testType',{testType:1});
-              let data1 ={
-                testType:this.getTestType
-              }
-              this.$store.dispatch('findAllTest1',{data1});
-                break;
+              this.data.testType=this.getTestType;
+              this.$store.dispatch('findAllTest',{data});
+              break;
               case "1-2-2":
               this.$store.dispatch('testType',{testType:2});
-              let data2 ={
-                testType:this.getTestType
-              }
-              this.$store.dispatch('findAllTest2',{data2});
+             this.data.testType=this.getTestType;
+              this.$store.dispatch('findAllTest',{data});
 
                 break;
               case "1-2-3":
               this.$store.dispatch('testType',{testType:3});
-              let data3 ={
-                testType:this.getTestType
-              }
-              this.$store.dispatch('findAllTest3',{data3});
+               this.data.testType=this.getTestType;
+              this.$store.dispatch('findAllTest',{data});
                 break;
               case "1-2-4":
               this.$store.dispatch('testType',{testType:4});
-              let data4 ={
-                testType:this.getTestType
-              }
-              this.$store.dispatch('findAllTest4',{data4});
+               this.data.testType=this.getTestType;
+              this.$store.dispatch('findAllTest',{data});
                 break;
               case "1-3":
               router.push({ path: '/admin_index/admin_message' });

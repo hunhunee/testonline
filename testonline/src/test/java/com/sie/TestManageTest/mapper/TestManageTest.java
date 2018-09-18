@@ -30,7 +30,7 @@ public class TestManageTest {
 
     @Test
     public void deleteTest(){
-        testManageMapper.deleteTest(3);
+        //testManageMapper.deleteTest();
     }
 
     @Test

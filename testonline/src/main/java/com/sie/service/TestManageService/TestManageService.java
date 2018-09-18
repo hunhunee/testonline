@@ -7,9 +7,9 @@ import java.util.List;
 public interface TestManageService {
     public void addTest(Test test);
 
-    public void deleteTest(int id);
+    public List<Test> deleteTest(Test test);
 
-    public void updateTest(Test test);
+    public List<Test> updateTest(Test test);
 
     public List<Test> findTest(Test test);
 

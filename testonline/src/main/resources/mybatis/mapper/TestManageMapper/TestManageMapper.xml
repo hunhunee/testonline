@@ -7,7 +7,7 @@
         VALUES (#{testContent},#{testAns1},#{testAns2},#{testAns3},#{testAns4},#{rightans1},#{rightans2},#{rightans3},#{rightans4},#{testCourse},#{testType})
     </insert>
 
-    <delete id="deleteTest" parameterType="int">
+    <delete id="deleteTest" parameterType="com.sie.domain.Test">
         DELETE FROM  test WHERE test_id=#{testId}
     </delete>
 

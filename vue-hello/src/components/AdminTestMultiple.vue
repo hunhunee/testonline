@@ -120,11 +120,10 @@ import router from '@/router/index'
 
           }
       },
-        created: function () {
-         
+        mounted: function () {
           this.data=this.$store.state.test.test
           console.log("admin_test_multiple  test");
-          console.log(this.$store.state.test.test);
+          console.log(this.data);
        },
         methods:{
           change (index) {

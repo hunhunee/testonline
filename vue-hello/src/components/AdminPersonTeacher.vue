@@ -6,7 +6,7 @@
 </style>
 <template>
     <div class="layout">
-        <Input search @on-search="search" v-model="num" enter-button placeholder="Enter something..." style="width:300px" />
+        <Input @on-change="search"   v-model="num" enter-button placeholder="Enter something..." style="width:300px" />
 
       <div class="add">
         <Button type="primary" @click="add">添加教师信息</Button>
@@ -26,16 +26,7 @@ export default {
                {
                    title: '姓名',
                    key: 'teaName',
-                   // render: (h, params) => {
-                   //     return h('div', [
-                   //         h('Icon', {
-                   //             props: {
-                   //                 type: 'person'
-                   //             }
-                   //         }),
-                   //         h('strong', params.row.name)
-                   //     ]);
-                   // }
+
                },
                {
                    title: '科目',
@@ -69,7 +60,7 @@ export default {
                                        this.change(params.index)
                                    }
                                }
-                           }, 'View'),
+                           }, "change"),
                            h('Button', {
                                props: {
                                    type: 'error',
@@ -92,18 +83,33 @@ export default {
 
        }
    },
+
    created: function () {
-    this.$store.dispatch('findAllTeacher');
-    this.data6=this.$store.state.person.teacher
-    console.log(this.$store.state.person.teacher);
-      },
+    console.log("created");
+
+         setInterval(()=>{
+            this.data6.length=this.$store.state.person.teacher.length
+            for (var i = 0; i < this.$store.state.person.teacher.length; i++) {
+              this.$set(this.data6,i,this.$store.state.person.teacher[i])
+            }
+         }, 1000);
+  },
+
+   mounted: function(){
+     console.log("mounted");
+   },
+
+
+  destroyed: function(){
+    console.log("destroyed");
+  },
    methods: {
        change (index) {
          let data = {
              "teaNum": this.data6[index].teaNum,
-             "teaName":this.data6[index].teaNum,
+             "teaName":this.data6[index].teaName,
              "teaClass":this.data6[index].teaClass,
-             "teaCourse":this.data6[index].teaCourse,
+             "teaCourse":this.data6[index].teaCourse+"",
              "teaPassword":this.data6[index].teaPassword
          }
          this.$store.dispatch('changeTeacher',{data});
@@ -113,20 +119,28 @@ export default {
          let data = {
              "num": this.data6[index].teaNum
          }
-
         this.$store.dispatch('deleteTeacher',{data});
-        this.data6=this.$store.state.person.teacher
+
       },
       search () {
         let data = {
             "num": this.num
         }
          this.$store.dispatch('findTeacher',{data});
-         this.data6=this.$store.state.person.teacher
-         console.log(this.data6);
       },
+
+      // show(){
+      //     console.log("show");
+      //     console.log(this.$store.state.person.teacher[0]);
+      //     if(this.$store.state.person.teacher[0]==null||this.$store.state.person.teacher[0]==""){
+      //       alert("没有这个老师！")
+      //     }
+      //     clearInterval();
+      //     this.$set(this.data6,0,this.$store.state.person.teacher[0])
+      // },
+
       add() {
-        this.$store.dispatch('addBeforeTeacher',{data});
+        this.$store.dispatch('addBeforeTeacher');
         router.push({ path: '/admin_index/admin_person_teacher_aou' });
       }
    }

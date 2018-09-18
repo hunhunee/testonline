@@ -11,7 +11,8 @@ export default {
      teaClass:"",
      teaCourse:"",
      teaPassword:""
-   }
+   },
+   utaction:"",
   },
   actions:{
     findAllTeacher({commit}){
@@ -24,6 +25,9 @@ export default {
        }
      );
    },
+
+
+
    deleteTeacher({commit},{data}){
      console.log(data);
     api.deleteTeacher(data)
@@ -35,7 +39,10 @@ export default {
       }
     );
   },
+
+
   findTeacher({commit},{data}){
+    console.log("findTeacher");
     console.log(data);
    api.findTeacher(data)
    .then((response) => {
@@ -46,6 +53,8 @@ export default {
      }
    );
  },
+
+
  addTeacher({commit},{data}){
    console.log(data);
   api.addTeacher(data)
@@ -57,15 +66,20 @@ export default {
     }
   );
 },
-addBeforeTeacher({commit},{data}){
-  console.log(data);
-   commit('addBeforeTeacher_m',data);
+addBeforeTeacher({commit}){
+   console.log("addBeforeTeacher");
+   commit('addBeforeTeacher_m');
 },
+
+
 changeTeacher({commit},{data}){
   console.log(data);
    commit('changeTeacher_m',data);
 },
+
+
 updateTeacher({commit},{data}){
+  console.log("updateTeacher");
   console.log(data);
  api.updateTeacher(data)
  .then((response) => {
@@ -79,51 +93,75 @@ updateTeacher({commit},{data}){
   },
   mutations:{
     findAllTeacher_m(state,data){
-      //第一个参数state是这个模块的state 第二个参数是传进来的数据
+      console.log("findAllTeacher_m");
+      state.teacher.length=data.data.length;
       for (var i = 0; i < data.data.length; i++) {
         state.teacher[i]=data.data[i];
+        console.log(state.teacher[i]);
       }
+      router.push({ path: '/admin_index/admin_person_teacher' });
     },
+
+
     deleteTeacher_m(state,data){
-      //第一个参数state是这个模块的state 第二个参数是传进来的数据
-      for (var i = 0; i < data.data.length; i++) {
-        state.teacher[i]=data.data[i]
-        //console.log(state.teacher[i]);
-      }
-    },
-    findTeacher_m(state,data){
-      //第一个参数state是这个模块的state 第二个参数是传进来的数据
-
-        state.teacher[0]=data.data
-        //console.log(state.teacher[0]);
-
-    },
-    addTeacher_m(state,data){
-      //第一个参数state是这个模块的state 第二个参数是传进来的数据
+      console.log("deleteTeacher_m");
+      state.teacher.length=data.data.length
       for (var i = 0; i < data.data.length; i++) {
         state.teacher[i]=data.data[i]
         console.log(state.teacher[i]);
       }
 
+      router.push({ path: '/admin_index/admin_person_teacher' });
     },
-    addBeforeTeacher_m(state,data){
-     state.uteacher.teaNum=null,
-     state.uteacher.teaName=null,
-     state.uteacher.teaClass=null,
-     state.uteacher.teaCourse=null,
-     state.uteacher.teaPassword=null
-     console.log(state.uteacher.teaPassword);
+    findTeacher_m(state,data){
+        console.log("findTeacher_m");
+        state.teacher.length=1;
+        state.teacher[0]=data.data
+        console.log(state.teacher[0]);
+        router.push({ path: '/admin_index/admin_person_teacher' });
+    },
+    addTeacher_m(state,data){
+      console.log("addTeacher_m");
+      state.teacher.length=data.data.length;
+      for (var i = 0; i < data.data.length; i++) {
+        state.teacher[i]=data.data[i]
+        console.log(state.teacher[i]);
+      }
+
+      if(state.teacher.length==data.data.length){
+        console.log("跳转到admin人事 teacher");
+          router.push({ path: '/admin_index/admin_person_teacher' });
+      }
+
+    },
+    addBeforeTeacher_m(state){
+     console.log("addBeforeTeacher_m");
+     state.utaction="1",
+     state.uteacher.teaNum="",
+     state.uteacher.teaName="",
+     state.uteacher.teaClass="",
+     state.uteacher.teaCourse="",
+     state.uteacher.teaPassword=""
+
    },
     changeTeacher_m(state,data){
+    console.log("changeTeacher_m");
+     state.utaction="2",
      state.uteacher.teaNum=data.teaNum,
      state.uteacher.teaName=data.teaName,
      state.uteacher.teaClass=data.teaClass,
      state.uteacher.teaCourse=data.teaCourse,
      state.uteacher.teaPassword=data.teaPassword
-     console.log(state.uteacher.teaPassword);
    },
+
    updateTeacher_m(state,data){
-     console.log(data.data.teaName);
+     console.log("updateTeacher_m");
+     state.teacher.length=data.data.length;
+     for (var i = 0; i < data.data.length; i++) {
+       state.teacher[i]=data.data[i]
+       console.log(state.teacher[i]);
+     }
+     router.push({ path: '/admin_index/admin_person_teacher' });
    }
   }
 }

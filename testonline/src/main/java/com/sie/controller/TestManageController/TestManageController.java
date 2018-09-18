@@ -22,20 +22,21 @@ public class TestManageController {
     }
 
     @PostMapping("/delete")
-    public void deleteTest(String id){
-        System.out.println("删除id:"+id);
-        if(id!=null){
-            int i =Integer.parseInt(id);
-            testManageService.deleteTest(i);
+    public List<Test> deleteTest(Test test){
+
+        if(test.getTestId()!=null){
+
+          List<Test> testList= testManageService.deleteTest(test);
+          return testList;
         }
-
-
+       return null;
     }
 
     @PostMapping("/update")
-    public void updateTest(Test test){
-        testManageService.updateTest(test);
-        System.out.println("更新的内容："+test.getTestId()+":"+test.getTestContent()+":"+test.getRightans1());
+    public List<Test> updateTest(Test test){
+       List<Test> testList = testManageService.updateTest(test);
+
+        return testList;
     }
 
     @PostMapping("/find")

@@ -21,13 +21,19 @@ public class TestManageServiceImpl implements TestManageService{
     }
 
     @Override
-    public void deleteTest(int id) {
-        testManageMapper.deleteTest(id);
+    public List<Test> deleteTest(Test test) {
+
+        testManageMapper.deleteTest(test);
+        List<Test> testList =testManageMapper.findTest(test);
+        return testList;
     }
 
     @Override
-    public void updateTest(Test test) {
+    public List<Test> updateTest(Test test) {
+
         testManageMapper.updateTest(test);
+        List<Test> testList= testManageMapper.findTest(test);
+        return testList;
     }
 
     @Override

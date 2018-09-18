@@ -12,7 +12,7 @@ public interface TeacherManagerService {
 
     public List<Teacher> addTeacher(Teacher teacher);
 
-    public Teacher updateTeacher(Teacher teacher);
+    public List<Teacher> updateTeacher(Teacher teacher);
 
     public List<Teacher> deleteTeacher(String num);
 }

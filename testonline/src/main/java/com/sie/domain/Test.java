@@ -25,7 +25,7 @@ public class Test {
 
     private String testType;
 
-    private Integer pub;
+    private Integer testStatus;
 
     private String testXxx2;
 
@@ -125,12 +125,12 @@ public class Test {
         this.testType = testType == null ? null : testType.trim();
     }
 
-    public Integer getPub() {
-        return pub;
+    public Integer getTestStatus() {
+        return testStatus;
     }
 
-    public void setPub(Integer pub) {
-        this.pub = pub;
+    public void setTestStatus(Integer testStatus) {
+        this.testStatus = testStatus;
     }
 
     public String getTestXxx2() {

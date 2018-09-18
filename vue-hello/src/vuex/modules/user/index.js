@@ -10,8 +10,7 @@ export default {
        sex:"",
        _class:"",
        name:"",
-       lesson:"",
-       count:"1"
+       lesson:""
   },
   getters: {
 		getLesson: state => {//通过方法访问
@@ -44,33 +43,40 @@ export default {
                  console.log("admin登录");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 state.identity=data.data.identity,
+                 //state.identity=data.data.identity,
+                 localStorage.setItem("identity",data.data.identity);
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
-                 state.lesson=data.data.lesson
+                 state.lesson=data.data.lesson,
+                 console.log(localStorage.getItem("identity"));
                  router.push({ path: '/admin_index' }) ;
                  break;
                case '2':
                  console.log("Teacher登录");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 state.identity=data.data.identity,
+                 //state.identity=data.data.identity,
+                 localStorage.setItem("identity",data.data.identity);
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
-                 state.lesson=data.data.lesson
+
+                 localStorage.setItem("lesson",data.data.lesson);
+                 console.log(localStorage.getItem("identity"));
                  router.push({ path: '/teacher_index' }) ;
                  break;
                case '3':
                  console.log("student登录");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 state.identity=data.data.identity,
+                 //state.identity=data.data.identity,
+                 localStorage.setItem("identity",data.data.identity);
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
-                 state.lesson=data.data.lesson
+                 state.lesson=data.data.lesson,
+                 console.log(localStorage.getItem("identity"));
                  router.push({ path: '/student_index' }) ;
                  break;
                default:

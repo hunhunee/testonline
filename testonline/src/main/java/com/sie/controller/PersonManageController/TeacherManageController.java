@@ -27,9 +27,9 @@ public class TeacherManageController {
     }
 
     @PostMapping("/updateTeacher")
-    public Teacher updateTeacher(Teacher teacher){
-        Teacher t = teacherManagerService.updateTeacher(teacher);
-        return t;
+    public List<Teacher> updateTeacher(Teacher teacher){
+        List<Teacher> teacherList = teacherManagerService.updateTeacher(teacher);
+        return teacherList;
     }
 
 

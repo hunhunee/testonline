@@ -58,7 +58,6 @@ public class TeacherManageServiceTest {
         teacher.setTeaCourse(1);
         teacher.setTeaNum("t003");
         teacher.setTeaPassword("123");
-      Teacher t= teacherManagerService.updateTeacher(teacher);
-        System.out.println(t.getTeaName());
+        
     }
 }

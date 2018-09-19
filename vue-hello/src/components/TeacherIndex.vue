@@ -80,11 +80,17 @@ import router from '@/router/index'
     export default {
         data () {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+                data:{
+                  testCourse:localStorage.getItem("lesson"),
+                  testType:this.$store.state.test.testType
+                }
             };
         },
         methods:{
+
           test(name){
+            let data=this.data;
             switch (name) {
               case "1-1":
               router.push({ path: '/teacher_index/teacher_test_result' });
@@ -92,28 +98,24 @@ import router from '@/router/index'
               case "1-2-1":
 
                 this.$store.dispatch('testType',{testType:1});
-                router.push({ path: '/teacher_index/teacher_test_single' });
+                this.data.testType=this.$store.state.test.testType
+                this.$store.dispatch('findTest',{data});
                 break;
               case "1-2-2":
-                let data2={
-                  testType:"2"
-                }
+
                 this.$store.dispatch('testType',{testType:2});
-                router.push({ path: '/teacher_index/teacher_test_multiple' });
+                this.data.testType=this.$store.state.test.testType
+                this.$store.dispatch('findTest',{data});
                 break;
               case "1-2-3":
-                let data3={
-                  testType:"3"
-                }
                 this.$store.dispatch('testType',{testType:3});
-                router.push({ path: '/teacher_index/teacher_test_judge' });
+                this.data.testType=this.$store.state.test.testType
+                this.$store.dispatch('findTest',{data});
                 break;
               case "1-2-4":
-                let data4={
-                  testType:"4"
-                }
                 this.$store.dispatch('testType',{testType:4});
-                router.push({ path: '/teacher_index/teacher_test_compute' });
+                this.data.testType=this.$store.state.test.testType
+                this.$store.dispatch('findTest',{data});
                 break;
               case "1-3":
              router.push({ path: '/teacher_index/teacher_message' });

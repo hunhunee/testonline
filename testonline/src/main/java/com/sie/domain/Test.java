@@ -17,7 +17,13 @@ public class Test {
 
     private String testCourse;
 
+<<<<<<< HEAD
     private Integer pub;
+=======
+    private String testType;
+
+    private Integer testStatus;
+>>>>>>> zjBranch
 
     private String testXxx1;
 
@@ -87,12 +93,25 @@ public class Test {
         this.testCourse = testCourse == null ? null : testCourse.trim();
     }
 
+<<<<<<< HEAD
     public Integer getPub() {
         return pub;
+=======
+    public String getTestType() {
+        return testType;
     }
 
-    public void setPub(Integer pub) {
-        this.pub = pub;
+    public void setTestType(String testType) {
+        this.testType = testType == null ? null : testType.trim();
+    }
+
+    public Integer getTestStatus() {
+        return testStatus;
+>>>>>>> zjBranch
+    }
+
+    public void setTestStatus(Integer testStatus) {
+        this.testStatus = testStatus;
     }
 
     public String getTestXxx1() {

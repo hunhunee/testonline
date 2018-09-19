@@ -93,14 +93,8 @@ import router from '@/router/index'
           }
       },
         created: function () {
-
-          let data={
-            testCourse:this.getLesson,
-            testType:this.$store.state.test.testType
-          }
-         this.$store.dispatch('findTest',{data});
          this.data=this.$store.state.test.test
-          
+
        },
         methods:{
           change (index) {

@@ -12,7 +12,11 @@ public interface TeacherManagerService {
 
     public void addTeacher(Teacher teacher);
 
+<<<<<<< HEAD
     public void updateTeacher(Teacher teacher);
+=======
+    public List<Teacher> updateTeacher(Teacher teacher);
+>>>>>>> zjBranch
 
     public void deleteTeacher(String num);
 }

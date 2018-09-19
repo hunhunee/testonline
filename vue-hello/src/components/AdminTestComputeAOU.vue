@@ -71,44 +71,41 @@ export default {
                   },
 
                   ],
-                  lesson: '',
+                  lesson: this.$store.state.test.utest.testType,
 
             }
         },
         methods: {
 
-          handleSubmit() {
 
-            if(this.$store.state.test.action=1){
-              let data = {
-                testId:this.$store.state.test.utest.testId,
-                testContent:this.formInline.testContent,
-                testAns1:this.formInline.testAns1,
-                testAns2:this.formInline.testAns2,
-                testAns3:this.formInline.testAns3,
-                testAns4:this.formInline.testAns4,
-                rightans1:this.formInline.rightans1,
-                testType:this.getTestType,
-                testCourse:this.lesson
-              }
-              this.$store.dispatch('addTest',{data});
+                    handleSubmit() {
+                       console.log("操作类型");
+                       console.log(this.$store.state.test.action);
+                      if(this.$store.state.test.action=="1"){
+                        let data = {
 
-            }else{
-              const axios = require('axios');
-              let data = {
-                  testContent:this.formInline.testContent,
-                  testAns1:this.formInline.testAns1,
-                  testAns2:this.formInline.testAns2,
-                  testAns3:this.formInline.testAns3,
-                  testAns4:this.formInline.testAns4,
-                  rightans1:this.formInline.rightans1,
-                  testType:this.getTestType,
-                  testCourse:this.getLesson
-              }
-              this.$store.dispatch('updateTest',{data});
+                          testContent:this.formInline.testContent,
 
-            }
-        }
+                          rightans1:this.formInline.rightans1,
+                          testType:this.getTestType,
+                          testCourse:this.lesson
+                        }
+                        this.$store.dispatch('addTest',{data});
+
+                      }else{
+                         const axios = require('axios');
+                         let data = {
+                             testId:this.$store.state.test.utest.testId,
+                             testContent:this.formInline.testContent,
+                             
+                             rightans1:this.formInline.rightans1,
+                             testType:this.getTestType,
+                             testCourse:this.lesson
+                         }
+                         this.$store.dispatch('updateTest',{data});
+                       }
+                     }
+
 
 
         },

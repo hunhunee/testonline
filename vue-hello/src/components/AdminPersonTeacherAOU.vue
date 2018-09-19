@@ -15,7 +15,7 @@
               </Input>
           </FormItem>
 
-          <FormItem   prop="teaCourse" style="width: 200px">
+          <FormItem  prop="teaCourse" style="width: 200px">
             <Select v-model="formInline.teaCourse" placeholder="Select your course">
                 <Option value="1">英语</Option>
                 <Option value="2">数学</Option>
@@ -72,7 +72,8 @@ export default {
         methods: {
 
               handleSubmit() {
-                if(this.$store.state.person.uteacher.teaPassword!=null){
+
+                if(this.$store.state.person.utaction=="2"){
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,

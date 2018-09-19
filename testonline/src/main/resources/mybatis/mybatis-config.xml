@@ -17,5 +17,11 @@
     <mappers>
         <mapper resource="mybatis/mapper/LessonManageMapper/LessonManageMapper.xml"/>
         <mapper resource="mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml"/>
+<<<<<<< HEAD
+=======
+        <mapper resource="mybatis/mapper/TestManageMapper/TestManageMapper.xml"/>
+        <mapper resource="mybatis/mapper/LoginMapper/LoginMapper.xml"/>
+        <mapper resource="mybatis/mapper/ExamMapper/ExamPaperMapper.xml"/>
+>>>>>>> zjBranch
     </mappers>
 </configuration>

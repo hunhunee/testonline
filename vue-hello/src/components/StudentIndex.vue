@@ -34,10 +34,22 @@
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
                 <Menu  active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
-                    <MenuItem name="1-1">
-                    <Icon type="ios-paper-outline" />
-                        <span>参加考试</span>
-                    </MenuItem>
+                  <Submenu name="1-1">
+                      <template slot="title">
+                          <Icon type="ios-filing" />
+                          参加考试
+                      </template>
+                      <Submenu name="1-1-1">
+                          <template slot="title">必考科目</template>
+                          <MenuItem name="1-1-1-1">英语</MenuItem>
+                          <MenuItem name="1-1-1-2">数学</MenuItem>
+                      </Submenu>
+                      <Submenu name="1-1-2">
+                          <template slot="title">选修科目</template>
+                          <MenuItem name="1-1-2-1">体育</MenuItem>
+                          <MenuItem name="1-1-2-2">音乐</MenuItem>
+                      </Submenu>
+                  </Submenu>
                     <MenuItem name="1-2">
                         <Icon type="ios-search" />
                         <span>查看成绩</span>
@@ -73,14 +85,26 @@ import router from '@/router/index'
     export default {
         data () {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+                data:{
+                  testCourse:""
+                }
             };
         },
         methods:{
           test(name){
+            let data =this.data;
             switch (name) {
               case "1-1":
               router.push({ path: '/student_index/student_test' });
+                break;
+              case "1-1-1-1":
+                this.data.testCourse="1";
+                this.$store.dispatch('findExamPaper',{data});
+                break;
+              case "1-1-1-2":
+                this.data.testCourse="2";
+                this.$store.dispatch('findExamPaper',{data});
                 break;
               case "1-2":
               router.push({ path: '/student_index/student_test_result' });

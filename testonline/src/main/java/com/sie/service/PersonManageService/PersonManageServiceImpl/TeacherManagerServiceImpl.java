@@ -33,8 +33,16 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
     }
 
     @Override
+<<<<<<< HEAD
     public void updateTeacher(Teacher teacher) {
         teacherManageMapper.updateTeacher(teacher);
+=======
+    public List<Teacher>  updateTeacher(Teacher teacher) {
+
+        teacherManageMapper.updateTeacher(teacher);
+        List<Teacher> teacherList = teacherManageMapper.findAllTeacher();
+        return teacherList;
+>>>>>>> zjBranch
     }
 
     @Override

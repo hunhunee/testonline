@@ -131,6 +131,18 @@ return axios({
 },
 
 
+findExamPaper: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/exam/findExamPaper',
+   data:Qs.stringify(data)
+ });
+},
+
+
 
 
 

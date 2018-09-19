@@ -45,11 +45,11 @@ export default {
   );
 },
 
-findAllTest1({commit},{data1}){
+findAllTest ({commit},{data}){
   console.log("findAllTest");
   console.log("查询的题型：");
-  console.log(data1.testType);
- api.findAllTest(data1)
+  console.log(data.testType);
+ api.findAllTest(data)
  .then((response) => {
     commit('findAllTest_m',response);
  })
@@ -59,49 +59,10 @@ findAllTest1({commit},{data1}){
  );
 },
 
-findAllTest2({commit},{data2}){
-  console.log("findAllTest");
-  console.log("查询的题型：");
-  console.log(data2.testType);
- api.findAllTest(data2)
- .then((response) => {
-    commit('findAllTest_m',response);
- })
- .catch((error)=>{
-    console.log(error);
-   }
- );
-},
 
-findAllTest3({commit},{data3}){
-  console.log("findAllTest");
-  console.log("查询的题型：");
-  console.log(data3.testType);
- api.findAllTest(data3)
- .then((response) => {
-    commit('findAllTest_m',response);
- })
- .catch((error)=>{
-    console.log(error);
-   }
- );
-},
-
-findAllTest4({commit},{data4}){
-  console.log("findAllTest");
-  console.log("查询的题型：");
-  console.log(data4.testType);
- api.findAllTest(data4)
- .then((response) => {
-    commit('findAllTest_m',response);
- })
- .catch((error)=>{
-    console.log(error);
-   }
- );
-},
 
 deleteTest({commit},{data}){
+  console.log("deleteTest");
   console.log(data);
  api.deleteTest(data)
  .then((response) => {
@@ -120,6 +81,7 @@ addBeforeTest({commit}){
 },
 
 addTest({commit},{data}){
+  console.log("addTest");
   console.log(data);
  api.addTest(data)
  .then((response) => {
@@ -133,10 +95,13 @@ addTest({commit},{data}){
 
 
 updateBeforeTest({commit},{data}){
+   console.log("updateBeforeTest");
+   console.log(data);
     commit('updateBeforeTest_m',data);
 },
 
 updateTest({commit},{data}){
+  console.log("updateTest");
   console.log(data);
  api.updateTest(data)
  .then((response) => {
@@ -158,9 +123,55 @@ updateTest({commit},{data}){
 
     findTest_m(state,data){
       console.log("findTest_m");
+      state.test.length=data.data.length
       for (var i = 0; i < data.data.length; i++) {
         state.test[i]=data.data[i]
-
+        console.log(state.test[i]);
+      }
+      console.log("用户类型：");
+      console.log(localStorage.getItem("identity"));
+      if(localStorage.getItem("identity")=='1'){
+        console.log(state.testType);
+        switch (state.testType) {
+          case '1':
+              console.log("跳转到admin单选页面");
+              router.push({ path: '/admin_index/admin_test_single' });
+            break;
+          case '2':
+          console.log("跳转到admin多选页面");
+            router.push({ path: '/admin_index/admin_test_multiple' });
+            break;
+          case '3':
+          console.log("跳转到admin判断页面");
+            router.push({ path: '/admin_index/admin_test_judge' });
+            break;
+          case '4':
+          console.log("跳转到admin计算页面");
+            router.push({ path: '/admin_index/admin_test_compute' });
+            break;
+          default:
+        }
+      }else{
+        console.log(state.testType);
+        switch (state.testType) {
+          case  '1' :
+              console.log("跳转到teacher单选页面");
+              router.push({ path: '/teacher_index/teacher_test_single' });
+            break;
+          case  '2' :
+          console.log("跳转到teacher多选页面");
+            router.push({ path: '/teacher_index/teacher_test_multiple' });
+            break;
+          case  '3' :
+          console.log("跳转到teacher判断页面");
+            router.push({ path: '/teacher_index/teacher_test_judge' });
+            break;
+          case  '4' :
+          console.log("跳转到teacher计算页面");
+            router.push({ path: '/teacher_index/teacher_test_compute' });
+            break;
+          default:
+        }
       }
 
     },
@@ -173,10 +184,41 @@ updateTest({commit},{data}){
         console.log(state.test[i]);
       }
 
-       
+        switch (state.testType) {
+          case 1:
+              console.log("跳转到admin单选页面");
+              router.push({ path: '/admin_index/admin_test_single' });
+            break;
+          case 2:
+          console.log("跳转到admin多选页面");
+            router.push({ path: '/admin_index/admin_test_multiple' });
+            break;
+          case 3:
+          console.log("跳转到admin判断页面");
+            router.push({ path: '/admin_index/admin_test_judge' });
+            break;
+          case 4:
+          console.log("跳转到admin计算页面");
+            router.push({ path: '/admin_index/admin_test_compute' });
+            break;
+          default:
+        }
+
+
+    },
+
+    deleteTest_m(state,data){
+      console.log("deleteTest_m");
+      state.test.length=data.data.length
+      for (var i = 0; i < data.data.length; i++) {
+        state.test[i]=data.data[i]
+        console.log(state.test[i]);
+      }
+
       console.log("用户类型：");
-      console.log(state.getIdentity);
-      if(state.getIdentity=1){
+      console.log(localStorage.getItem("identity"));
+      if(localStorage.getItem("identity")=='1'){
+        console.log(state.testType);
         switch (state.testType) {
           case 1:
               console.log("跳转到admin单选页面");
@@ -197,20 +239,21 @@ updateTest({commit},{data}){
           default:
         }
       }else{
+        console.log(state.testType);
         switch (state.testType) {
-          case "1":
+          case  '1' :
               console.log("跳转到teacher单选页面");
               router.push({ path: '/teacher_index/teacher_test_single' });
             break;
-          case "2":
+          case  '2' :
           console.log("跳转到teacher多选页面");
             router.push({ path: '/teacher_index/teacher_test_multiple' });
             break;
-          case "3":
+          case  '3' :
           console.log("跳转到teacher判断页面");
             router.push({ path: '/teacher_index/teacher_test_judge' });
             break;
-          case "4":
+          case  '4' :
           console.log("跳转到teacher计算页面");
             router.push({ path: '/teacher_index/teacher_test_compute' });
             break;
@@ -218,26 +261,6 @@ updateTest({commit},{data}){
         }
       }
 
-    },
-
-    deleteTest_m(state,data){
-      //第一个参数state是这个模块的state 第二个参数是传进来的数据
-      switch (state.testType) {
-        case "1":
-            console.log("跳转到单选页面");
-            router.push({ path: '/teacher_index/teacher_test_single' });
-          break;
-        case "2":
-          router.push({ path: '/teacher_index/teacher_test_multiple' });
-          break;
-        case "3":
-          router.push({ path: '/teacher_index/teacher_test_judge' });
-          break;
-        case "4":
-          router.push({ path: '/teacher_index/teacher_test_compute' });
-          break;
-        default:
-      }
     },
 
 
@@ -260,41 +283,45 @@ updateTest({commit},{data}){
     addTest_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
       console.log("addTest_m");
-      if (state.getIdentity=1) {
+      console.log("用户类型：");
+      console.log(localStorage.getItem("identity"));
+      if(localStorage.getItem("identity")=='1'){
+        console.log(state.testType);
         switch (state.testType) {
-          case 1:
+          case '1':
               console.log("跳转到admin单选页面");
               router.push({ path: '/admin_index/admin_test_single' });
             break;
-          case 2:
+          case '2':
           console.log("跳转到admin多选页面");
             router.push({ path: '/admin_index/admin_test_multiple' });
             break;
-          case 3:
+          case '3':
           console.log("跳转到admin判断页面");
             router.push({ path: '/admin_index/admin_test_judge' });
             break;
-          case 4:
+          case '4':
           console.log("跳转到admin计算页面");
             router.push({ path: '/admin_index/admin_test_compute' });
             break;
           default:
         }
       }else{
+        console.log(state.testType);
         switch (state.testType) {
-          case 1:
+          case  '1' :
               console.log("跳转到teacher单选页面");
               router.push({ path: '/teacher_index/teacher_test_single' });
             break;
-          case 2:
+          case  '2' :
           console.log("跳转到teacher多选页面");
             router.push({ path: '/teacher_index/teacher_test_multiple' });
             break;
-          case 3:
+          case  '3' :
           console.log("跳转到teacher判断页面");
             router.push({ path: '/teacher_index/teacher_test_judge' });
             break;
-          case 4:
+          case  '4' :
           console.log("跳转到teacher计算页面");
             router.push({ path: '/teacher_index/teacher_test_compute' });
             break;
@@ -325,27 +352,58 @@ updateTest({commit},{data}){
 
     updateTest_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
-      console.log("updatetest");
-      console.log(state.utest.testType);
-      switch (state.testType) {
-        case 1:
-            console.log("跳转到单选页面");
-            router.push({ path: '/teacher_index/teacher_test_single' });
-          break;
-        case 2:
-        console.log("跳转到多选页面");
-          router.push({ path: '/teacher_index/teacher_test_multiple' });
-          break;
-        case 3:
-        console.log("跳转到判断页面");
-          router.push({ path: '/teacher_index/teacher_test_judge' });
-          break;
-        case 4:
-        console.log("跳转到计算页面");
-          router.push({ path: '/teacher_index/teacher_test_compute' });
-          break;
-        default:
+      console.log("updateTest m");
+      state.test.length=data.data.length
+      for (var i = 0; i < data.data.length; i++) {
+        state.test[i]=data.data[i]
+        console.log(state.test[i]);
       }
+      console.log("用户类型：");
+      console.log(localStorage.getItem("identity"));
+      if(localStorage.getItem("identity")=='1'){
+        console.log(state.testType);
+        switch (state.testType) {
+          case 1 :
+              console.log("跳转到admin单选页面");
+              router.push({ path: '/admin_index/admin_test_single' });
+            break;
+          case 2:
+          console.log("跳转到admin多选页面");
+            router.push({ path: '/admin_index/admin_test_multiple' });
+            break;
+          case 3:
+          console.log("跳转到admin判断页面");
+            router.push({ path: '/admin_index/admin_test_judge' });
+            break;
+          case 4:
+          console.log("跳转到admin计算页面");
+            router.push({ path: '/admin_index/admin_test_compute' });
+            break;
+          default:
+        }
+      }else{
+        console.log(state.testType);
+        switch (state.testType) {
+          case  '1' :
+              console.log("跳转到teacher单选页面");
+              router.push({ path: '/teacher_index/teacher_test_single' });
+            break;
+          case  '2' :
+          console.log("跳转到teacher多选页面");
+            router.push({ path: '/teacher_index/teacher_test_multiple' });
+            break;
+          case  '3' :
+          console.log("跳转到teacher判断页面");
+            router.push({ path: '/teacher_index/teacher_test_judge' });
+            break;
+          case  '4' :
+          console.log("跳转到teacher计算页面");
+            router.push({ path: '/teacher_index/teacher_test_compute' });
+            break;
+          default:
+        }
+      }
+
     },
 
   }

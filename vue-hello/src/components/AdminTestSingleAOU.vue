@@ -33,9 +33,18 @@
 
               </Input>
           </FormItem>
-          <Select v-model="lesson" style="width:200px">
-            <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-          </Select>
+          <FormItem>
+            <Select v-model="lesson" style="width:200px">
+              <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+
+          </FormItem>
+          <FormItem>
+            <Select v-model="status" style="width:200px">
+              <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
+
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
@@ -60,7 +69,6 @@ export default {
                  testAns3:this.$store.state.test.utest.testAns3,
                  testAns4:this.$store.state.test.utest.testAns4,
                  rightans1:this.$store.state.test.utest.rightans1,
-                 testCourse:this.$store.state.test.utest.testCourse,
                 },
                 ruleInline: {
                     testContent: [
@@ -102,9 +110,28 @@ export default {
                   },
 
                   ],
-                  lesson: this.$store.state.test.utest.testCourse,
 
+
+                  statusList: [
+                    {
+                        value: '0',
+                        label: '随机'
+                    },
+                    {
+                        value: '1',
+                        label: '必考'
+                    },
+
+                    ],
+                  lesson: this.$store.state.test.utest.testCourse,
+                  status:this.$store.state.test.utest.testStatus,
             }
+        },
+
+        created: function(){
+          console.log("created");
+          console.log(this.status);
+          console.log(this.lesson);
         },
         methods: {
 
@@ -121,7 +148,8 @@ export default {
                     testAns4:this.formInline.testAns4,
                     rightans1:this.formInline.rightans1,
                     testType:this.getTestType,
-                    testCourse:this.lesson
+                    testCourse:this.lesson,
+                    testStatus:this.status
                   }
                   this.$store.dispatch('addTest',{data});
 
@@ -136,7 +164,8 @@ export default {
                        testAns4:this.formInline.testAns4,
                        rightans1:this.formInline.rightans1,
                        testType:this.getTestType,
-                       testCourse:this.lesson
+                       testCourse:this.lesson,
+                       testStatus:this.status
                    }
                    this.$store.dispatch('updateTest',{data});
                  }
@@ -161,7 +190,6 @@ export default {
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .userLogin{
 text-align: center;

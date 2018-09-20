@@ -39,9 +39,17 @@
 
               </Input>
           </FormItem>
-          <Select v-model="lesson" style="width:200px">
-            <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-          </Select>
+          <FormItem>
+            <Select v-model="lesson" style="width:200px">
+              <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+
+          </FormItem>
+          <FormItem>
+            <Select v-model="status" style="width:200px">
+              <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
@@ -112,8 +120,21 @@ export default {
                   },
 
                   ],
-                  lesson:this.$store.state.test.utest.testType,
 
+
+                  statusList: [
+                    {
+                        value: '0',
+                        label: '随机'
+                    },
+                    {
+                        value: '1',
+                        label: '必考'
+                    },
+
+                    ],
+                  lesson: this.$store.state.test.utest.testCourse,
+                  status:this.$store.state.test.utest.testStatus,
             }
         },
         methods: {
@@ -132,7 +153,8 @@ export default {
                 rightans1:this.formInline.rightans1,
                 rightans2:this.formInline.rightans2,
                 testType:this.getTestType,
-                testCourse:this.lesson
+                testCourse:this.lesson,
+                testStatus:this.status,
               }
               this.$store.dispatch('addTest',{data});
 
@@ -148,7 +170,8 @@ export default {
                    rightans1:this.formInline.rightans1,
                    rightans2:this.formInline.rightans2,
                    testType:this.getTestType,
-                   testCourse:this.lesson
+                   testCourse:this.lesson,
+                   testStatus:this.status,
                }
                this.$store.dispatch('updateTest',{data});
              }

@@ -19,7 +19,8 @@ export default {
        rightans3:"",
        rightans4:"",
        testCourse:"",
-       testType:""
+       testType:"",
+       testStatus:"",
     }
   },
   getters: {
@@ -277,7 +278,8 @@ updateTest({commit},{data}){
       state.utest.rightans3="",
       state.utest.rightans4="",
       state.utest.testCourse="",
-      state.utest.testType=""
+      state.utest.testType="",
+      state.utest.testStatus=""
     },
 
     addTest_m(state,data){
@@ -345,7 +347,8 @@ updateTest({commit},{data}){
       state.utest.rightans3=data.rightans3,
       state.utest.rightans4=data.rightans4,
       state.utest.testCourse=data.testCourse,
-      state.utest.testType=data.testType
+      state.utest.testType=data.testType,
+      state.utest.testStatus=data.testStatus
       console.log("update before m");
       console.log(state.utest);
     },

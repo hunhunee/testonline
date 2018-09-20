@@ -57,6 +57,10 @@ import router from '@/router/index'
                       key: 'rightans1'
                   },
                   {
+                      title: '状态',
+                      key: 'testStatus'
+                  },
+                  {
                       title: 'Action',
                       key: 'action',
                       width: 150,
@@ -115,12 +119,20 @@ import router from '@/router/index'
                 lesson: ''
           }
       },
-        mounted: function () {
-           this.data=this.$store.state.test.test
+      created: function () {
+       console.log("created");
 
-       },
+            setInterval(()=>{
+               this.data.length=this.$store.state.test.test.length
+               for (var i = 0; i < this.$store.state.test.test.length; i++) {
+                 this.$set(this.data,i,this.$store.state.test.test[i])
+               }
+            }, 1000);
+     },
 
-
+     destroyed: function(){
+       clearInterval();
+     },
 
 
         methods:{
@@ -134,7 +146,8 @@ import router from '@/router/index'
               testAns4:this.data[index].testAns4,
               rightans1:this.data[index].rightans1,
               testCourse:this.data[index].testCourse,
-              testType:this.data[index].testType
+              testType:this.data[index].testType,
+              testStatus:this.data[index].testStatus
             }
             this.$store.dispatch('updateBeforeTest',{data});
             router.push({ path: '/admin_index/admin_test_single_aou' });

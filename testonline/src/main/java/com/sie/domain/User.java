@@ -2,6 +2,16 @@ package com.sie.domain;
 
 public class User {
 
+    private int userid;
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
     private String usernum;
     private String password;
     private String identity;

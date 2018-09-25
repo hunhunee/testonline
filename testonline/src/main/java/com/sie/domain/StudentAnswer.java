@@ -31,9 +31,9 @@ public class StudentAnswer {
 
     private String fourscore;
 
-    private String totalscore;
+    private int totalscore;
 
-    private String stuAnsXxx1;
+    private String stuClass;
 
     private String stuAnsXxx2;
 
@@ -159,20 +159,20 @@ public class StudentAnswer {
         this.fourscore = fourscore == null ? null : fourscore.trim();
     }
 
-    public String getTotalscore() {
+    public int getTotalscore() {
         return totalscore;
     }
 
-    public void setTotalscore(String totalscore) {
-        this.totalscore = totalscore == null ? null : totalscore.trim();
+    public void setTotalscore(int totalscore) {
+        this.totalscore = totalscore;
     }
 
-    public String getStuAnsXxx1() {
-        return stuAnsXxx1;
+    public String getStuClass() {
+        return stuClass;
     }
 
-    public void setStuAnsXxx1(String stuAnsXxx1) {
-        this.stuAnsXxx1 = stuAnsXxx1 == null ? null : stuAnsXxx1.trim();
+    public void setStuClass(String stuClass) {
+        this.stuClass = stuClass;
     }
 
     public String getStuAnsXxx2() {

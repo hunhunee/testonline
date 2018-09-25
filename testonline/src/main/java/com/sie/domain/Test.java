@@ -29,6 +29,27 @@ public class Test {
 
     private String testXxx2;
 
+    public Test() {
+    }
+
+    public Test(Integer testId, String testContent, String testAns1, String testAns2, String testAns3, String testAns4, String rightans1, String rightans2, String rightans3, String rightans4, String testCourse, String testType, Integer testStatus, String testXxx2) {
+        this.testId = testId;
+        this.testContent = testContent;
+        this.testAns1 = testAns1;
+        this.testAns2 = testAns2;
+        this.testAns3 = testAns3;
+        this.testAns4 = testAns4;
+        this.rightans1 = rightans1;
+        this.rightans2 = rightans2;
+        this.rightans3 = rightans3;
+        this.rightans4 = rightans4;
+        this.testCourse = testCourse;
+        this.testType = testType;
+        this.testStatus = testStatus;
+
+        this.testXxx2 = testXxx2;
+    }
+
     public Integer getTestId() {
         return testId;
     }

@@ -1,7 +1,7 @@
 package com.sie.domain;
 
 public class Student {
-    private Integer stuId;
+    private int stuId;
 
     private String stuName;
 

@@ -18,5 +18,9 @@
         ORDER BY test_id LIMIT #{testRandomNum};
     </select>
 
+    <insert id="addExamResult" parameterType="com.sie.domain.StudentAnswer">
+        insert into student_answer (stu_id,stu_class,totalscore,les_name) VALUES
+        (#{stuId},#{stuClass},#{totalscore},#{lesName})
+    </insert>
 
 </mapper>

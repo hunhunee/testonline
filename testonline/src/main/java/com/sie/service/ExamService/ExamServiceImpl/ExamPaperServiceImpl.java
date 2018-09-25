@@ -1,5 +1,6 @@
 package com.sie.service.ExamService.ExamServiceImpl;
 
+import com.sie.domain.StudentAnswer;
 import com.sie.domain.TestEx;
 import com.sie.mapper.ExamMapper.ExamPaperMapper;
 import com.sie.service.ExamService.ExamPaperService;
@@ -108,5 +109,137 @@ public class ExamPaperServiceImpl implements ExamPaperService{
         System.out.println("总题数："+paperList.size());
 
         return paperList;
+    }
+
+    @Override
+    public void addExamResult(List<TestEx> testExList,StudentAnswer studentAnswer) {
+
+        int score=0;
+        for (int i = 0; i < testExList.size(); i++) {
+
+            switch (testExList.get(i).getTestType()) {
+                case "1":
+                    System.out.println("试题内容："+testExList.get(i).getTestContent());
+                    System.out.println("试题正确答案："+testExList.get(i).getRightans1());
+                    System.out.println("学生回答："+testExList.get(i).getTestAnswer());
+
+
+                    if (testExList.get(i).getTestAnswer()!=null) {
+                        if (testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswer())) {
+                            System.out.println("单选题正确");
+                            score=score+2;
+                        } else {
+                            System.out.println("单选题错误");
+                        }
+                    }
+                    System.out.println("===========================================");
+                    break;
+                case "2":
+                    System.out.println("试题内容："+testExList.get(i).getTestContent());
+                    System.out.println("试题正确答案1："+testExList.get(i).getRightans1());
+                    System.out.println("试题正确答案2："+testExList.get(i).getRightans2());
+                    System.out.println("试题正确答案3："+testExList.get(i).getRightans3());
+                    System.out.println("试题正确答案4："+testExList.get(i).getRightans4());
+
+                    if(testExList.get(i).getTestAnswerArray()!=null){
+                        for (int j = 0; j <testExList.get(i).getTestAnswerArray().length ; j++) {
+                            System.out.println("学生答案"+j+":"+testExList.get(i).getTestAnswerArray()[j]);
+                        }
+                    }
+
+                    if (testExList.get(i).getRightans3()!=null){
+                        if(testExList.get(i).getTestAnswerArray()!=null) {
+                            if (testExList.get(i).getTestAnswerArray().length <= 2) {
+                                System.out.println("多选题错误");
+                            } else if (testExList.get(i).getTestAnswerArray().length == 3) {
+                                if (testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswerArray()[0])||
+                                        testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswerArray()[1]) ||
+                                        testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswerArray()[2])) {
+                                    if (testExList.get(i).getRightans2().equals(testExList.get(i).getTestAnswerArray()[0])||
+                                            testExList.get(i).getRightans2().equals(testExList.get(i).getTestAnswerArray()[1]) ||
+                                            testExList.get(i).getRightans2().equals(testExList.get(i).getTestAnswerArray()[2])){
+                                        if (testExList.get(i).getRightans3().equals(testExList.get(i).getTestAnswerArray()[0])||
+                                                testExList.get(i).getRightans3().equals(testExList.get(i).getTestAnswerArray()[1]) ||
+                                                testExList.get(i).getRightans3().equals(testExList.get(i).getTestAnswerArray()[2])){
+                                            System.out.println("多选题正确");
+                                            score=score+2;
+                                        }else{
+                                            System.out.println("多选题错误");
+                                        }
+
+                                    }else{
+                                        System.out.println("多选题错误");
+                                    }
+
+                                }else{
+                                    System.out.println("多选题错误");
+                                }
+                            } else {
+                                System.out.println("多选题错误");
+                            }
+                        }
+                    }else{
+                        if(testExList.get(i).getTestAnswerArray()!=null) {
+                            if (testExList.get(i).getTestAnswerArray().length <= 1) {
+                                System.out.println("多选题错误");
+                            } else if (testExList.get(i).getTestAnswerArray().length == 2) {
+                                if (testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswerArray()[0])||
+                                        testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswerArray()[1])){
+                                    if (testExList.get(i).getRightans2().equals(testExList.get(i).getTestAnswerArray()[0])||
+                                            testExList.get(i).getRightans2().equals(testExList.get(i).getTestAnswerArray()[1])){
+                                        System.out.println("多选题正确");
+                                     score=score+2;
+                                    }else{
+                                        System.out.println("多选题错误");
+                                    }
+
+                                }else{
+                                    System.out.println("多选题错误");
+                                }
+                            }else{
+                                System.out.println("多选题错误");
+                            }
+                        }
+                    }
+                    System.out.println("===========================================");
+                    break;
+                case "3":
+                    System.out.println("试题内容："+testExList.get(i).getTestContent());
+                    System.out.println("试题正确答案："+testExList.get(i).getRightans1());
+                    System.out.println("学生回答："+testExList.get(i).getTestAnswer());
+
+                    if (testExList.get(i).getTestAnswer()!=null) {
+                        if (testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswer())) {
+                            System.out.println("判断题正确");
+                            score=score+2;
+                        } else {
+                            System.out.println("判断题错误");
+                        }
+                    }
+                    System.out.println("===========================================");
+
+                    break;
+                case "4":
+                    System.out.println("试题内容："+testExList.get(i).getTestContent());
+                    System.out.println("试题正确答案："+testExList.get(i).getRightans1());
+                    System.out.println("学生回答："+testExList.get(i).getTestAnswer());
+                    if (testExList.get(i).getTestAnswer()!=null) {
+                        if (testExList.get(i).getRightans1().equals(testExList.get(i).getTestAnswer())) {
+                            System.out.println("计算题题正确");
+                            score=score+15;
+                        } else {
+                            System.out.println("计算题错误");
+                        }
+                    }
+                    System.out.println("===========================================");
+                    break;
+                default:
+                    System.out.println("error");
+            }
+        }
+        System.out.println("总分："+score);
+        studentAnswer.setTotalscore(score);
+        studentAnswer.setLesName(testExList.get(0).getTestCourse());
+        examPaperMapper.addExamResult(studentAnswer);
     }
 }

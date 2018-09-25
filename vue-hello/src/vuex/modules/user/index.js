@@ -4,6 +4,7 @@ import router from '@/router/index'
 import api from '@/api/global'
 export default {
   state:{ //这里面是要读取或者写入数据的地方
+       userid:"",
        usernum:"",
        password:"",
        identity:"",
@@ -43,8 +44,11 @@ export default {
                  console.log("admin登录");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 //state.identity=data.data.identity,
+                 state.userid=data.data.userid;
                  localStorage.setItem("identity",data.data.identity);
+                 localStorage.setItem("userid",data.data.userid);
+
+
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
@@ -56,8 +60,12 @@ export default {
                  console.log("Teacher登录");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 //state.identity=data.data.identity,
+
                  localStorage.setItem("identity",data.data.identity);
+
+                 localStorage.setItem("userid",data.data.userid);
+                 localStorage.setItem("_class",data.data._class);
+
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
@@ -68,10 +76,16 @@ export default {
                  break;
                case '3':
                  console.log("student登录");
+                 console.log("stuid");
+                 console.log(data.data.userid);
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
-                 //state.identity=data.data.identity,
+
                  localStorage.setItem("identity",data.data.identity);
+
+                 localStorage.setItem("userid",data.data.userid);
+                 localStorage.setItem("_class",data.data._class);
+
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,

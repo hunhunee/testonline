@@ -18,10 +18,10 @@ export default {
    findAllTeacher: function () {
    return axios({
       headers: {
-          'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
       },
       method: 'post',
-      url: '/api/personManage/findAllTeacher'
+      url: '/api/personManage/findAllStudent'
     });
   },
   deleteTeacher: function (data) {
@@ -34,7 +34,20 @@ export default {
      data:Qs.stringify(data)
 
    });
- },
+  },
+  //---------------删除学生-----------
+  deleteStudent: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/deleteStudent',
+      data:Qs.stringify(data)
+
+    });
+  },
+
 
  findTeacher: function (data) {
  return axios({
@@ -47,8 +60,22 @@ export default {
 
   });
 },
+  //----查询单个学生----
+  findStudent: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/findStudent',
+      data:Qs.stringify(data)
 
-addTeacher: function (data) {
+    });
+  },
+
+
+
+  addTeacher: function (data) {
 return axios({
    headers: {
        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
@@ -59,6 +86,19 @@ return axios({
 
  });
 },
+//------增加学生------
+ addStudent: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/addStudent',
+      data:Qs.stringify(data)
+
+    });
+  },
+
 
 updateTeacher: function (data) {
 return axios({
@@ -71,6 +111,18 @@ return axios({
 
  });
 },
+  //------修改学生-----
+  updateStudent: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/updateStudent',
+      data:Qs.stringify(data)
+
+    });
+  },
 
 findTest: function (data) {
 return axios({
@@ -160,37 +212,6 @@ return axios({
  });
 },
 
-updateAdmin: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateAdmin',
-   data:Qs.stringify(data)
- });
-},
-
-updateTeacher: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateTeacher',
-   data:Qs.stringify(data)
- });
-},
-updateStudent: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateStudent',
-   data:Qs.stringify(data)
- });
-}
 
 
 

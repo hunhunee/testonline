@@ -2,8 +2,6 @@
     .layout-con{
         height: 100%;
         width: 100%;
-        margin:0 auto;
-        margin-right:20px;
     }
     .menu-item span{
         display: inline-block;
@@ -30,23 +28,6 @@
         vertical-align: middle;
         font-size: 22px;
     }
-    .layout-nav{
-
-           width: 420px;
-           margin: 0 auto;
-           margin-right: 20px;
-       }
-   .layout-footer-center{
-         text-align: center;
-   }
-   .layout-logo{
-         width: 145px;
-         height: 50px;
-         color:#fff;
-         float: left;
-         position: relative;
-         top: 7px;
-         }
 </style>
 <template>
 
@@ -80,7 +61,7 @@
                <div class="layout-logo">在线考试系统---管理员</div>
                    <div class="layout-nav">
 
-                      
+
                    </div>
                </Menu>
             </Header>
@@ -96,9 +77,6 @@
                         </div>
                     </Card>
                 </Content>
-                <Footer class="layout-footer-center">
-                        2018-9-21 &copy; TalkingData
-                 </Footer>
             </Layout>
         </Layout>
     </div>

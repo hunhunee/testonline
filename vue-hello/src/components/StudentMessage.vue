@@ -33,9 +33,12 @@
      </FormItem>
      </Form>
 
+</style>
+<template>
+    <div class="layout">
+     学生个人信息管理----修改密码
     </div>
 </template>
-
 <script>
     export default {
         data () {
@@ -74,17 +77,8 @@
 
           }
 
+            };
         }
-    }
+        }
 
 </script>
-  <style scoped>
-    .userLayout{
-          text-align:center;
-          background-color:	#7FFFAA
-     }
-     .text{
-        text-align:left;
-     }
-
-</style>

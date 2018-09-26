@@ -6,6 +6,7 @@ import AdminIndex from '@/components/AdminIndex'
 import AdminMessage from '@/components/AdminMessage'
 import AdminPersonTeacher from '@/components/AdminPersonTeacher'
 import AdminPersonStudent from '@/components/AdminPersonStudent'
+import AdminPersonStudentAOU from '@/components/AdminPersonStudentAOU'
 import AdminPersonTeacherAOU from '@/components/AdminPersonTeacherAOU'
 import AdminTestSingle from '@/components/AdminTestSingle'
 import AdminTestMultiple from '@/components/AdminTestMultiple'
@@ -82,7 +83,8 @@ export default new Router({
         { path: 'admin_test_compute', component: AdminTestCompute },                  //教师对考试试题进行管理
         { path: 'admin_person_teacher', component: AdminPersonTeacher },             //管理员对人事信息管理--教师
         { path: 'admin_person_student', component: AdminPersonStudent },             //管理员对人事信息管理--学生
-        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },             //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },      //管理员对人事信息管理--教师
+        { path: 'admin_person_student_aou', component: AdminPersonStudentAOU },      //管理员对人事信息管理--学生
         { path: 'admin_test_single_aou', component: AdminTestSingleAOU },
         { path: 'admin_test_multiple_aou', component: AdminTestMultipleAOU },
         { path: 'admin_test_judge_aou', component: AdminTestJudgeAOU },

@@ -2,8 +2,6 @@
     .layout-con{
         height: 100%;
         width: 100%;
-        margin:0 auto;
-        margin-right:20px;
     }
     .menu-item span{
         display: inline-block;
@@ -30,23 +28,6 @@
         vertical-align: middle;
         font-size: 22px;
     }
-    .layout-nav{
-
-           width: 420px;
-           margin: 0 auto;
-           margin-right: 20px;
-       }
-   .layout-footer-center{
-         text-align: center;
-   }
-   .layout-logo{
-         width: 145px;
-         height: 50px;
-         color:#fff;
-         float: left;
-         position: relative;
-         top: 7px;
-         }
 </style>
 <template>
     <div class="layout">
@@ -101,15 +82,10 @@
                     </div>
                 </Card>
                 </Content>
-                <Footer class="layout-footer-center">
-                        2018-9-21 &copy; TalkingData
-                 </Footer>
             </Layout>
         </Layout>
     </div>
 </template>
-
-
 <script>
   import router from '@/router/index'
     export default {
@@ -125,14 +101,11 @@
           test(name){
             let data =this.data;
             switch (name) {
-
               case "1-1-1":
-              this.$store.dispatch('findAllTeacher');
-
-                break;
+                this.$store.dispatch('findAllTeacher');break;
+              //-------学生------
               case "1-1-2":
-              router.push({ path: '/admin_index/admin_person_student' });
-                break;
+                this.$store.dispatch('findAllStudent');break;
               case "1-2-1":
               this.$store.dispatch('testType',{testType:1});
               this.data.testType=this.getTestType;

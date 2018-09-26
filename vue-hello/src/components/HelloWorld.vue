@@ -86,7 +86,7 @@ export default {
 <style scoped>
 .userLogin{
 text-align: center;
-background-color: #7FFFAA;
+background-color: inherit;
  }
 
 

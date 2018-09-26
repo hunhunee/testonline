@@ -1,0 +1,43 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.PersonManageMapper.StudentManageMapper">
+
+    <resultMap id="BaseResultMap" type="com.sie.domain.Student">
+        <id property="stuId" column="stu_id"/>
+        <result property="stuName" column="stu_name"/>
+        <result property="stuPassword" column="stu_password"/>
+        <result property="stuSex" column="stu_sex"/>
+        <result property="stuNum" column="stu_num"/>
+        <result property="stuClass" column="stu_class"/>
+    </resultMap>
+
+
+    <!--添加学生-->
+    <insert id="insertStudent" parameterType="student">
+          INSERT INTO student (stu_name,stu_password,stu_sex,stu_num,stu_class)
+              VALUES(#{stuName},#{stuPassword},#{stuSex},#{stuNum},#{stuClass});
+       </insert>
+
+    <!--根据学生的学号来删除-->
+    <delete id="deleteStudentByStuNum" parameterType="java.lang.String">
+          DELETE FROM student WHERE stu_num = #{value}
+        </delete>
+
+    <!--修改学生信息-->
+    <update id="updateStudentByStuNum" parameterType="student">
+          UPDATE student SET stu_name=#{stuName},stu_password=#{stuPassword},stu_sex=#{stuSex},stu_class=#{stuClass}
+              WHERE stu_num = #{stuNum}
+        </update>
+
+    <!--模糊查询单个学生-->
+    <select id="selectStudentByStuNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+          SELECT * FROM student WHERE stu_num like '%${value}%'
+
+        </select>
+
+    <!--查询所有学生-->
+    <select id="selectAllStudent" resultMap="BaseResultMap">
+          SELECT * FROM student
+        </select>
+</mapper>

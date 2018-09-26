@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.PersonManageMapper.TeacherManageMapper">
+
+    <select id="findTeacherByNum" parameterType="string" resultType="teacher">
+      SELECT * FROM teacher WHERE tea_num like '%${value}%'
+    </select>
+
+    <select id="findAllTeacher"  resultType="teacher">
+      SELECT * FROM teacher;
+    </select>
+
+    <select id="findCount"  resultType="int">
+        SELECT COUNT(*) FROM teacher;
+    </select>
+
+    <update id="updateTeacher" parameterType="teacher" >
+        UPDATE teacher set tea_name=#{teaName},tea_password=#{teaPassword},tea_course=#{teaCourse} where tea_num=#{teaNum};
+    </update>
+
+
+    <delete id="deleteTeacher" parameterType="string">
+        DELETE  from teacher WHERE  tea_num=#{tea_num}
+    </delete>
+
+    <insert id="addTeacher" parameterType="teacher">
+        INSERT INTO teacher (tea_name,tea_password,tea_course,tea_num,tea_class) VALUES (#{teaName},#{teaPassword},#{teaCourse},#{teaNum},#{teaClass});
+    </insert>
+</mapper>

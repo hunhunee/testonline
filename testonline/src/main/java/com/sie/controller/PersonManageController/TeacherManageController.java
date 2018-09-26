@@ -34,7 +34,7 @@ public class TeacherManageController {
 
 
     @PostMapping("/findTeacher")
-    public Teacher findTeacher(String num){
+    public List<Teacher> findTeacher(String num){
       return teacherManagerService.findTeacherByNum(num);
     }
 

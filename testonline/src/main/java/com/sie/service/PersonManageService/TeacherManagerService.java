@@ -8,7 +8,7 @@ import java.util.List;
 public interface TeacherManagerService {
     public List<Teacher> findAllTeacher();
 
-    public Teacher findTeacherByNum(String num);
+    public List<Teacher> findTeacherByNum(String num);
 
     public List<Teacher> addTeacher(Teacher teacher);
 

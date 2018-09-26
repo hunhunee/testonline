@@ -16,8 +16,10 @@ public class TestManageServiceImpl implements TestManageService{
 
 
     @Override
-    public void addTest(Test test) {
+    public List<Test> addTest(Test test) {
         testManageMapper.addTest(test);
+        List<Test> testList =testManageMapper.findAllTest(test);
+        return testList;
     }
 
     @Override

@@ -30,13 +30,13 @@ import java.util.List;
 
         @Test
         public void findTeacherByNumTest(){
-            Teacher teacher =teacherManageMapper.findTeacherByNum("t001");
+            List<Teacher> teacher =teacherManageMapper.findTeacherByNum("t00");
             if(teacher!=null){
                 System.out.println("yes");
             }else{
                 System.out.println("no");
             }
-            System.out.println("用户名:"+teacher.getTeaName());
+
         }
 
         @Test

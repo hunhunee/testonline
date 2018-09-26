@@ -4,7 +4,7 @@
 <mapper namespace="com.sie.mapper.PersonManageMapper.TeacherManageMapper">
 
     <select id="findTeacherByNum" parameterType="string" resultType="teacher">
-      SELECT * FROM teacher WHERE tea_num=#{id}
+      SELECT * FROM teacher WHERE tea_num like '%${value}%'
     </select>
 
     <select id="findAllTeacher"  resultType="teacher">

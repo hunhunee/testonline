@@ -27,9 +27,8 @@ public class TeacherManageServiceTest {
 
     @Test
     public void findTeacherByNameTest(){
-
-
-        System.out.println("老师名字："+teacherManagerService.findTeacherByNum("t001").getTeaName());
+        List<Teacher> teacherByNum = teacherManagerService.findTeacherByNum("2");
+        System.out.println(teacherByNum);
     }
 
 

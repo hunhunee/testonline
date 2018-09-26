@@ -11,7 +11,7 @@ public interface TeacherManageMapper {
 
     public void updateTeacher(Teacher teacher);
 
-    public Teacher findTeacherByNum(String num);
+    public List<Teacher> findTeacherByNum(String num);
 
     public List<Teacher> findAllTeacher();
 

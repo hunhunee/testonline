@@ -5,7 +5,7 @@ import com.sie.domain.Test;
 import java.util.List;
 
 public interface TestManageService {
-    public void addTest(Test test);
+    public List<Test> addTest(Test test);
 
     public List<Test> deleteTest(Test test);
 

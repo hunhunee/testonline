@@ -22,8 +22,8 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
     }
 
     @Override
-    public Teacher findTeacherByNum(String num) {
-        Teacher teacher =teacherManageMapper.findTeacherByNum(num);
+    public List<Teacher> findTeacherByNum(String num) {
+        List<Teacher> teacher =teacherManageMapper.findTeacherByNum(num);
         return teacher;
     }
 

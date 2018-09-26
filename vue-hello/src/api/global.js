@@ -14,6 +14,7 @@ export default {
        data: Qs.stringify(data)
      });
    },
+ 
    findAllTeacher: function () {
    return axios({
       headers: {

@@ -28,8 +28,8 @@
      </FormItem>
 
      <FormItem>
-          <Button type="primary" @click="handleput('formInline')">保存</Button>
-          <Button type="primary" @click="handleReset('formInline')">重置</Button>
+          <Button type="primary" @click="handleput('formInline')">修改密码</Button>
+
      </FormItem>
      </Form>
 
@@ -68,25 +68,11 @@
               let data = {
                   "password":this.formInline.password,
                   "newpassword":this.formInline.newpassword,
-                  "repassword":this.formInline.repassword,
+                  "repassword":this.formInline.repassword
               }
-              //alert("对不起，您输入的密码或账户有误，请重新输入！")
               this.$store.dispatch('userLayout',{data});
 
-          },
-
-            handleReset(password){
-            const axios = require('axios');
-            let data = {
-                "password":this.formInline.password,
-                "newpassword":this.formInline.newpassword,
-                "repassword":this.formInline.repassword,
-            }
-
-              this.$store.dispatch('userLayout1',{data});
-            }
-
-
+          }
 
         }
     }

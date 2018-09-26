@@ -32,39 +32,38 @@ export default {
       console.log("userLayout");
       console.log(data)
       if (data.password==null||data.password=="") {
-       alert("原密码不能为空，请重新输入！")
+       alert("密码不能为空，请重新输入！")
      }
      //else if (data.newpassword==null||data.newpassword=="") {
     //   alert("请输入新密码！")
     // }
      //alert("修改密码成功！")
 
-     api.layout(data)
+     api.updateAdmin(data)
      .then((response) => {
         commit('userLayout_m',response);
      })
      .catch((error)=>{
         console.log(error);
-       }
-     );
-   },
+       } );
 
-   userLayout1({commit},{data}){
-     console.log("userLayout1");
-     console.log(data)
-     if (data.password==null||data.password=="") {
-           alert("已重置，请重新输入！")
-   }
-    api.layout1(data)
-    .then((response) => {
-       commit('userLayout_m',response);
-    })
-    .catch((error)=>{
-       console.log(error);
-      }
-    );
-   }
+       api.updateStudent(data)
+       .then((response) => {
+          commit('userLayout_m',response);
+       })
+       .catch((error)=>{
+          console.log(error);
+         } );
 
+         api.updateTeacher(data)
+         .then((response) => {
+            commit('userLayout_m',response);
+         })
+         .catch((error)=>{
+            console.log(error);
+           } );
+
+   }
   },
   mutations:{
     userLayout_m(state,data){
@@ -89,7 +88,7 @@ export default {
                  state.teaName=data.data.teaName,
                  state.teaClass=data.data.teaClass,
                  state.teaCourse=data.data.teaCourse,
-                 router.push({ path: '/teacher_index/teacher_message' }) ;
+                 router.push({ path: 'teacher_message' }) ;
                    break;
                  case '3':
                  console.log("StudentMessage密码修改");

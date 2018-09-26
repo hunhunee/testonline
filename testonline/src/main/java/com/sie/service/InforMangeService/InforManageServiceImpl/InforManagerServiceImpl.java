@@ -7,6 +7,7 @@ import com.sie.mapper.InforMangeMapper.InforMangeMapper;
 import com.sie.service.InforMangeService.InforManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class InforManagerServiceImpl implements InforManagerService {
@@ -14,18 +15,24 @@ public class InforManagerServiceImpl implements InforManagerService {
     private InforMangeMapper inforMangeMapper;
 
     @Override
-    public Admin updateAdmin(Admin admin) {
-        return null;
+    public List<Admin> updateAdmin(Admin admin) {
+        inforMangeMapper.updateAdmin(admin);
+        List<Admin> adminList = inforMangeMapper.findAllAdmin();
+        return adminList;
     }
 
     @Override
-    public Teacher updateTeacher(Teacher teacher) {
-        return null;
+    public List<Teacher> updateTeacher(Teacher teacher) {
+        inforMangeMapper.updateTeacher(teacher);
+        List<Teacher> teacherList = inforMangeMapper.findAllTeacher();
+        return teacherList;
     }
 
     @Override
-    public Student updateStudent(Student student) {
-        return null;
+    public List<Student> updateStudent(Student student) {
+        inforMangeMapper.updateStudent(student);
+        List<Student> studentList = inforMangeMapper.findAllStudent();
+        return studentList;
     }
 
 }

@@ -80,25 +80,7 @@
                <div class="layout-logo">在线考试系统---管理员</div>
                    <div class="layout-nav">
 
-                      <MenuItem name="1">
-                       <Icon type="ios-navigate"></Icon>
-                         菜单
-                      </MenuItem>
-
-                     <MenuItem name="2">
-                        <Icon type="ios-keypad"></Icon>
-                         设置
-                     </MenuItem>
-
-                     <MenuItem name="3">
-                       <Icon type="ios-analytics"></Icon>
-                          通知
-                    </MenuItem>
-
-                    <MenuItem name="4">
-                      <Icon type="ios-paper"></Icon>
-                           退出
-                    </MenuItem>
+                      
                    </div>
                </Menu>
             </Header>

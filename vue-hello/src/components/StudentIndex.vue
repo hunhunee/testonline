@@ -66,11 +66,6 @@
                <div class="layout-logo">在线考试系统---管理员</div>
                    <div class="layout-nav">
 
-<<<<<<< HEAD
-
-=======
-                    
->>>>>>> cgwBranch
                    </div>
                </Menu>
             </Header>

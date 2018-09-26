@@ -2,6 +2,8 @@
     .layout-con{
         height: 100%;
         width: 100%;
+        margin:0 auto;
+        margin-right:20px;
     }
     .menu-item span{
         display: inline-block;
@@ -28,6 +30,23 @@
         vertical-align: middle;
         font-size: 22px;
     }
+    .layout-nav{
+
+           width: 420px;
+           margin: 0 auto;
+           margin-right: 20px;
+       }
+   .layout-footer-center{
+         text-align: center;
+   }
+   .layout-logo{
+         width: 145px;
+         height: 50px;
+         color:#fff;
+         float: left;
+         position: relative;
+         top: 7px;
+         }
 </style>
 <template>
     <div class="layout">
@@ -61,9 +80,33 @@
                 </Menu>
             </Sider>
             <Layout>
-                <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
-                 <div>在线考试系统---学生</div>
-                </Header>
+            <Header >
+              <Menu mode="horizontal" theme="dark" active-name="1">
+               <div class="layout-logo">在线考试系统---管理员</div>
+                   <div class="layout-nav">
+
+                      <MenuItem name="1">
+                       <Icon type="ios-navigate"></Icon>
+                         菜单
+                      </MenuItem>
+
+                     <MenuItem name="2">
+                        <Icon type="ios-keypad"></Icon>
+                         设置
+                     </MenuItem>
+
+                     <MenuItem name="3">
+                       <Icon type="ios-analytics"></Icon>
+                          通知
+                    </MenuItem>
+
+                    <MenuItem name="4">
+                      <Icon type="ios-paper"></Icon>
+                           退出
+                    </MenuItem>
+                   </div>
+               </Menu>
+            </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
                         <BreadcrumbItem>Home</BreadcrumbItem>
@@ -76,6 +119,9 @@
                         </div>
                     </Card>
                 </Content>
+                <Footer class="layout-footer-center">
+                        2018-9-21 &copy; TalkingData
+                 </Footer>
             </Layout>
         </Layout>
     </div>

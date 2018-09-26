@@ -14,6 +14,44 @@ export default {
        data: Qs.stringify(data)
      });
    },
+   inforManage: function (data) {
+   return axios({
+      headers: {
+          'deviceCode': ' '
+      },
+      method: 'post',
+      url: '/api/inforManage',
+      data: Qs.stringify(data)
+    });
+  },
+  updateAdmin: function () {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/inforManage/updateAdmin'
+   });
+  },
+  updateTeacher: function () {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/inforManage/updateTeacher'
+   });
+  },
+  updateStudent: function () {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/inforManage/updateStudent'
+   });
+  },
+
    findAllTeacher: function () {
    return axios({
       headers: {
@@ -155,10 +193,41 @@ return axios({
    url: '/api/exam/addExamResult',
 
    data:params
- 
+
  });
 },
 
+updateAdmin: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateAdmin',
+   data:Qs.stringify(data)
+ });
+},
+
+updateTeacher: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateTeacher',
+   data:Qs.stringify(data)
+ });
+},
+updateStudent: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateStudent',
+   data:Qs.stringify(data)
+ });
+}
 
 
 

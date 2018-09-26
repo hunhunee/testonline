@@ -70,7 +70,7 @@
             <Header >
               <Menu mode="horizontal" theme="dark" active-name="1">
                <div class="layout-logo">在线考试系统---管理员</div>
-
+                   
                </Menu>
             </Header>
                 <Content :style="{padding: '5px 5px 5px'}">

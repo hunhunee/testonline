@@ -33,13 +33,11 @@
      </FormItem>
      </Form>
 
-</style>
-<template>
-    <div class="layout">
-     管理员个人信息管理----修改密码
-    </div>
+</div>
+
+</div>
 </template>
-<script>
+ <script>
     export default {
         data () {
             return {
@@ -77,8 +75,8 @@
 
           }
 
-            };
+            }
         }
-        }
+
 
 </script>

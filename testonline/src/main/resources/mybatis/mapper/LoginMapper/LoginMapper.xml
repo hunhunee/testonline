@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.LoginMapper.LoginMapper">
+<select id="findAdminByNumAndPwd" parameterType="com.sie.domain.User" resultType="com.sie.domain.Admin">
+    SELECT * from admin where adm_num=#{usernum} and adm_password=#{password}
+</select>
+
+    <select id="findTeacherByNumAndPwd" parameterType="com.sie.domain.User" resultType="com.sie.domain.Teacher">
+        SELECT * from teacher where tea_num=#{usernum} and tea_password=#{password}
+    </select>
+
+    <select id="findStudentByNumAndPwd" parameterType="com.sie.domain.User" resultType="com.sie.domain.Student">
+        SELECT * from student where stu_num=#{usernum} and stu_password=#{password}
+    </select>
+
+</mapper>

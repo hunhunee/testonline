@@ -67,15 +67,20 @@
                 </Menu>
             </Sider>
             <Layout>
-                <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
-                 <div class="text">在线考试系统---管理员</div>
-                </Header>
-                <Content :style="{padding: '0 16px 16px'}">
-                    <Card>
-                        <div style="height: 600px">
-                         <router-view/>
-                        </div>
-                    </Card>
+            <Header >
+              <Menu mode="horizontal" theme="dark" active-name="1">
+               <div class="layout-logo">在线考试系统---管理员</div>
+
+               </Menu>
+            </Header>
+                <Content :style="{padding: '5px 5px 5px'}">
+                <Card >
+
+                    <div style="height: 700px">
+
+                     <router-view/>
+                    </div>
+                </Card>
                 </Content>
             </Layout>
         </Layout>

@@ -61,9 +61,15 @@
                 </Menu>
             </Sider>
             <Layout>
-                <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
-                 <div>在线考试系统---学生</div>
-                </Header>
+            <Header >
+              <Menu mode="horizontal" theme="dark" active-name="1">
+               <div class="layout-logo">在线考试系统---管理员</div>
+                   <div class="layout-nav">
+
+
+                   </div>
+               </Menu>
+            </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
                         <BreadcrumbItem>Home</BreadcrumbItem>

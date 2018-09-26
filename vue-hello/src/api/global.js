@@ -18,16 +18,6 @@ export default {
    findAllTeacher: function () {
    return axios({
       headers: {
-          'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/personManage/findAllTeacher'
-    });
-  },
-  //-------查询学生--------
-  findAllStudent:function() {
-    return axios({
-      headers: {
         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
       },
       method: 'post',
@@ -57,6 +47,7 @@ export default {
 
     });
   },
+
 
 
  findTeacher: function (data) {

@@ -19,7 +19,6 @@ public class TestManageController {
     public List<Test> addTest(Test test){
         System.out.println("增加题目类容："+test.getTestContent());
         List<Test> testList = testManageService.addTest(test);
-        System.out.println(testList.size());
         return testList;
     }
 

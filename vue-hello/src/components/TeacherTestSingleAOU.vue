@@ -30,10 +30,13 @@
           </FormItem>
           <FormItem   prop="rightans1">
               <Input type="text" v-model="formInline.rightans1" placeholder="rightans1" style="width: 200px" clearable>
-
               </Input>
           </FormItem>
-
+          <FormItem>
+            <Select v-model="status" style="width:200px">
+              <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
@@ -57,7 +60,9 @@ export default {
                  testAns2:this.$store.state.test.utest.testAns1,
                  testAns3:this.$store.state.test.utest.testAns1,
                  testAns4:this.$store.state.test.utest.testAns1,
-                 rightans1:this.$store.state.test.utest.rightans1
+                 rightans1:this.$store.state.test.utest.rightans1,
+
+
 
                 },
                 ruleInline: {
@@ -79,7 +84,18 @@ export default {
                     rightans1: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
-                }
+                },
+              statusList: [
+                {
+                  value: '0',
+                  label: '随机'
+                },
+                {
+                  value: '1',
+                  label: '必考'
+                },
+              ],
+              status:this.$store.state.test.utest.testStatus,
             }
         },
         methods: {
@@ -96,7 +112,8 @@ export default {
                     testAns4:this.formInline.testAns4,
                     rightans1:this.formInline.rightans1,
                     testType:this.getTestType,
-                    testCourse:this.getLesson
+                    testCourse:this.getLesson,
+                    testStatus:this.status,
                   }
                   this.$store.dispatch('updateTest',{data});
 

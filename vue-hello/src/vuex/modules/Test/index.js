@@ -1,5 +1,3 @@
-import axios from 'axios';
-import iView from 'iview';
 import router from '@/router/index'
 import api from '@/api/global'
 export default {
@@ -244,19 +242,19 @@ updateTest({commit},{data}){
       }else{
         console.log(state.testType);
         switch (state.testType) {
-          case  '1' :
+          case  "1" :
               console.log("跳转到teacher单选页面");
               router.push({ path: '/teacher_index/teacher_test_single' });
             break;
-          case  '2' :
+          case  "2" :
           console.log("跳转到teacher多选页面");
             router.push({ path: '/teacher_index/teacher_test_multiple' });
             break;
-          case  '3' :
+          case  "3" :
           console.log("跳转到teacher判断页面");
             router.push({ path: '/teacher_index/teacher_test_judge' });
             break;
-          case  '4' :
+          case  "4" :
           console.log("跳转到teacher计算页面");
             router.push({ path: '/teacher_index/teacher_test_compute' });
             break;
@@ -365,7 +363,8 @@ updateTest({commit},{data}){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
       console.log("updateTest m");
 
-      console.log("用户类型：");state.test.length=data.data.length
+      console.log("用户类型：");
+      state.test.length=data.data.length
       for (var i = 0; i < data.data.length; i++) {
         state.test[i]=data.data[i]
         console.log(state.test[i]);

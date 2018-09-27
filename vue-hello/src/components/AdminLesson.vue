@@ -8,7 +8,7 @@
     <div class="layout">
 
         <Input @on-change="search" v-model="lesName" search enter-button placeholder="Enter something..." style="width:300px" />
-<!--传递值给子主键-->
+
       <div class="add">
         <Button type="primary" @click="add">添加科目</Button>
       </div>
@@ -19,7 +19,7 @@
 <script>
 import router from '@/router/index'
 export default {
-<!--主键接收属性-->
+
    data () {
        return {
            columns7: [

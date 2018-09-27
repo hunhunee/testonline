@@ -93,26 +93,15 @@ import router from '@/router/index'
                   }
               ],
               data:[],
-              lessonList: [
-                {
-                    value: '1',
-                    label: '英语'
-                },
-                {
-                    value: '2',
-                    label: '数学'
-                },
-                {
-                    value: '3',
-                    label: '物理'
-                },
-                {
-                    value: '4',
-                    label: '语文'
-                },
-
-                ],
-                lesson: ''
+              lessonList: [],
+              l:{value:"",
+                  label:""
+              },
+              lessonIdString:"",
+              lessonNameString:"",
+              lessonIdList:[],
+              lessonNameList:[],
+              lesson: ''
           }
       },
         mounted: function () {
@@ -120,7 +109,25 @@ import router from '@/router/index'
 
        },
 
+       created:function(){
+           console.log("lessonlist");
 
+
+               this.lessonIdString=localStorage.getItem("lessonIdList");
+               this.lessonNameString=localStorage.getItem("lessonNameList");
+                
+               for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                 this.lessonList.push({
+                   value:this.lessonIdString.split(',')[i],
+                   label:this.lessonNameString.split(',')[i]
+                 })
+              }
+
+
+
+
+
+       },
 
 
         methods:{
@@ -172,6 +179,7 @@ import router from '@/router/index'
             this.$set(this.data,i,this.$store.state.test.test[i])
            }
          },
+
 
         },
         computed: {

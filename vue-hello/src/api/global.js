@@ -151,6 +151,16 @@ return axios({
    url: '/api/LessonManage/findAllLesson'
  });
 },
+findLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findLessonByName',
+   data:Qs.stringify(data)
+ });
+},
 
 deleteLesson: function (data) {
 return axios({
@@ -159,17 +169,6 @@ return axios({
    },
    method: 'post',
    url: '/api/LessonManage/deleteLesson',
-   data:Qs.stringify(data)
- });
-},
-
-findLesson: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/LessonManage/findLessonByName',
    data:Qs.stringify(data)
  });
 },
@@ -197,4 +196,5 @@ return axios({
 
  });
 },
+
 }

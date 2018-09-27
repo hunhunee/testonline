@@ -85,26 +85,14 @@ import router from '@/router/index'
                   }
               ],
               data:[],
-              lessonList: [
-                    {
-                        value: '1',
-                        label: '英语'
-                    },
-                    {
-                        value: '2',
-                        label: '数学'
-                    },
-                    {
-                        value: '3',
-                        label: '物理'
-                    },
-                    {
-                        value: '4',
-                        label: '语文'
-                    },
-
-
-                ],
+              lessonList: [],
+              l:{value:"",
+                  label:""
+              },
+              lessonIdString:"",
+              lessonNameString:"",
+              lessonIdList:[],
+              lessonNameList:[],
                 lesson: ''
 
           }
@@ -114,6 +102,24 @@ import router from '@/router/index'
            console.log("admin_test_multiple  test");
            console.log(this.data);
        },
+
+       created:function(){
+           console.log("lessonlist");
+
+           this.lessonIdString=localStorage.getItem("lessonIdList");
+           this.lessonNameString=localStorage.getItem("lessonNameList");
+
+
+           for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+              console.log(this.lessonIdString.split(',')[i]);
+              this.lessonList.push({
+                value:this.lessonIdString.split(',')[i],
+                label:this.lessonNameString.split(',')[i]
+              })
+           }
+
+       },
+
         methods:{
           change (index) {
             let data = {

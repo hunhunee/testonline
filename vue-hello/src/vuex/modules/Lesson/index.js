@@ -5,6 +5,8 @@ import api from '@/api/global'
 export default {
   state:{
    lesson:[],
+   lessonId:[],
+   lessonName:[],
    ulesson:{
      // lesId:"",switch (zzzz) {
      //   case expression:
@@ -14,6 +16,7 @@ export default {
      //
      // }
      lesName:"",
+
    },
    utaction:"",
   },
@@ -101,8 +104,15 @@ updateLesson({commit},{data}){
       state.lesson.length=data.data.length;
       for (var i = 0; i < data.data.length; i++) {
         state.lesson[i]=data.data[i];
-        console.log(state.lesson[i]);
+        state.lessonId[i]=data.data[i].lesId;
+        console.log(state.lessonId[i]);
+        state.lessonName[i]=data.data[i].lesName;
+        console.log(state.lessonName[i]);
       }
+     localStorage.setItem("lessonIdList",state.lessonId),
+     localStorage.setItem("lessonNameList",state.lessonName),
+
+
       router.push({ path: '/admin_index/admin_Lesson' });
     },
 
@@ -110,10 +120,20 @@ updateLesson({commit},{data}){
     deleteLesson_m(state,data){
       console.log("deleteLesson_m");
       state.lesson.length=data.data.length;
+
+      state.lessonId.length=data.data.length;
+      state.lessonName.length=data.data.length;
       for (var i = 0; i < data.data.length; i++) {
-        state.lesson[i]=data.data[i]
-        console.log(state.lesson[i]);
+        state.lesson[i]=data.data[i];
+        state.lessonId[i]=data.data[i].lesId;
+        console.log(state.lessonId[i]);
+        state.lessonName[i]=data.data[i].lesName;
+        console.log(state.lessonName[i]);
       }
+     localStorage.setItem("lessonIdList",state.lessonId),
+     localStorage.setItem("lessonNameList",state.lessonName),
+
+
       router.push({ path: '/admin_index/admin_Lesson'});
     },
 
@@ -127,10 +147,17 @@ updateLesson({commit},{data}){
     addLesson_m(state,data){
       console.log("addLesson_m");
       state.lesson.length=data.data.length;
+      state.lessonId.length=data.data.length;
+      state.lessonName.length=data.data.length;
       for (var i = 0; i < data.data.length; i++) {
-        state.lesson[i]=data.data[i]
-        console.log(state.lesson[i]);
+        state.lesson[i]=data.data[i];
+        state.lessonId[i]=data.data[i].lesId;
+        console.log(state.lessonId[i]);
+        state.lessonName[i]=data.data[i].lesName;
+        console.log(state.lessonName[i]);
       }
+     localStorage.setItem("lessonIdList",state.lessonId),
+     localStorage.setItem("lessonNameList",state.lessonName)
 
       if(state.lesson.length==data.data.lesson){
         console.log("跳转到admin科目 Lesson");
@@ -154,10 +181,17 @@ updateLesson({commit},{data}){
    updateLesson_m(state,data){
      console.log("updateLesson_m");
      state.lesson.length=data.data.length;
+     state.lessonId.length=data.data.length;
+     state.lessonName.length=data.data.length;
      for (var i = 0; i < data.data.length; i++) {
-       state.lesson[i]=data.data[i]
-       console.log(state.lesson[i]);
+       state.lesson[i]=data.data[i];
+       state.lessonId[i]=data.data[i].lesId;
+       console.log(state.lessonId[i]);
+       state.lessonName[i]=data.data[i].lesName;
+       console.log(state.lessonName[i]);
      }
+    localStorage.setItem("lessonIdList",state.lessonId),
+    localStorage.setItem("lessonNameList",state.lessonName),
      router.push({ path: '/admin_index/admin_Lesson' });
    }
   }

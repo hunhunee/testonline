@@ -140,9 +140,6 @@ import router from '@/router/index'
 
 
 
-       },
-
-
         methods:{
           change (index) {
             let data = {
@@ -192,8 +189,7 @@ import router from '@/router/index'
              console.log(this.$store.state.test.test[i]);
             this.$set(this.data,i,this.$store.state.test.test[i])
            }
-         },
-
+         }
 
         },
         computed: {

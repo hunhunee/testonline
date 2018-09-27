@@ -288,7 +288,7 @@ return axios({
    url: '/api/inforManage/updateStudent',
    data:Qs.stringify(data)
  });
-}
+},
 
 
 deleteLesson: function (data) {

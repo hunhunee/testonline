@@ -217,6 +217,25 @@ return axios({
  });
 },
 
+findAllLesson: function () {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findAllLesson'
+ });
+},
+findLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findLessonByName',
+   data:Qs.stringify(data)
+ });
+},
 
 addExamResult: function (data) {
   var params = new URLSearchParams();
@@ -234,26 +253,32 @@ return axios({
  });
 },
 updateAdmin: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateAdmin',
-   data:Qs.stringify(data)
- });
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/inforManage/updateAdmin',
+     data:Qs.stringify(data)
+});
 },
 
+
+
+
 updateTeacher: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateTeacher',
-   data:Qs.stringify(data)
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/inforManage/updateTeacher',
+     data:Qs.stringify(data)
  });
-},
+ },
+
+
+
 updateStudent: function (data) {
 return axios({
    headers: {
@@ -266,6 +291,40 @@ return axios({
 }
 
 
+deleteLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateAdmin',
+   url: '/api/LessonManage/deleteLesson',
 
+   data:Qs.stringify(data)
+ });
+},
+
+addLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/addLesson',
+   data:Qs.stringify(data)
+ });
+ },
+
+updateLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/updateLesson',
+   data:Qs.stringify(data)
+
+ });
+},
 
 }

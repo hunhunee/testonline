@@ -97,42 +97,50 @@ import router from '@/router/index'
                   }
               ],
               data:[],
-              lessonList: [
-                {
-                    value: '1',
-                    label: '英语'
-                },
-                {
-                    value: '2',
-                    label: '数学'
-                },
-                {
-                    value: '3',
-                    label: '物理'
-                },
-                {
-                    value: '4',
-                    label: '语文'
-                },
-
-                ],
-                lesson: ''
+              lessonList: [],
+              l:{value:"",
+                  label:""
+              },
+              lessonIdString:"",
+              lessonNameString:"",
+              lessonIdList:[],
+              lessonNameList:[],
+              lesson: ''
           }
       },
       created: function () {
        console.log("created");
+       setInterval(()=>{
+          this.data.length=this.$store.state.test.test.length
+          for (var i = 0; i < this.$store.state.test.test.length; i++) {
+            this.$set(this.data,i,this.$store.state.test.test[i])
+          }
+       }, 1000);
+                      console.log("lessonlist");
+                      this.lessonIdString=localStorage.getItem("lessonIdList");
+                      this.lessonNameString=localStorage.getItem("lessonNameList");
 
-            setInterval(()=>{
-               this.data.length=this.$store.state.test.test.length
-               for (var i = 0; i < this.$store.state.test.test.length; i++) {
-                 this.$set(this.data,i,this.$store.state.test.test[i])
-               }
-            }, 1000);
+                      for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                        this.lessonList.push({
+                          value:this.lessonIdString.split(',')[i],
+                          label:this.lessonNameString.split(',')[i]
+                        })
+                     }
+
+
+
      },
+
 
      destroyed: function(){
        clearInterval();
      },
+
+
+
+
+
+       },
 
 
         methods:{
@@ -185,6 +193,7 @@ import router from '@/router/index'
             this.$set(this.data,i,this.$store.state.test.test[i])
            }
          },
+
 
         },
         computed: {

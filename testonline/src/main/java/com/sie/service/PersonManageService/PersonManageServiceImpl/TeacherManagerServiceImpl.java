@@ -40,7 +40,7 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
 
         teacherManageMapper.updateTeacher(teacher);
         List<Teacher> teacherList = teacherManageMapper.findAllTeacher();
-        return teacherList;
+         return teacherList;
     }
 
     @Override

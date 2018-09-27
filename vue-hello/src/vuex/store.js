@@ -3,7 +3,8 @@ import Vuex from 'vuex';
 import user from './modules/user/index';//引进模块
 import person from './modules/person/index';
 import test from './modules/test/index';
-import exam from './modules/exam/index'
+import exam from './modules/exam/index';
+import lesson from './modules/Lesson/index';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -12,7 +13,8 @@ export default new Vuex.Store({
     user:user,
     person:person,
     test:test,
-    exam:exam
+    exam:exam,
+    lesson:lesson
   }
 
 });

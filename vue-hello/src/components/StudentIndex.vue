@@ -8,7 +8,7 @@
         overflow: hidden;
         width: 69px;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        white-space: nowrap;s
         vertical-align: bottom;
         transition: width .2s ease .2s;
     }

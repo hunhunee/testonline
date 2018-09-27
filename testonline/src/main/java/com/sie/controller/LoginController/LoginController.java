@@ -18,6 +18,9 @@ public class LoginController {
 
     @PostMapping("/login")
     public User login(User user){
+        System.out.println(user.getIdentity());
+        System.out.println(user.getUsernum());
+        System.out.println(user.getPassword());
         User u=new User();
          if(user.getIdentity().equals("1")){
             Admin admin= loginService.findAdminByNumAndPwd(user);

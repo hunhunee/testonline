@@ -142,8 +142,59 @@ return axios({
  });
 },
 
+findAllLesson: function () {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findAllLesson'
+ });
+},
 
+deleteLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/deleteLesson',
+   data:Qs.stringify(data)
+ });
+},
 
+findLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findLessonByName',
+   data:Qs.stringify(data)
+ });
+},
 
+addLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/addLesson',
+   data:Qs.stringify(data)
 
+ });
+},
+
+updateLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/updateLesson',
+   data:Qs.stringify(data)
+
+ });
+},
 }

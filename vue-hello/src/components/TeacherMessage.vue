@@ -2,7 +2,7 @@
     <div class="userLayout">
     <div class="text" >
         <Icon type="ios-person-outline"></Icon>
-        个人信息维护--修改密码
+        教师个人信息管理---修改密码
     </div>
 
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
@@ -33,12 +33,9 @@
      </FormItem>
      </Form>
 
-</style>
-<template>
-    <div class="layout">
-     教师个人信息管理---修改密码
-    </div>
+</div>
 </template>
+
 <script>
     export default {
         data () {
@@ -77,8 +74,16 @@
 
           }
 
-            };
         }
         }
 
 </script>
+<style scoped>
+.userLayout{
+          text-align:center;
+          background-color: inherit;
+     }
+     .text{
+             text-align:left;
+          }
+</style>

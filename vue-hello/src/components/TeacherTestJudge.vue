@@ -45,6 +45,10 @@ import router from '@/router/index'
                       key: 'rightans1'
                   },
                   {
+                      title: '状态',
+                      key: 'testStatus'
+                  },
+                  {
                       title: 'Action',
                       key: 'action',
                       width: 150,
@@ -85,8 +89,14 @@ import router from '@/router/index'
           }
       },
         created: function () {
- 
-         this.data=this.$store.state.test.test
+          console.log("created");
+
+               setInterval(()=>{
+                  this.data.length=this.$store.state.test.test.length
+                  for (var i = 0; i < this.$store.state.test.test.length; i++) {
+                    this.$set(this.data,i,this.$store.state.test.test[i])
+                  }
+               }, 1000);
        },
         methods:{
           change (index) {
@@ -97,14 +107,17 @@ import router from '@/router/index'
               testAns2:this.data[index].testAns2,
               rightans1:this.data[index].rightans1,
               testCourse:this.data[index].testCourse,
-              testType:this.data[index].testType
+              testType:this.data[index].testType,
+              testStatus:this.data[index].testStatus
             }
             this.$store.dispatch('updateBeforeTest',{data});
             router.push({ path: '/teacher_index/teacher_test_judge_aou' });
           },
           remove (index) {
             let data = {
-                "id": this.data[index].testId
+                "testId": this.data[index].testId,
+                "testType":this.data[index].testType,
+                "testCourse":this.data[index].testCourse
             }
            this.$store.dispatch('deleteTest',{data});
            this.data=this.$store.state.test.test

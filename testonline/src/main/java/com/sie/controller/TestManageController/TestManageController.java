@@ -25,10 +25,11 @@ public class TestManageController {
 
     @PostMapping("/delete")
     public List<Test> deleteTest(Test test){
-
+        System.out.println("testid"+test.getTestId());
         if(test.getTestId()!=null){
 
           List<Test> testList= testManageService.deleteTest(test);
+            System.out.println(testList.size());
           return testList;
         }
        return null;

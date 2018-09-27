@@ -80,3 +80,14 @@
 
 
 </script>
+<style scoped>
+
+.userLayout{
+          text-align:center;
+          background-color: inherit;
+     }
+     .text{
+        text-align:left;
+     }
+
+</style>

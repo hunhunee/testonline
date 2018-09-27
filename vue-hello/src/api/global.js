@@ -233,7 +233,37 @@ return axios({
 
  });
 },
+updateAdmin: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateAdmin',
+   data:Qs.stringify(data)
+ });
+},
 
+updateTeacher: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateTeacher',
+   data:Qs.stringify(data)
+ });
+},
+updateStudent: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/inforManage/updateStudent',
+   data:Qs.stringify(data)
+ });
+}
 
 
 

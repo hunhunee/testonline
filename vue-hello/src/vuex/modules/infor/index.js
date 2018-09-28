@@ -4,64 +4,31 @@ import router from '@/router/index'
 import api from '@/api/global'
 export default {
   state:{ //这里面是要读取或者写入数据的地方
-      admId:"",
-      admName:"",
-      admPassword:"",
-      admNum:"",
-      count:"1",
-
-      teaId:"",
-      teaName:"",
-      teaPassword:"",
-      teaCourse:"",
-      teaNum:"",
-      teaClass:"",
-      count:"2",
-
-      stuId:"",
-      stuName:"",
-      stuPassword:"",
-      stuNum:"",
-      stuClass:"",
-      count:"3"
+      userid:"",
+      password:"",
+      newpassword:"",
+      repassword:"",
+      identity:"",
+      name:"",
+      usernum:"",
 
   },
-
+  getters: {
+    getIdentity: state => {//通过方法访问
+      return state.identity
+    }
+  },
   actions:{
     userLayout({commit},{data}){
-      console.log("userLayout");
-      console.log(data)
-      if (data.password==null||data.password=="") {
-       alert("密码不能为空，请重新输入！")
-     }
-     //else if (data.newpassword==null||data.newpassword=="") {
-    //   alert("请输入新密码！")
-    // }
-     //alert("修改密码成功！")
-
-     api.updateAdmin(data)
+     console.log("userLayout");
+     console.log(data)
+     api.updateInfor(data)
      .then((response) => {
         commit('userLayout_m',response);
      })
      .catch((error)=>{
         console.log(error);
        } );
-
-       api.updateStudent(data)
-       .then((response) => {
-          commit('userLayout_m',response);
-       })
-       .catch((error)=>{
-          console.log(error);
-         } );
-
-         api.updateTeacher(data)
-         .then((response) => {
-            commit('userLayout_m',response);
-         })
-         .catch((error)=>{
-            console.log(error);
-           } );
 
    }
   },
@@ -71,36 +38,44 @@ export default {
       console.log(data)
       switch (data.statusText) {
         case 'OK':
-             switch (data.data.admId) {
-               case '1':
-                 console.log("AdminMessage密码修改");
-                 state.admNum=data.data.admNum,
-                 state.admPassword=data.data.admPassword,
-                 state.admId=data.data.admId,
-                 state.admName=data.data.admName,
+             switch (data.data.identity) {
+               case 1:
+                 console.log("AdminMessage密码已修改");
+                 state.usernum=data.data.usernum,
+                 state.password=data.data.password,
+                 state.newpassword=data.data.newpassword,
+                 state.repassword=data.data.repassword,
+                 state.name=data.data.name,
+                 localStorage.setItem("identity",data.data.identity);
+                 console.log(localStorage.getItem("identity"));
                  router.push({ path: 'admin_message' }) ;
                  break;
-                 case '2':
-                 console.log("TeacherMessage密码修改");
-                 state.teaNum=data.data.teaNum,
-                 state.teaPassword=data.data.teaPassword,
-                 state.teaId=data.data.teaId,
-                 state.teaName=data.data.teaName,
-                 state.teaClass=data.data.teaClass,
-                 state.teaCourse=data.data.teaCourse,
-                 router.push({ path: 'teacher_message' }) ;
-                   break;
-                 case '3':
-                 console.log("StudentMessage密码修改");
-                 state.stuNum=data.data.stuNum,
-                 state.stuPassword=data.data.stuPassword,
-                 state.stuId=data.data.stuId,
-                 state.stuName=data.data.stuName,
-                 state.stuClass=data.data.stuClass
-                 router.push({ path: 'student_message' }) ;
-                   break;
-                 default:
 
+                 case 2:
+                 console.log("TeacherMessage密码已修改");
+                 state.usernum=data.data.usernum,
+                 state.password=data.data.password,
+                 state.newpassword=data.data.newpassword,
+                 state.repassword=data.data.repassword,
+                 state.name=data.data.name,
+                 localStorage.setItem("identity",data.data.identity);
+                 console.log(localStorage.getItem("identity"));
+                 router.push({ path: 'teacher_message' }) ;
+                 break;
+
+                 case 3:
+                 console.log("StudentMessage密码已修改");
+                 state.usernum=data.data.usernum,
+                 state.password=data.data.password,
+                 state.newpassword=data.data.newpassword,
+                 state.repassword=data.data.repassword,
+                 state.name=data.data.name,
+                 localStorage.setItem("identity",data.data.identity);
+                 console.log(localStorage.getItem("identity"));
+                 router.push({ path: 'student_message' }) ;
+                 break;
+                 default:
+                 alert("修改密码成功！")
                }
             break;
           default:

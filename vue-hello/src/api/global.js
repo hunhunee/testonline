@@ -222,45 +222,18 @@ return axios({
 
  });
 },
-
-//------修改管理员密码-----
-updateAdmin: function (data) {
+//个人信息维护--修改密码
+updateInfor: function (data) {
 return axios({
  headers: {
      'deviceCode': 'A95ZEF1-47B5-AC90BF3'
  },
  method: 'post',
- url: '/api/inforManage/updateAdmin',
+ url: '/api/inforManage/updateInfor',
  data:Qs.stringify(data)
 
 });
 },
-  //------修改教师密码-----
-updateTeacher: function (data) {
-return axios({
-   headers: {
-       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-   },
-   method: 'post',
-   url: '/api/inforManage/updateTeacher',
-   data:Qs.stringify(data)
-
- });
-},
-  //------修改学生密码-----
-  updateStudent: function (data) {
-    return axios({
-      headers: {
-        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/inforManage/updateStudent',
-      data:Qs.stringify(data)
-
-    });
-  },
-
-
 
 
 }

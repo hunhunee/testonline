@@ -17,21 +17,21 @@ public class InforManagerServiceImpl implements InforManagerService {
     @Override
     public List<Admin> updateAdmin(Admin admin) {
         inforMangeMapper.updateAdmin(admin);
-        List<Admin> adminList = inforMangeMapper.findAllAdmin();
+        List<Admin> adminList = inforMangeMapper.updateAdmin();
         return adminList;
     }
 
     @Override
     public List<Teacher> updateTeacher(Teacher teacher) {
         inforMangeMapper.updateTeacher(teacher);
-        List<Teacher> teacherList = inforMangeMapper.findAllTeacher();
+        List<Teacher> teacherList = inforMangeMapper.updateTeacher();
         return teacherList;
     }
 
     @Override
     public List<Student> updateStudent(Student student) {
         inforMangeMapper.updateStudent(student);
-        List<Student> studentList = inforMangeMapper.findAllStudent();
+        List<Student> studentList = inforMangeMapper.updateStudent();
         return studentList;
     }
 

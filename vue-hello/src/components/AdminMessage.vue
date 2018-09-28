@@ -28,7 +28,7 @@
      </FormItem>
 
      <FormItem>
-          <Button type="primary" @click="handleput('formInline')">修改密码</Button>
+          <Button type="primary" @click="handleSubmit('formInline')">修改</Button>
 
      </FormItem>
      </Form>
@@ -42,7 +42,8 @@
               formInline:{
               password:'',
                 newpassword:'',
-                  repassword:''
+                  repassword:'',
+                  radio:'1'
               },
               ruleInline: {
                   password: [
@@ -62,12 +63,13 @@
             }
         },
         methods: {
-          handleput(password){
+          handleSubmit(password){
               const axios = require('axios');
               let data = {
                   "password":this.formInline.password,
                   "newpassword":this.formInline.newpassword,
-                  "repassword":this.formInline.repassword
+                  "repassword":this.formInline.repassword,
+                  "identity":this.formInline.radio
               }
               this.$store.dispatch('userLayout',{data});
 

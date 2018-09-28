@@ -23,7 +23,7 @@ public class TestManageTest {
     public void findAllTest(){
         com.sie.domain.Test t = new com.sie.domain.Test();
         t.setTestType("1");
-        List<com.sie.domain.Test> testList= testManageService.findAllTest(t);
-        System.out.println(testList.size());
+        List<com.sie.domain.TestEx> testList= testManageService.findAllTest(t);
+        System.out.println(testList.get(0).getLesName());
     }
 }

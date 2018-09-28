@@ -53,15 +53,19 @@ public class TestManageTest {
         com.sie.domain.Test t = new com.sie.domain.Test();
         t.setTestCourse("2");
         t.setTestType("1");
-      List<com.sie.domain.Test> testList= testManageMapper.findTest(t);
-        System.out.println(testList.size());
+      List<com.sie.domain.TestEx> testList= testManageMapper.findTest(t);
+        System.out.println(testList.get(1).getLesson().getLesName());
+        System.out.println(testList.get(1).getTestId());
+        System.out.println(testList.get(1).getTestContent());
     }
 
     @Test
     public void findAllTest(){
         com.sie.domain.Test t = new com.sie.domain.Test();
         t.setTestType("4");
-        List<com.sie.domain.Test> testList= testManageMapper.findAllTest(t);
-        System.out.println(testList.size());
+        List<com.sie.domain.TestEx> testList= testManageMapper.findAllTest(t);
+        System.out.println(testList.get(1).getLesson().getLesName());
+        System.out.println(testList.get(1).getTestId());
+        System.out.println(testList.get(1).getTestContent());
     }
 }

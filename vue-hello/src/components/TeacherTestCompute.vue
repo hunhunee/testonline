@@ -26,19 +26,41 @@ import router from '@/router/index'
                   },
                   {
                       title: '试题科目',
-                      key: 'testCourse'
+                      key: 'lesName'
                   },
                   {
                       title: '试题类型',
                       key: 'testType'
                   },
-                  {
-                      title: '正确答案',
-                      key: 'rightans1'
-                  },
+
                   {
                       title: '状态',
                       key: 'testStatus'
+                  },
+                  {
+                      title: '试题详情',
+                      key: 'detail',
+                      width: 100,
+                      align: 'center',
+                      render: (h, params) => {
+                          return h('div', [
+                              h('Button', {
+                                  props: {
+                                      type: 'primary',
+                                      size: 'small'
+                                  },
+                                  style: {
+                                      marginRight: '5px'
+                                  },
+                                  on: {
+                                      click: () => {
+                                          this.detail(params.index)
+                                      }
+                                  }
+                              }, 'detail'),
+
+                          ]);
+                      }
                   },
                   {
                       title: 'Action',
@@ -96,7 +118,7 @@ import router from '@/router/index'
               testId:this.data[index].testId,
               testContent:this.data[index].testContent,
               rightans1:this.data[index].rightans1,
-              testCourse:this.data[index].testCourse,
+              testCourse:this.data[index].lesName,
               testType:this.data[index].testType,
               testStatus:this.data[index].testStatus
             }
@@ -115,7 +137,17 @@ import router from '@/router/index'
          add() {
            this.$store.dispatch('addBeforeTest');
            router.push({ path: '/teacher_index/teacher_test_compute_aou' });
-         }
+         },
+         detail (index) {
+                         this.$Modal.info({
+                             title: 'Test Details',
+                             content: `试题内容：${this.data[index].testContent}<br>
+                                       正确答案: ${this.data[index].rightans1}<br>
+                                       科目: ${this.data[index].lesName}<br>
+                                       试题类型: ${this.data[index].testType}<br>
+                                       状态: ${this.data[index].testStatus}<br>`
+                         })
+                     }
 
         },
         computed: {

@@ -30,39 +30,42 @@ import router from '@/router/index'
                   },
                   {
                       title: '试题科目',
-                      key: 'testCourse'
+                      key: 'lesName'
                   },
                   {
                       title: '试题类型',
                       key: 'testType'
                   },
-                  {
-                      title: '答案1',
-                      key: 'testAns1'
-                  },
-                  {
-                      title: '答案2',
-                      key: 'testAns2'
-                  },
-                  {
-                      title: '答案3',
-                      key: 'testAns3'
-                  },
-                  {
-                      title: '答案4',
-                      key: 'testAns4'
-                  },
-                  {
-                      title: '正确答案1',
-                      key: 'rightans1'
-                  },
-                  {
-                      title: '正确答案2',
-                      key: 'rightans2'
-                  },
+
                   {
                       title: '状态',
                       key: 'testStatus'
+                  },
+
+                  {
+                      title: '试题详情',
+                      key: 'detail',
+                      width: 100,
+                      align: 'center',
+                      render: (h, params) => {
+                          return h('div', [
+                              h('Button', {
+                                  props: {
+                                      type: 'primary',
+                                      size: 'small'
+                                  },
+                                  style: {
+                                      marginRight: '5px'
+                                  },
+                                  on: {
+                                      click: () => {
+                                          this.detail(params.index)
+                                      }
+                                  }
+                              }, 'detail'),
+
+                          ]);
+                      }
                   },
                   {
                       title: 'Action',
@@ -113,7 +116,7 @@ import router from '@/router/index'
 
           }
       },
- 
+
       created: function () {
        console.log("created");
 
@@ -132,7 +135,7 @@ import router from '@/router/index'
 
 
             for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
-               console.log(this.lessonIdString.split(',')[i]);
+
                this.lessonList.push({
                  value:this.lessonIdString.split(',')[i],
                  label:this.lessonNameString.split(',')[i]
@@ -185,6 +188,23 @@ import router from '@/router/index'
           this.$store.dispatch('findTest',{data});
           this.data=this.$store.state.test.test
          },
+
+         detail (index) {
+                         this.$Modal.info({
+                             title: 'Test Details',
+                             content: `试题内容：${this.data[index].testContent}<br>
+                                       试题答案1: ${this.data[index].testAns1}<br>
+                                       试题答案2: ${this.data[index].testAns2}<br>
+                                       试题答案3: ${this.data[index].testAns3}<br>
+                                       试题答案4: ${this.data[index].testAns4}<br>
+                                       正确答案1: ${this.data[index].rightans1}<br>
+                                       正确答案2: ${this.data[index].rightans1}<br>
+                                       科目: ${this.data[index].lesName}<br>
+                                       试题类型: ${this.data[index].testType}<br>
+                                       状态: ${this.data[index].testStatus}<br>`
+                         })
+                     }
+
 
         },
         computed: {

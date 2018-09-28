@@ -13,6 +13,22 @@ public class StudentAnswer {
 
     private String stuAnswerfour;
 
+    @Override
+    public String toString() {
+        return "StudentAnswer{" +
+                "lesName='" + lesName + '\'' +
+                ", totalscore=" + totalscore +
+                ", stuClass='" + stuClass + '\'' +
+                '}';
+    }
+//    private String stuNum;
+//    public String getStuNum() {
+//        return stuNum;
+//    }
+//    public void setStuNum(String stuNum) {
+//        this.stuNum = stuNum;
+//    }
+
     private String rightanswerone;
 
     private String rightanswertwo;
@@ -31,9 +47,18 @@ public class StudentAnswer {
 
     private String fourscore;
 
-    private int totalscore;
+    private Double totalscore;
+
+    public Double getTotalscore() {
+        return totalscore;
+    }
+
+    public void setTotalscore(Double totalscore) {
+        this.totalscore = totalscore;
+    }
 
     private String stuClass;
+
 
     private String stuAnsXxx2;
 
@@ -124,7 +149,7 @@ public class StudentAnswer {
     }
 
     public void setLesName(String lesName) {
-        this.lesName = lesName == null ? null : lesName.trim();
+        this.lesName = lesName;
     }
 
     public String getOnescore() {
@@ -159,13 +184,6 @@ public class StudentAnswer {
         this.fourscore = fourscore == null ? null : fourscore.trim();
     }
 
-    public int getTotalscore() {
-        return totalscore;
-    }
-
-    public void setTotalscore(int totalscore) {
-        this.totalscore = totalscore;
-    }
 
     public String getStuClass() {
         return stuClass;

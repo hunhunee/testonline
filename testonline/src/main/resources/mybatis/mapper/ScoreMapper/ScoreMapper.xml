@@ -1,12 +1,40 @@
-<!--<!DOCTYPE mapper-->
-        <!--PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
-        <!--"http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
-<!--<mapper namespace="com.sie.mapper.ScoreMappper.ScoreMapper">-->
-    <!---->
-    <!--<resultMap id="BaseScore" type=""-->
-    <!---->
-    <!--<select id="findScoreByStuId" parameterType="java.lang.String"-->
-            <!--resultType=""-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.ScoreManagerMapper.ScoreMapper">
 
+    <resultMap id="BaseScoreResultMap" type="com.sie.domain.Student">
+       <id property="stuNum" column="stu_num"></id>
+       <result property="stuName" column="stu_name"></result>
+       <collection property="studentAnswer" ofType="com.sie.domain.StudentAnswer">
+           <result property="stuClass" column="stu_class"></result>
+           <result property="lesName" column="les_name"></result>
+           <result property="totalscore" column="totalscore"></result>
+       </collection>
+    </resultMap>
 
-<!--</mapper>-->
+    <!--查询学生各科的成绩-->
+    <select id="findScoreByStuId" parameterType="java.lang.String"
+            resultMap="BaseScoreResultMap">
+    SELECT student.stu_name ,student.stu_num,student_answer.stu_class , les_name ,totalscore
+        FROM student_answer,student
+        WHERE student.stu_id = student_answer.stu_id AND student.stu_num = #{value}
+    </select>
+    <!--教师- 平均分查询 -->
+    <select id="findAvgScore" parameterType="java.lang.String" resultType="java.lang.Double">
+    SELECT AVG(totalscore) FROM student_answer
+        WHERE stu_class = #{value1} AND les_name = #{value2}
+    </select>
+
+    <!--教师 -最高成绩查询 -->
+    <select id="findMaxScore" parameterType="java.lang.String" resultType="java.lang.Double">
+    SELECT MAX(totalscore) FROM student_answer
+        WHERE stu_class = #{value1} AND les_name = #{value2}
+    </select>
+
+    <!--教师 -最低成绩查询 -->
+    <select id="findMinScore" parameterType="java.lang.String" resultType="java.lang.Double">
+    SELECT MIN(totalscore) FROM student_answer
+        WHERE stu_class =  #{value1}  AND les_name = #{value2}
+    </select>
+</mapper>

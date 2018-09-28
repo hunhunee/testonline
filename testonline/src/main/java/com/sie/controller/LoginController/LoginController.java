@@ -57,10 +57,12 @@ public class LoginController {
                   u.setSex(student.getStuSex());
                   u.setUsernum(student.getStuNum());
                   u.setIdentity("3");
-
               }
+              request.setAttribute("StudentByNum",u);
 
          }
+        System.out.println(request.getAttribute("StudentByNum"));
+
         return u;
     }
 }

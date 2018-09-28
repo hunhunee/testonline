@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(value = "com.sie.mapper")
 public class TestonlineApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TestonlineApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TestonlineApplication.class, args);
+    }
 }

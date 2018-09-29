@@ -40,8 +40,8 @@
         data () {
             return {
               formInline:{
-              password:'',
-                newpassword:'',
+                  password:'',
+                  newpassword:'',
                   repassword:'',
                   radio:'1'
               },
@@ -63,13 +63,14 @@
             }
         },
         methods: {
-          handleSubmit(password){
+          handleSubmit(){
               const axios = require('axios');
               let data = {
                   "password":this.formInline.password,
                   "newpassword":this.formInline.newpassword,
                   "repassword":this.formInline.repassword,
-                  "identity":this.formInline.radio
+                  "identity":this.formInline.radio,
+                  "userid":localStorage.getItem("userid")
               }
               this.$store.dispatch('userLayout',{data});
 

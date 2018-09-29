@@ -1,9 +1,9 @@
 package com.sie.service.InforMangeService.InforManageServiceImpl;
 
-import com.sie.domain.Admin;
+import com.sie.domain.Infor;
 import com.sie.domain.Student;
-import com.sie.domain.Teacher;
 import com.sie.mapper.InforMangeMapper.InforMangeMapper;
+import com.sie.mapper.PersonManageMapper.StudentManageMapper;
 import com.sie.service.InforMangeService.InforManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,26 +13,26 @@ import java.util.List;
 public class InforManagerServiceImpl implements InforManagerService {
     @Autowired
     private InforMangeMapper inforMangeMapper;
-
+    @Autowired
+    private StudentManageMapper studentManageMapper;
     @Override
-    public List<Admin> updateAdmin(Admin admin) {
-        inforMangeMapper.updateAdmin(admin);
-        List<Admin> adminList = inforMangeMapper.updateAdmin();
+    public List<Student> updateAdmin(Infor infor) {
+        inforMangeMapper.updateAdmin(infor);
+        List<Student> adminList = studentManageMapper.selectAllStudent();
         return adminList;
     }
-
     @Override
-    public List<Teacher> updateTeacher(Teacher teacher) {
-        inforMangeMapper.updateTeacher(teacher);
-        List<Teacher> teacherList = inforMangeMapper.updateTeacher();
+   public List<Student> updateTeacher(Infor infor){
+        inforMangeMapper.updateTeacher(infor);
+        List<Student> teacherList = studentManageMapper.selectAllStudent();
         return teacherList;
     }
-
     @Override
-    public List<Student> updateStudent(Student student) {
-        inforMangeMapper.updateStudent(student);
-        List<Student> studentList = inforMangeMapper.updateStudent();
-        return studentList;
+   public List<Student> updateStudent(Infor infor) {
+        inforMangeMapper.updateStudent(infor);
+       List<Student> studentList = studentManageMapper.selectAllStudent();
+      return studentList;
     }
+
 
 }

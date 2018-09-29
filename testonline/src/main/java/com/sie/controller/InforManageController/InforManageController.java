@@ -29,9 +29,11 @@ public class InforManageController {
                 i.setUsernum(admin.getAdmNum());
                 i.setName(admin.getAdmName());
                 i.setIdentity("1");
+                inforManagerService.updateAdmin(infor);
                 System.out.println("Admin密码:" + infor.getPassword());
                 System.out.println("Admin新密码:" + infor.getNewpassword());
                 System.out.println("Admin确认密码:" + infor.getRepassword());
+                System.out.println(infor.getUserid());
 
             }
         } else if (infor.getIdentity().equals("2")) {
@@ -43,9 +45,11 @@ public class InforManageController {
                 i.setUsernum(teacher.getTeaNum());
                 i.setName(teacher.getTeaName());
                 i.setIdentity("2");
+                inforManagerService.updateTeacher(infor);
                 System.out.println("Teacher密码:" + infor.getPassword());
                 System.out.println("Teacher新密码:" + infor.getNewpassword());
                 System.out.println("Teacher确认密码:" + infor.getRepassword());
+                System.out.println(infor.getUserid());
             }
 
         } else {
@@ -58,10 +62,11 @@ public class InforManageController {
                 i.setRepassword(student.getStuPassword());
                 i.setNewpassword(student.getStuPassword());
                 i.setIdentity("3");
+                inforManagerService.updateStudent(infor);
                 System.out.println("Student密码:" + infor.getPassword());
                 System.out.println("Student新密码:" + infor.getNewpassword());
                 System.out.println("Student确认密码:" + infor.getRepassword());
-
+                System.out.println(infor.getUserid());
             }
         }
         return i;

@@ -1,18 +1,17 @@
 package com.sie.service.InforMangeService;
 
-import com.sie.domain.Admin;
+import com.sie.domain.Infor;
 import com.sie.domain.Student;
-import com.sie.domain.Teacher;
 import java.util.List;
 
 
 public interface InforManagerService {
 
-    public List<Admin> updateAdmin(Admin admin);
+    public List<Student> updateAdmin(Infor infor);
 
-    public List<Teacher> updateTeacher(Teacher teacher);
+    public List<Student> updateTeacher(Infor infor);
 
-    public List<Student> updateStudent(Student student);
+   public List<Student> updateStudent(Infor infor);
 
 
 

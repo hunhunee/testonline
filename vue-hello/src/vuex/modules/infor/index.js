@@ -11,6 +11,7 @@ export default {
       identity:"",
       name:"",
       usernum:"",
+      admpassword:'',
 
   },
   getters: {
@@ -42,9 +43,9 @@ export default {
                case 1:
                  console.log("AdminMessage密码已修改");
                  state.usernum=data.data.usernum,
-                 state.password=data.data.password,
-                 state.newpassword=data.data.newpassword,
-                 state.repassword=data.data.repassword,
+                 state.password=data.data.admpassword,
+                 state.newpassword=data.data.admnewpassword,
+                 state.repassword=data.data.admrepassword,
                  state.name=data.data.name,
                  localStorage.setItem("identity",data.data.identity);
                  console.log(localStorage.getItem("identity"));

@@ -1,22 +1,14 @@
 package com.sie.mapper.InforMangeMapper;
 
-import com.sie.domain.Admin;
-import com.sie.domain.Student;
-import com.sie.domain.Teacher;
-import java.util.List;
-
+import com.sie.domain.Infor;
 
 public interface InforMangeMapper {
 
-     public void updateAdmin(Admin admin);
+     public void updateAdmin(Infor infor);
 
-     public void updateTeacher(Teacher teacher);
+    public void updateTeacher(Infor infor);
 
-     public void updateStudent(Student student);
+    public void updateStudent(Infor infor);
 
-     public List<Admin> updateAdmin();
 
-     public List<Teacher> updateTeacher();
-
-     public List<Student> updateStudent();
 }

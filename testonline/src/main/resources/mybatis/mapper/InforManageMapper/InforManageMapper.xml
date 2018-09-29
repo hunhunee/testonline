@@ -4,16 +4,16 @@
 <mapper namespace="com.sie.mapper.InforMangeMapper.InforMangeMapper">
 
 
-    <update id="updateAdmin" parameterType="admin" >
-        UPDATE admin set adm_name=#{admName},adm_password=#{admPassword} where adm_num=#{admNum};
+    <update id="updateAdmin" parameterType="infor" >
+        UPDATE admin set adm_password=#{newpassword} where adm_id=#{userid};
     </update>
 
-    <update id="updateTeacher" parameterType="teacher" >
-        UPDATE teacher set tea_name=#{teaName},tea_password=#{teaPassword} where tea_num=#{teaNum};
+    <update id="updateTeacher" parameterType="infor" >
+        UPDATE teacher set tea_password=#{newpassword} where tea_id=#{userid};
     </update>
 
-    <update id="updateStudent" parameterType="student" >
-        UPDATE student set stu_name=#{stuName},stu_password=#{stuPassword} where stu_num=#{stuNum};
+    <update id="updateStudent" parameterType="infor" >
+        UPDATE student set stu_password=#{newpassword} where stu_id=#{userid};
     </update>
 
 </mapper>

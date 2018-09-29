@@ -42,7 +42,7 @@ public class Infor {
     }
 
 
-    public int getUseridid() {
+    public int getUserid() {
         return userid;
     }
 

@@ -21,6 +21,7 @@ public class TestManageServiceImpl implements TestManageService{
     public List<TestEx> addTest(Test test) {
         testManageMapper.addTest(test);
         List<TestEx> testList =testManageMapper.findAllTest(test);
+
         return testList;
     }
 
@@ -28,7 +29,8 @@ public class TestManageServiceImpl implements TestManageService{
     public List<TestEx> deleteTest(Test test) {
 
         testManageMapper.deleteTest(test);
-        List<TestEx> testList =testManageMapper.findTest(test);
+        List<TestEx> testList =testManageMapper.findAllTest(test);
+
         return testList;
     }
 
@@ -37,6 +39,9 @@ public class TestManageServiceImpl implements TestManageService{
 
         testManageMapper.updateTest(test);
         List<TestEx> testList= testManageMapper.findAllTest(test);
+        for (int i = 0; i <testList.size() ; i++) {
+            testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+        }
         return testList;
     }
 

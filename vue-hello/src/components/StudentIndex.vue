@@ -59,6 +59,16 @@
                         <span>个人信息</span>
                     </MenuItem>
                 </Menu>
+                <Modal
+                    v-model="modal"
+                    title="message"
+
+                    @on-ok="ok"
+                    @on-cancel="cancel">
+                    <p>
+                      请确认进行考试，进入考试后无法退出！
+                    </p>
+                </Modal>
             </Sider>
             <Layout>
             <Header >
@@ -93,23 +103,27 @@ import router from '@/router/index'
                 isCollapsed: false,
                 data:{
                   testCourse:""
-                }
+                },
+                modal:false
             };
         },
         methods:{
           test(name){
-            let data =this.data;
+
             switch (name) {
               case "1-1":
               router.push({ path: '/student_index/student_test' });
                 break;
               case "1-1-1-1":
-                this.data.testCourse="1";
-                this.$store.dispatch('findExamPaper',{data});
+                 this.data.testCourse="1";
+                 this.modal=true
+
                 break;
               case "1-1-1-2":
-                this.data.testCourse="2";
-                this.$store.dispatch('findExamPaper',{data});
+                 this.data.testCourse="2";
+                 this.modal=true
+
+
                 break;
               case "1-2":
               router.push({ path: '/student_index/student_test_result' });
@@ -120,7 +134,17 @@ import router from '@/router/index'
               default:
 
             }
+          },
+
+          ok:function(){
+                 let data =this.data;
+                //alert(this.data.testCourse)
+                this.$store.dispatch('findExamPaper',{data});
+          },
+          cancel:function(){
+
           }
+
         },
         computed: {
             menuitemClasses: function () {

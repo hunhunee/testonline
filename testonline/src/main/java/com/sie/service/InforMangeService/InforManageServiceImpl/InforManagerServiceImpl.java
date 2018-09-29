@@ -1,37 +1,50 @@
 package com.sie.service.InforMangeService.InforManageServiceImpl;
 
 import com.sie.domain.Infor;
-import com.sie.domain.Student;
 import com.sie.mapper.InforMangeMapper.InforMangeMapper;
 import com.sie.mapper.PersonManageMapper.StudentManageMapper;
 import com.sie.service.InforMangeService.InforManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class InforManagerServiceImpl implements InforManagerService {
     @Autowired
     private InforMangeMapper inforMangeMapper;
-    @Autowired
-    private StudentManageMapper studentManageMapper;
     @Override
-    public List<Student> updateAdmin(Infor infor) {
-        inforMangeMapper.updateAdmin(infor);
-        List<Student> adminList = studentManageMapper.selectAllStudent();
-        return adminList;
+    public String updateAdmin(Infor infor) {
+        String oldPwd= inforMangeMapper.findAdminPwd(infor);
+        if(oldPwd.equals(infor.getPassword())){
+            System.out.println("密码正确！");
+            inforMangeMapper.updateAdmin(infor);
+            return "修改密码成功！";
+        }else{
+            return "您输入的旧密码不正确！";
+        }
     }
     @Override
-   public List<Student> updateTeacher(Infor infor){
-        inforMangeMapper.updateTeacher(infor);
-        List<Student> teacherList = studentManageMapper.selectAllStudent();
-        return teacherList;
+   public String updateTeacher(Infor infor){
+        String oldPwd = inforMangeMapper.findTeacherPwd(infor);
+        if(oldPwd.equals(infor.getPassword())){
+            System.out.println("密码正确!");
+            inforMangeMapper.updateTeacher(infor);
+            return "修改密码成功！";
+        }else {
+            return "您输入的旧密码不正确！";
+        }
     }
     @Override
-   public List<Student> updateStudent(Infor infor) {
-        inforMangeMapper.updateStudent(infor);
-       List<Student> studentList = studentManageMapper.selectAllStudent();
-      return studentList;
+   public String updateStudent(Infor infor) {
+        String oldPwd = inforMangeMapper.findStudentPwd(infor);
+        if(oldPwd.equals(infor.getPassword())){
+            System.out.println("密码正确!");
+            inforMangeMapper.updateStudent(infor);
+            return "修改密码成功！";
+        }else {
+            return "您输入的旧密码不正确！";
+        }
+
+
     }
 
 

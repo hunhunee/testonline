@@ -21,38 +21,37 @@ export default {
   },
   actions:{
     userLayout({commit},{data}){
-     console.log("userLayout");
-     console.log(data)
      api.updateInfor(data)
      .then((response) => {
         commit('userLayout_m',response);
      })
      .catch((error)=>{
         console.log(error);
-       } );
-
+       }
+     );
    }
   },
   mutations:{
     userLayout_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
+      console.log("userLayout_m");
       console.log(data)
       switch (data.statusText) {
         case 'OK':
              switch (data.data.identity) {
-               case 1:
+               case '1':
                  console.log("AdminMessage密码已修改");
                  state.usernum=data.data.usernum,
-                 state.password=data.data.admpassword,
-                 state.newpassword=data.data.admnewpassword,
-                 state.repassword=data.data.admrepassword,
+                 state.password=data.data.password,
+                 state.newpassword=data.data.newpassword,
+                 state.repassword=data.data.repassword,
                  state.name=data.data.name,
                  localStorage.setItem("identity",data.data.identity);
                  console.log(localStorage.getItem("identity"));
                  router.push({ path: 'admin_message' }) ;
                  break;
 
-                 case 2:
+                 case '2':
                  console.log("TeacherMessage密码已修改");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,
@@ -64,7 +63,7 @@ export default {
                  router.push({ path: 'teacher_message' }) ;
                  break;
 
-                 case 3:
+                 case '3':
                  console.log("StudentMessage密码已修改");
                  state.usernum=data.data.usernum,
                  state.password=data.data.password,

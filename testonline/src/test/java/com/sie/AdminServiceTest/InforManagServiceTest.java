@@ -1,6 +1,6 @@
 package com.sie.AdminServiceTest;
 
-import com.sie.domain.Admin;
+import com.sie.domain.Infor;
 import com.sie.domain.Student;
 import com.sie.domain.Teacher;
 import com.sie.service.InforMangeService.InforManagerService;
@@ -17,14 +17,12 @@ public class InforManagServiceTest {
     private InforManagerService inforManagerService;
     @Test
     public void updateAdmintest(){
-        Admin admin = new Admin();
-        admin.setAdmNum("a001");
-        admin.setAdmName("张三");
-        admin.setAdmPassword("123456");
-       // inforManagerService.updateAdmin(admin);
-        System.out.println("编号:"+admin.getAdmNum());
-        System.out.println("姓名:"+admin.getAdmName());
-        System.out.println("密码:"+admin.getAdmPassword());
+        //测试管理员密码是否正确
+         Infor infor = new Infor();
+         infor.setUserid(1);
+         infor.setPassword("12");
+         infor.setNewpassword("12");
+        inforManagerService.updateAdmin(infor);
     }
 
     @Test

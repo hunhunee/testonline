@@ -21,7 +21,24 @@ public class TestManageServiceImpl implements TestManageService{
     public List<TestEx> addTest(Test test) {
         testManageMapper.addTest(test);
         List<TestEx> testList =testManageMapper.findAllTest(test);
+        for (int i = 0; i <testList.size() ; i++) {
+            testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+            if(testList.get(i).getTestType().equals("1")){
+                testList.get(i).setTestTypeName("单选题");
+            }else if(testList.get(i).getTestType().equals("2")){
+                testList.get(i).setTestTypeName("多选题");
+            }else if(testList.get(i).getTestType().equals("3")){
+                testList.get(i).setTestTypeName("判断题");
+            }else{
+                testList.get(i).setTestTypeName("计算题");
+            }
 
+            if (testList.get(i).getTestStatus().equals("0")){
+                testList.get(i).setTestStatusName("随机");
+            }else{
+                testList.get(i).setTestStatusName("固定");
+            }
+        }
         return testList;
     }
 
@@ -30,7 +47,24 @@ public class TestManageServiceImpl implements TestManageService{
 
         testManageMapper.deleteTest(test);
         List<TestEx> testList =testManageMapper.findAllTest(test);
+        for (int i = 0; i <testList.size() ; i++) {
+            testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+            if(testList.get(i).getTestType().equals("1")){
+                testList.get(i).setTestTypeName("单选题");
+            }else if(testList.get(i).getTestType().equals("2")){
+                testList.get(i).setTestTypeName("多选题");
+            }else if(testList.get(i).getTestType().equals("3")){
+                testList.get(i).setTestTypeName("判断题");
+            }else{
+                testList.get(i).setTestTypeName("计算题");
+            }
 
+            if (testList.get(i).getTestStatus().equals("0")){
+                testList.get(i).setTestStatusName("随机");
+            }else{
+                testList.get(i).setTestStatusName("固定");
+            }
+        }
         return testList;
     }
 
@@ -41,6 +75,21 @@ public class TestManageServiceImpl implements TestManageService{
         List<TestEx> testList= testManageMapper.findAllTest(test);
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+            if(testList.get(i).getTestType().equals("1")){
+                testList.get(i).setTestTypeName("单选题");
+            }else if(testList.get(i).getTestType().equals("2")){
+                testList.get(i).setTestTypeName("多选题");
+            }else if(testList.get(i).getTestType().equals("3")){
+                testList.get(i).setTestTypeName("判断题");
+            }else{
+                testList.get(i).setTestTypeName("计算题");
+            }
+
+            if (testList.get(i).getTestStatus().equals("0")){
+                testList.get(i).setTestStatusName("随机");
+            }else{
+                testList.get(i).setTestStatusName("固定");
+            }
         }
         return testList;
     }
@@ -51,6 +100,21 @@ public class TestManageServiceImpl implements TestManageService{
 
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+            if(testList.get(i).getTestType().equals("1")){
+                testList.get(i).setTestTypeName("单选题");
+            }else if(testList.get(i).getTestType().equals("2")){
+                testList.get(i).setTestTypeName("多选题");
+            }else if(testList.get(i).getTestType().equals("3")){
+                testList.get(i).setTestTypeName("判断题");
+            }else{
+                testList.get(i).setTestTypeName("计算题");
+            }
+
+            if (testList.get(i).getTestStatus().equals("0")){
+                testList.get(i).setTestStatusName("随机");
+            }else{
+                testList.get(i).setTestStatusName("固定");
+            }
         }
         return testList;
     }
@@ -61,6 +125,21 @@ public class TestManageServiceImpl implements TestManageService{
         List<TestEx> testList =testManageMapper.findAllTest(test);
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
+            if(testList.get(i).getTestType().equals("1")){
+                 testList.get(i).setTestTypeName("单选题");
+            }else if(testList.get(i).getTestType().equals("2")){
+                testList.get(i).setTestTypeName("多选题");
+            }else if(testList.get(i).getTestType().equals("3")){
+                testList.get(i).setTestTypeName("判断题");
+            }else{
+                testList.get(i).setTestTypeName("计算题");
+            }
+
+            if (testList.get(i).getTestStatus().equals("0")){
+                testList.get(i).setTestStatusName("随机");
+            }else{
+                testList.get(i).setTestStatusName("固定");
+            }
         }
         return testList;
     }

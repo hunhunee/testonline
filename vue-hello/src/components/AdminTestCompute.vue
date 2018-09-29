@@ -34,12 +34,12 @@ import router from '@/router/index'
                   },
                   {
                       title: '试题类型',
-                      key: 'testType'
+                      key: 'testTypeName'
                   },
 
                   {
                       title: '状态',
-                      key: 'testStatus'
+                      key: 'testStatusName'
                   },
 
                   {
@@ -192,8 +192,8 @@ import router from '@/router/index'
                                        正确答案: ${this.data[index].rightans1}<br>
 
                                        科目: ${this.data[index].lesName}<br>
-                                       试题类型: ${this.data[index].testType}<br>
-                                       状态: ${this.data[index].testStatus}<br>`
+                                       试题类型: ${this.data[index].testTypeName}<br>
+                                       状态: ${this.data[index].testStatusName}<br>`
                          })
                      }
 

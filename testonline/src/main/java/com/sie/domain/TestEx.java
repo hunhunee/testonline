@@ -12,6 +12,24 @@ public class TestEx extends Test{
     private Lesson lesson;
     private String lesName;
     private int lesId;
+    private String testTypeName;
+    private String testStatusName;
+
+    public String getTestTypeName() {
+        return testTypeName;
+    }
+
+    public void setTestTypeName(String testTypeName) {
+        this.testTypeName = testTypeName;
+    }
+
+    public String getTestStatusName() {
+        return testStatusName;
+    }
+
+    public void setTestStatusName(String testStatusName) {
+        this.testStatusName = testStatusName;
+    }
 
     public String getLesName() {
         return lesName;

@@ -26,23 +26,41 @@ import router from '@/router/index'
                   },
                   {
                       title: '试题科目',
-                      key: 'testCourse'
+                      key: 'lesName'
                   },
                   {
                       title: '试题类型',
-                      key: 'testType'
+                      key: 'testTypeName'
+                  },
+
+                  {
+                      title: '状态',
+                      key: 'testStatusName'
                   },
                   {
-                      title: '答案1',
-                      key: 'testAns1'
-                  },
-                  {
-                      title: '答案2',
-                      key: 'testAns2'
-                  },
-                  {
-                      title: '正确答案',
-                      key: 'rightans1'
+                      title: '试题详情',
+                      key: 'detail',
+                      width: 100,
+                      align: 'center',
+                      render: (h, params) => {
+                          return h('div', [
+                              h('Button', {
+                                  props: {
+                                      type: 'primary',
+                                      size: 'small'
+                                  },
+                                  style: {
+                                      marginRight: '5px'
+                                  },
+                                  on: {
+                                      click: () => {
+                                          this.detail(params.index)
+                                      }
+                                  }
+                              }, 'detail'),
+
+                          ]);
+                      }
                   },
                   {
                       title: 'Action',
@@ -85,8 +103,14 @@ import router from '@/router/index'
           }
       },
         created: function () {
- 
-         this.data=this.$store.state.test.test
+          console.log("created");
+
+               setInterval(()=>{
+                  this.data.length=this.$store.state.test.test.length
+                  for (var i = 0; i < this.$store.state.test.test.length; i++) {
+                    this.$set(this.data,i,this.$store.state.test.test[i])
+                  }
+               }, 1000);
        },
         methods:{
           change (index) {
@@ -97,14 +121,17 @@ import router from '@/router/index'
               testAns2:this.data[index].testAns2,
               rightans1:this.data[index].rightans1,
               testCourse:this.data[index].testCourse,
-              testType:this.data[index].testType
+              testType:this.data[index].testType,
+              testStatus:this.data[index].testStatus
             }
             this.$store.dispatch('updateBeforeTest',{data});
             router.push({ path: '/teacher_index/teacher_test_judge_aou' });
           },
           remove (index) {
             let data = {
-                "id": this.data[index].testId
+                "testId": this.data[index].testId,
+                "testType":this.data[index].testType,
+                "testCourse":this.data[index].testCourse
             }
            this.$store.dispatch('deleteTest',{data});
            this.data=this.$store.state.test.test
@@ -112,7 +139,19 @@ import router from '@/router/index'
          add() {
            this.$store.dispatch('addBeforeTest');
            router.push({ path: '/teacher_index/teacher_test_judge_aou' });
-         }
+         },
+         detail (index) {
+                         this.$Modal.info({
+                             title: 'Test Details',
+                             content: `试题内容：${this.data[index].testContent}<br>
+                                       试题答案1: ${this.data[index].testAns1}<br>
+                                       试题答案2: ${this.data[index].testAns2}<br>
+                                       正确答案: ${this.data[index].rightans1}<br>
+                                       科目: ${this.data[index].lesName}<br>
+                                       试题类型: ${this.data[index].testTypeName}<br>
+                                       状态: ${this.data[index].testStatusName}<br>`
+                         })
+                     }
 
         },
         computed: {

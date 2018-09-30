@@ -33,6 +33,11 @@
               </Input>
           </FormItem>
           <FormItem>
+            <Select v-model="status" style="width:200px" placeholder="testStatus">
+              <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
+
             <Select v-model="status" style="width:200px">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
@@ -85,6 +90,20 @@ export default {
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
                 },
+
+                statusList: [
+                  {
+                      value: '0',
+                      label: '随机'
+                  },
+                  {
+                      value: '1',
+                      label: '必考'
+                  },
+
+                  ],
+                lesson:localStorage.getItem("lesson"),
+                status:this.$store.state.test.utest.testStatus,
               statusList: [
                 {
                   value: '0',
@@ -102,24 +121,27 @@ export default {
 
               handleSubmit() {
 
-                if(this.$store.state.test.utest.testType!=null){
-                  let data = {
-                    testId:this.$store.state.test.utest.testId,
-                    testContent:this.formInline.testContent,
-                    testAns1:this.formInline.testAns1,
-                    testAns2:this.formInline.testAns2,
-                    testAns3:this.formInline.testAns3,
-                    testAns4:this.formInline.testAns4,
-                    rightans1:this.formInline.rightans1,
-                    testType:this.getTestType,
-                    testCourse:this.getLesson,
-                    testStatus:this.status,
-                  }
-                  this.$store.dispatch('updateTest',{data});
+                console.log("操作类型");
+                console.log(this.$store.state.test.action);
+               if(this.$store.state.test.action=="1"){
+                 let data = {
 
-                }else{
+                   testContent:this.formInline.testContent,
+                   testAns1:this.formInline.testAns1,
+                   testAns2:this.formInline.testAns2,
+                   testAns3:this.formInline.testAns3,
+                   testAns4:this.formInline.testAns4,
+                   rightans1:this.formInline.rightans1,
+                   testType:this.getTestType,
+                   testCourse:this.lesson,
+                   testStatus:this.status
+                 }
+                 this.$store.dispatch('addTest',{data});
+
+               }else{
                   const axios = require('axios');
                   let data = {
+                      testId:this.$store.state.test.utest.testId,
                       testContent:this.formInline.testContent,
                       testAns1:this.formInline.testAns1,
                       testAns2:this.formInline.testAns2,
@@ -127,11 +149,15 @@ export default {
                       testAns4:this.formInline.testAns4,
                       rightans1:this.formInline.rightans1,
                       testType:this.getTestType,
-                      testCourse:this.getLesson
+                      testCourse:this.lesson,
+                      testStatus:this.status
                   }
-                this.$store.dispatch('addTest',{data});
+                  this.$store.dispatch('updateTest',{data});
                 }
             }
+
+
+
 
         },
 

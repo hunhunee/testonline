@@ -2,9 +2,11 @@
 
 </style>
 <template>
+ 
     <div class="layout">
       <Table height="480" border :columns="columns" :data="data"></Table>
     </div>
+
 </template>
 <script>
     export default {

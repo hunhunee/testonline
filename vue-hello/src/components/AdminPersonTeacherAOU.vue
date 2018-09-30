@@ -15,16 +15,14 @@
               </Input>
           </FormItem>
 
-          <FormItem  prop="teaCourse" style="width: 200px">
-            <Select v-model="formInline.teaCourse" placeholder="Select your course">
-                <Option value="1">英语</Option>
-                <Option value="2">数学</Option>
-                <Option value="3">语文</Option>
+          <FormItem>
+            <Select v-model="lesson" style="width:200px" placeholder="Select your lesson">
+              <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
-        </FormItem>
+          </FormItem>
 
-        <FormItem   prop="teaClass" style="width: 200px">
-          <Select v-model="formInline.teaClass" placeholder="Select your class">
+        <FormItem   prop="teaClass" >
+          <Select v-model="formInline.teaClass" placeholder="Select your class" style="width: 200px">
               <Option value="1">一班</Option>
               <Option value="2">二班</Option>
               <Option value="3">三班</Option>
@@ -60,15 +58,36 @@ export default {
                     teaNum: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
                     ],
-                    teaCourse: [
-                        { required: true, message: 'Please fill in the course.', trigger: 'blur' },
-                    ],
                     teaClass: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
-                }
+                },
+                lessonList: [],
+                l:{value:"",
+                    label:""
+                },
+                lessonIdString:"",
+                lessonNameString:"",
+                lessonIdList:[],
+                lessonNameList:[],
+                lesson: ''
             }
         },
+        created: function () {
+         console.log("created");
+
+                        console.log("lessonlist");
+                        this.lessonIdString=localStorage.getItem("lessonIdList");
+                        this.lessonNameString=localStorage.getItem("lessonNameList");
+
+                        for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                          this.lessonList.push({
+                            value:this.lessonIdString.split(',')[i],
+                            label:this.lessonNameString.split(',')[i]
+                          })
+                       }
+
+       },
         methods: {
 
               handleSubmit() {

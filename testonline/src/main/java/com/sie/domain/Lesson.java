@@ -7,7 +7,7 @@ public class Lesson {
 
     private String lesName;
 
-    private Date lesDatatime;
+
 
     private String lesXxx1;
 
@@ -29,13 +29,6 @@ public class Lesson {
         this.lesName = lesName == null ? null : lesName.trim();
     }
 
-    public Date getLesDatatime() {
-        return lesDatatime;
-    }
-
-    public void setLesDatatime(Date lesDatatime) {
-        this.lesDatatime = lesDatatime;
-    }
 
     public String getLesXxx1() {
         return lesXxx1;

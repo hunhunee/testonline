@@ -8,7 +8,7 @@
         overflow: hidden;
         width: 69px;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        white-space: nowrap;s
         vertical-align: bottom;
         transition: width .2s ease .2s;
     }
@@ -59,11 +59,26 @@
                         <span>个人信息</span>
                     </MenuItem>
                 </Menu>
+                <Modal
+                    v-model="modal"
+                    title="message"
+
+                    @on-ok="ok"
+                    @on-cancel="cancel">
+                    <p>
+                      请确认进行考试，进入考试后无法退出！
+                    </p>
+                </Modal>
             </Sider>
             <Layout>
-                <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
-                 <div>在线考试系统---学生</div>
-                </Header>
+            <Header >
+              <Menu mode="horizontal" theme="dark" active-name="1">
+               <div class="layout-logo">在线考试系统---管理员</div>
+                   <div class="layout-nav">
+
+                   </div>
+               </Menu>
+            </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
                         <BreadcrumbItem>Home</BreadcrumbItem>
@@ -89,6 +104,8 @@ import router from '@/router/index'
                 data:{
                   testCourse:""
                 },
+
+                modal:false
                 student:{
                   //从本地获取学生的学号
                   stuNum:localStorage.getItem("usernum")
@@ -97,6 +114,7 @@ import router from '@/router/index'
         },
         methods:{
           test(name){
+
             let data =this.data;
             let student =this.student;
             switch (name) {
@@ -104,12 +122,15 @@ import router from '@/router/index'
               router.push({ path: '/student_index/student_test' });
                 break;
               case "1-1-1-1":
-                this.data.testCourse="1";
-                this.$store.dispatch('findExamPaper',{data});
+                 this.data.testCourse="1";
+                 this.modal=true
+
                 break;
               case "1-1-1-2":
-                this.data.testCourse="2";
-                this.$store.dispatch('findExamPaper',{data});
+                 this.data.testCourse="2";
+                 this.modal=true
+
+
                 break;
               case "1-2":
                 this.$store.dispatch('findStudnetScore',{student});
@@ -120,7 +141,17 @@ import router from '@/router/index'
               default:
 
             }
+          },
+
+          ok:function(){
+                 let data =this.data;
+                //alert(this.data.testCourse)
+                this.$store.dispatch('findExamPaper',{data});
+          },
+          cancel:function(){
+
           }
+
         },
         computed: {
             menuitemClasses: function () {

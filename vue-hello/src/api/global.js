@@ -14,25 +14,26 @@ export default {
        data: Qs.stringify(data)
      });
    },
+
    findAllTeacher: function () {
    return axios({
       headers: {
-          'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
       },
       method: 'post',
       url: '/api/personManage/findAllTeacher'
     });
   },
-  //-------查询学生--------
-  findAllStudent:function() {
-    return axios({
-      headers: {
-        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/personManage/findAllStudent'
-    });
-  },
+
+  findAllStudent: function () {
+  return axios({
+     headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/personManage/findAllStudent'
+   });
+ },
   deleteTeacher: function (data) {
   return axios({
      headers: {
@@ -43,6 +44,18 @@ export default {
      data:Qs.stringify(data)
 
    });
+  },
+  //---------------删除学生-----------
+  deleteStudent: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/deleteStudent',
+      data:Qs.stringify(data)
+
+    });
   },
   //---------------删除学生-----------
   deleteStudent: function (data) {
@@ -204,6 +217,25 @@ return axios({
  });
 },
 
+findAllLesson: function () {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findAllLesson'
+ });
+},
+findLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/findLessonByName',
+   data:Qs.stringify(data)
+ });
+},
 
 addExamResult: function (data) {
   var params = new URLSearchParams();
@@ -246,6 +278,43 @@ return axios({
     });
   },
 
+deleteLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/deleteLesson',
+   data:Qs.stringify(data)
+ });
+},
+
+  //教师查询所教班级及科目的同学的成绩 --教师
+  findByClassAndByLenName: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findByClassAndByLenName',
+      data:Qs.stringify(data)
+    });
+  },
+
+  //---查询最高、低、平均成绩----
+  findMinAndMaxAndAvgScore: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findMinAndMaxAndAvgScore',
+      data:Qs.stringify(data)
+    });
+  },
+
+
   //----统计不同区间成绩的个数----
   findScoreScope: function (data) {
     console.log(data)
@@ -272,6 +341,45 @@ return axios({
     });
   },
 
+
+addLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/addLesson',
+   data:Qs.stringify(data)
+ });
+ },
+
+updateLesson: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/LessonManage/updateLesson',
+   data:Qs.stringify(data)
+
+ });
+},
+
+
+//个人信息维护--修改密码
+updateInfor: function (data) {
+return axios({
+ headers: {
+     'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+ },
+ method: 'post',
+ url: '/api/inforManage/updateInfor',
+ data:Qs.stringify(data)
+
+});
+}
+
+
   //
   findByStuNum: function (data) {
     console.log(data)
@@ -284,4 +392,5 @@ return axios({
       data:Qs.stringify(data)
     });
   },
+
 }

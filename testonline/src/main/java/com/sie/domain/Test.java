@@ -25,14 +25,14 @@ public class Test {
 
     private String testType;
 
-    private Integer testStatus;
+    private String testStatus;
 
     private String testXxx2;
 
     public Test() {
     }
 
-    public Test(Integer testId, String testContent, String testAns1, String testAns2, String testAns3, String testAns4, String rightans1, String rightans2, String rightans3, String rightans4, String testCourse, String testType, Integer testStatus, String testXxx2) {
+    public Test(Integer testId, String testContent, String testAns1, String testAns2, String testAns3, String testAns4, String rightans1, String rightans2, String rightans3, String rightans4, String testCourse, String testType, String testStatus, String testXxx2) {
         this.testId = testId;
         this.testContent = testContent;
         this.testAns1 = testAns1;
@@ -146,11 +146,11 @@ public class Test {
         this.testType = testType == null ? null : testType.trim();
     }
 
-    public Integer getTestStatus() {
+    public String getTestStatus() {
         return testStatus;
     }
 
-    public void setTestStatus(Integer testStatus) {
+    public void setTestStatus(String testStatus) {
         this.testStatus = testStatus;
     }
 

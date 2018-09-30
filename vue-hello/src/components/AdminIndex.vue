@@ -37,7 +37,7 @@
                     <Submenu name="1-1">
                     <template slot="title">
                         <Icon type="ios-body" />
-                        人事管理
+                        用户管理
                     </template>
                     <MenuItem name="1-1-1">教师管理</MenuItem>
                     <MenuItem name="1-1-2">学生管理</MenuItem>
@@ -70,7 +70,7 @@
             <Header >
               <Menu mode="horizontal" theme="dark" active-name="1">
                <div class="layout-logo">在线考试系统---管理员</div>
-                   
+
                </Menu>
             </Header>
                 <Content :style="{padding: '5px 5px 5px'}">
@@ -101,6 +101,7 @@
           test(name){
             let data =this.data;
             switch (name) {
+
               case "1-1-1":
                 this.$store.dispatch('findAllTeacher');break;
               //-------学生------
@@ -124,13 +125,16 @@
                 break;
               case "1-2-4":
               this.$store.dispatch('testType',{testType:4});
-               this.data.testType=this.getTestType;
+              this.data.testType=this.getTestType;
               this.$store.dispatch('findAllTest',{data});
                 break;
               case "1-3":
               router.push({ path: '/admin_index/admin_message' });
                 break;
               default:
+
+              case"1-4":
+              this.$store.dispatch('findAllLesson');
 
             }
           }

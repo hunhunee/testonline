@@ -32,7 +32,9 @@
 
      </FormItem>
      </Form>
+
    </div>
+
 </template>
 
 <script>
@@ -78,6 +80,7 @@
         }
 
 </script>
+
 <style scoped>
  .userLayout{
            text-align:center;
@@ -86,4 +89,5 @@
       .text{
               text-align:left;
            }
+
 </style>

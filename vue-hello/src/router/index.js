@@ -16,6 +16,8 @@ import AdminTestSingleAOU from '@/components/AdminTestSingleAOU'
 import AdminTestMultipleAOU from '@/components/AdminTestMultipleAOU'
 import  AdminTestJudgeAOU from '@/components/AdminTestJudgeAOU'
 import  AdminTestComputeAOU from '@/components/AdminTestComputeAOU'
+import AdminLesson from '@/components/AdminLesson'
+import AdminLessonAou from '@/components/AdminLessonAou'
 
 import TeacherIndex from '@/components/TeacherIndex'
 import TeacherMessage from '@/components/TeacherMessage'
@@ -85,11 +87,15 @@ export default new Router({
         { path: 'admin_person_student', component: AdminPersonStudent },             //管理员对人事信息管理--学生
         { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },      //管理员对人事信息管理--教师
         { path: 'admin_person_student_aou', component: AdminPersonStudentAOU },      //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },       //管理员对人事信息管理--学生
         { path: 'admin_test_single_aou', component: AdminTestSingleAOU },
         { path: 'admin_test_multiple_aou', component: AdminTestMultipleAOU },
         { path: 'admin_test_judge_aou', component: AdminTestJudgeAOU },
         { path: 'admin_test_compute_aou', component: AdminTestComputeAOU },
+        { path: 'admin_Lesson', component: AdminLesson },                       //管理员对科目信息进行管理
+        { path: 'admin_Lesson_aou', component: AdminLessonAou },                //对科目的增删改查
       ]
     }
+
   ]
 })

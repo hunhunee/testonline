@@ -1,6 +1,7 @@
 package com.sie.mapper.TestManageMapper;
 
 import com.sie.domain.Test;
+import com.sie.domain.TestEx;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface TestManageMapper {
 
     public void updateTest(Test test);
 
-    public List<Test> findTest(Test test);
+    public List<TestEx> findTest(Test test);
 
-    public List<Test> findAllTest(Test test);
+    public List<TestEx> findAllTest(Test test);
  }

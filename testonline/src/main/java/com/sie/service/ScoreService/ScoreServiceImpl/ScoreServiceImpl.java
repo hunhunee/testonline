@@ -1,6 +1,8 @@
 package com.sie.service.ScoreService.ScoreServiceImpl;
 
+import com.sie.domain.ScoreEx;
 import com.sie.domain.Student;
+import com.sie.domain.StudentAnswer;
 import com.sie.mapper.ScoreManagerMapper.ScoreMapper;
 import com.sie.service.ScoreService.ScoreService;
 import org.apache.ibatis.annotations.Param;
@@ -11,33 +13,90 @@ import java.util.List;
 
 @Service
 public class ScoreServiceImpl implements ScoreService {
+
     @Autowired
     private ScoreMapper scoreMapper;
 
-    //查询最低成绩 教师
-    @Override
-    public Double findMinScore(String value1, String value2) throws Exception {
-        Double minScore = scoreMapper.findMinScore(value1, value2);
-        return minScore;
+    //统计不同区间成绩的个数
+    public ScoreEx findScoreScope(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {
+        ScoreEx zeroToFiftyNine = scoreMapper.findZeroToFiftyNine(teaClass, teaCourse);
+        ScoreEx sixtyToSeventyNine = scoreMapper.findSixtyToSeventyNine(teaClass, teaCourse);
+        ScoreEx eightyToeightyNine = scoreMapper.findEightyToEightyNine(teaClass, teaCourse);
+        ScoreEx ninetyToHundred = scoreMapper.findNinetyToHundred(teaClass, teaCourse);
+        ScoreEx scoreEX = new ScoreEx();
+        scoreEX.setZeroToFiftyNine(zeroToFiftyNine.getZeroToFiftyNine());
+        scoreEX.setSixtyToSeventyNine(sixtyToSeventyNine.getSixtyToSeventyNine());
+        scoreEX.setEightyToeightyNine(eightyToeightyNine.getEightyToeightyNine());
+        scoreEX.setNinetyToHundred(ninetyToHundred.getNinetyToHundred());
+        return scoreEX;
     }
 
-    //查询最高成绩  教师
+    //教师查询所教班级及科目的同学的成绩 --教师
     @Override
-    public Double findMaxScore(String value1, String value2) throws Exception {
-        Double maxScore = scoreMapper.findMaxScore(value1, value2);
-        return maxScore;
+    public List<StudentAnswer> findByClassAndByLenName(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {
+        List<StudentAnswer> byClassAndByLenName = scoreMapper.findByClassAndByLenName(teaClass, teaCourse);
+        return byClassAndByLenName;
     }
 
-    //查询平均成绩  教师
+    //教师查询学生信息by学生学号
     @Override
-    public Double findAvgScore(@Param("value1")String value1, @Param("value2")String value2) throws Exception {
-        Double avgScore = scoreMapper.findAvgScore(value1, value2);
-        return avgScore;
+    public StudentAnswer findByStuNum(@Param("stuNum")String stuNum,@Param("teaCourse") String teaCourse) throws Exception {
+        StudentAnswer byStuNum = scoreMapper.findByStuNum(stuNum, teaCourse);
+        return byStuNum;
     }
-    //学生查询各科的成绩 学生
+
+    //查询最低成绩 、最高成绩、平均成绩 --教师
     @Override
-    public List<Student> findScoreByStuId(String value) throws Exception {
-        List<Student> lists = scoreMapper.findScoreByStuId(value);
+    public ScoreEx findMinAndMaxAndAvgScore(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {
+        ScoreEx score = scoreMapper.findMinAndMaxAndAvgScore(teaClass,teaCourse);
+        return score;
+    }
+
+
+
+//    //查询区间0-59之间的成绩个数
+//    @Override
+//    public ScoreEx findZeroToFiftyNine(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {
+//        ScoreEx zeroToFiftyNine = scoreMapper.findZeroToFiftyNine(teaClass, teaCourse);
+//        return zeroToFiftyNine;
+//    }
+//
+//    //查询区间60-79之间的成绩个数
+//    @Override
+//    public ScoreEx findSixtyToSeventyNine(String teaClass, String teaCourse) throws Exception {
+//        ScoreEx sixtyToSeventyNine = scoreMapper.findSixtyToSeventyNine(teaClass, teaCourse);
+//        return sixtyToSeventyNine;
+//    }
+//
+//    //查询区间80-89之间的成绩个数
+//    @Override
+//    public ScoreEx findEightyToEightyNine(String teaClass, String teaCourse) throws Exception {
+//        ScoreEx eightyToeightyNine = scoreMapper.findEightyToEightyNine(teaClass, teaCourse);
+//        return eightyToeightyNine;
+//    }
+//
+//    //查询区间90-100之间的成绩个数
+//    @Override
+//    public ScoreEx findNinetyToHundred(String teaClass, String teaCourse) throws Exception {
+//        ScoreEx ninetyToHundred = scoreMapper.findNinetyToHundred(teaClass, teaCourse);
+//        return ninetyToHundred;
+//    }
+
+    //学生查询各科的成绩 -- 学生
+    @Override
+    public List<Student> findScoreByStuId(String stuNum) throws Exception {
+        List<Student> lists = scoreMapper.findScoreByStuId(stuNum);
+        for (int i = 0; i <lists.size() ; i++) {
+            //list.get(0)获取list集合中的第一个元素
+            for (int j = 0; j <lists.get(i).getStudentAnswer().size() ; j++){
+                //获取到Student里面的stuName值并把它赋值给StudentAnswer里面的stuName
+                lists.get(i).getStudentAnswer().get(j).setStuName(lists.get(i).getStuName());
+                //同理
+                lists.get(i).getStudentAnswer().get(j).setStuNum(lists.get(i).getStuNum());
+                lists.get(i).getStudentAnswer().get(j).setLesName(lists.get(i).getStudentAnswer().get(j).getLesson().getLesName());
+            }
+
+        }
         return lists;
     }
 

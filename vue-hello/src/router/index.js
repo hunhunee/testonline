@@ -28,6 +28,7 @@ import  TeacherTestSingleAOU from '@/components/TeacherTestSingleAOU'
 import  TeacherTestMultipleAOU from '@/components/TeacherTestMultipleAOU'
 import  TeacherTestJudgeAOU from '@/components/TeacherTestJudgeAOU'
 import  TeacherTestComputeAOU from '@/components/TeacherTestComputeAOU'
+import TeacherTestResultSelect from '@/components/TeacherTestResultSelect'
 
 import StudentIndex from '@/components/StudentIndex'
 import StudentMessage from '@/components/StudentMessage'
@@ -68,6 +69,7 @@ export default new Router({
         { path: 'teacher_test_multiple_aou', component: TeacherTestMultipleAOU },
         { path: 'teacher_test_judge_aou', component: TeacherTestJudgeAOU },
         { path: 'teacher_test_compute_aou', component: TeacherTestComputeAOU },
+        { path: 'teacher_test_result_select', component: TeacherTestResultSelect },
       ]
     }
     ,

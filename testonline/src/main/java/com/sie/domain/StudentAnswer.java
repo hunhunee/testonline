@@ -3,6 +3,16 @@ package com.sie.domain;
 public class StudentAnswer {
     private Integer stuAnsId;
 
+    private Lesson lesson;
+
+    public Lesson getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
+    }
+
     private Integer stuId;
 
     private String stuAnswerone;
@@ -12,6 +22,21 @@ public class StudentAnswer {
     private String stuAnswerthree;
 
     private String stuAnswerfour;
+
+    private  String stuNum;
+    private  String stuName;
+    public String getStuNum() {
+        return stuNum;
+    }
+    public void setStuNum(String stuNum) {
+        this.stuNum = stuNum;
+    }
+    public String getStuName() {
+        return stuName;
+    }
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
 
     @Override
     public String toString() {

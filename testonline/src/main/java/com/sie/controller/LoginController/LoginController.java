@@ -58,11 +58,7 @@ public class LoginController {
                   u.setUsernum(student.getStuNum());
                   u.setIdentity("3");
               }
-              request.setAttribute("StudentByNum",u);
-
          }
-        System.out.println(request.getAttribute("StudentByNum"));
-
         return u;
     }
 }

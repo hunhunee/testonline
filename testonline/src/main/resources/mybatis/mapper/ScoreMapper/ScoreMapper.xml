@@ -8,33 +8,90 @@
        <result property="stuName" column="stu_name"></result>
        <collection property="studentAnswer" ofType="com.sie.domain.StudentAnswer">
            <result property="stuClass" column="stu_class"></result>
-           <result property="lesName" column="les_name"></result>
            <result property="totalscore" column="totalscore"></result>
+           <association property="lesson" javaType="com.sie.domain.Lesson">
+               <id column="les_id" property="lesId"></id>
+               <result column="les_name" property="lesName"></result>
+           </association>
        </collection>
     </resultMap>
 
+    <resultMap id="BaseScoreExResultMap" type="com.sie.domain.StudentAnswer">
+        <id property="stuNum" column="stu_num"></id>
+        <result property="stuName" column="stu_name"/>
+        <result property="stuClass" column="stu_class"/>
+        <result property="lesName" column="les_name"/>
+        <result property="totalscore" column="totalscore"/>
+    </resultMap>
+
     <!--查询学生各科的成绩-->
-    <select id="findScoreByStuId" parameterType="java.lang.String"
-            resultMap="BaseScoreResultMap">
-    SELECT student.stu_name ,student.stu_num,student_answer.stu_class , les_name ,totalscore
-        FROM student_answer,student
-        WHERE student.stu_id = student_answer.stu_id AND student.stu_num = #{value}
-    </select>
-    <!--教师- 平均分查询 -->
-    <select id="findAvgScore" parameterType="java.lang.String" resultType="java.lang.Double">
-    SELECT AVG(totalscore) FROM student_answer
-        WHERE stu_class = #{value1} AND les_name = #{value2}
+    <select id="findScoreByStuId" parameterType="java.lang.String" resultMap="BaseScoreResultMap">
+
+
+      SELECT student.stu_name ,student.stu_num,student_answer.stu_class , lesson.les_name ,totalscore
+        FROM student_answer,student,lesson
+        WHERE student.stu_id = student_answer.stu_id AND student.stu_num =  #{value} AND student_answer.les_name = lesson.les_id
     </select>
 
-    <!--教师 -最高成绩查询 -->
-    <select id="findMaxScore" parameterType="java.lang.String" resultType="java.lang.Double">
-    SELECT MAX(totalscore) FROM student_answer
-        WHERE stu_class = #{value1} AND les_name = #{value2}
+    <!--教师 -最低成绩查询 、最高成绩查询 、平均分查询-->
+    <select id="findMinAndMaxAndAvgScore" parameterType="java.lang.String" resultType="com.sie.domain.ScoreEx">
+    SELECT MIN(totalscore)as minscore,MAX(totalscore) as maxscore,AVG(totalscore) as avgscore
+        FROM student_answer
+        WHERE stu_class =  #{teaClass}  AND les_name = #{teaCourse}
     </select>
 
-    <!--教师 -最低成绩查询 -->
-    <select id="findMinScore" parameterType="java.lang.String" resultType="java.lang.Double">
-    SELECT MIN(totalscore) FROM student_answer
-        WHERE stu_class =  #{value1}  AND les_name = #{value2}
+    <!--查询区间在0-59之间的成绩个数-->
+    <select id="findZeroToFiftyNine" parameterType="java.lang.String" resultType="com.sie.domain.ScoreEx">
+    SELECT COUNT(*) as zeroToFiftyNine
+        FROM student_answer
+        WHERE stu_class = #{teaClass} AND les_name = #{teaCourse} AND 0 &lt;= totalscore AND totalscore &lt;= 59
     </select>
+
+    <!--查询区间在60-79之间的成绩个数-->
+    <select id="findSixtyToSeventyNine" parameterType="java.lang.String" resultType="com.sie.domain.ScoreEx">
+    SELECT COUNT(*) as sixtyToSeventyNine
+        FROM student_answer
+        WHERE stu_class = #{teaClass} AND les_name = #{teaCourse} AND 60 &lt;= totalscore AND totalscore &lt;= 79
+    </select>
+
+    <!--查询区间在80-89之间的成绩个数-->
+    <select id="findEightyToEightyNine" parameterType="java.lang.String" resultType="com.sie.domain.ScoreEx">
+    SELECT COUNT(*) as eightyToeightyNine
+        FROM student_answer
+        WHERE stu_class = #{teaClass} AND les_name = #{teaCourse} AND 80 &lt;= totalscore AND totalscore &lt;= 89
+    </select>
+
+    <!--查询区间在90-100之间的成绩个数-->
+    <select id="findNinetyToHundred" parameterType="java.lang.String" resultType="com.sie.domain.ScoreEx">
+    SELECT COUNT(*) as ninetyToHundred
+        FROM student_answer
+        WHERE stu_class = #{teaClass} AND les_name = #{teaCourse} AND 90 &lt;= totalscore AND totalscore &lt;= 100
+    </select>
+
+    <!--教师查询所教班级及科目的同学的成绩-->
+    <select id="findByClassAndByLenName" parameterType="java.lang.String" resultMap="BaseScoreExResultMap">
+     SELECT student_answer.stu_class,lesson.les_name, stu_name,student.stu_num,totalscore
+        FROM student_answer,student,lesson
+        WHERE student.stu_id = student_answer.stu_id AND
+        student_answer.les_name = lesson.les_id AND
+         student_answer.stu_class = #{teaClass} AND
+         student_answer.les_name= #{teaCourse}
+
+    </select>
+
+    <!--根据学生的学号来查询学生的信息 -教师-->
+    <select id="findByStuNum" parameterType="java.lang.String" resultMap="BaseScoreExResultMap">
+    SELECT student_answer.stu_class,
+       lesson.les_name,
+       student.stu_name,
+       student.stu_num,
+       student_answer.totalscore
+    FROM student_answer,student,lesson
+    WHERE student.stu_num= #{stuNum }AND
+        student_answer.les_name =  #{teaCourse} AND
+        student.stu_id=student_answer.stu_id AND
+        student_answer.les_name = lesson.les_id
+    </select>
+
+
 </mapper>

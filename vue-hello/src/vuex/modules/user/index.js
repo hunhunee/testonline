@@ -47,7 +47,7 @@ export default {
                  state.userid=data.data.userid;
                  localStorage.setItem("identity",data.data.identity);
                  localStorage.setItem("userid",data.data.userid);
-
+                 localStorage.setItem("usernum",data.data.usernum);
 
                  state.sex=data.data.sex,
                  state._class=data.data._class,
@@ -65,12 +65,13 @@ export default {
 
                  localStorage.setItem("userid",data.data.userid);
                  localStorage.setItem("_class",data.data._class);
+                 localStorage.setItem("usernum",data.data.usernum);
+                 localStorage.setItem("lesson",data.data.lesson);
 
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
 
-                 localStorage.setItem("lesson",data.data.lesson);
                  console.log(localStorage.getItem("identity"));
                  router.push({ path: '/teacher_index' }) ;
                  break;
@@ -82,8 +83,8 @@ export default {
                  state.password=data.data.password,
 
                  localStorage.setItem("identity",data.data.identity);
-
                  localStorage.setItem("userid",data.data.userid);
+                 localStorage.setItem("usernum",data.data.usernum);
                  localStorage.setItem("_class",data.data._class);
 
                  state.sex=data.data.sex,

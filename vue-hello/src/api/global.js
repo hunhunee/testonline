@@ -221,8 +221,67 @@ return axios({
  });
 },
 
+  //----学生考试成绩----
+  findStudnetScore: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findStudentScore',
+      data:Qs.stringify(data)
+    });
+  },
 
+  //---查询最高、低、平均成绩----
+  findMinAndMaxAndAvgScore: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findMinAndMaxAndAvgScore',
+      data:Qs.stringify(data)
+    });
+  },
 
+  //----统计不同区间成绩的个数----
+  findScoreScope: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findScoreScope',
+      data:Qs.stringify(data)
+    });
+  },
 
+  //教师查询所教班级及科目的同学的成绩 --教师
+  findByClassAndByLenName: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findByClassAndByLenName',
+      data:Qs.stringify(data)
+    });
+  },
 
+  //
+  findByStuNum: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/findByStuNum',
+      data:Qs.stringify(data)
+    });
+  },
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="userLayout">
+  <div class="userLayout">
     <div class="text" >
         <Icon type="ios-person-outline"></Icon>
         个人信息维护--修改密码
@@ -35,9 +35,10 @@
 
 </div>
 
-</div>
+
 </template>
  <script>
+
     export default {
         data () {
             return {
@@ -75,11 +76,15 @@
 
           }
 
-            }
+
+        }
+
         }
 
 
 </script>
+
+
 <style scoped>
 
 .userLayout{
@@ -87,7 +92,8 @@
           background-color: inherit;
      }
      .text{
-        text-align:left;
-     }
 
+             text-align:left;
+          }
+ 
 </style>

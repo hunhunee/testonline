@@ -18,6 +18,7 @@ export default new Vuex.Store({
     exam:exam,
     infor:infor,
     lesson:lesson
+
   }
 
 });

@@ -252,7 +252,7 @@ return axios({
 
  });
 },
- 
+
 
 
 deleteLesson: function (data) {
@@ -340,7 +340,7 @@ return axios({
       data:Qs.stringify(data)
 
     });
-  }
+  },
 
 addLesson: function (data) {
 return axios({

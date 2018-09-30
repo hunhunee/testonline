@@ -34,7 +34,7 @@
               </Input>
           </FormItem>
           <FormItem>
-            <Select v-model="status" style="width:200px">
+            <Select v-model="status" style="width:200px" placeholder="testStatus">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>

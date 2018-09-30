@@ -21,6 +21,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public User login(User user, HttpServletRequest request){
+
         User u=new User();
          if(user.getIdentity().equals("1")){
             Admin admin= loginService.findAdminByNumAndPwd(user);

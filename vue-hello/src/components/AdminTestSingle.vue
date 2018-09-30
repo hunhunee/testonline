@@ -30,35 +30,41 @@ import router from '@/router/index'
                   },
                   {
                       title: '试题科目',
-                      key: 'testCourse'
+                      key: 'lesName'
                   },
                   {
                       title: '试题类型',
-                      key: 'testType'
+                      key: 'testTypeName'
                   },
-                  {
-                      title: '答案1',
-                      key: 'testAns1'
-                  },
-                  {
-                      title: '答案2',
-                      key: 'testAns2'
-                  },
-                  {
-                      title: '答案3',
-                      key: 'testAns3'
-                  },
-                  {
-                      title: '答案4',
-                      key: 'testAns4'
-                  },
-                  {
-                      title: '正确答案',
-                      key: 'rightans1'
-                  },
+
                   {
                       title: '状态',
-                      key: 'testStatus'
+                      key: 'testStatusName'
+                  },
+                  {
+                      title: '试题详情',
+                      key: 'detail',
+                      width: 100,
+                      align: 'center',
+                      render: (h, params) => {
+                          return h('div', [
+                              h('Button', {
+                                  props: {
+                                      type: 'primary',
+                                      size: 'small'
+                                  },
+                                  style: {
+                                      marginRight: '5px'
+                                  },
+                                  on: {
+                                      click: () => {
+                                          this.detail(params.index)
+                                      }
+                                  }
+                              }, 'detail'),
+
+                          ]);
+                      }
                   },
                   {
                       title: 'Action',
@@ -97,42 +103,49 @@ import router from '@/router/index'
                   }
               ],
               data:[],
-              lessonList: [
-                {
-                    value: '1',
-                    label: '英语'
-                },
-                {
-                    value: '2',
-                    label: '数学'
-                },
-                {
-                    value: '3',
-                    label: '物理'
-                },
-                {
-                    value: '4',
-                    label: '语文'
-                },
-
-                ],
-                lesson: ''
+              lessonList: [],
+              l:{value:"",
+                  label:""
+              },
+              lessonIdString:"",
+              lessonNameString:"",
+              lessonIdList:[],
+              lessonNameList:[],
+              lesson: ''
           }
       },
       created: function () {
        console.log("created");
+       console.log(this.$store.state.test.test[0].lesson.lesName)
+       setInterval(()=>{
+          this.data.length=this.$store.state.test.test.length
+          for (var i = 0; i < this.$store.state.test.test.length; i++) {
+            this.$set(this.data,i,this.$store.state.test.test[i])
 
-            setInterval(()=>{
-               this.data.length=this.$store.state.test.test.length
-               for (var i = 0; i < this.$store.state.test.test.length; i++) {
-                 this.$set(this.data,i,this.$store.state.test.test[i])
-               }
-            }, 1000);
+          }
+       }, 1000);
+                      console.log("lessonlist");
+                      this.lessonIdString=localStorage.getItem("lessonIdList");
+                      this.lessonNameString=localStorage.getItem("lessonNameList");
+
+                      for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                        this.lessonList.push({
+                          value:this.lessonIdString.split(',')[i],
+                          label:this.lessonNameString.split(',')[i]
+                        })
+                     }
+
+
+
      },
+
 
      destroyed: function(){
        clearInterval();
      },
+
+
+
 
 
         methods:{
@@ -185,6 +198,21 @@ import router from '@/router/index'
             this.$set(this.data,i,this.$store.state.test.test[i])
            }
          },
+
+         detail (index) {
+                         this.$Modal.info({
+                             title: 'Test Details',
+                             content: `试题内容：${this.data[index].testContent}<br>
+                                       试题答案1: ${this.data[index].testAns1}<br>
+                                       试题答案2: ${this.data[index].testAns2}<br>
+                                       试题答案3: ${this.data[index].testAns3}<br>
+                                       试题答案4: ${this.data[index].testAns4}<br>
+                                       正确答案: ${this.data[index].rightans1}<br>
+                                       科目: ${this.data[index].lesName}<br>
+                                       试题类型: ${this.data[index].testTypeName}<br>
+                                       状态: ${this.data[index].testStatusName}<br>`
+                         })
+                     }
 
         },
         computed: {

@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.LessonManageMapper.LessonManageMapper">
+
+    <select id="findLessonByName" parameterType="com.sie.domain.Lesson" resultType="com.sie.domain.Lesson">
+      SELECT * FROM lesson WHERE les_name=#{lesName};
+    </select>
+
+
+    <select id="findAllLesson"  resultType="com.sie.domain.Lesson">
+      SELECT * FROM lesson;
+    </select>
+
+
+    <update id="updateLesson" parameterType="com.sie.domain.Lesson" >
+        UPDATE lesson set les_name=#{lesName} where les_id=#{lesId};
+    </update>
+
+
+    <delete id="deleteLesson" parameterType="com.sie.domain.Lesson">
+        DELETE  from lesson WHERE  les_name=#{lesName};
+    </delete>
+
+    <insert id="addLesson" parameterType="com.sie.domain.Lesson">
+        INSERT INTO lesson (les_name) VALUES (#{lesName});
+    </insert>
+</mapper>

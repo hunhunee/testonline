@@ -75,25 +75,7 @@ export default {
                     ],
                 },
 
-                lessonList: [
-                  {
-                      value: '1',
-                      label: '英语'
-                  },
-                  {
-                      value: '2',
-                      label: '数学'
-                  },
-                  {
-                      value: '3',
-                      label: '物理'
-                  },
-                  {
-                      value: '4',
-                      label: '语文'
-                  },
 
-                  ],
 
 
                   statusList: [
@@ -110,8 +92,37 @@ export default {
                   lesson: this.$store.state.test.utest.testCourse,
                   status:this.$store.state.test.utest.testStatus,
 
+                lessonList: [],
+                l:{value:"",
+                    label:""
+                },
+                lessonIdString:"",
+                lessonNameString:"",
+                lessonIdList:[],
+                lessonNameList:[],
+
+
+
             }
         },
+
+        created:function(){
+            console.log("lessonlist");
+
+            this.lessonIdString=localStorage.getItem("lessonIdList");
+            this.lessonNameString=localStorage.getItem("lessonNameList");
+
+
+            for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+               console.log(this.lessonIdString.split(',')[i]);
+               this.lessonList.push({
+                 value:this.lessonIdString.split(',')[i],
+                 label:this.lessonNameString.split(',')[i]
+               })
+            }
+
+        },
+
         methods: {
 
 

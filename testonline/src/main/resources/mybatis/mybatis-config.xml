@@ -11,9 +11,15 @@
 
     <typeAliases>
         <typeAlias type="com.sie.domain.Teacher" alias="teacher"/>
+
         <typeAlias type="com.sie.domain.Student" alias="student"/>
+
+
+        <typeAlias type="com.sie.domain.Lesson" alias="lesson"/>
+
         <typeAlias type="com.sie.domain.Admin" alias="admin"/>
         <typeAlias type="com.sie.domain.Infor" alias="infor"/>
+        
     </typeAliases>
 
     <mappers>
@@ -23,5 +29,6 @@
         <mapper resource="mybatis/mapper/TestManageMapper/TestManageMapper.xml"/>
         <mapper resource="mybatis/mapper/LoginMapper/LoginMapper.xml"/>
         <mapper resource="mybatis/mapper/ExamMapper/ExamPaperMapper.xml"/>
+        <mapper resource="mybatis/mapper/LessonManage/LessonManageMapper.xml"></mapper>
     </mappers>
 </configuration>

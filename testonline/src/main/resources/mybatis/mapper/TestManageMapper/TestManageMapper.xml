@@ -2,6 +2,29 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sie.mapper.TestManageMapper.TestManageMapper">
+    
+    <resultMap id="testResultMap" type="com.sie.domain.TestEx">
+        <id column="test_id" property="testId"/>
+        <result column="test_content" property="testContent"/>
+        <result column="test_ans1" property="testAns1"/>
+        <result column="test_ans2" property="testAns2"/>
+        <result column="test_ans3" property="testAns3"/>
+        <result column="test_ans4" property="testAns4"/>
+        <result column="rightans1" property="rightans1"/>
+        <result column="rightans2" property="rightans2"/>
+        <result column="rightans3" property="rightans3"/>
+        <result column="rightans4" property="rightans4"/>
+        <result column="test_course" property="testCourse"/>
+        <result column="test_type" property="testType"/>
+        <result column="test_status" property="testStatus"/>
+        <result column="test_xxx2" property="testXxx2"/>
+        <association property="lesson" javaType="com.sie.domain.Lesson">
+            <id column="les_id" property="lesId"/>
+            <result column="les_name" property="lesName"/>
+            <result column="les_xxx1" property="lesXxx1"/>
+            <result column="les_xxx2" property="lesXxx2"/>
+        </association>
+    </resultMap>
     <insert id="addTest" parameterType="com.sie.domain.Test" >
         insert into test (test_content,test_ans1,test_ans2,test_ans3,test_ans4,rightans1,rightans2,rightans3,rightans4,test_course,test_type,test_status)
         VALUES (#{testContent},#{testAns1},#{testAns2},#{testAns3},#{testAns4},#{rightans1},#{rightans2},#{rightans3},#{rightans4},#{testCourse},#{testType},#{testStatus})
@@ -16,11 +39,14 @@
          UPDATE test set test_content=#{testContent},test_ans1=#{testAns1},test_ans2=#{testAns2},test_ans3=#{testAns3},test_ans4=#{testAns4},rightans1=#{rightans1},rightans2=#{rightans2},rightans3=#{rightans3},rightans4=#{rightans4},test_course=#{testCourse},test_type=#{testType},test_status=#{testStatus} WHERE test_id=#{testId}
      </update>
 
-    <select id="findTest" parameterType="com.sie.domain.Test" resultType="com.sie.domain.Test">
-         SELECT * from test where test_type=#{testType} and test_course=#{testCourse}
+    <select id="findTest" parameterType="com.sie.domain.Test" resultMap="testResultMap">
+         SELECT t.test_id,t.test_content,t.test_ans1,t.test_ans2,t.test_ans3,t.test_ans4,t.rightans1,t.rightans2,t.rightans3,t.rightans4,l.les_name,t.test_course,t.test_type,t.test_status from test t,lesson l
+         where t.test_type=#{testType} and t.test_course=#{testCourse}
+         and l.les_id =t.test_course
     </select>
 
-    <select id="findAllTest" parameterType="com.sie.domain.Test" resultType="com.sie.domain.Test">
-        SELECT * from test where test_type=#{testType}
+    <select id="findAllTest" parameterType="com.sie.domain.Test" resultMap="testResultMap">
+        SELECT t.test_id,t.test_content,t.test_ans1,t.test_ans2,t.test_ans3,t.test_ans4,t.rightans1,t.rightans2,t.rightans3,t.rightans4,l.les_name,t.test_course,t.test_type,t.test_status from test t,lesson l
+         where t.test_type=#{testType} and l.les_id =t.test_course
     </select>
 </mapper>

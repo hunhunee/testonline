@@ -5,6 +5,8 @@ import person from './modules/person/index';
 import test from './modules/test/index';
 import exam from './modules/exam/index';
 import infor from './modules/infor/index'
+import lesson from './modules/Lesson/index';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -14,7 +16,9 @@ export default new Vuex.Store({
     person:person,
     test:test,
     exam:exam,
-    infor:infor
+    infor:infor,
+    lesson:lesson
+
   }
 
 });

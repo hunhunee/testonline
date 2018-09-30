@@ -14,11 +14,12 @@
 
         <typeAlias type="com.sie.domain.Student" alias="student"/>
 
+
         <typeAlias type="com.sie.domain.Lesson" alias="lesson"/>
 
         <typeAlias type="com.sie.domain.Admin" alias="admin"/>
         <typeAlias type="com.sie.domain.Infor" alias="infor"/>
- 
+        
     </typeAliases>
 
     <mappers>

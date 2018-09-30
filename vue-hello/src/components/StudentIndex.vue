@@ -58,6 +58,10 @@
                         <Icon type="md-person-add" />
                         <span>个人信息</span>
                     </MenuItem>
+                    <MenuItem name="1-4">
+                        <Icon type="ios-end" />
+                        <span>结束页面</span>
+                    </MenuItem>
                 </Menu>
                 <Modal
                     v-model="modal"
@@ -131,6 +135,9 @@ import router from '@/router/index'
               case "1-3":
              router.push({ path: '/student_index/student_message' });
                 break;
+                case "1-4":
+               router.push({ path: '/student_index/student_end' });
+                  break;
               default:
 
             }

@@ -1,9 +1,15 @@
 <style scoped>
-
+    .text{
+            font-size: 8px;
+            text-align:right;
+         }
 </style>
 <template>
   <div class="layout">
+    <div class="text" >
+      <h1> 距离考试结束时间还有：<span style="color:red">{{time}}</span>秒</h1>
 
+  </div>
   <Card style="width:1300px">
        <p slot="title">
            <Icon type="ios-film-outline"></Icon>
@@ -11,6 +17,7 @@
        </p>
        <ul>
            <li v-for="item in examSingleList">
+
              <Card style="width:1000px">
                <p>{{ item.testContent }}</p>
                <RadioGroup v-model="item.testAnswer">
@@ -89,7 +96,10 @@
               examSingleList:[],
               examMultipleList:[],
               examJudgeList:[],
-              examComputeList:[]
+              examComputeList:[],
+              time:0
+              //minutes:0,
+            //  seconds:0
             };
         },
 
@@ -125,6 +135,16 @@
         },
 
         methods:{
+          //时间参数
+          countDown(){
+
+            let THIS=this;
+            THIS.time--;
+            //THIS.minutes--;
+          //  THIS.seconds--;
+
+          },
+
           submit:function(){
             var examList_sm =this.examSingleList.concat(this.examMultipleList);
             var examList_jm =this.examJudgeList.concat(this.examComputeList);
@@ -140,8 +160,37 @@
             }
              this.$store.dispatch('addExamResult',{data});
           }
-        }
 
+        },
+        //设定时间
+        mounted(){
+           let THIS=this;
+           THIS.time=2;
+           //THIS.minutes=(60+60)*120;
+           //THIS.seconds=5;
+           setInterval(THIS.countDown,1000);
+          },
+          //监听事件
+          watch:{
+            'time':function(newVal,oldVal){
+          if(newVal==0){
+            this.$router.push('');
+          }
+    }
+
+            // 'minutes':function(newVal,oldVal){
+            //   if(newVal>=0){
+            //     this.minutes;
+            //   }
+            // },
+              // 'seconds':function(newVal,oldVal){
+              //   if(newVal==0){
+              //      //alert("还剩5分钟");
+              //      //alert("时间到，结束!");
+              //      this.$router.push(''); //跳转到指定页面
+              //    }
+              // }
+            }
 
         }
 

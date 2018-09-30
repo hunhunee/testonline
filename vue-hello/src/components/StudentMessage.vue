@@ -2,7 +2,7 @@
   <div class="userLayout">
     <div class="text" >
         <Icon type="ios-person-outline"></Icon>
-        学生个人信息维护--修改密码
+        个人信息维护--修改密码
     </div>
 
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
@@ -28,7 +28,7 @@
      </FormItem>
 
      <FormItem>
-          <Button type="primary" @click="handleput('formInline')">修改密码</Button>
+          <Button type="primary" @click="handleSubmit('formInline')">修改</Button>
 
      </FormItem>
      </Form>
@@ -44,7 +44,8 @@
               formInline:{
               password:'',
                 newpassword:'',
-                  repassword:''
+                  repassword:'',
+                  radio:'3'
               },
               ruleInline: {
                   password: [
@@ -64,12 +65,14 @@
             }
         },
         methods: {
-          handleput(password){
+          handleSubmit(){
               const axios = require('axios');
               let data = {
                   "password":this.formInline.password,
                   "newpassword":this.formInline.newpassword,
-                  "repassword":this.formInline.repassword
+                  "repassword":this.formInline.repassword,
+                  "identity":this.formInline.radio,
+                  "userid":localStorage.getItem("userid")
               }
               this.$store.dispatch('userLayout',{data});
 

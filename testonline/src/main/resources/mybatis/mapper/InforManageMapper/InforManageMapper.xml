@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.InforMangeMapper.InforMangeMapper">
+
+
+    <update id="updateAdmin" parameterType="infor" >
+        UPDATE admin set adm_password=#{newpassword} where adm_id=#{userid};
+    </update>
+
+    <update id="updateTeacher" parameterType="infor" >
+        UPDATE teacher set tea_password=#{newpassword} where tea_id=#{userid};
+    </update>
+
+    <update id="updateStudent" parameterType="infor" >
+        UPDATE student set stu_password=#{newpassword} where stu_id=#{userid};
+    </update>
+
+    <select id="findAdminPwd" parameterType="infor" resultType="string">
+        select adm_password from admin where adm_id=#{userid}
+    </select>
+
+    <select id="findTeacherPwd" parameterType="infor" resultType="string">
+        select tea_password from teacher where tea_id=#{userid}
+    </select>
+
+    <select id="findStudentPwd" parameterType="infor" resultType="string">
+        select stu_password from student where stu_id=#{userid}
+    </select>
+
+</mapper>

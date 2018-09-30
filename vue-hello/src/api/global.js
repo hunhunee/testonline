@@ -266,17 +266,6 @@ return axios({
     });
   },
 
-  //---查询最高、低、平均成绩----
-  findMinAndMaxAndAvgScore: function (data) {
-    return axios({
-      headers: {
-        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/score/findMinAndMaxAndAvgScore',
-      data:Qs.stringify(data)
-    });
-  },
 
 deleteLesson: function (data) {
 return axios({
@@ -289,18 +278,6 @@ return axios({
  });
 },
 
-  //教师查询所教班级及科目的同学的成绩 --教师
-  findByClassAndByLenName: function (data) {
-    console.log(data)
-    return axios({
-      headers: {
-        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/score/findByClassAndByLenName',
-      data:Qs.stringify(data)
-    });
-  },
 
   //---查询最高、低、平均成绩----
   findMinAndMaxAndAvgScore: function (data) {
@@ -392,5 +369,5 @@ return axios({
       data:Qs.stringify(data)
     });
   },
-
+ 
 }

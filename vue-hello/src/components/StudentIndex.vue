@@ -114,7 +114,7 @@ import router from '@/router/index'
         },
         methods:{
           test(name){
-
+            
             let data =this.data;
             let student =this.student;
             switch (name) {

@@ -33,15 +33,18 @@
               </Input>
           </FormItem>
           <FormItem>
+<<<<<<< HEAD
             <Select v-model="status" style="width:200px" placeholder="testStatus">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
 
+=======
             <Select v-model="status" style="width:200px">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
+>>>>>>> hxjBranch
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
@@ -90,6 +93,7 @@ export default {
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
                 },
+<<<<<<< HEAD
 
                 statusList: [
                   {
@@ -104,6 +108,7 @@ export default {
                   ],
                 lesson:localStorage.getItem("lesson"),
                 status:this.$store.state.test.utest.testStatus,
+=======
               statusList: [
                 {
                   value: '0',
@@ -115,6 +120,7 @@ export default {
                 },
               ],
               status:this.$store.state.test.utest.testStatus,
+>>>>>>> hxjBranch
             }
         },
         methods: {

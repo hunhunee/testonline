@@ -112,7 +112,7 @@ public class ExamPaperServiceImpl implements ExamPaperService {
     @Override
     public void addExamResult(List<TestEx> testExList, StudentAnswer studentAnswer) {
 
-        int score = 0;
+        double score = 0;
         for (int i = 0; i < testExList.size(); i++) {
 
             switch (testExList.get(i).getTestType()) {

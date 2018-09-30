@@ -58,9 +58,7 @@ public class LoginController {
                   u.setSex(student.getStuSex());
                   u.setUsernum(student.getStuNum());
                   u.setIdentity("3");
-
               }
-
          }
         return u;
     }

@@ -1,6 +1,24 @@
 package com.sie.domain;
 
+import java.util.List;
+
 public class Student {
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentAnswer=" + studentAnswer +
+                ", stuName='" + stuName + '\'' +
+                ", stuNum='" + stuNum + '\'' +
+                '}';
+    }
+    private List<StudentAnswer> studentAnswer;
+    public List<StudentAnswer> getStudentAnswer() {
+        return studentAnswer;
+    }
+    public void setStudentAnswer(List<StudentAnswer> studentAnswer) {
+        this.studentAnswer = studentAnswer;
+    }
+
     private int stuId;
 
     private String stuName;

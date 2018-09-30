@@ -35,10 +35,18 @@
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
                 <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
-                    <MenuItem name="1-1">
+                    <!--<MenuItem name="1-1">-->
+                      <!--<Icon type="ios-paper-outline" />-->
+                        <!--<span>考试结果</span>-->
+                    <!--</MenuItem>-->
+                  <Submenu name="1-1">
+                    <template slot="title" >
                       <Icon type="ios-paper-outline" />
-                        <span>考试结果</span>
-                    </MenuItem>
+                      考试结果
+                    </template>
+                    <MenuItem name="1-1-1">成绩分析</MenuItem>
+                    <MenuItem name="1-1-2">成绩显示</MenuItem>
+                  </Submenu>
                     <Submenu name="1-2">
                     <template slot="title">
                         <Icon type="ios-search" />
@@ -90,6 +98,11 @@ import router from '@/router/index'
                 data:{
                   testCourse:localStorage.getItem("lesson"),
                   testType:this.$store.state.test.testType
+                },
+                scoretatil:{
+                  //从本地获取教师所教的班级及科目
+                  teaClass:localStorage.getItem("_class"),
+                  teaCourse:localStorage.getItem("lesson"),
                 }
             };
         },
@@ -97,12 +110,18 @@ import router from '@/router/index'
 
           test(name){
             let data=this.data;
+            let scoretatil = this.scoretatil
             switch (name) {
-              case "1-1":
-              router.push({ path: '/teacher_index/teacher_test_result' });
+              case "1-1-1":
+                this.$store.dispatch('findMinAndMaxAndAvgScore',{scoretatil});
+                this.$store.dispatch('findScoreScope',{scoretatil});
+              //  router.push({ path: '/teacher_index/teacher_test_result' });
+                break;
+              case "1-1-2":
+                this.$store.dispatch('findByClassAndByLenName',{scoretatil});
+                  //router.push({ path: '/teacher_index/teacher_test_result_select' });
                 break;
               case "1-2-1":
-
                 this.$store.dispatch('testType',{testType:1});
                 this.data.testType=this.$store.state.test.testType
                 this.$store.dispatch('findTest',{data});

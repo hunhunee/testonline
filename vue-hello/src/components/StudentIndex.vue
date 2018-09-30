@@ -33,7 +33,7 @@
     <div class="layout">
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-                <Menu  active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
+                <Menu  active-name="1-3" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
                   <Submenu name="1-1">
                       <template slot="title">
                           <Icon type="ios-filing" />
@@ -104,12 +104,19 @@ import router from '@/router/index'
                 data:{
                   testCourse:""
                 },
+
                 modal:false
+                student:{
+                  //从本地获取学生的学号
+                  stuNum:localStorage.getItem("usernum")
+                }
             };
         },
         methods:{
           test(name){
-
+            
+            let data =this.data;
+            let student =this.student;
             switch (name) {
               case "1-1":
               router.push({ path: '/student_index/student_test' });
@@ -126,7 +133,7 @@ import router from '@/router/index'
 
                 break;
               case "1-2":
-              router.push({ path: '/student_index/student_test_result' });
+                this.$store.dispatch('findStudnetScore',{student});
                 break;
               case "1-3":
              router.push({ path: '/student_index/student_message' });

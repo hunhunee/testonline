@@ -1,5 +1,3 @@
-import axios from 'axios';
-import iView from 'iview';
 import router from '@/router/index'
 import api from '@/api/global'
 export default {
@@ -364,11 +362,13 @@ updateTest({commit},{data}){
     updateTest_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
       console.log("updateTest m");
+
       for (var i = 0; i < data.data.length; i++) {
         state.test[i]=data.data[i]
         console.log(state.test[i]);
       }
-      console.log("用户类型：");state.test.length=data.data.length
+      console.log("用户类型：");
+      state.test.length=data.data.length
       console.log(localStorage.getItem("identity"));
       if(localStorage.getItem("identity")=='1'){
         console.log(state.testType);

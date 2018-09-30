@@ -105,7 +105,7 @@ import router from '@/router/index'
                   testCourse:""
                 },
 
-                modal:false
+                modal:false,
                 student:{
                   //从本地获取学生的学号
                   stuNum:localStorage.getItem("usernum")
@@ -114,7 +114,7 @@ import router from '@/router/index'
         },
         methods:{
           test(name){
-            
+
             let data =this.data;
             let student =this.student;
             switch (name) {

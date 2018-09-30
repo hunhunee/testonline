@@ -354,7 +354,7 @@ return axios({
  data:Qs.stringify(data)
 
 });
-}
+},
 
 
   //
@@ -369,5 +369,5 @@ return axios({
       data:Qs.stringify(data)
     });
   },
- 
+
 }

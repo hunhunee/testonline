@@ -89,5 +89,5 @@
       .text{
               text-align:left;
            }
- 
+
 </style>

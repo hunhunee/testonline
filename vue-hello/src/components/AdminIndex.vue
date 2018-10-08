@@ -28,6 +28,11 @@
         vertical-align: middle;
         font-size: 22px;
     }
+
+    .layout-ceiling-main{
+        float: right;
+      margin-right: 10px;
+    }
 </style>
 <template>
     <div class="layout">
@@ -68,10 +73,15 @@
             </Sider>
             <Layout>
             <Header >
-              <Menu mode="horizontal" theme="dark" active-name="1">
-               <div class="layout-logo">在线考试系统---管理员</div>
+              <div class="layout-ceiling-main">
+                <Menu mode="horizontal" theme="dark" @on-select="test">
+                  <MenuItem name="h-1-1" >
+                      <Icon type="md-person-add" />
+                      <span>注销</span>
+                  </MenuItem>
+                 </Menu>
+              </div>
 
-               </Menu>
             </Header>
                 <Content :style="{padding: '5px 5px 5px'}">
                 <Card >
@@ -130,6 +140,9 @@
                 break;
               case "1-3":
               router.push({ path: '/admin_index/admin_message' });
+                break;
+              case "h-1-1":
+              this.$store.dispatch('userLoginOut');
                 break;
               default:
 

@@ -28,6 +28,11 @@
         vertical-align: middle;
         font-size: 22px;
     }
+
+    .layout-ceiling-main{
+        float: right;
+      margin-right: 10px;
+    }
 </style>
 <template>
     <div class="layout">
@@ -72,12 +77,14 @@
             </Sider>
             <Layout>
             <Header >
-              <Menu mode="horizontal" theme="dark" active-name="1">
-               <div class="layout-logo">在线考试系统---管理员</div>
-                   <div class="layout-nav">
-
-                   </div>
-               </Menu>
+              <div class="layout-ceiling-main">
+                <Menu mode="horizontal" theme="dark" @on-select="test">
+                  <MenuItem name="h-1-1" >
+                      <Icon type="md-person-add" />
+                      <span>注销</span>
+                  </MenuItem>
+                 </Menu>
+              </div>
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
@@ -137,6 +144,9 @@ import router from '@/router/index'
                 break;
               case "1-3":
              router.push({ path: '/student_index/student_message' });
+                break;
+              case "h-1-1":
+              this.$store.dispatch('userLoginOut');
                 break;
               default:
 

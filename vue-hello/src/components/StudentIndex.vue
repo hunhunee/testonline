@@ -58,10 +58,7 @@
                         <Icon type="md-person-add" />
                         <span>个人信息</span>
                     </MenuItem>
-                    <MenuItem name="1-4">
-                        <Icon type="ios-end" />
-                        <span>结束页面</span>
-                    </MenuItem>
+                    
                 </Menu>
                 <Modal
                     v-model="modal"
@@ -120,7 +117,7 @@ import router from '@/router/index'
                 break;
               case "1-1-1-1":
                  this.data.testCourse="1";
-                 this.modal=true
+                  this.modal=true
 
                 break;
               case "1-1-1-2":

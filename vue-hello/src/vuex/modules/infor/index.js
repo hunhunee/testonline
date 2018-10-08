@@ -21,6 +21,7 @@ export default {
   },
   actions:{
     userLayout({commit},{data}){
+      
      api.updateInfor(data)
      .then((response) => {
         commit('userLayout_m',response);
@@ -75,6 +76,7 @@ export default {
                  router.push({ path: 'student_message' }) ;
                  break;
                  default:
+
                 // alert("修改密码成功！")
                }
             break;

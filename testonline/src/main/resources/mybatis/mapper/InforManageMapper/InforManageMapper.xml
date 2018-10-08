@@ -5,15 +5,15 @@
 
 
     <update id="updateAdmin" parameterType="infor" >
-        UPDATE admin set adm_password=#{newpassword},newpassword=#{repassword} where adm_id=#{userid};
+        UPDATE admin set adm_password=#{newpassword} where adm_id=#{userid};
     </update>
 
     <update id="updateTeacher" parameterType="infor" >
-        UPDATE teacher set tea_password=#{newpassword},newpassword=#{repassword} where tea_id=#{userid};
+        UPDATE teacher set tea_password=#{newpassword} where tea_id=#{userid};
     </update>
 
     <update id="updateStudent" parameterType="infor" >
-        UPDATE student set stu_password=#{newpassword},newpassword=#{repassword} where stu_id=#{userid};
+        UPDATE student set stu_password=#{newpassword} where stu_id=#{userid};
     </update>
 
     <select id="findAdminPwd" parameterType="infor" resultType="string">

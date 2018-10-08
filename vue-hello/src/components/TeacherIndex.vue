@@ -72,6 +72,9 @@
             <Header >
               <div class="layout-ceiling-main">
                 <Menu mode="horizontal" theme="dark" @on-select="test">
+                  <MenuItem name="h-1-2">
+                    <span> <p>当前时间：{{nowTime}}</p></span>
+                  </MenuItem>
                   <MenuItem name="h-1-1" >
                       <Icon type="md-person-add" />
                       <span>注销</span>
@@ -109,8 +112,13 @@ import router from '@/router/index'
                   //从本地获取教师所教的班级及科目
                   teaClass:localStorage.getItem("_class"),
                   teaCourse:localStorage.getItem("lesson"),
-                }
+                },
+                nowTime:""
             };
+        },
+        // 创建完成时
+        created() {
+          this.nowTimes();
         },
         methods:{
 
@@ -157,7 +165,23 @@ import router from '@/router/index'
               default:
 
             }
-          }
+          },
+          // 获取当前时间函数
+          timeFormate(timeStamp) {
+            let year = new Date(timeStamp).getFullYear();
+            let month = new Date(timeStamp).getMonth() + 1 < 10 ? "0" + (new Date(timeStamp).getMonth() + 1) : new Date(timeStamp).getMonth() + 1;
+            let date = new Date(timeStamp).getDate() < 10 ? "0" + new Date(timeStamp).getDate() : new Date(timeStamp).getDate();
+            let hh = new Date(timeStamp).getHours() < 10 ? "0" + new Date(timeStamp).getHours() : new Date(timeStamp).getHours();
+            let mm = new Date(timeStamp).getMinutes() < 10 ? "0" + new Date(timeStamp).getMinutes() : new Date(timeStamp).getMinutes();
+            let ss =new Date(timeStamp).getSeconds() < 10? "0" + new Date(timeStamp).getSeconds(): new Date(timeStamp).getSeconds();
+            //return year + "年" + month + "月" + date +"日"+" "+hh+":"+mm+":"+ss ;
+            this.nowTime = year + "年" + month + "月" + date +"日"+" "+hh+":"+mm +":"+ss;
+          },
+          // 定时器函数
+          nowTimes(){
+            this.timeFormate(new Date());
+            setInterval(this.nowTimes,3*1000);
+          },
         },
         computed: {
             menuitemClasses: function () {

@@ -8,7 +8,7 @@
         overflow: hidden;
         width: 69px;
         text-overflow: ellipsis;
-        white-space: nowrap;s
+        white-space: nowrap;
         vertical-align: bottom;
         transition: width .2s ease .2s;
     }
@@ -79,6 +79,9 @@
             <Header >
               <div class="layout-ceiling-main">
                 <Menu mode="horizontal" theme="dark" @on-select="test">
+                  <MenuItem name="h-1-2">
+                    <span> <p>当前时间：{{nowTime}}</p></span>
+                  </MenuItem>
                   <MenuItem name="h-1-1" >
                       <Icon type="md-person-add" />
                       <span>注销</span>
@@ -116,12 +119,16 @@ import router from '@/router/index'
                 student:{
                   //从本地获取学生的学号
                   stuNum:localStorage.getItem("usernum")
-                }
+                },
+                nowTime:""
             };
+        },
+        // 创建完成时
+        created() {
+          this.nowTimes();
         },
         methods:{
           test(name){
-
             let data =this.data;
             let student =this.student;
             switch (name) {
@@ -131,13 +138,10 @@ import router from '@/router/index'
               case "1-1-1-1":
                  this.data.testCourse="1";
                  this.modal=true
-
                 break;
               case "1-1-1-2":
                  this.data.testCourse="2";
                  this.modal=true
-
-
                 break;
               case "1-2":
                 this.$store.dispatch('findStudnetScore',{student});
@@ -149,10 +153,25 @@ import router from '@/router/index'
               this.$store.dispatch('userLoginOut');
                 break;
               default:
-
             }
           },
+          // 获取当前时间函数
+          timeFormate(timeStamp) {
+            let year = new Date(timeStamp).getFullYear();
+            let month = new Date(timeStamp).getMonth() + 1 < 10 ? "0" + (new Date(timeStamp).getMonth() + 1) : new Date(timeStamp).getMonth() + 1;
+            let date = new Date(timeStamp).getDate() < 10 ? "0" + new Date(timeStamp).getDate() : new Date(timeStamp).getDate();
+            let hh = new Date(timeStamp).getHours() < 10 ? "0" + new Date(timeStamp).getHours() : new Date(timeStamp).getHours();
+            let mm = new Date(timeStamp).getMinutes() < 10 ? "0" + new Date(timeStamp).getMinutes() : new Date(timeStamp).getMinutes();
+            let ss =new Date(timeStamp).getSeconds() < 10? "0" + new Date(timeStamp).getSeconds(): new Date(timeStamp).getSeconds();
+            //return year + "年" + month + "月" + date +"日"+" "+hh+":"+mm+":"+ss ;
+            this.nowTime = year + "年" + month + "月" + date +"日"+" "+hh+":"+mm +":"+ss;
 
+          },
+          // 定时器函数
+          nowTimes(){
+            this.timeFormate(new Date());
+            setInterval(this.nowTimes,3*1000);
+          },
           ok:function(){
                  let data =this.data;
                 //alert(this.data.testCourse)

@@ -184,7 +184,7 @@
       // 定时器函数
       nowTimes(){
         this.timeFormate(new Date());
-        setInterval(this.nowTimes,1000);
+        setInterval(this.nowTimes,3*1000);
       },
     },
     computed: {

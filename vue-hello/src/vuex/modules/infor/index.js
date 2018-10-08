@@ -21,7 +21,6 @@ export default {
   },
   actions:{
     userLayout({commit},{data}){
-      
      api.updateInfor(data)
      .then((response) => {
         commit('userLayout_m',response);
@@ -77,7 +76,6 @@ export default {
                  break;
                  default:
 
-                // alert("修改密码成功！")
                }
             break;
           default:

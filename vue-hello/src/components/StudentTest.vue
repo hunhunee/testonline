@@ -147,7 +147,6 @@
                     var examList_jm =this.examJudgeList.concat(this.examComputeList);
                     var examList=examList_sm.concat(examList_jm);
 
-
                     let data={
                       studentAnswer:{
                         stuId:localStorage.getItem("userid"),
@@ -160,7 +159,7 @@
 
                   this.$router.push('/student_index/student_end'); //跳转到指定页面
 
-              }else if (THIS.minutes >= 0) {
+                }else if (THIS.minutes >= 0) {
 
                   if(THIS.seconds > 0 ){
 

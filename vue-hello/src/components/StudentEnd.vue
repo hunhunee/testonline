@@ -3,7 +3,7 @@
 </style>
 <template>
 <div class="layout">
-  感谢您的参与，考试已结束!
+  考试已结束，祝您好运！！！
 </div>
 </template>
 <script>

@@ -28,6 +28,9 @@
         vertical-align: middle;
         font-size: 22px;
     }
+    .layout-footer-center{
+    text-align: center;
+}
 </style>
 <template>
 
@@ -67,9 +70,9 @@
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>Home</BreadcrumbItem>
-                        <BreadcrumbItem>Components</BreadcrumbItem>
-                        <BreadcrumbItem>Layout</BreadcrumbItem>
+                      <BreadcrumbItem>Home 主页</BreadcrumbItem>
+                      <BreadcrumbItem>Components 上一页</BreadcrumbItem>
+                      <BreadcrumbItem>Layout 当前页面</BreadcrumbItem>
                     </Breadcrumb>
                     <Card>
                         <div style="height: 600px">
@@ -77,6 +80,7 @@
                         </div>
                     </Card>
                 </Content>
+                <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
             </Layout>
         </Layout>
     </div>

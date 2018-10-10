@@ -119,9 +119,9 @@
       };
     },
     // 创建完成时
-    created() {
-      this.nowTimes();
-    },
+    // created() {
+    //   this.nowTimes();
+    // },
 
     methods: {
       test(name) {

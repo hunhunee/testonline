@@ -116,7 +116,7 @@ import router from '@/router/index'
       },
       created: function () {
        console.log("created");
-       console.log(this.$store.state.test.test[0].lesson.lesName)
+       console.log(this.$store.state.test.test[0])
        setInterval(()=>{
           this.data.length=this.$store.state.test.test.length
           for (var i = 0; i < this.$store.state.test.test.length; i++) {

@@ -107,7 +107,7 @@ export default {
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
+                      "teaCourse":this.lesson,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":"123"
                   }

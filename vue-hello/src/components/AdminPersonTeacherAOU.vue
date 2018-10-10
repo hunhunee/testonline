@@ -9,8 +9,8 @@
 
               </Input>
           </FormItem>
-          <FormItem   prop="teaNum">
-              <Input type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
+          <FormItem prop="teaNum">
+              <Input disabled type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px">
 
               </Input>
           </FormItem>

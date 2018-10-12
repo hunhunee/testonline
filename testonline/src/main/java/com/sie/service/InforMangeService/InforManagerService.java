@@ -8,7 +8,7 @@ public interface InforManagerService {
 
     public String  updateTeacher(Infor infor);
 
-   public String  updateStudent(Infor infor);
+    public String  updateStudent(Infor infor);
 
 
 

@@ -1,11 +1,7 @@
 package com.sie.controller.InforManageController;
 
-import com.sie.domain.Admin;
 import com.sie.domain.Infor;
-import com.sie.domain.Student;
-import com.sie.domain.Teacher;
 import com.sie.service.InforMangeService.InforManagerService;
-import com.sie.service.PersonManageService.StudentManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

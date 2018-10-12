@@ -13,12 +13,14 @@ public class InforManagerServiceImpl implements InforManagerService {
     private InforMangeMapper inforMangeMapper;
     @Override
     public String updateAdmin(Infor infor) {
-        String oldPwd= inforMangeMapper.findAdminPwd(infor);
+        String oldPwd = inforMangeMapper.findAdminPwd(infor);
+
         if(oldPwd.equals(infor.getPassword())){
             System.out.println("密码正确！");
             inforMangeMapper.updateAdmin(infor);
             return "修改密码成功！";
-        }else{
+        }
+        else{
             return "您输入的旧密码不正确！";
         }
     }

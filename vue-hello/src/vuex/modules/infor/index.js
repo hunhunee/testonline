@@ -75,15 +75,12 @@ export default {
                  router.push({ path: 'student_message' }) ;
                  break;
                  default:
-                 alert("修改密码成功！")
+
                }
             break;
           default:
 
         }
-
-
-
 
     }
   }

@@ -67,7 +67,8 @@
         },
         methods: {
           handleSubmit(){
-              const axios = require('axios');
+            const axios = require('axios');
+            if (this.formInline.newpassword==this.formInline.repassword) {
               let data = {
                   "password":this.formInline.password,
                   "newpassword":this.formInline.newpassword,
@@ -76,6 +77,9 @@
                   "userid":localStorage.getItem("userid")
               }
               this.$store.dispatch('userLayout',{data});
+            }else{
+                alert("两次密码不相同，请重新输入！")
+            }
 
           }
 

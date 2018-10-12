@@ -33,6 +33,11 @@
         float: right;
       margin-right: 10px;
     }
+
+    .layout-footer-center{
+    text-align: center;
+}
+
 </style>
 <template>
     <div class="layout">
@@ -63,6 +68,7 @@
                         <Icon type="md-person-add" />
                         <span>个人信息</span>
                     </MenuItem>
+
                 </Menu>
                 <Modal
                     v-model="modal"
@@ -91,9 +97,9 @@
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>Home</BreadcrumbItem>
-                        <BreadcrumbItem>Components</BreadcrumbItem>
-                        <BreadcrumbItem>Layout</BreadcrumbItem>
+                        <BreadcrumbItem>Home 主页</BreadcrumbItem>
+                        <BreadcrumbItem>Components 上一页</BreadcrumbItem>
+                        <BreadcrumbItem>Layout 当前页面</BreadcrumbItem>
                     </Breadcrumb>
                     <Card>
                         <div style="height: 600px">
@@ -101,6 +107,7 @@
                         </div>
                     </Card>
                 </Content>
+                  <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
             </Layout>
         </Layout>
     </div>
@@ -137,7 +144,9 @@ import router from '@/router/index'
                 break;
               case "1-1-1-1":
                  this.data.testCourse="1";
+
                  this.modal=true
+
                 break;
               case "1-1-1-2":
                  this.data.testCourse="2";
@@ -149,9 +158,11 @@ import router from '@/router/index'
               case "1-3":
              router.push({ path: '/student_index/student_message' });
                 break;
+ 
               case "h-1-1":
               this.$store.dispatch('userLoginOut');
                 break;
+
               default:
             }
           },

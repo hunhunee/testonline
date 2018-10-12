@@ -36,6 +36,7 @@ import StudentIndex from '@/components/StudentIndex'
 import StudentMessage from '@/components/StudentMessage'
 import StudentTest from '@/components/StudentTest'
 import StudentTestResult from '@/components/StudentTestResult'
+import StudentEnd from '@/components/StudentEnd'
 
 Vue.use(Router)
 
@@ -53,9 +54,12 @@ export default new Router({
       name: 'student_index',
       component: StudentIndex,
       children: [
+
         { path: 'student_message', component:  StudentMessage,meta: {auth: true}},            //学生对个人信息进行管理
         { path: 'student_test', component: StudentTest,meta: {auth: true}},                  //学生进行考试
-        { path: 'student_test_result', component: StudentTestResult,meta: {auth: true}}      //学生查看自己的考试结果
+        { path: 'student_test_result', component: StudentTestResult,meta: {auth: true}},      //学生查看自己的考试结果
+        { path:'student_end',component:StudentEnd,meta: {auth: true}}
+
       ]
     },
     {

@@ -68,17 +68,20 @@
         methods: {
           handleSubmit(){
               const axios = require('axios');
-              let data = {
-                  "password":this.formInline.password,
-                  "newpassword":this.formInline.newpassword,
-                  "repassword":this.formInline.repassword,
-                  "identity":this.formInline.radio,
-                  "userid":localStorage.getItem("userid")
+              if (this.formInline.newpassword==this.formInline.repassword) {
+                let data = {
+                    "password":this.formInline.password,
+                    "newpassword":this.formInline.newpassword,
+                    "repassword":this.formInline.repassword,
+                    "identity":this.formInline.radio,
+                    "userid":localStorage.getItem("userid")
+                }
+                this.$store.dispatch('userLayout',{data});
+              }else{
+                  alert("两次密码不相同，请重新输入！")
               }
-              this.$store.dispatch('userLayout',{data});
 
           }
-
 
         }
 
@@ -98,5 +101,6 @@
 
              text-align:left;
           }
+
 
 </style>

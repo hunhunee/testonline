@@ -7,9 +7,19 @@
 <template>
   <div class="layout">
     <div class="text" >
-      <h1> 距离考试结束时间还有：<span style="color:red">{{time}}</span>秒</h1>
-
+      <h1>
+        距离考试结束时间还有：
+        <span style="color:red">
+          {{minutes}}
+        </span>
+          分
+        <span style="color:red">
+          {{seconds}}
+        </span>
+          秒
+      </h1>
   </div>
+
   <Card style="width:1300px">
        <p slot="title">
            <Icon type="ios-film-outline"></Icon>
@@ -97,9 +107,9 @@
               examMultipleList:[],
               examJudgeList:[],
               examComputeList:[],
-              time:0
-              //minutes:0,
-            //  seconds:0
+              minutes:60,  //定义分数值参数
+              seconds:0,//定义秒值参数
+
             };
         },
 
@@ -135,13 +145,42 @@
         },
 
         methods:{
-          //时间参数
+          //判断
           countDown(){
-
             let THIS=this;
-            THIS.time--;
-            //THIS.minutes--;
-          //  THIS.seconds--;
+
+              if( THIS.minutes == 0 && THIS.seconds == 0 ){
+                  THIS.minutes = 60;
+
+                    var examList_sm =this.examSingleList.concat(this.examMultipleList);
+                    var examList_jm =this.examJudgeList.concat(this.examComputeList);
+                    var examList=examList_sm.concat(examList_jm);
+
+                    let data={
+                      studentAnswer:{
+                        stuId:localStorage.getItem("userid"),
+                        stuClass:localStorage.getItem("_class")
+                      },
+                      examList:examList
+                    }
+                     this.$store.dispatch('addExamResult',{data});
+
+                  this.$router.push('/student_index/student_end'); //跳转到指定页面
+
+                }else if (THIS.minutes >= 0) {
+
+                  if(THIS.seconds > 0 ){
+
+                    THIS.seconds--;
+
+                  }else if (THIS.seconds == 0) {
+
+                      THIS.minutes--;
+                      THIS.seconds = 60;
+
+                  }
+
+              }
 
           },
 
@@ -162,36 +201,15 @@
           }
 
         },
-        //设定时间
+
         mounted(){
            let THIS=this;
-           THIS.time=2;
-           //THIS.minutes=(60+60)*120;
-           //THIS.seconds=5;
            setInterval(THIS.countDown,1000);
-          },
-          //监听事件
-          watch:{
-            'time':function(newVal,oldVal){
-          if(newVal==0){
-            this.$router.push('');
-          }
-    }
 
-            // 'minutes':function(newVal,oldVal){
-            //   if(newVal>=0){
-            //     this.minutes;
-            //   }
-            // },
-              // 'seconds':function(newVal,oldVal){
-              //   if(newVal==0){
-              //      //alert("还剩5分钟");
-              //      //alert("时间到，结束!");
-              //      this.$router.push(''); //跳转到指定页面
-              //    }
-              // }
-            }
+          },
 
         }
+
+
 
 </script>

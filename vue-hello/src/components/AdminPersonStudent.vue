@@ -6,7 +6,7 @@
 </style>
 <template>
   <div class="layout">
-    <Input  @on-change="search" v-model="num" search enter-button placeholder="Enter something..." style="width:300px" />
+    <Input  @on-change="search" v-model="num" search enter-button placeholder="请输入学号查找学生" style="width:300px" />
     <div class="add">
       <Button type="primary" @click="add">添加学生信息</Button>
     </div>

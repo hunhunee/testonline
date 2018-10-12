@@ -7,7 +7,7 @@
 <template>
     <div class="layout">
 
-        <Input @on-change="search" v-model="lesName" search enter-button placeholder="Enter something..." style="width:300px" />
+        <Input @on-change="search" v-model="lesName" search enter-button placeholder="科目名称查询" style="width:300px" />
 
       <div class="add">
         <Button type="primary" @click="add">添加科目</Button>

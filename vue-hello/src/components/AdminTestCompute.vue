@@ -4,7 +4,7 @@
 <template>
 
     <div class="layout">
-      <Select v-model="lesson" style="width:200px" placeholder="LessonName">
+      <Select @on-change="find" v-model="lesson" style="width:200px" placeholder="LessonName">
         <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
       <Button type="primary" @click="find">查询科目计算题</Button>
@@ -132,7 +132,7 @@ import router from '@/router/index'
 
             this.lessonIdString=localStorage.getItem("lessonIdList");
             this.lessonNameString=localStorage.getItem("lessonNameList");
-
+            this.lessonList.push({value:"0",label:"all"});
 
             for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
 
@@ -176,16 +176,23 @@ import router from '@/router/index'
            router.push({ path: '/admin_index/admin_test_compute_aou' });
          },
 
-         find() {
-
-           let data={
-             testCourse:this.lesson,
-             testType:this.getTestType
+         find(value) {
+           if(value=="0"){
+             let data={
+               testType:this.getTestType
+             }
+               this.$store.dispatch('findAllTest',{data});
+           }else{
+             let data={
+               testCourse:value,
+               testType:this.getTestType
+             }
+            this.$store.dispatch('findTest',{data});
            }
 
-          this.$store.dispatch('findTest',{data});
-          this.data=this.$store.state.test.test
          },
+
+
          detail (index) {
                          this.$Modal.info({
                              title: 'Test Details',

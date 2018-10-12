@@ -160,9 +160,9 @@ public class ScoreTest {
     @Test
     public void  testFindByStuNum() throws  Exception{
         StudentAnswer byStuNum = scoreService.findByStuNum("123", "2");
-        System.out.println("学号："+byStuNum.getStuNum()+"姓名："+byStuNum.getStuName()
-                + "班级: "+byStuNum.getStuClass()+"科目："+byStuNum.getLesName()+
-                "成绩："+byStuNum.getTotalscore());
+//        System.out.println("学号："+byStuNum.getStuNum()+"姓名："+byStuNum.getStuName()
+//                + "班级: "+byStuNum.getStuClass()+"科目："+byStuNum.getLesName()+
+//                "成绩："+byStuNum.getTotalscore());
     }
 
 

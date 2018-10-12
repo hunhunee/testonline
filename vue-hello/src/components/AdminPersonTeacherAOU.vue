@@ -9,19 +9,26 @@
 
               </Input>
           </FormItem>
-          <FormItem prop="teaNum">
-              <Input disabled type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px">
 
-              </Input>
+
+          <FormItem prop="teaNum" >
+                <Input v-if="this.$store.state.person.utaction=='2'" disabled type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px">
+                </Input>
+
+                <Input  v-else type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
+                </Input>
           </FormItem>
 
+
+
+
           <FormItem>
-            <Select v-model="lesson" style="width:200px" placeholder="Select your lesson">
+            <Select v-model="formInline.teaCours" style="width:200px" placeholder="Select your lesson">
               <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
 
-        <FormItem   prop="teaClass" >
+        <FormItem prop="teaClass" >
           <Select v-model="formInline.teaClass" placeholder="Select your class" style="width: 200px">
               <Option value="1">一班</Option>
               <Option value="2">二班</Option>
@@ -63,14 +70,9 @@ export default {
                     ],
                 },
                 lessonList: [],
-                l:{value:"",
-                    label:""
-                },
                 lessonIdString:"",
-                lessonNameString:"",
-                lessonIdList:[],
-                lessonNameList:[],
-                lesson: ''
+                lessonNameString:""
+
             }
         },
         created: function () {
@@ -79,7 +81,6 @@ export default {
                         console.log("lessonlist");
                         this.lessonIdString=localStorage.getItem("lessonIdList");
                         this.lessonNameString=localStorage.getItem("lessonNameList");
-
                         for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
                           this.lessonList.push({
                             value:this.lessonIdString.split(',')[i],
@@ -93,10 +94,11 @@ export default {
               handleSubmit() {
 
                 if(this.$store.state.person.utaction=="2"){
+
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
+                      "teaCourse":this.formInline.teaCours,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":this.$store.state.person.uteacher.teaPassword
                   }
@@ -107,7 +109,7 @@ export default {
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.lesson,
+                      "teaCourse":this.formInline.teaCours,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":"123"
                   }

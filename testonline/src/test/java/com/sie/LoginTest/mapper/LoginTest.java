@@ -26,7 +26,7 @@ public class LoginTest {
       user.setUsernum("a001");
       user.setPassword("123456");
       Admin admin = loginMapper.findAdminByNumAndPwd(user);
-        System.out.println("admin："+admin.getAdmName());
+        //System.out.println("admin："+admin.getAdmName());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class LoginTest {
         user.setUsernum("s001");
         user.setPassword("123456");
         Student student = loginMapper.findStudentByNumAndPwd(user);
-        System.out.println("student:"+student.getStuName());
+        //System.out.println("student:"+student.getStuName());
     }
 
 }

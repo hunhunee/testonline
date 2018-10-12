@@ -44,8 +44,8 @@ export default {
     userLogin_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
       console.log(data)
-      switch (data.statusText) {
-        case 'OK':
+
+
              switch (data.data.identity) {
                case '1':
                  console.log("admin登录");
@@ -105,10 +105,7 @@ export default {
                default:
                  alert("对不起，您输入的密码或账户有误，请重新输入！")
              }
-          break;
-        default:
 
-      }
     },
 
 

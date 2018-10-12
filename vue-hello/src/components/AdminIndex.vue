@@ -119,9 +119,10 @@
       };
     },
     // 创建完成时
-    // created() {
+    created() {
     //   this.nowTimes();
-    // },
+    this.$store.dispatch('findAllLesson');
+    },
 
     methods: {
       test(name) {

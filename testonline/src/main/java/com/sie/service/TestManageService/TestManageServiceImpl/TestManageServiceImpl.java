@@ -36,7 +36,7 @@ public class TestManageServiceImpl implements TestManageService{
             if (testList.get(i).getTestStatus().equals("0")){
                 testList.get(i).setTestStatusName("随机");
             }else{
-                testList.get(i).setTestStatusName("固定");
+                testList.get(i).setTestStatusName("必考");
             }
         }
         return testList;

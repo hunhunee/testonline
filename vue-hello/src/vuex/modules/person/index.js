@@ -97,6 +97,7 @@ export default {
         );
     },
     addTeacher({commit}, {data}) {
+      console.log("addTeacher");
       console.log(data);
       api.addTeacher(data)
         .then((response) => {

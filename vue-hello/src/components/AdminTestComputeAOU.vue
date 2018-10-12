@@ -15,13 +15,13 @@
               </Input>
           </FormItem>
           <FormItem>
-            <Select v-model="lesson" style="width:200px">
+            <Select v-model="lesson" style="width:200px" placeholder="LessonName">
               <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
 
           </FormItem>
           <FormItem>
-            <Select v-model="status" style="width:200px">
+            <Select v-model="status" style="width:200px" placeholder="testStatus">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
@@ -60,7 +60,7 @@ export default {
                     ],
                 },
 
- 
+
 
 
                   statusList: [

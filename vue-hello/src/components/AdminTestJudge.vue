@@ -4,7 +4,7 @@
 <template>
 
     <div class="layout">
-      <Select v-model="lesson" style="width:200px">
+      <Select v-model="lesson" style="width:200px" placeholder="LessonName">
         <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
       <Button type="primary" @click="find">查询科目判断题</Button>

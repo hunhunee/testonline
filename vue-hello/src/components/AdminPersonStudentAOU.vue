@@ -15,15 +15,15 @@
         </Input>
       </FormItem>
 
-      <FormItem  prop="stuSex" style="width: 200px">
-        <Select v-model="formInline.stuSex" placeholder="Select your course">
+      <FormItem  prop="stuSex">
+        <Select v-model="formInline.stuSex" placeholder="Select your gender" style="width: 200px">
           <Option value="1">男</Option>
           <Option value="2">女</Option>
         </Select>
       </FormItem>
 
-      <FormItem   prop="stuClass" style="width: 200px">
-        <Select v-model="formInline.stuClass" placeholder="Select your class">
+      <FormItem   prop="stuClass">
+        <Select v-model="formInline.stuClass" placeholder="Select your class" style="width: 200px">
           <Option value="1">一班</Option>
           <Option value="2">二班</Option>
           <Option value="3">三班</Option>

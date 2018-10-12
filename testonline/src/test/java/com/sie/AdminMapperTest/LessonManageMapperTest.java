@@ -48,7 +48,7 @@ public class LessonManageMapperTest {
             }else{
                 System.out.println("no");
             }
-            System.out.println("科目"+les.getLesId());
+            //System.out.println("科目"+les.getLesId());
                     }
         @Test
         public  void findAllLessonTest(){

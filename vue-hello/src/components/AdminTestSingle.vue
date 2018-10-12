@@ -4,7 +4,7 @@
 <template>
 
     <div class="layout">
-      <Select @on-change="find" v-model="lesson" style="width:200px">
+      <Select @on-change="find" v-model="lesson" style="width:200px" placeholder="LessonName">
         <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
     <Button type="primary" @click="search">查询</Button>
@@ -116,7 +116,7 @@ import router from '@/router/index'
       },
       created: function () {
        console.log("created");
-       console.log(this.$store.state.test.test[0].lesson.lesName)
+       console.log(this.$store.state.test.test[0])
        setInterval(()=>{
           this.data.length=this.$store.state.test.test.length
           for (var i = 0; i < this.$store.state.test.test.length; i++) {
@@ -134,8 +134,6 @@ import router from '@/router/index'
                           label:this.lessonNameString.split(',')[i]
                         })
                      }
-
-
 
      },
 

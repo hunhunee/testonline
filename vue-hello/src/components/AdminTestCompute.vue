@@ -4,7 +4,7 @@
 <template>
 
     <div class="layout">
-      <Select v-model="lesson" style="width:200px">
+      <Select v-model="lesson" style="width:200px" placeholder="LessonName">
         <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
       <Button type="primary" @click="find">查询科目计算题</Button>
@@ -164,7 +164,9 @@ import router from '@/router/index'
           },
           remove (index) {
             let data = {
-                "id": this.data[index].testId
+                "testId": this.data[index].testId,
+                "testType":this.data[index].testType,
+                "testCourse":this.data[index].testCourse
             }
            this.$store.dispatch('deleteTest',{data});
            this.data=this.$store.state.test.test

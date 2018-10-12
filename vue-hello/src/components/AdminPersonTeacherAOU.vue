@@ -9,22 +9,27 @@
 
               </Input>
           </FormItem>
-          <FormItem   prop="teaNum">
-              <Input type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
 
-              </Input>
+
+          <FormItem prop="teaNum" >
+                <Input v-if="this.$store.state.person.utaction=='2'" disabled type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px">
+                </Input>
+
+                <Input  v-else type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
+                </Input>
           </FormItem>
 
-          <FormItem  prop="teaCourse" style="width: 200px">
-            <Select v-model="formInline.teaCourse" placeholder="Select your course">
-                <Option value="1">英语</Option>
-                <Option value="2">数学</Option>
-                <Option value="3">语文</Option>
-            </Select>
-        </FormItem>
 
-        <FormItem   prop="teaClass" style="width: 200px">
-          <Select v-model="formInline.teaClass" placeholder="Select your class">
+
+
+          <FormItem>
+            <Select v-model="formInline.teaCours" style="width:200px" placeholder="Select your lesson">
+              <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+          </FormItem>
+
+        <FormItem prop="teaClass" >
+          <Select v-model="formInline.teaClass" placeholder="Select your class" style="width: 200px">
               <Option value="1">一班</Option>
               <Option value="2">二班</Option>
               <Option value="3">三班</Option>
@@ -60,24 +65,40 @@ export default {
                     teaNum: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
                     ],
-                    teaCourse: [
-                        { required: true, message: 'Please fill in the course.', trigger: 'blur' },
-                    ],
                     teaClass: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
-                }
+                },
+                lessonList: [],
+                lessonIdString:"",
+                lessonNameString:""
+
             }
         },
+        created: function () {
+         console.log("created");
+
+                        console.log("lessonlist");
+                        this.lessonIdString=localStorage.getItem("lessonIdList");
+                        this.lessonNameString=localStorage.getItem("lessonNameList");
+                        for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                          this.lessonList.push({
+                            value:this.lessonIdString.split(',')[i],
+                            label:this.lessonNameString.split(',')[i]
+                          })
+                       }
+
+       },
         methods: {
 
               handleSubmit() {
 
                 if(this.$store.state.person.utaction=="2"){
+
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
+                      "teaCourse":this.formInline.teaCours,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":this.$store.state.person.uteacher.teaPassword
                   }
@@ -88,7 +109,7 @@ export default {
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
+                      "teaCourse":this.formInline.teaCours,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":"123"
                   }

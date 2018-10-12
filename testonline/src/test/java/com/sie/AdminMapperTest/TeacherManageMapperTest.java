@@ -64,7 +64,7 @@ import java.util.List;
             teacher.setTeaNum("t002");
             teacher.setTeaPassword("123");
 
-            teacherManageMapper.addTeacher(teacher);
+            //teacherManageMapper.addTeacher(teacher);
         }
 
 }

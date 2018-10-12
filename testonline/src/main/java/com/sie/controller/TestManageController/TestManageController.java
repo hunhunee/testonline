@@ -19,6 +19,7 @@ public class TestManageController {
     @PostMapping("/add")
     public List<TestEx> addTest(Test test){
         System.out.println("增加题目类容："+test.getTestContent());
+
         List<TestEx> testList = testManageService.addTest(test);
         System.out.println(testList.size());
         return testList;

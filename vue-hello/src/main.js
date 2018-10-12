@@ -25,6 +25,22 @@ Vue.prototype.$echarts = echarts
 Vue.use(iView);
 Vue.use(VueAxios,axios);
 /* eslint-disable no-new */
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(m => m.meta.auth)) {
+    if (window.localStorage.isLogin === '1') {
+      next()
+    } else if (to.path !== '/') {
+      next({path: '/'})
+      Vue.prototype.$message.warning('检测到您还未登录,请登录后操作！')
+    }
+  } else {
+    next()
+  }
+})
+
+
+
 new Vue({
   el: '#app',
   router,

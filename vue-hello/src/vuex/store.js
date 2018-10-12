@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import user from './modules/user/index';//引进模块
+//引进模块
+import user from './modules/user/index';
 import person from './modules/person/index';
 import test from './modules/test/index';
 import exam from './modules/exam/index';
 import infor from './modules/infor/index'
 import lesson from './modules/Lesson/index';
+import score from './modules/score/index';
 
 Vue.use(Vuex);
 
@@ -17,8 +19,8 @@ export default new Vuex.Store({
     test:test,
     exam:exam,
     infor:infor,
-    lesson:lesson
-
+    lesson:lesson,
+    score:score,
   }
 
 });

@@ -3,6 +3,16 @@ package com.sie.domain;
 public class StudentAnswer {
     private Integer stuAnsId;
 
+    private Lesson lesson;
+
+    public Lesson getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
+    }
+
     private Integer stuId;
 
     private String stuAnswerone;
@@ -12,6 +22,37 @@ public class StudentAnswer {
     private String stuAnswerthree;
 
     private String stuAnswerfour;
+
+    private  String stuNum;
+    private  String stuName;
+    public String getStuNum() {
+        return stuNum;
+    }
+    public void setStuNum(String stuNum) {
+        this.stuNum = stuNum;
+    }
+    public String getStuName() {
+        return stuName;
+    }
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentAnswer{" +
+                "lesName='" + lesName + '\'' +
+                ", totalscore=" + totalscore +
+                ", stuClass='" + stuClass + '\'' +
+                '}';
+    }
+//    private String stuNum;
+//    public String getStuNum() {
+//        return stuNum;
+//    }
+//    public void setStuNum(String stuNum) {
+//        this.stuNum = stuNum;
+//    }
 
     private String rightanswerone;
 
@@ -31,9 +72,18 @@ public class StudentAnswer {
 
     private String fourscore;
 
-    private int totalscore;
+    private Double totalscore;
+
+    public Double getTotalscore() {
+        return totalscore;
+    }
+
+    public void setTotalscore(Double totalscore) {
+        this.totalscore = totalscore;
+    }
 
     private String stuClass;
+
 
     private String stuAnsXxx2;
 
@@ -124,7 +174,7 @@ public class StudentAnswer {
     }
 
     public void setLesName(String lesName) {
-        this.lesName = lesName == null ? null : lesName.trim();
+        this.lesName = lesName;
     }
 
     public String getOnescore() {
@@ -159,13 +209,6 @@ public class StudentAnswer {
         this.fourscore = fourscore == null ? null : fourscore.trim();
     }
 
-    public int getTotalscore() {
-        return totalscore;
-    }
-
-    public void setTotalscore(int totalscore) {
-        this.totalscore = totalscore;
-    }
 
     public String getStuClass() {
         return stuClass;

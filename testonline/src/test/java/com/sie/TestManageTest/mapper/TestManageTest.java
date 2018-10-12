@@ -25,7 +25,7 @@ public class TestManageTest {
         t.setTestAns4("25");
         t.setRightans1("20");
         t.setTestType("1");
-        testManageMapper.addTest(t);
+        //testManageMapper.addTest(t);
     }
 
     @Test

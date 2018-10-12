@@ -158,7 +158,7 @@ import router from '@/router/index'
               case "1-3":
              router.push({ path: '/student_index/student_message' });
                 break;
- 
+
               case "h-1-1":
               this.$store.dispatch('userLoginOut');
                 break;

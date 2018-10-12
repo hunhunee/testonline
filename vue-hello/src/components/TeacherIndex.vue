@@ -38,7 +38,7 @@
     .layout-footer-center{
     text-align: center;
 }
- 
+
 </style>
 <template>
 

@@ -23,7 +23,7 @@
 
 
           <FormItem>
-            <Select v-model="formInline.teaCours" style="width:200px" placeholder="Select your lesson">
+            <Select v-model="formInline.teaCourse" style="width:200px" placeholder="Select your lesson">
               <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
@@ -81,7 +81,10 @@ export default {
                         console.log("lessonlist");
                         this.lessonIdString=localStorage.getItem("lessonIdList");
                         this.lessonNameString=localStorage.getItem("lessonNameList");
+
                         for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+
+
                           this.lessonList.push({
                             value:this.lessonIdString.split(',')[i],
                             label:this.lessonNameString.split(',')[i]
@@ -98,7 +101,7 @@ export default {
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCours,
+                      "teaCourse":this.formInline.teaCourse,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":this.$store.state.person.uteacher.teaPassword
                   }
@@ -109,7 +112,7 @@ export default {
                   let data = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCours,
+                      "teaCourse":this.formInline.teaCourse,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":"123"
                   }

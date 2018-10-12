@@ -2,13 +2,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sie.mapper.PersonManageMapper.TeacherManageMapper">
-
-    <select id="findTeacherByNum" parameterType="string" resultType="teacher">
-      SELECT * FROM teacher WHERE tea_num like '%${value}%'
+    <resultMap id="personResultMap" type="com.sie.domain.TeacherEx">
+        <id column="tea_id" property="teaId"/>
+        <result column="tea_name" property="teaName"/>
+        <result column="tea_password" property="teaPassword"/>
+        <result column="tea_course" property="teaCourse"/>
+        <result column="tea_num" property="teaNum"/>
+        <result column="tea_class" property="teaClass"/>
+        <association property="lesson" javaType="com.sie.domain.Lesson">
+            <id column="les_id" property="lesId"/>
+            <result column="les_name" property="lesName"/>
+            <result column="les_xxx1" property="lesXxx1"/>
+            <result column="les_xxx2" property="lesXxx2"/>
+        </association>
+    </resultMap>
+    <select id="findTeacherByNum" parameterType="string" resultMap="personResultMap">
+      select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name from teacher t,lesson l where t.tea_course=l.les_id
+   AND tea_num like '%${value}%'
     </select>
 
-    <select id="findAllTeacher"  resultType="teacher">
-      SELECT * FROM teacher;
+    <select id="findAllTeacher"  resultMap="personResultMap">
+     select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name from teacher t,lesson l where t.tea_course=l.les_id
     </select>
 
     <select id="findCount"  resultType="int">

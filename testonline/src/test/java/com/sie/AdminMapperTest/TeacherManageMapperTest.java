@@ -1,6 +1,7 @@
 package com.sie.AdminMapperTest;
 
 import com.sie.domain.Teacher;
+import com.sie.domain.TeacherEx;
 import com.sie.mapper.PersonManageMapper.TeacherManageMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,13 +25,17 @@ import java.util.List;
 
         @Test
         public void findAllTeacherTest(){
-            List<Teacher> teacherList =teacherManageMapper.findAllTeacher();
+            List<TeacherEx> teacherList =teacherManageMapper.findAllTeacher();
             System.out.println("老师人数2："+teacherList.size());
+            System.out.println(teacherList.get(0).getTeaName());
+            System.out.println(teacherList.get(0).getTeaNum());
+            System.out.println(teacherList.get(0).getTeaClass());
+            System.out.println(teacherList.get(0).getLesson().getLesName());
         }
 
         @Test
         public void findTeacherByNumTest(){
-            List<Teacher> teacher =teacherManageMapper.findTeacherByNum("t00");
+            List<TeacherEx> teacher =teacherManageMapper.findTeacherByNum("t00");
             if(teacher!=null){
                 System.out.println("yes");
             }else{

@@ -1,18 +1,19 @@
 package com.sie.service.PersonManageService;
 
 import com.sie.domain.Teacher;
+import com.sie.domain.TeacherEx;
 
 import java.util.List;
 
 
 public interface TeacherManagerService {
-    public List<Teacher> findAllTeacher();
+    public List<TeacherEx> findAllTeacher();
 
-    public List<Teacher> findTeacherByNum(String num);
+    public List<TeacherEx> findTeacherByNum(String num);
 
-    public List<Teacher> addTeacher(Teacher teacher);
+    public List<TeacherEx> addTeacher(Teacher teacher);
 
-    public List<Teacher> updateTeacher(Teacher teacher);
+    public List<TeacherEx> updateTeacher(Teacher teacher);
 
-    public List<Teacher> deleteTeacher(String num);
+    public List<TeacherEx> deleteTeacher(String num);
 }

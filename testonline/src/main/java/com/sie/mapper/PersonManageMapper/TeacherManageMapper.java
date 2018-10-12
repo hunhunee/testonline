@@ -1,6 +1,7 @@
 package com.sie.mapper.PersonManageMapper;
 
 import com.sie.domain.Teacher;
+import com.sie.domain.TeacherEx;
 
 import java.util.List;
 
@@ -11,9 +12,9 @@ public interface TeacherManageMapper {
 
     public void updateTeacher(Teacher teacher);
 
-    public List<Teacher> findTeacherByNum(String num);
+    public List<TeacherEx> findTeacherByNum(String num);
 
-    public List<Teacher> findAllTeacher();
+    public List<TeacherEx> findAllTeacher();
 
     public int findCount();
 }

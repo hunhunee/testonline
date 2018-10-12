@@ -2,6 +2,7 @@ package com.sie.AdminServiceTest;
 
 
 import com.sie.domain.Teacher;
+import com.sie.domain.TeacherEx;
 import com.sie.service.PersonManageService.TeacherManagerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,14 +21,14 @@ public class TeacherManageServiceTest {
     @Test
     public void findAllTeacherTest(){
 
-       List<Teacher> teacherList= teacherManagerService.findAllTeacher();
+       List<TeacherEx> teacherList= teacherManagerService.findAllTeacher();
         System.out.println("老师数量："+teacherList.size());
     }
 
 
     @Test
     public void findTeacherByNameTest(){
-        List<Teacher> teacherByNum = teacherManagerService.findTeacherByNum("2");
+        List<TeacherEx> teacherByNum = teacherManagerService.findTeacherByNum("2");
         System.out.println(teacherByNum);
     }
 
@@ -40,13 +41,13 @@ public class TeacherManageServiceTest {
         teacher.setTeaNum("t005");
         teacher.setTeaPassword("123");
         teacher.setTeaClass("1");
-       List<Teacher> teacherList= teacherManagerService.addTeacher(teacher);
+       List<TeacherEx> teacherList= teacherManagerService.addTeacher(teacher);
         System.out.println(teacherList.size());
     }
 
     @Test
     public void deleteTeacherTest(){
-        List<Teacher> teacherList= teacherManagerService.deleteTeacher("t003");
+        List<TeacherEx> teacherList= teacherManagerService.deleteTeacher("t003");
         System.out.println(teacherList.size());
     }
 

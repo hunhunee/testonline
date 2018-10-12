@@ -30,7 +30,7 @@ export default {
                },
                {
                    title: '科目',
-                   key: 'teaCourse'
+                   key: 'lesName'
                },
                {
                    title: '工号',
@@ -109,7 +109,7 @@ export default {
              "teaNum": this.data6[index].teaNum,
              "teaName":this.data6[index].teaName,
              "teaClass":this.data6[index].teaClass,
-             "teaCourse":this.data6[index].teaCourse,
+             "teaCourse":this.data6[index].teaCourse+"",
              "teaPassword":this.data6[index].teaPassword
          }
          this.$store.dispatch('changeTeacher',{data});

@@ -11,7 +11,7 @@
 
     <typeAliases>
         <typeAlias type="com.sie.domain.Teacher" alias="teacher"/>
-
+        <typeAlias type="com.sie.domain.TeacherEx" alias="teacherEx"/>
         <typeAlias type="com.sie.domain.Student" alias="student"/>
 
 

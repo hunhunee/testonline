@@ -30,6 +30,7 @@ import  TeacherTestSingleAOU from '@/components/TeacherTestSingleAOU'
 import  TeacherTestMultipleAOU from '@/components/TeacherTestMultipleAOU'
 import  TeacherTestJudgeAOU from '@/components/TeacherTestJudgeAOU'
 import  TeacherTestComputeAOU from '@/components/TeacherTestComputeAOU'
+import TeacherTestResultSelect from '@/components/TeacherTestResultSelect'
 
 import StudentIndex from '@/components/StudentIndex'
 import StudentMessage from '@/components/StudentMessage'
@@ -40,6 +41,8 @@ import StudentEnd from '@/components/StudentEnd'
 Vue.use(Router)
 
 export default new Router({
+  // mode:'history',
+  // base:'/',
   routes: [
     {
       path: '/',
@@ -51,27 +54,31 @@ export default new Router({
       name: 'student_index',
       component: StudentIndex,
       children: [
-        { path: 'student_message', component:  StudentMessage},            //学生对个人信息进行管理
-        { path: 'student_test', component: StudentTest },                  //学生进行考试
-        { path: 'student_test_result', component: StudentTestResult } ,     //学生查看自己的考试结果
-        { path:'student_end',component:StudentEnd}
+
+        { path: 'student_message', component:  StudentMessage,meta: {auth: true}},            //学生对个人信息进行管理
+        { path: 'student_test', component: StudentTest,meta: {auth: true}},                  //学生进行考试
+        { path: 'student_test_result', component: StudentTestResult,meta: {auth: true}},      //学生查看自己的考试结果
+        { path:'student_end',component:StudentEnd,meta: {auth: true}}
+
       ]
     },
     {
       path: '/teacher_index',
       name: 'teacher_index',
       component: TeacherIndex,
+      meta: {auth: true},
       children: [
-        { path: 'teacher_message', component: TeacherMessage },            //教师对个人信息进行管理
-        { path: 'teacher_test_single', component: TeacherTestSingle },                  //教师对考试试题进行管理
-        { path: 'teacher_test_multiple', component: TeacherTestMultiple },                  //教师对考试试题进行管理
-        { path: 'teacher_test_judge', component: TeacherTestJudge},                  //教师对考试试题进行管理
-        { path: 'teacher_test_compute', component: TeacherTestCompute },                  //教师对考试试题进行管理
-        { path: 'teacher_test_result', component: TeacherTestResult },     //教师对考试结果进行查看
-        { path: 'teacher_test_single_aou', component: TeacherTestSingleAOU },
-        { path: 'teacher_test_multiple_aou', component: TeacherTestMultipleAOU },
-        { path: 'teacher_test_judge_aou', component: TeacherTestJudgeAOU },
-        { path: 'teacher_test_compute_aou', component: TeacherTestComputeAOU },
+        { path: 'teacher_message', component: TeacherMessage,meta: {auth: true}},            //教师对个人信息进行管理
+        { path: 'teacher_test_single', component: TeacherTestSingle,meta: {auth: true}},                  //教师对考试试题进行管理
+        { path: 'teacher_test_multiple', component: TeacherTestMultiple,meta: {auth: true}},                  //教师对考试试题进行管理
+        { path: 'teacher_test_judge', component: TeacherTestJudge,meta: {auth: true}},                  //教师对考试试题进行管理
+        { path: 'teacher_test_compute', component: TeacherTestCompute,meta: {auth: true}},                  //教师对考试试题进行管理
+        { path: 'teacher_test_result', component: TeacherTestResult,meta: {auth: true}},     //教师对考试结果进行查看
+        { path: 'teacher_test_single_aou', component: TeacherTestSingleAOU,meta: {auth: true}},
+        { path: 'teacher_test_multiple_aou', component: TeacherTestMultipleAOU,meta: {auth: true} },
+        { path: 'teacher_test_judge_aou', component: TeacherTestJudgeAOU,meta: {auth: true} },
+        { path: 'teacher_test_compute_aou', component: TeacherTestComputeAOU,meta: {auth: true} },
+        { path: 'teacher_test_result_select', component: TeacherTestResultSelect,meta: {auth: true} },
       ]
     }
     ,
@@ -79,23 +86,24 @@ export default new Router({
       path: '/admin_index',
       name: 'admin_index',
       component: AdminIndex,
+      meta: {auth: true},
       children: [
-        { path: 'admin_message', component: AdminMessage },              //管理员对个人信息进行管理
-        { path: 'admin_test_single', component: AdminTestSingle },                  //教师对考试试题进行管理
-        { path: 'admin_test_multiple', component:AdminTestMultiple },                  //教师对考试试题进行管理
-        { path: 'admin_test_judge', component: AdminTestJudge},                  //教师对考试试题进行管理
-        { path: 'admin_test_compute', component: AdminTestCompute },                  //教师对考试试题进行管理
-        { path: 'admin_person_teacher', component: AdminPersonTeacher },             //管理员对人事信息管理--教师
-        { path: 'admin_person_student', component: AdminPersonStudent },             //管理员对人事信息管理--学生
-        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },      //管理员对人事信息管理--教师
-        { path: 'admin_person_student_aou', component: AdminPersonStudentAOU },      //管理员对人事信息管理--学生
-        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU },       //管理员对人事信息管理--学生
-        { path: 'admin_test_single_aou', component: AdminTestSingleAOU },
-        { path: 'admin_test_multiple_aou', component: AdminTestMultipleAOU },
-        { path: 'admin_test_judge_aou', component: AdminTestJudgeAOU },
-        { path: 'admin_test_compute_aou', component: AdminTestComputeAOU },
-        { path: 'admin_Lesson', component: AdminLesson },                       //管理员对科目信息进行管理
-        { path: 'admin_Lesson_aou', component: AdminLessonAou },                //对科目的增删改查
+        { path: 'admin_message', component: AdminMessage,meta: {auth: true} },              //管理员对个人信息进行管理
+        { path: 'admin_test_single', component: AdminTestSingle,meta: {auth: true} },                  //教师对考试试题进行管理
+        { path: 'admin_test_multiple', component:AdminTestMultiple,meta: {auth: true} },                  //教师对考试试题进行管理
+        { path: 'admin_test_judge', component: AdminTestJudge,meta: {auth: true}},                  //教师对考试试题进行管理
+        { path: 'admin_test_compute', component: AdminTestCompute,meta: {auth: true} },                  //教师对考试试题进行管理
+        { path: 'admin_person_teacher', component: AdminPersonTeacher,meta: {auth: true} },             //管理员对人事信息管理--教师
+        { path: 'admin_person_student', component: AdminPersonStudent,meta: {auth: true} },             //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU,meta: {auth: true} },      //管理员对人事信息管理--教师
+        { path: 'admin_person_student_aou', component: AdminPersonStudentAOU,meta: {auth: true} },      //管理员对人事信息管理--学生
+        { path: 'admin_person_teacher_aou', component: AdminPersonTeacherAOU,meta: {auth: true} },       //管理员对人事信息管理--学生
+        { path: 'admin_test_single_aou', component: AdminTestSingleAOU,meta: {auth: true} },
+        { path: 'admin_test_multiple_aou', component: AdminTestMultipleAOU,meta: {auth: true} },
+        { path: 'admin_test_judge_aou', component: AdminTestJudgeAOU,meta: {auth: true} },
+        { path: 'admin_test_compute_aou', component: AdminTestComputeAOU,meta: {auth: true} },
+        { path: 'admin_Lesson', component: AdminLesson,meta: {auth: true} },                       //管理员对科目信息进行管理
+        { path: 'admin_Lesson_aou', component: AdminLessonAou,meta: {auth: true} },                //对科目的增删改查
       ]
     }
 

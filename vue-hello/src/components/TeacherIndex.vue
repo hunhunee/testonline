@@ -28,9 +28,17 @@
         vertical-align: middle;
         font-size: 22px;
     }
+
+
+    .layout-ceiling-main{
+        float: right;
+      margin-right: 10px;
+    }
+
     .layout-footer-center{
     text-align: center;
 }
+
 </style>
 <template>
 
@@ -38,10 +46,18 @@
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
                 <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
-                    <MenuItem name="1-1">
+                    <!--<MenuItem name="1-1">-->
+                      <!--<Icon type="ios-paper-outline" />-->
+                        <!--<span>考试结果</span>-->
+                    <!--</MenuItem>-->
+                  <Submenu name="1-1">
+                    <template slot="title" >
                       <Icon type="ios-paper-outline" />
-                        <span>考试结果</span>
-                    </MenuItem>
+                      考试结果
+                    </template>
+                    <MenuItem name="1-1-1">成绩分析</MenuItem>
+                    <MenuItem name="1-1-2">成绩显示</MenuItem>
+                  </Submenu>
                     <Submenu name="1-2">
                     <template slot="title">
                         <Icon type="ios-search" />
@@ -60,13 +76,17 @@
             </Sider>
             <Layout>
             <Header >
-              <Menu mode="horizontal" theme="dark" active-name="1">
-               <div class="layout-logo">在线考试系统---管理员</div>
-                   <div class="layout-nav">
-
-
-                   </div>
-               </Menu>
+              <div class="layout-ceiling-main">
+                <Menu mode="horizontal" theme="dark" @on-select="test">
+                  <MenuItem name="h-1-2">
+                    <span> <p>当前时间：{{nowTime}}</p></span>
+                  </MenuItem>
+                  <MenuItem name="h-1-1" >
+                      <Icon type="md-person-add" />
+                      <span>注销</span>
+                  </MenuItem>
+                 </Menu>
+              </div>
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
@@ -94,19 +114,35 @@ import router from '@/router/index'
                 data:{
                   testCourse:localStorage.getItem("lesson"),
                   testType:this.$store.state.test.testType
-                }
+                },
+                scoretatil:{
+                  //从本地获取教师所教的班级及科目
+                  teaClass:localStorage.getItem("_class"),
+                  teaCourse:localStorage.getItem("lesson"),
+                },
+                nowTime:""
             };
+        },
+        // 创建完成时
+        created() {
+          this.nowTimes();
         },
         methods:{
 
           test(name){
             let data=this.data;
+            let scoretatil = this.scoretatil
             switch (name) {
-              case "1-1":
-              router.push({ path: '/teacher_index/teacher_test_result' });
+              case "1-1-1":
+                this.$store.dispatch('findMinAndMaxAndAvgScore',{scoretatil});
+                this.$store.dispatch('findScoreScope',{scoretatil});
+              //  router.push({ path: '/teacher_index/teacher_test_result' });
+                break;
+              case "1-1-2":
+                this.$store.dispatch('findByClassAndByLenName',{scoretatil});
+                  //router.push({ path: '/teacher_index/teacher_test_result_select' });
                 break;
               case "1-2-1":
-
                 this.$store.dispatch('testType',{testType:1});
                 this.data.testType=this.$store.state.test.testType
                 this.$store.dispatch('findTest',{data});
@@ -130,10 +166,29 @@ import router from '@/router/index'
               case "1-3":
              router.push({ path: '/teacher_index/teacher_message' });
                 break;
+              case "h-1-1":
+              this.$store.dispatch('userLoginOut');
+                break;
               default:
 
             }
-          }
+          },
+          // 获取当前时间函数
+          timeFormate(timeStamp) {
+            let year = new Date(timeStamp).getFullYear();
+            let month = new Date(timeStamp).getMonth() + 1 < 10 ? "0" + (new Date(timeStamp).getMonth() + 1) : new Date(timeStamp).getMonth() + 1;
+            let date = new Date(timeStamp).getDate() < 10 ? "0" + new Date(timeStamp).getDate() : new Date(timeStamp).getDate();
+            let hh = new Date(timeStamp).getHours() < 10 ? "0" + new Date(timeStamp).getHours() : new Date(timeStamp).getHours();
+            let mm = new Date(timeStamp).getMinutes() < 10 ? "0" + new Date(timeStamp).getMinutes() : new Date(timeStamp).getMinutes();
+            let ss =new Date(timeStamp).getSeconds() < 10? "0" + new Date(timeStamp).getSeconds(): new Date(timeStamp).getSeconds();
+            //return year + "年" + month + "月" + date +"日"+" "+hh+":"+mm+":"+ss ;
+            this.nowTime = year + "年" + month + "月" + date +"日"+" "+hh+":"+mm +":"+ss;
+          },
+          // 定时器函数
+          nowTimes(){
+            this.timeFormate(new Date());
+            setInterval(this.nowTimes,3*1000);
+          },
         },
         computed: {
             menuitemClasses: function () {

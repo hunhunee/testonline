@@ -7,8 +7,17 @@
 <template>
   <div class="layout">
     <div class="text" >
-      <h1> 距离考试结束时间还有：<span style="color:red">{{minutes}}</span>分<span style="color:red">{{seconds}}</span>秒</h1>
-
+      <h1>
+        距离考试结束时间还有：
+        <span style="color:red">
+          {{minutes}}
+        </span>
+          分
+        <span style="color:red">
+          {{seconds}}
+        </span>
+          秒
+      </h1>
   </div>
 
   <Card style="width:1300px">
@@ -156,7 +165,6 @@
                     }
                      this.$store.dispatch('addExamResult',{data});
 
-
                   this.$router.push('/student_index/student_end'); //跳转到指定页面
 
                 }else if (THIS.minutes >= 0) {
@@ -169,7 +177,6 @@
 
                       THIS.minutes--;
                       THIS.seconds = 60;
-
 
                   }
 

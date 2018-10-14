@@ -31,7 +31,7 @@
         <FormItem prop="teaClass" >
           <Select v-model="formInline.teaClass" placeholder="Select your class" style="width: 200px">
             <Option v-for="item in classList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-    
+
           </Select>
       </FormItem>
 
@@ -92,7 +92,7 @@ export default {
                             label:this.lessonNameString.split(',')[i]
                           })
                        }
-
+                       console.log(this.formInline.teaClass);
                        for (var i = 0; i < this.classNameString.split(',').length; i++) {
                          this.classList.push({
                            value:this.classIdString.split(',')[i],

@@ -108,7 +108,7 @@ export default {
          let data = {
              "teaNum": this.data6[index].teaNum,
              "teaName":this.data6[index].teaName,
-             "teaClass":this.data6[index].teaClass,
+             "teaClass":this.data6[index].teaClass+"",
              "teaCourse":this.data6[index].teaCourse+"",
              "teaPassword":this.data6[index].teaPassword
          }

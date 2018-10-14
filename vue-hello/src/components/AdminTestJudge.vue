@@ -166,7 +166,9 @@ import router from '@/router/index'
           },
           remove (index) {
             let data = {
-                "id": this.data[index].testId
+                "testId": this.data[index].testId,
+                "testType":this.data[index].testType,
+                "testCourse":this.data[index].testCourse
             }
            this.$store.dispatch('deleteTest',{data});
            this.data=this.$store.state.test.test

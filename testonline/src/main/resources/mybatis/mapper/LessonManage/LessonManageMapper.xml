@@ -4,7 +4,7 @@
 <mapper namespace="com.sie.mapper.LessonManageMapper.LessonManageMapper">
 
     <select id="findLessonByName" parameterType="com.sie.domain.Lesson" resultType="com.sie.domain.Lesson">
-      SELECT * FROM lesson WHERE les_name=#{lesName};
+      SELECT * FROM lesson WHERE les_name like '%${lesName}%';
     </select>
 
 

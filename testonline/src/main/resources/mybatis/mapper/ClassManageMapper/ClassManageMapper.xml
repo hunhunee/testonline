@@ -4,7 +4,7 @@
 <mapper namespace="com.sie.mapper.ClassManageMapper.ClassManageMapper">
 
     <select id="findClassByName" parameterType="com.sie.domain.Class_" resultType="com.sie.domain.Class_">
-      SELECT * FROM class WHERE class_name=#{className};
+      SELECT * FROM class WHERE class_name like '%${className}%';
     </select>
 
 

@@ -139,8 +139,14 @@ updateClass({commit},{data}){
 
     findClass_m(state,data){
         console.log("findClass_m");
-        state.class.length=1;
-        state.class[0]=data.data
+        state.class.length=data.data.length;
+        for (var i = 0; i < data.data.length; i++) {
+          state.class[i]=data.data[i];
+          state.classId[i]=data.data[i].classId;
+          console.log(state.classId[i]);
+          state.className[i]=data.data[i].className;
+          console.log(state.className[i]);
+        }
         console.log(data.data);
         router.push({ path: '/admin_index/admin_Class' });
     },

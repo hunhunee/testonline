@@ -12,7 +12,7 @@ public interface ClassManageMapper {
 
     public void  updateClass(Class_ class_);
 
-    public Class_ findClassByName(Class_ class_);
+    public List<Class_> findClassByName(Class_ class_);
 
     public List<Class_> findAllClass();
 

@@ -12,7 +12,7 @@ public interface ClassManagerService {
 
     public List<Class_> updateClass(Class_ class_);
 
-    public  Class_  findClassByName(Class_ class_);
+    public  List<Class_>  findClassByName(Class_ class_);
 
     public List<Class_> findAllClass();
 

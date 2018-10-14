@@ -41,9 +41,9 @@ public class ClassManageController {
     }
 
     @PostMapping("/findClassByName")
-    public  Class_  findClassByNameTest(Class_ class_){
+    public  List<Class_>  findClassByNameTest(Class_ class_){
        System.out.println("查找的班级名："+class_.getClassName());
-       Class_ class1=classManagerService.findClassByName(class_);
+        List<Class_> class1=classManagerService.findClassByName(class_);
 
         return class1;
     }

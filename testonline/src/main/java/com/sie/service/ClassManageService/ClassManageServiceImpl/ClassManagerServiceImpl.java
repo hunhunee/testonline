@@ -41,8 +41,8 @@ public class ClassManagerServiceImpl implements ClassManagerService {
    }
 
 
-   public  Class_  findClassByName(Class_ class_) {
-      Class_ lessonList=classManageMapper.findClassByName(class_);
+   public  List<Class_>  findClassByName(Class_ class_) {
+      List<Class_> lessonList=classManageMapper.findClassByName(class_);
 
         return lessonList;
 

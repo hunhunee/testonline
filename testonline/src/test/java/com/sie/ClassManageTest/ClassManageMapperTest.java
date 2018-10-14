@@ -43,9 +43,9 @@ public class ClassManageMapperTest {
         @Test
          public  void findClassByNameTest(){
              Class_ class_=new Class_();
-            Class_ class1_=new Class_();
+
              class_.setClassName("1A");
-            class1_=classManageMapper.findClassByName(class_);
+            List<Class_> class1_=classManageMapper.findClassByName(class_);
             if(class1_!=null){
                 System.out.println("yes");
             }else{

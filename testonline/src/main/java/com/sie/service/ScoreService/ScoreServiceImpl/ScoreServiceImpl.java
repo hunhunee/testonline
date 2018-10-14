@@ -35,6 +35,10 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public List<StudentAnswer> findByClassAndByLenName(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {
         List<StudentAnswer> byClassAndByLenName = scoreMapper.findByClassAndByLenName(teaClass, teaCourse);
+        System.out.println(byClassAndByLenName.size());
+        for (int i = 0; i <byClassAndByLenName.size() ; i++) {
+            //byClassAndByLenName.get(i).setClassName();
+        }
         return byClassAndByLenName;
     }
 
@@ -42,6 +46,9 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public StudentAnswer findByStuNum(@Param("stuNum")String stuNum,@Param("teaCourse") String teaCourse) throws Exception {
         StudentAnswer byStuNum = scoreMapper.findByStuNum(stuNum, teaCourse);
+
+        byStuNum.setClassName(byStuNum.getaClass().getClassName());
+
         return byStuNum;
     }
 
@@ -94,6 +101,8 @@ public class ScoreServiceImpl implements ScoreService {
                 //同理
                 lists.get(i).getStudentAnswer().get(j).setStuNum(lists.get(i).getStuNum());
                 lists.get(i).getStudentAnswer().get(j).setLesName(lists.get(i).getStudentAnswer().get(j).getLesson().getLesName());
+                lists.get(i).getStudentAnswer().get(j).setClassName(lists.get(i).getStudentAnswer().get(j).getaClass().getClassName());
+
             }
 
         }

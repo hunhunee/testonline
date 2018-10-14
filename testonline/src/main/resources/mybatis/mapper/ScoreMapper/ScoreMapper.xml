@@ -13,6 +13,10 @@
                <id column="les_id" property="lesId"></id>
                <result column="les_name" property="lesName"></result>
            </association>
+           <association property="aClass" javaType="com.sie.domain.Class_">
+               <id column="class_id" property="classId"/>
+               <result column="class_name" property="className"/>
+           </association>
        </collection>
     </resultMap>
 
@@ -22,15 +26,20 @@
         <result property="stuClass" column="stu_class"/>
         <result property="lesName" column="les_name"/>
         <result property="totalscore" column="totalscore"/>
+        <association property="aClass" javaType="com.sie.domain.Class_">
+            <id column="class_id" property="classId"/>
+            <result column="class_name" property="className"/>
+        </association>
     </resultMap>
 
     <!--查询学生各科的成绩-->
     <select id="findScoreByStuId" parameterType="java.lang.String" resultMap="BaseScoreResultMap">
 
 
-      SELECT student.stu_name ,student.stu_num,student_answer.stu_class , lesson.les_name ,totalscore
-        FROM student_answer,student,lesson
+      SELECT student.stu_name ,student.stu_num,student_answer.stu_class , lesson.les_name ,totalscore,class.class_name
+        FROM student_answer,student,lesson,class
         WHERE student.stu_id = student_answer.stu_id AND student.stu_num =  #{value} AND student_answer.les_name = lesson.les_id
+        AND   student_answer.stu_class= class.class_id
     </select>
 
     <!--教师 -最低成绩查询 、最高成绩查询 、平均分查询-->
@@ -70,12 +79,13 @@
 
     <!--教师查询所教班级及科目的同学的成绩-->
     <select id="findByClassAndByLenName" parameterType="java.lang.String" resultMap="BaseScoreExResultMap">
-     SELECT student_answer.stu_class,lesson.les_name, stu_name,student.stu_num,totalscore
-        FROM student_answer,student,lesson
+     SELECT student_answer.stu_class,lesson.les_name, stu_name,student.stu_num,totalscore,class.class_name
+        FROM student_answer,student,lesson,class
         WHERE student.stu_id = student_answer.stu_id AND
         student_answer.les_name = lesson.les_id AND
-         student_answer.stu_class = #{teaClass} AND
-         student_answer.les_name= #{teaCourse}
+        student_answer.stu_class = #{teaClass} AND
+        student_answer.les_name= #{teaCourse} AND
+        student_answer.stu_class= class.class_id
 
     </select>
 
@@ -85,12 +95,14 @@
        lesson.les_name,
        student.stu_name,
        student.stu_num,
-       student_answer.totalscore
-    FROM student_answer,student,lesson
+       student_answer.totalscore,
+       class.class_name
+    FROM student_answer,student,lesson,class
     WHERE student.stu_num= #{stuNum }AND
         student_answer.les_name =  #{teaCourse} AND
         student.stu_id=student_answer.stu_id AND
-        student_answer.les_name = lesson.les_id
+        student_answer.les_name = lesson.les_id AND
+        student_answer.stu_class= class.class_id
     </select>
 
 

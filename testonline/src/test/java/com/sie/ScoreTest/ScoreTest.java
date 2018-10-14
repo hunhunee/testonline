@@ -4,6 +4,7 @@ import com.sie.controller.ScoreController.ScoreController;
 import com.sie.domain.ScoreEx;
 import com.sie.domain.Student;
 import com.sie.domain.StudentAnswer;
+import com.sie.mapper.ScoreManagerMapper.ScoreMapper;
 import com.sie.service.ScoreService.ScoreService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +23,9 @@ public class ScoreTest {
 
     @Autowired
     private ScoreController scoreController;
+
+    @Autowired
+    private ScoreMapper scoreMapper;
 
     //学生service
     @Test
@@ -139,11 +143,12 @@ public class ScoreTest {
 
     @Test
     public void  findByClassAndByLenName() throws  Exception{
-        List<StudentAnswer> scoreScope = scoreService.findByClassAndByLenName("2", "2");
+        List<StudentAnswer> scoreScope = scoreMapper.findByClassAndByLenName("1","2");
         for(int i= 0;i<scoreScope.size();i++){
         System.out.println("学号："+scoreScope.get(i).getStuNum()+"姓名："+scoreScope.get(i).getStuNum()
-                           + "班级: "+scoreScope.get(i).getStuClass()+"科目："+scoreScope.get(i).getLesName()+
-                             "成绩："+scoreScope.get(i).getTotalscore() );
+                           + "班级: "+scoreScope.get(i).getaClass().getClassName()+"科目："+scoreScope.get(i).getLesName()+
+                             "成绩："+scoreScope.get(i).getTotalscore()  );
+           // System.out.println(scoreScope.get(i).toString());
         }
     }
 

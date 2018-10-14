@@ -5,6 +5,25 @@ public class StudentAnswer {
 
     private Lesson lesson;
 
+    private Class_ aClass;
+    private String className;
+
+    public Class_ getaClass() {
+        return aClass;
+    }
+
+    public void setaClass(Class_ aClass) {
+        this.aClass = aClass;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     public Lesson getLesson() {
         return lesson;
     }

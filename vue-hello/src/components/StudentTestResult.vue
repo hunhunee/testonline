@@ -2,7 +2,7 @@
 
 </style>
 <template>
- 
+
     <div class="layout">
       <Table height="480" border :columns="columns" :data="data"></Table>
     </div>
@@ -23,7 +23,7 @@
                 },
                 {
                   title: '班级',
-                  key: 'stuClass'
+                  key: 'className'
                 },
                 {
                   title: '考试科目',

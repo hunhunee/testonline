@@ -31,6 +31,6 @@
         <mapper resource="mybatis/mapper/ExamMapper/ExamPaperMapper.xml"/>
         <mapper resource="mybatis/mapper/LessonManage/LessonManageMapper.xml"></mapper>
         <mapper resource="mybatis/mapper/ScoreMapper/ScoreMapper.xml"/>
-
+        <mapper resource="mybatis/mapper/ClassManageMapper/ClassManageMapper.xml"/>
     </mappers>
 </configuration>

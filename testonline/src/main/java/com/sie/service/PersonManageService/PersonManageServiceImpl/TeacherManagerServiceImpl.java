@@ -20,6 +20,7 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
        List<TeacherEx> teacherList= teacherManageMapper.findAllTeacher();
         for (int i = 0; i <teacherList.size() ; i++) {
             teacherList.get(i).setLesName(teacherList.get(i).getLesson().getLesName());
+            teacherList.get(i).setClassName(teacherList.get(i).getaClass().getClassName());
         }
         return teacherList;
     }
@@ -29,6 +30,8 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
         List<TeacherEx> teacher =teacherManageMapper.findTeacherByNum(num);
         for (int i = 0; i <teacher.size() ; i++) {
             teacher.get(i).setLesName(teacher.get(i).getLesson().getLesName());
+            teacher.get(i).setClassName(teacher.get(i).getaClass().getClassName());
+
         }
         return teacher;
     }
@@ -40,6 +43,8 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
         List<TeacherEx> teacherList=teacherManageMapper.findAllTeacher();
         for (int i = 0; i <teacherList.size() ; i++) {
             teacherList.get(i).setLesName(teacherList.get(i).getLesson().getLesName());
+            teacherList.get(i).setClassName(teacherList.get(i).getaClass().getClassName());
+
         }
         return teacherList;
     }
@@ -51,6 +56,7 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
         List<TeacherEx> teacherList = teacherManageMapper.findAllTeacher();
         for (int i = 0; i <teacherList.size() ; i++) {
             teacherList.get(i).setLesName(teacherList.get(i).getLesson().getLesName());
+            teacherList.get(i).setClassName(teacherList.get(i).getaClass().getClassName());
         }
          return teacherList;
     }
@@ -62,6 +68,7 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
         List<TeacherEx> teacherList=teacherManageMapper.findAllTeacher();
         for (int i = 0; i <teacherList.size() ; i++) {
             teacherList.get(i).setLesName(teacherList.get(i).getLesson().getLesName());
+             teacherList.get(i).setClassName(teacherList.get(i).getaClass().getClassName());
         }
         return teacherList;
     }

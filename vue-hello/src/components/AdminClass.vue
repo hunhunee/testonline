@@ -6,12 +6,12 @@
 </style>
 <template>
     <div class="layout">
-        <Input @on-change="search" search  v-model="num" enter-button placeholder="请输入工号查找教师" style="width:300px" />
+
+        <Input @on-change="search" v-model="className" search enter-button placeholder="班级名称查询" style="width:300px" />
 
       <div class="add">
-        <Button type="primary" @click="add">添加教师信息</Button>
+        <Button type="primary" @click="add">添加班级</Button>
       </div>
-
 
     <Table height="480" border :columns="columns7" :data="data6"></Table>
     </div>
@@ -24,22 +24,15 @@ export default {
        return {
            columns7: [
                {
-                   title: '姓名',
-                   key: 'teaName',
+                   title: '班级Id',
+                   key: 'classId',
 
                },
                {
-                   title: '科目',
-                   key: 'lesName'
-               },
-               {
-                   title: '工号',
-                   key: 'teaNum'
-               },
-               {
-                   title: '班级',
+                   title: '班级名称',
                    key: 'className'
                },
+
                {
                    title: 'Action',
                    key: 'action',
@@ -77,21 +70,21 @@ export default {
                }
            ],
            data6:[],
-           num:""
-
-
-
+          className:""
        }
    },
 
    created: function () {
     console.log("created");
+    // this.data6=this.$store.state.lesson.lesson
+    // console.log(this.data6);
 
          setInterval(()=>{
-            this.data6.length=this.$store.state.person.teacher.length
-            for (var i = 0; i < this.$store.state.person.teacher.length; i++) {
-              this.$set(this.data6,i,this.$store.state.person.teacher[i])
-            }
+
+         this.data6.length=this.$store.state.Class.class.length
+         for (var i = 0; i < this.$store.state.Class.class.length; i++) {
+         this.$set(this.data6,i,this.$store.state.Class.class[i])
+          }
          }, 1000);
   },
 
@@ -99,50 +92,38 @@ export default {
      console.log("mounted");
    },
 
-
   destroyed: function(){
     console.log("destroyed");
   },
    methods: {
        change (index) {
          let data = {
-             "teaNum": this.data6[index].teaNum,
-             "teaName":this.data6[index].teaName,
-             "teaClass":this.data6[index].teaClass,
-             "teaCourse":this.data6[index].teaCourse+"",
-             "teaPassword":this.data6[index].teaPassword
+            "classId":this.data6[index].classId,
+              "className":this.data6[index].className
          }
-         this.$store.dispatch('changeTeacher',{data});
-         router.push({ path: '/admin_index/admin_person_teacher_aou' });
+         this.$store.dispatch('changeClass',{data});
+         router.push({ path: '/admin_index/admin_Class_aou' });
        },
        remove (index) {
          let data = {
-             "num": this.data6[index].teaNum
+             "className": this.data6[index].className
          }
-        this.$store.dispatch('deleteTeacher',{data});
-
+        this.$store.dispatch('deleteClass',{data});
       },
       search () {
         let data = {
-            "num": this.num
+            "className": this.className
         }
-         this.$store.dispatch('findTeacher',{data});
+        this.$store.dispatch('findClass',{data});
+
+
       },
 
-      // show(){
-      //     console.log("show");
-      //     console.log(this.$store.state.person.teacher[0]);
-      //     if(this.$store.state.person.teacher[0]==null||this.$store.state.person.teacher[0]==""){
-      //       alert("没有这个老师！")
-      //     }
-      //     clearInterval();
-      //     this.$set(this.data6,0,this.$store.state.person.teacher[0])
-      // },
-
       add() {
-        this.$store.dispatch('addBeforeTeacher');
-        router.push({ path: '/admin_index/admin_person_teacher_aou' });
+        this.$store.dispatch('addBeforeClass');
+        router.push({ path: '/admin_index/admin_Class_aou' });
       }
+
    }
 }
 </script>

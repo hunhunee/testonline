@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sie.mapper.ClassManageMapper.ClassManageMapper">
+
+    <select id="findClassByName" parameterType="com.sie.domain.Class_" resultType="com.sie.domain.Class_">
+      SELECT * FROM class WHERE class_name=#{className};
+    </select>
+
+
+    <select id="findAllClass"  resultType="com.sie.domain.Class_">
+      SELECT * FROM class;
+    </select>
+
+
+    <update id="updateClass" parameterType="com.sie.domain.Class_" >
+        UPDATE class set class_name=#{className} where class_id=#{classId};
+    </update>
+
+
+    <delete id="deleteClass" parameterType="com.sie.domain.Class_">
+        DELETE  from class WHERE  class_name=#{className};
+    </delete>
+
+    <insert id="addClass" parameterType="com.sie.domain.Class_">
+        INSERT INTO class (class_id,class_name) VALUES (#{classId},#{className});
+    </insert>
+</mapper>

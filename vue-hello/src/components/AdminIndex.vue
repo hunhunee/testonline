@@ -73,6 +73,10 @@
             <Icon type="md-person-add"/>
             <span>科目管理</span>
           </MenuItem>
+          <MenuItem name="1-5">
+            <Icon type="md-person-add"/>
+            <span>班级管理</span>
+          </MenuItem>
         </Menu>
       </Sider>
       <Layout>
@@ -163,11 +167,13 @@
           case "h-1-1":
             this.$store.dispatch('userLoginOut');
             break;
-          default:
-
           case"1-4":
             this.$store.dispatch('findAllLesson');
-
+            break;
+          case"1-5":
+              this.$store.dispatch('findAllClass');
+              break;
+            default:
         }
       },
       // 获取当前时间函数

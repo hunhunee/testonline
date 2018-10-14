@@ -369,4 +369,61 @@ return axios({
     });
   },
 
+
+  findAllClass: function () {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/findAllClass'
+   });
+  },
+  findClass: function (data) {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/findClassByName',
+     data:Qs.stringify(data)
+   });
+  },
+
+
+  addClass: function (data) {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/addClass',
+     data:Qs.stringify(data)
+   });
+   },
+
+  updateClass: function (data) {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/updateClass',
+     data:Qs.stringify(data)
+
+   });
+  },
+
+  deleteClass: function (data) {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/deleteClass',
+     data:Qs.stringify(data)
+   });
+  },
+
+
 }

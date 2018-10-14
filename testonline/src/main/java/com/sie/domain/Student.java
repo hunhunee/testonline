@@ -29,7 +29,7 @@ public class Student {
 
     private String stuNum;
 
-    private String stuClass;
+    private int stuClass;
 
     public Integer getStuId() {
         return stuId;
@@ -71,11 +71,15 @@ public class Student {
         this.stuNum = stuNum == null ? null : stuNum.trim();
     }
 
-    public String getStuClass() {
+    public void setStuId(int stuId) {
+        this.stuId = stuId;
+    }
+
+    public int getStuClass() {
         return stuClass;
     }
 
-    public void setStuClass(String stuClass) {
-        this.stuClass = stuClass == null ? null : stuClass.trim();
+    public void setStuClass(int stuClass) {
+        this.stuClass = stuClass;
     }
 }

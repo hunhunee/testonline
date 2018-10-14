@@ -16,7 +16,7 @@ public class User {
     private String password;
     private String identity;
     private String sex;
-    private String _class;
+    private int _class;
     private String name;
     private int lesson;
 
@@ -28,11 +28,11 @@ public class User {
         this.sex = sex;
     }
 
-    public String get_class() {
+    public int get_class() {
         return _class;
     }
 
-    public void set_class(String _class) {
+    public void set_class(int _class) {
         this._class = _class;
     }
 

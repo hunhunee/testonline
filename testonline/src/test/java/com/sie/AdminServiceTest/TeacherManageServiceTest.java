@@ -40,7 +40,7 @@ public class TeacherManageServiceTest {
         teacher.setTeaCourse(1);
         teacher.setTeaNum("t005");
         teacher.setTeaPassword("123");
-        teacher.setTeaClass("1");
+        //teacher.setTeaClass("1");
        List<TeacherEx> teacherList= teacherManagerService.addTeacher(teacher);
         System.out.println(teacherList.size());
     }

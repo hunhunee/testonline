@@ -8,6 +8,7 @@ import exam from './modules/exam/index';
 import infor from './modules/infor/index'
 import lesson from './modules/Lesson/index';
 import score from './modules/score/index';
+import Class from './modules/Class/index';
 
 Vue.use(Vuex);
 
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     infor:infor,
     lesson:lesson,
     score:score,
+    Class:Class
   }
 
 });

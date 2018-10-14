@@ -25,7 +25,7 @@ public class StudentManagerServiceTest {
         stu.setStuPassword("123456");
         stu.setStuNum("1111");
         stu.setStuSex("女");
-        stu.setStuClass("信息与安全");
+        //stu.setStuClass("信息与安全");
         studentManagerService.insertStudent(stu);
         System.out.println("添加成功!!!");
     }
@@ -45,7 +45,7 @@ public class StudentManagerServiceTest {
         stu.setStuName("我喜欢你张同学");
         stu.setStuPassword("123456");
         stu.setStuSex("男");
-        stu.setStuClass("软件2班");
+        //stu.setStuClass("软件2班");
         studentManagerService.updateStudentByStuNum(stu);
         System.out.println("修改成功!!!");
     }

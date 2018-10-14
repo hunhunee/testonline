@@ -27,10 +27,8 @@ import java.util.List;
         public void findAllTeacherTest(){
             List<TeacherEx> teacherList =teacherManageMapper.findAllTeacher();
             System.out.println("老师人数2："+teacherList.size());
-            System.out.println(teacherList.get(0).getTeaName());
-            System.out.println(teacherList.get(0).getTeaNum());
-            System.out.println(teacherList.get(0).getTeaClass());
-            System.out.println(teacherList.get(0).getLesson().getLesName());
+
+            System.out.println(teacherList.get(0).getaClass().getClassName());
         }
 
         @Test

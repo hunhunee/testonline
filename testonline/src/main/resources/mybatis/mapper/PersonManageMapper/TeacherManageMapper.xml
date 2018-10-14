@@ -15,14 +15,21 @@
             <result column="les_xxx1" property="lesXxx1"/>
             <result column="les_xxx2" property="lesXxx2"/>
         </association>
+
+        <association property="aClass" javaType="com.sie.domain.Class_">
+            <id column="class_id" property="classId"/>
+            <result column="class_name" property="className"/>
+
+        </association>
+
     </resultMap>
     <select id="findTeacherByNum" parameterType="string" resultMap="personResultMap">
-      select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name from teacher t,lesson l where t.tea_course=l.les_id
-   AND tea_num like '%${value}%'
+       select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name,class_name from teacher t,lesson l ,class c where t.tea_course=l.les_id and t.tea_class=c.class_id
+    AND tea_num like '%${value}%'
     </select>
 
     <select id="findAllTeacher"  resultMap="personResultMap">
-     select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name from teacher t,lesson l where t.tea_course=l.les_id
+     select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name,class_name from teacher t,lesson l,class c where t.tea_course=l.les_id and t.tea_class=c.class_id
     </select>
 
     <select id="findCount"  resultType="int">

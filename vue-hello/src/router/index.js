@@ -18,6 +18,8 @@ import  AdminTestJudgeAOU from '@/components/AdminTestJudgeAOU'
 import  AdminTestComputeAOU from '@/components/AdminTestComputeAOU'
 import AdminLesson from '@/components/AdminLesson'
 import AdminLessonAou from '@/components/AdminLessonAou'
+import AdminClass from '@/components/AdminClass'
+import AdminClassAou from '@/components/AdminClassAou'
 
 import TeacherIndex from '@/components/TeacherIndex'
 import TeacherMessage from '@/components/TeacherMessage'
@@ -104,6 +106,9 @@ export default new Router({
         { path: 'admin_test_compute_aou', component: AdminTestComputeAOU,meta: {auth: true} },
         { path: 'admin_Lesson', component: AdminLesson,meta: {auth: true} },                       //管理员对科目信息进行管理
         { path: 'admin_Lesson_aou', component: AdminLessonAou,meta: {auth: true} },                //对科目的增删改查
+        { path: 'admin_Class', component: AdminClass,meta: {auth: true} },                       //管理员对科目信息进行管理
+        { path: 'admin_Class_aou', component: AdminClassAou,meta: {auth: true} },                //对科目的增删改查
+
       ]
     }
 

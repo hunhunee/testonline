@@ -24,9 +24,8 @@
 
       <FormItem   prop="stuClass">
         <Select v-model="formInline.stuClass" placeholder="Select your class" style="width: 200px">
-          <Option value="1">一班</Option>
-          <Option value="2">二班</Option>
-          <Option value="3">三班</Option>
+          <Option v-for="item in classList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+
         </Select>
       </FormItem>
 
@@ -65,9 +64,32 @@
           stuClass: [
             { required: true, message: 'Please fill in the class.', trigger: 'blur' }
           ],
-        }
+        },
+        classList: [],
+        classIdString:"",
+        classNameString:""
+
       }
     },
+
+    created: function () {
+     console.log("created");
+
+                    console.log("list");
+
+                    this.classIdString=localStorage.getItem("classIdList");
+                    this.classNameString=localStorage.getItem("classNameList");
+
+                   
+                   for (var i = 0; i < this.classNameString.split(',').length; i++) {
+                     this.classList.push({
+                       value:this.classIdString.split(',')[i],
+                       label:this.classNameString.split(',')[i]
+                     })
+                  }
+
+    },
+
     methods: {
 
       handleSubmit() {

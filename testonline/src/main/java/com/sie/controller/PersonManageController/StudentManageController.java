@@ -1,6 +1,7 @@
 package com.sie.controller.PersonManageController;
 
 import com.sie.domain.Student;
+import com.sie.domain.StudentEx;
 import com.sie.service.PersonManageService.StudentManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,31 +19,31 @@ public class StudentManageController {
 
     //查询学生
     @PostMapping("/findStudent")
-    public List<Student> findStudent(String num){
+    public List<StudentEx> findStudent(String num){
         return studentManagerService.selectStudentByStuNum(num);
     }
     //查询所有学生
     @PostMapping("/findAllStudent")
-    public List<Student> findAllStudent(){
+    public List<StudentEx> findAllStudent(){
         System.out.println("我进来了。。。。。");
         return studentManagerService.selectAllStudent();
     }
     //增加
     @PostMapping("/addStudent")
-    public List<Student> addStudent(Student student){
-        List<Student> studentList = studentManagerService.insertStudent(student);
+    public List<StudentEx> addStudent(StudentEx student){
+        List<StudentEx> studentList = studentManagerService.insertStudent(student);
         return studentList;
     }
     //删除
     @PostMapping("/deleteStudent")
-    public List<Student> deleteStudent(String num){
-        List<Student> studentList = studentManagerService.deleteStudentByStuNum(num);
+    public List<StudentEx> deleteStudent(String num){
+        List<StudentEx> studentList = studentManagerService.deleteStudentByStuNum(num);
         return studentList;
     }
     //修改
     @PostMapping("/updateStudent")
-    public List<Student> updataStudent(Student student){
-        List<Student> studentList = studentManagerService.updateStudentByStuNum(student);
+    public List<StudentEx> updataStudent(StudentEx student){
+        List<StudentEx> studentList = studentManagerService.updateStudentByStuNum(student);
         return studentList;
     }
 }

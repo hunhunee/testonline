@@ -3,13 +3,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sie.mapper.PersonManageMapper.StudentManageMapper">
 
-    <resultMap id="BaseResultMap" type="com.sie.domain.Student">
+    <resultMap id="BaseResultMap" type="com.sie.domain.StudentEx">
         <id property="stuId" column="stu_id"/>
         <result property="stuName" column="stu_name"/>
         <result property="stuPassword" column="stu_password"/>
         <result property="stuSex" column="stu_sex"/>
         <result property="stuNum" column="stu_num"/>
         <result property="stuClass" column="stu_class"/>
+        <association property="aClass" javaType="com.sie.domain.Class_">
+            <id column="class_id" property="classId"/>
+            <result column="class_name" property="className"/>
+        </association>
     </resultMap>
 
 
@@ -32,12 +36,12 @@
 
     <!--模糊查询单个学生-->
     <select id="selectStudentByStuNum" parameterType="java.lang.String" resultMap="BaseResultMap">
-          SELECT * FROM student WHERE stu_num like '%${value}%'
+          SELECT stu_id,stu_name,stu_password,stu_sex,stu_num,stu_class,class_name FROM student,class WHERE stu_class=class_id AND stu_num like '%${value}%'
 
         </select>
 
     <!--查询所有学生-->
     <select id="selectAllStudent" resultMap="BaseResultMap">
-          SELECT * FROM student
+          SELECT  stu_id,stu_name,stu_password,stu_sex,stu_num,stu_class,class_name FROM student ,class WHERE stu_class=class_id
         </select>
 </mapper>

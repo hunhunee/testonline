@@ -2,6 +2,7 @@ package com.sie.service.PersonManageService.PersonManageServiceImpl;
 
 
 import com.sie.domain.Student;
+import com.sie.domain.StudentEx;
 import com.sie.mapper.PersonManageMapper.StudentManageMapper;
 import com.sie.service.PersonManageService.StudentManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,40 +20,55 @@ public class StudentManagerServiceImpl implements StudentManagerService {
 
     //学生添加
     @Override
-    public List<Student> insertStudent(Student student) {
-        studentManageMapper.insertStudent(student);
-        List<Student> studentList = studentManageMapper.selectAllStudent();
+    public List<StudentEx> insertStudent(StudentEx studentEx) {
+        studentManageMapper.insertStudent(studentEx);
+        List<StudentEx> studentList = studentManageMapper.selectAllStudent();
+        for (int i = 0; i <studentList.size() ; i++) {
+            studentList.get(i).setClassName(studentList.get(i).getaClass().getClassName());
+        }
         return studentList;
 
     }
 
     //根据学号来删除学生
     @Override
-    public List<Student> deleteStudentByStuNum(String num) {
+    public List<StudentEx> deleteStudentByStuNum(String num) {
         studentManageMapper.deleteStudentByStuNum(num);
-        List<Student> studentList = studentManageMapper.selectAllStudent();
+        List<StudentEx> studentList = studentManageMapper.selectAllStudent();
+        for (int i = 0; i <studentList.size() ; i++) {
+            studentList.get(i).setClassName(studentList.get(i).getaClass().getClassName());
+        }
         return studentList;
     }
 
     //根据学号来修改学生信息
     @Override
-    public List<Student> updateStudentByStuNum(Student student) {
-        studentManageMapper.updateStudentByStuNum(student);
-        List<Student> studentList = studentManageMapper.selectAllStudent();
+    public List<StudentEx> updateStudentByStuNum(StudentEx studentEx) {
+        studentManageMapper.updateStudentByStuNum(studentEx);
+        List<StudentEx> studentList = studentManageMapper.selectAllStudent();
+        for (int i = 0; i <studentList.size() ; i++) {
+            studentList.get(i).setClassName(studentList.get(i).getaClass().getClassName());
+        }
         return studentList;
     }
 
     //根据学号来查询学生
     @Override
-    public List<Student> selectStudentByStuNum(String num) {
-        List<Student> student = studentManageMapper.selectStudentByStuNum(num);
+    public List<StudentEx> selectStudentByStuNum(String num) {
+        List<StudentEx> student = studentManageMapper.selectStudentByStuNum(num);
+        for (int i = 0; i <student.size() ; i++) {
+            student.get(i).setClassName(student.get(i).getaClass().getClassName());
+        }
         return student;
     }
 
     //查询所有学生
     @Override
-    public List<Student> selectAllStudent() {
-        List<Student> list = studentManageMapper.selectAllStudent();
+    public List<StudentEx> selectAllStudent() {
+        List<StudentEx> list = studentManageMapper.selectAllStudent();
+        for (int i = 0; i <list.size() ; i++) {
+               list.get(i).setClassName(list.get(i).getaClass().getClassName());
+        }
         return list;
     }
 }

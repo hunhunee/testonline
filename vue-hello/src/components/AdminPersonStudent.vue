@@ -34,7 +34,7 @@
           },
           {
             title: '班级',
-            key: 'stuClass'
+            key: 'className'
           },
           {
             title: 'Action',

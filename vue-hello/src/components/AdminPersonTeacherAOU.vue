@@ -30,9 +30,8 @@
 
         <FormItem prop="teaClass" >
           <Select v-model="formInline.teaClass" placeholder="Select your class" style="width: 200px">
-              <Option value="1">一班</Option>
-              <Option value="2">二班</Option>
-              <Option value="3">三班</Option>
+            <Option v-for="item in classList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+    
           </Select>
       </FormItem>
 
@@ -71,7 +70,10 @@ export default {
                 },
                 lessonList: [],
                 lessonIdString:"",
-                lessonNameString:""
+                lessonNameString:"",
+                classList: [],
+                classIdString:"",
+                classNameString:""
 
             }
         },
@@ -81,15 +83,22 @@ export default {
                         console.log("lessonlist");
                         this.lessonIdString=localStorage.getItem("lessonIdList");
                         this.lessonNameString=localStorage.getItem("lessonNameList");
+                        this.classIdString=localStorage.getItem("classIdList");
+                        this.classNameString=localStorage.getItem("classNameList");
 
                         for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
-
-
                           this.lessonList.push({
                             value:this.lessonIdString.split(',')[i],
                             label:this.lessonNameString.split(',')[i]
                           })
                        }
+
+                       for (var i = 0; i < this.classNameString.split(',').length; i++) {
+                         this.classList.push({
+                           value:this.classIdString.split(',')[i],
+                           label:this.classNameString.split(',')[i]
+                         })
+                      }
 
        },
         methods: {

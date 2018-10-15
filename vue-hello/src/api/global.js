@@ -343,13 +343,13 @@ return axios({
 
 
 //个人信息维护--修改密码
-updateInfor: function (data) {
+updateInfo: function (data) {
 return axios({
  headers: {
      'deviceCode': 'A95ZEF1-47B5-AC90BF3'
  },
  method: 'post',
- url: '/api/inforManage/updateInfor',
+ url: '/api/infoManage/updateInfo',
  data:Qs.stringify(data)
 
 });

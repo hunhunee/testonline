@@ -5,7 +5,7 @@ import user from './modules/user/index';
 import person from './modules/person/index';
 import test from './modules/test/index';
 import exam from './modules/exam/index';
-import infor from './modules/infor/index'
+import info from './modules/info/index'
 import lesson from './modules/Lesson/index';
 import score from './modules/score/index';
 import Class from './modules/Class/index';
@@ -19,7 +19,7 @@ export default new Vuex.Store({
     person:person,
     test:test,
     exam:exam,
-    infor:infor,
+    info:info,
     lesson:lesson,
     score:score,
     Class:Class

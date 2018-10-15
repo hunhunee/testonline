@@ -37,6 +37,9 @@
     float: right;
     margin-right: 10px;
   }
+  .layout-footer-center{
+    text-align: center;
+}
 </style>
 <template>
   <div class="layout">
@@ -103,6 +106,7 @@
             </div>
           </Card>
         </Content>
+        <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
       </Layout>
     </Layout>
   </div>
@@ -117,7 +121,7 @@
         data: {
           testType: this.getTestType,
         },
-       
+
       };
     },
     // 创建完成时

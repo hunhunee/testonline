@@ -21,7 +21,7 @@ export default {
   },
   actions:{
     userLayout({commit},{data}){
-     api.updateInfor(data)
+     api.updateInfo(data)
      .then((response) => {
         commit('userLayout_m',response);
      })

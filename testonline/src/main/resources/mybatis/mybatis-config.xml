@@ -18,14 +18,14 @@
         <typeAlias type="com.sie.domain.Lesson" alias="lesson"/>
 
         <typeAlias type="com.sie.domain.Admin" alias="admin"/>
-        <typeAlias type="com.sie.domain.Infor" alias="infor"/>
+        <typeAlias type="com.sie.domain.Info" alias="info"/>
         
     </typeAliases>
 
     <mappers>
         <mapper resource="mybatis/mapper/PersonManageMapper/TeacherManageMapper.xml"/>
         <mapper resource="mybatis/mapper/PersonManageMapper/StudentManageMapper.xml"/>
-        <mapper resource="mybatis/mapper/InforManageMapper/InforManageMapper.xml"/>
+        <mapper resource="mybatis/mapper/InfoManageMapper/InfoManageMapper.xml"/>
         <mapper resource="mybatis/mapper/TestManageMapper/TestManageMapper.xml"/>
         <mapper resource="mybatis/mapper/LoginMapper/LoginMapper.xml"/>
         <mapper resource="mybatis/mapper/ExamMapper/ExamPaperMapper.xml"/>

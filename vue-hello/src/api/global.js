@@ -252,7 +252,7 @@ return axios({
  });
 },
 
- 
+
 
   //----学生考试成绩----
   findStudnetScore: function (data) {
@@ -345,13 +345,13 @@ return axios({
 
 
 //个人信息维护--修改密码
-updateInfor: function (data) {
+updateInfo: function (data) {
 return axios({
  headers: {
      'deviceCode': 'A95ZEF1-47B5-AC90BF3'
  },
  method: 'post',
- url: '/api/inforManage/updateInfor',
+ url: '/api/infoManage/updateInfo',
  data:Qs.stringify(data)
 
 });

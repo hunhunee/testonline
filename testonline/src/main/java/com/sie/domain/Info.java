@@ -1,6 +1,6 @@
 package com.sie.domain;
 
-public class Infor {
+public class Info {
     private int userid;
     private String usernum;
     private String password;

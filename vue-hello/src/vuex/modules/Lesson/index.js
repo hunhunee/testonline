@@ -101,8 +101,8 @@ updateLesson({commit},{data}){
     findAllLesson_m(state,data){
       console.log("findAllLesson_m");
 
-      state.lesson.length=data.data.length;
-      for (var i = 0; i < data.data.length; i++) {
+       state.lesson.length=data.data.length;
+       for (var i = 0; i < data.data.length; i++) {
         state.lesson[i]=data.data[i];
         state.lessonId[i]=data.data[i].lesId;
         console.log(state.lessonId[i]);
@@ -115,7 +115,7 @@ updateLesson({commit},{data}){
 
           router.push({ path: '/admin_index/admin_Lesson' });
      }else{
-       
+
      }
 
 

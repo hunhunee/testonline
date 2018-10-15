@@ -126,31 +126,38 @@ import router from '@/router/index'
                 lessonList: [],
                 lessonIdString:"",
                 lessonNameString:"",
-                length:[]
+                lesson: [],
+                lessonId:[],
+                lessonName:[],
 
             };
         },
         // 创建完成时
         created: function () {
-          this.$store.dispatch('findAllLesson');
-         console.log("created");
+          this.$api.findAllLesson()
+          .then((response) => {
+            this.lesson.length=response.data.length;
+            for (var i = 0; i < response.data.length; i++) {
 
-                        console.log("lessonlist");
-                        this.lessonIdString=localStorage.getItem("lessonIdList");
-                        this.lessonNameString=localStorage.getItem("lessonNameList");
+             this.lessonList.push({
+               value:response.data[i].lesId,
+               label:response.data[i].lesName
+             })
+           }
 
-                        for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
-                          this.lessonList.push({
-                            value:this.lessonIdString.split(',')[i],
-                            label:this.lessonNameString.split(',')[i]
-                          })
-                       }
+          })
+          .catch((error)=>{
+             console.log(error);
+            }
+          );
 
-                       console.log("teacher lesson length");
 
-                       setInterval(()=>{
-                          this.length.length=this.$store.state.score.score1.length
-                       }, 1000);
+
+
+
+
+
+
 
        },
         methods:{
@@ -159,17 +166,7 @@ import router from '@/router/index'
             let data =this.data;
             let student =this.student;
             switch (name) {
-              // case "1-1":
-              // router.push({ path: '/student_index/student_test' });
-              //   break;
-              // case "1-1-1-1":
-              //    this.data.testCourse="1";
-              //    this.modal=true
-              //   break;
-              // case "1-1-1-2":
-              //    this.data.testCourse="2";
-              //    this.modal=true
-              //   break;
+             
               case "1-2":
                 this.$store.dispatch('findStudnetScore',{student});
                 break;

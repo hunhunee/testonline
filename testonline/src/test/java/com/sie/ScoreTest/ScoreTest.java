@@ -152,6 +152,16 @@ public class ScoreTest {
         }
     }
 
+
+    @Test
+    public void findByStuIdAndLesName(){
+        StudentAnswer studentAnswer=new StudentAnswer();
+        studentAnswer.setStuId(1);
+        studentAnswer.setLesName("2");
+        List<StudentAnswer> scoreScope = scoreMapper.findScoreByStuIdAndLesName(studentAnswer);
+        System.out.println(scoreScope.size());
+    }
+
     @Test
     public void  findByClassAndByLenNameController() throws  Exception{
         List<StudentAnswer> scoreScope = scoreController.findByClassAndByLenName("2", "2");
@@ -164,8 +174,9 @@ public class ScoreTest {
 
     @Test
     public void  testFindByStuNum() throws  Exception{
-        StudentAnswer byStuNum = scoreService.findByStuNum("123", "2");
-//        System.out.println("学号："+byStuNum.getStuNum()+"姓名："+byStuNum.getStuName()
+        List<StudentAnswer> byStuNum = scoreService.findByStuNum("s001", "2");
+        System.out.println(byStuNum.get(0).getaClass().getClassName());
+        //        System.out.println("学号："+byStuNum.getStuNum()+"姓名："+byStuNum.getStuName()
 //                + "班级: "+byStuNum.getStuClass()+"科目："+byStuNum.getLesName()+
 //                "成绩："+byStuNum.getTotalscore());
     }

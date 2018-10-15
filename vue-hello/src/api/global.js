@@ -252,6 +252,8 @@ return axios({
  });
 },
 
+ 
+
   //----学生考试成绩----
   findStudnetScore: function (data) {
     console.log(data)

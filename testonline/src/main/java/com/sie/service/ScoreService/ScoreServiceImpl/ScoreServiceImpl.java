@@ -44,12 +44,21 @@ public class ScoreServiceImpl implements ScoreService {
 
     //教师查询学生信息by学生学号
     @Override
-    public StudentAnswer findByStuNum(@Param("stuNum")String stuNum,@Param("teaCourse") String teaCourse) throws Exception {
-        StudentAnswer byStuNum = scoreMapper.findByStuNum(stuNum, teaCourse);
+    public List<StudentAnswer> findByStuNum(@Param("stuNum")String stuNum,@Param("testCourse") String testCourse) throws Exception {
+        System.out.println(stuNum+testCourse);
+        List<StudentAnswer> byStuNum = scoreMapper.findByStuNum(stuNum,testCourse);
 
-        byStuNum.setClassName(byStuNum.getaClass().getClassName());
+        if(byStuNum.size()!=0){
+            for (int i = 0; i <byStuNum.size() ; i++) {
+                byStuNum.get(i).setClassName(byStuNum.get(i).getaClass().getClassName());
+            }
+            return byStuNum;
+        }else{
+             return  byStuNum;
+        }
 
-        return byStuNum;
+
+
     }
 
     //查询最低成绩 、最高成绩、平均成绩 --教师

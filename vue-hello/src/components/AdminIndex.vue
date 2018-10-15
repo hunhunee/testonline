@@ -117,7 +117,7 @@
         data: {
           testType: this.getTestType,
         },
-       
+
       };
     },
     // 创建完成时

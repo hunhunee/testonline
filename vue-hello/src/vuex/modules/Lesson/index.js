@@ -110,10 +110,16 @@ updateLesson({commit},{data}){
         console.log(state.lessonName[i]);
       }
      localStorage.setItem("lessonIdList",state.lessonId),
-     localStorage.setItem("lessonNameList",state.lessonName),
+     localStorage.setItem("lessonNameList",state.lessonName)
+     if(localStorage.getItem("identity")=="1"){
+
+          router.push({ path: '/admin_index/admin_Lesson' });
+     }else{
+       
+     }
 
 
-      router.push({ path: '/admin_index/admin_Lesson' });
+
     },
 
 
@@ -123,6 +129,7 @@ updateLesson({commit},{data}){
 
       state.lessonId.length=data.data.length;
       state.lessonName.length=data.data.length;
+
       for (var i = 0; i < data.data.length; i++) {
         state.lesson[i]=data.data[i];
         state.lessonId[i]=data.data[i].lesId;
@@ -131,10 +138,11 @@ updateLesson({commit},{data}){
         console.log(state.lessonName[i]);
       }
      localStorage.setItem("lessonIdList",state.lessonId),
-     localStorage.setItem("lessonNameList",state.lessonName),
+     localStorage.setItem("lessonNameList",state.lessonName)
 
 
-      router.push({ path: '/admin_index/admin_Lesson'});
+        router.push({ path: '/admin_index/admin_Lesson'});
+
     },
 
     findLesson_m(state,data){

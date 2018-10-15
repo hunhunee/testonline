@@ -58,7 +58,7 @@
       search () {
         let data = {
           "stuNum": this.num,
-          "teaCourse":localStorage.getItem("lesson")
+          "testCourse":localStorage.getItem("lesson")
         }
         this.$store.dispatch('findByStuNum',{data});
       },

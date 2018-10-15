@@ -99,10 +99,14 @@
        class.class_name
     FROM student_answer,student,lesson,class
     WHERE student.stu_num= #{stuNum }AND
-        student_answer.les_name =  #{teaCourse} AND
+        student_answer.les_name =  #{testCourse} AND
         student.stu_id=student_answer.stu_id AND
         student_answer.les_name = lesson.les_id AND
         student_answer.stu_class= class.class_id
+    </select>
+
+    <select id="findScoreByStuIdAndLesName" parameterType="com.sie.domain.StudentAnswer" resultType="com.sie.domain.StudentAnswer">
+        select * from student_answer WHERE stu_id=#{stuId} and les_name=#{lesName}
     </select>
 
 

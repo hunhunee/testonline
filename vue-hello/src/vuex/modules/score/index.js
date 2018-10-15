@@ -17,6 +17,11 @@ export default {
       totalscore: ""
     }
   },
+  setter:{
+    setScoreLength: state => {//通过方法访问
+		 state.score1.length=0
+		},
+  },
   //前端把数据传到后台
   actions: {
     //student这个数据是从StudentIndex.vue传过来的，里面存的值是学生的学号
@@ -135,12 +140,12 @@ export default {
     //教师查询学生信息by学生学号
    findByStuNum_m(state, data) {
       console.log("findByStuNum_m");
-      console.log(data.data)
-      state.score1.length = 1
+       state.score1.length =data.data.length
+       for (var i = 0; i < data.data.length; i++) {
+         state.score1[i]=data.data[i]
+       }
+        router.push({path: '/teacher_index/teacher_test_result_select'});
 
-        state.score1[0] = data.data
-
-      router.push({path: '/teacher_index/teacher_test_result_select'});
     },
   }
 }

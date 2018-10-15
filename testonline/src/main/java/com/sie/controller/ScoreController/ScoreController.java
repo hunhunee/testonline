@@ -28,8 +28,8 @@ public class ScoreController {
 
     //教师查询学生信息by学生学号
     @PostMapping("/findByStuNum")
-    public StudentAnswer findByStuNum(@Param("stuNum")String stuNum,@Param("teaCourse") String teaCourse) throws Exception {
-        StudentAnswer byStuNum = scoreService.findByStuNum(stuNum, teaCourse);
+    public List<StudentAnswer> findByStuNum(@Param("stuNum")String stuNum,@Param("testCourse") String testCourse) throws Exception {
+        List<StudentAnswer> byStuNum = scoreService.findByStuNum(stuNum, testCourse);
         System.out.println(byStuNum);
         return byStuNum;
     }

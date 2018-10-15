@@ -52,48 +52,57 @@ export default {
     );
    },
 
+ 
   },
   mutations:{
     findExamPaper_m(state,data){
       console.log("findExamPaper_m");
       console.log(data)
-      console.log(data.data.length);
-      for (var i = 0; i < data.data.length; i++) {
-        switch (data.data[i].testType) {
-          case "1":
+      if(data.data.length==37){
+        for (var i = 0; i < data.data.length; i++) {
+          switch (data.data[i].testType) {
+            case "1":
 
-            state.examSingleList.length=state.examSingleList.length+1;
-            state.examSingleList[state.examSingleList.length-1]=data.data[i];
-            break;
-          case "2":
+              state.examSingleList.length=state.examSingleList.length+1;
+              state.examSingleList[state.examSingleList.length-1]=data.data[i];
+              break;
+            case "2":
 
-            state.examMultipleList.length=state.examMultipleList.length+1;
-            state.examMultipleList[state.examMultipleList.length-1]=data.data[i];
-            break;
-          case "3":
+              state.examMultipleList.length=state.examMultipleList.length+1;
+              state.examMultipleList[state.examMultipleList.length-1]=data.data[i];
+              break;
+            case "3":
 
-          state.examJudgeList.length=state.examJudgeList.length+1;
-          state.examJudgeList[state.examJudgeList.length-1]=data.data[i];
-            break;
-          case "4":
+            state.examJudgeList.length=state.examJudgeList.length+1;
+            state.examJudgeList[state.examJudgeList.length-1]=data.data[i];
+              break;
+            case "4":
 
-          state.examComputeList.length=state.examComputeList.length+1;
-          state.examComputeList[state.examComputeList.length-1]=data.data[i];
-            break;
-          default:
+            state.examComputeList.length=state.examComputeList.length+1;
+            state.examComputeList[state.examComputeList.length-1]=data.data[i];
+              break;
+            default:
 
+          }
         }
-      }
-      console.log("examSingleList");
-      console.log(state.examSingleList.length);
-      console.log("examMultipleList");
-      console.log(state.examMultipleList.length);
-      console.log("examJudgeList");
-      console.log(state.examJudgeList.length);
-      console.log("examComputeList");
-      console.log(state.examComputeList.length);
+        console.log("examSingleList");
+        console.log(state.examSingleList.length);
+        console.log("examMultipleList");
+        console.log(state.examMultipleList.length);
+        console.log("examJudgeList");
+        console.log(state.examJudgeList.length);
+        console.log("examComputeList");
+        console.log(state.examComputeList.length);
 
-      router.push({ path: '/student_index/student_test' });
+        router.push({ path: '/student_index/student_test' });
+      }else{
+        console.log(data.data.length);
+        alert("抱歉，该科目试题不足，不能进行考试");
+      }
+
+
+
+
     },
 
 

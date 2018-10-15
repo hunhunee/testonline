@@ -49,17 +49,11 @@
                           <Icon type="ios-filing" />
                           参加考试
                       </template>
-                      <Submenu name="1-1-1">
-                          <template slot="title">必考科目</template>
-                          <MenuItem name="1-1-1-1">英语</MenuItem>
-                          <MenuItem name="1-1-1-2">数学</MenuItem>
-                      </Submenu>
-                      <Submenu name="1-1-2">
-                          <template slot="title">选修科目</template>
-                          <MenuItem name="1-1-2-1">体育</MenuItem>
-                          <MenuItem name="1-1-2-2">音乐</MenuItem>
-                      </Submenu>
+
+                          <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
+
                   </Submenu>
+
                     <MenuItem name="1-2">
                         <Icon type="ios-search" />
                         <span>查看成绩</span>
@@ -117,39 +111,65 @@ import router from '@/router/index'
             return {
                 isCollapsed: false,
                 data:{
+                  stuNum:localStorage.getItem("usernum"),
                   testCourse:""
                 },
 
                 modal:false,
                 student:{
                   //从本地获取学生的学号
-                  stuNum:localStorage.getItem("usernum")
+                  stuNum:localStorage.getItem("usernum"),
+
                 },
+
+
+                lessonList: [],
+                lessonIdString:"",
+                lessonNameString:"",
+                length:[]
 
             };
         },
         // 创建完成时
-        created() {
+        created: function () {
+          this.$store.dispatch('findAllLesson');
+         console.log("created");
 
-        },
+                        console.log("lessonlist");
+                        this.lessonIdString=localStorage.getItem("lessonIdList");
+                        this.lessonNameString=localStorage.getItem("lessonNameList");
+
+                        for (var i = 0; i < this.lessonNameString.split(',').length; i++) {
+                          this.lessonList.push({
+                            value:this.lessonIdString.split(',')[i],
+                            label:this.lessonNameString.split(',')[i]
+                          })
+                       }
+
+                       console.log("teacher lesson length");
+
+                       setInterval(()=>{
+                          this.length.length=this.$store.state.score.score1.length
+                       }, 1000);
+
+       },
         methods:{
+
           test(name){
             let data =this.data;
             let student =this.student;
             switch (name) {
-              case "1-1":
-              router.push({ path: '/student_index/student_test' });
-                break;
-              case "1-1-1-1":
-                 this.data.testCourse="1";
-
-                 this.modal=true
-
-                break;
-              case "1-1-1-2":
-                 this.data.testCourse="2";
-                 this.modal=true
-                break;
+              // case "1-1":
+              // router.push({ path: '/student_index/student_test' });
+              //   break;
+              // case "1-1-1-1":
+              //    this.data.testCourse="1";
+              //    this.modal=true
+              //   break;
+              // case "1-1-1-2":
+              //    this.data.testCourse="2";
+              //    this.modal=true
+              //   break;
               case "1-2":
                 this.$store.dispatch('findStudnetScore',{student});
                 break;
@@ -162,9 +182,27 @@ import router from '@/router/index'
                 break;
 
               default:
+              this.data.testCourse=name;
+              this.$api.findByStuNum(data)
+                .then((response) => {
+                   if(response.data.length>=1){
+                      alert("您已经进行过一次考试了，请不要重复考试！")
+                   }else{
+                     this.data.testCourse=name;
+                     this.modal=true
+                   }
+                })
+                .catch((error) => {
+                    console.log(error);
+                  }
+                );
+
+
+
+
             }
           },
-         
+
           ok:function(){
                  let data =this.data;
                 //alert(this.data.testCourse)

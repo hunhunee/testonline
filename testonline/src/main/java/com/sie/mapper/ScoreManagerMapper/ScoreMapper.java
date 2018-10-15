@@ -12,6 +12,7 @@ public interface ScoreMapper {
     //查询学生的各科成绩
     public List<Student> findScoreByStuId(String stuNum) throws Exception;
 
+
     //查询最低成绩、最高成绩、平均成绩
     public  ScoreEx findMinAndMaxAndAvgScore(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws  Exception;
 
@@ -30,5 +31,8 @@ public interface ScoreMapper {
     public List<StudentAnswer> findByClassAndByLenName(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws  Exception;
 
     //教师查询学生信息by学生学号
-    public StudentAnswer findByStuNum(@Param("stuNum")String stuNum,@Param("teaCourse") String teaCourse)throws  Exception;
+    public List<StudentAnswer> findByStuNum(@Param("stuNum")String stuNum,@Param("testCourse") String teaCourse)throws  Exception;
+
+    public List<StudentAnswer> findScoreByStuIdAndLesName(StudentAnswer studentAnswer);
+
 }

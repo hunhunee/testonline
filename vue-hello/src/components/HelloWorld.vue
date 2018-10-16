@@ -1,8 +1,8 @@
 <template>
   <div class="userLogin">
       <div class="text" >
-          <Icon type="ios-person-outline"></Icon>
-          欢迎来到在线考试系统
+          <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+          在线考试系统登录界面
 
           <Form ref="formInline" :model="formInline" :rules="ruleInline">
 
@@ -30,10 +30,10 @@
                 </FormItem>
 
                 <FormItem>
-                    <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
+                    <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
                 </FormItem>
             </Form>
-          <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
+          <Footer class="layout-footer-center">2018-9&copy;第二小组出版，版权归己所有，拒绝侵权 </Footer>
           </div>
   </div>
 </template>
@@ -79,9 +79,7 @@ export default {
                       //     console.log(error)
                       //   }
                       // );
-             this.$store.dispatch('userLogin',{data});
-
-
+            this.$store.dispatch('userLogin',{data});
 
             }
         }
@@ -99,13 +97,14 @@ export default {
      .text{
               font-size: 18px;
               text-align:center;
-                background-color: #00FFFF;
+              
+                /* background-color: #00FFFF; */
 
           }
           .layout-footer-center{
             text-align: center;
               line-height: 210px;
-            background-color: #00FFFF;
+            /* background-color: #00FFFF; */
         }
 
 </style>

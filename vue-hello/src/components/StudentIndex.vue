@@ -132,6 +132,7 @@ import router from '@/router/index'
 
             };
         },
+
         // 创建完成时
         created: function () {
           this.$api.findAllLesson()
@@ -151,13 +152,7 @@ import router from '@/router/index'
             }
           );
 
-
-
-
-
-
-
-
+          this.$router.push('/student_index/main'); //跳转到指定页面
 
        },
         methods:{

@@ -123,7 +123,7 @@ import router from '@/router/index'
         },
         // 创建完成时
         created() {
-
+            this.$router.push('/teacher_index/main'); //跳转到指定页面
         },
         methods:{
 
@@ -171,7 +171,7 @@ import router from '@/router/index'
 
             }
           },
-       
+
         },
         computed: {
             menuitemClasses: function () {

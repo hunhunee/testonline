@@ -37,6 +37,7 @@
     float: right;
     margin-right: 10px;
   }
+  
 </style>
 <template>
   <div class="layout">
@@ -94,15 +95,19 @@
           </div>
 
         </Header>
-        <Content :style="{padding: '5px 5px 5px'}">
-          <Card>
-
-            <div style="height: 700px">
-
-              <router-view/>
-            </div>
-          </Card>
+        <Content :style="{padding: '0 16px 16px'}">
+            <Breadcrumb :style="{margin: '16px 0'}">
+              <BreadcrumbItem>Home 主页</BreadcrumbItem>
+              <BreadcrumbItem>Components 上一页</BreadcrumbItem>
+              <BreadcrumbItem>Layout 当前页面</BreadcrumbItem>
+            </Breadcrumb>
+            <Card>
+                <div style="height: 600px">
+                  <router-view/>
+                </div>
+            </Card>
         </Content>
+        <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
       </Layout>
     </Layout>
   </div>
@@ -122,9 +127,10 @@
     },
     // 创建完成时
     created() {
+ this.$router.push('/admin_index/main'); //跳转到指定页面
+  //  this.$store.dispatch('findAllLesson');
+    //this.$store.dispatch('findAllClass');
 
-    this.$store.dispatch('findAllLesson');
-    this.$store.dispatch('findAllClass');
     },
 
     methods: {

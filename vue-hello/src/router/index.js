@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Main from '@/components/Main'
 
 import AdminIndex from '@/components/AdminIndex'
 import AdminMessage from '@/components/AdminMessage'
@@ -60,7 +61,8 @@ export default new Router({
         { path: 'student_message', component:  StudentMessage,meta: {auth: true}},            //学生对个人信息进行管理
         { path: 'student_test', component: StudentTest,meta: {auth: true}},                  //学生进行考试
         { path: 'student_test_result', component: StudentTestResult,meta: {auth: true}},      //学生查看自己的考试结果
-        { path:'student_end',component:StudentEnd,meta: {auth: true}}
+        { path:'student_end',component:StudentEnd,meta: {auth: true}},
+        {path:'main',component:Main,meta:{auth:true}}
 
       ]
     },
@@ -81,6 +83,7 @@ export default new Router({
         { path: 'teacher_test_judge_aou', component: TeacherTestJudgeAOU,meta: {auth: true} },
         { path: 'teacher_test_compute_aou', component: TeacherTestComputeAOU,meta: {auth: true} },
         { path: 'teacher_test_result_select', component: TeacherTestResultSelect,meta: {auth: true} },
+        {path:'main',component:Main,meta:{auth:true}}
       ]
     }
     ,
@@ -107,7 +110,8 @@ export default new Router({
         { path: 'admin_Lesson', component: AdminLesson,meta: {auth: true} },                       //管理员对科目信息进行管理
         { path: 'admin_Lesson_aou', component: AdminLessonAou,meta: {auth: true} },                //对科目的增删改查
         { path: 'admin_Class', component: AdminClass,meta: {auth: true} },                       //管理员对科目信息进行管理
-        { path: 'admin_Class_aou', component: AdminClassAou,meta: {auth: true} },                //对科目的增删改查
+        { path: 'admin_Class_aou', component: AdminClassAou,meta: {auth: true} },                 //对科目的增删改查
+        {path:'main',component:Main,meta:{auth:true}}
 
       ]
     }

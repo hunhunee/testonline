@@ -1,9 +1,12 @@
 <style scoped>
-
+    .layout{
+        text-align: center;
+        font-size: 25px;
+    }
 </style>
 <template>
 <div class="layout">
-  您已完成了关于本试卷的考试
+    欢迎使用在线考试系统！
 </div>
 </template>
 <script>

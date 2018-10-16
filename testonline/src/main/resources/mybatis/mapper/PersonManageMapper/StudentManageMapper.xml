@@ -23,6 +23,12 @@
               VALUES(#{stuName},#{stuPassword},#{stuSex},#{stuNum},#{stuClass});
        </insert>
 
+    <!--根据班级来查询-->
+    <select id="findStudentByClass" parameterType="com.sie.domain.StudentEx" resultMap="student">
+        select stu_class,stu_id,stu_name,stu_num,stu_password,stu_sex,class_name from student s,class c where s.stu_class=c.class_id
+        AND  stu_class=#{stuClass}
+    </select>
+
     <!--根据学生的学号来删除-->
     <delete id="deleteStudentByStuNum" parameterType="java.lang.String">
       DELETE FROM student WHERE stu_num = #{value}

@@ -34,6 +34,12 @@ public class StudentManageController {
         List<StudentEx> studentList = studentManagerService.insertStudent(student);
         return studentList;
     }
+
+    //查询学生
+  @PostMapping("/findStudentByClass")
+    public List<StudentEx> findStudentByClass(StudentEx studentEx){
+        return  studentManagerService.findStudentByClass(studentEx);
+    }
     //删除
     @PostMapping("/deleteStudent")
     public List<StudentEx> deleteStudent(String num){

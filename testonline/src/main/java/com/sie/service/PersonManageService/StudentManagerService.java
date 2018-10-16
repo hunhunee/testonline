@@ -16,6 +16,8 @@ public interface StudentManagerService {
     //修改学生
     public List<StudentEx> updateStudentByStuNum(StudentEx student);
 
+    public List<StudentEx> findStudentByClass(StudentEx student);
+
     //查询学生
     public List<StudentEx> selectStudentByStuNum(String num);
 

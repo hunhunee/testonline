@@ -4,17 +4,26 @@
 
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
 
-          <FormItem prop="lesId" >
-            <Input type="text"  v-model="formInline.lesId" placeholder="lesId" style="width: 200px" clearable>
+          <!-- <FormItem prop="lesId" >
+            <Input type="text" disabled  v-model="formInline.lesId" placeholder="lesId" style="width: 200px" clearable>
             </Input>
+          </FormItem> -->
+
+          <FormItem prop="lesId" >
+                <Input v-if="this.$store.state.lesson.utaction=='2'" disabled type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px">
+                </Input>
+
+                <Input  v-else type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px" clearable>
+                </Input>
           </FormItem>
+
           <FormItem   prop="lesName">
             <Input type="text"  v-model="formInline.lesName" placeholder="lesName" style="width: 200px" clearable>
             </Input>
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
-            <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+            <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
 
@@ -63,11 +72,14 @@ export default {
 
                this.$store.dispatch('addLesson',{data});
                router.push({ path: '/admin_index/admin_Lesson' });
-                }
-
-            }
-        }
+             }
+        },
+        clearable(){
+          this.formInline.lesId='',
+          this.formInline.lesName=''
+       }
     }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

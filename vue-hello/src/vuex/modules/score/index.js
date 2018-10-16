@@ -90,19 +90,43 @@ export default {
           }
         );
     },
+
+    deleteStudnetScore({commit}, {data1}) {
+      console.log("deleteStudnetScore")
+      console.log(data1)
+      api.deleteStudnetScore(data1)
+        .then((response) => {
+          commit('deleteStudnetScore_m', response);
+        })
+        .catch((error) => {
+            console.log(error);
+          }
+        );
+    },
+
   },
   //从后端得到数据储存到vuex，前端从这里获取数据
   mutations: {
     //查询学生的分数
     findStudnetScore_m(state, data) {
       console.log("findStudnetScore_m");
-      state.score.length = data.data[0].studentAnswer.length;
       console.log(data.data);
-      for (var i = 0; i < data.data[0].studentAnswer.length; i++) {
-        state.score[i] = data.data[0].studentAnswer[i]
+
+      if(data.data.length==0){
+        state.score.length=0;
+      }else{
+        state.score.length = data.data[0].studentAnswer.length;
+        for (var i = 0; i < data.data[0].studentAnswer.length; i++) {
+          state.score[i] = data.data[0].studentAnswer[i]
+        }
       }
 
-      router.push({path: '/student_index/student_test_result'});
+
+      console.log(state.score.length);
+      if(localStorage.getItem("identity")=="3"){
+             router.push({path: '/student_index/student_test_result'});
+      }
+
     },
     //查询最高最低平均分
     findMinAndMaxAndAvgScore_m(state, data) {
@@ -144,8 +168,14 @@ export default {
        for (var i = 0; i < data.data.length; i++) {
          state.score1[i]=data.data[i]
        }
-        router.push({path: '/teacher_index/teacher_test_result_select'});
-
+      router.push({path: '/teacher_index/teacher_test_result_select'});
     },
+
+deleteStudnetScore_m(state, data) {
+   console.log("deleteStudnetScore_m");
+   console.log(data);
+ },
+
+
   }
 }

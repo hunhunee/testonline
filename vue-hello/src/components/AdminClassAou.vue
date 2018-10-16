@@ -4,17 +4,26 @@
 
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
 
-          <FormItem prop="classId" >
-            <Input type="text"  v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
+          <!-- <FormItem prop="classId" >
+            <Input type="text" disabled v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
             </Input>
+          </FormItem> -->
+
+          <FormItem prop="classId" >
+                <Input v-if="this.$store.state.Class.utaction=='2'" disabled type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px">
+                </Input>
+
+                <Input  v-else type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
+                </Input>
           </FormItem>
+
           <FormItem   prop="className">
             <Input type="text"  v-model="formInline.className" placeholder="className" style="width: 200px" clearable>
             </Input>
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
-            <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+            <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
 
@@ -65,7 +74,11 @@ export default {
                router.push({ path: '/admin_index/admin_Class' });
                 }
 
-            }
+            },
+            clearable(){
+              this.formInline.classId='',
+              this.formInline.className=''
+           }
         }
     }
 </script>

@@ -109,5 +109,7 @@
         select * from student_answer WHERE stu_id=#{stuId} and les_name=#{lesName}
     </select>
 
-
+    <delete id="deleteScoreByStuId" parameterType="com.sie.domain.Student">
+        delete from student_answer WHERE stu_id=#{stuId}
+    </delete>
 </mapper>

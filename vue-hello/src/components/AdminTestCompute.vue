@@ -108,7 +108,7 @@ import router from '@/router/index'
               data:[],
               data1:[],
               data2:[],
-              currentPage:"",
+              currentPage:"1",
 
 
               lessonList: [],

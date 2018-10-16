@@ -11,6 +11,8 @@ public interface TeacherManagerService {
 
     public List<TeacherEx> findTeacherByNum(String num);
 
+    public List<TeacherEx> findTeacherByClass(TeacherEx teacherEx);
+
     public List<TeacherEx> addTeacher(Teacher teacher);
 
     public List<TeacherEx> updateTeacher(Teacher teacher);

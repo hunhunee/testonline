@@ -39,6 +39,12 @@ public class TeacherManageController {
       return teacherManagerService.findTeacherByNum(num);
     }
 
+    @PostMapping("/findTeacherByClass")
+    public List<TeacherEx> findTeacher(TeacherEx teacherEx){
+        return teacherManagerService.findTeacherByClass(teacherEx);
+    }
+
+
     @PostMapping("/findAllTeacher")
     public List<TeacherEx> findAllTeacher(){
       return teacherManagerService.findAllTeacher();

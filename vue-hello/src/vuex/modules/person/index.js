@@ -83,6 +83,20 @@ export default {
           }
         );
     },
+
+
+    findTeacherByClass({commit}, {teacher}) {
+      console.log("findTeacherByClass");
+      console.log(teacher);
+      api.findTeacherByClass(teacher)
+        .then((response) => {
+          commit('findTeacherByClass_m', response);
+        })
+        .catch((error) => {
+            console.log(error);
+          }
+        );
+    },
     //----查询学生----
      findStudent({commit}, {data}) {
       console.log("findStudent");
@@ -223,6 +237,17 @@ export default {
       // state.teacher[0] = data.data
       // console.log(state.teacher[0]);
       router.push({path: '/admin_index/admin_person_teacher'});
+    },
+
+
+    findTeacherByClass_m(state, data) {
+      console.log("findTeacherByClass_m");
+      state.teacher.length = data.data.length;
+      for (var i = 0; i < data.data.length; i++) {
+        state.teacher[i] = data.data[i];
+        console.log(state.teacher[i]);
+      }
+
     },
     //-----查询单个学生------
     findStudent_m(state, data) {

@@ -37,6 +37,17 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
     }
 
     @Override
+    public List<TeacherEx> findTeacherByClass(TeacherEx teacherEx) {
+        List<TeacherEx> teacher =teacherManageMapper.findTeacherByClass(teacherEx);
+        for (int i = 0; i <teacher.size() ; i++) {
+            teacher.get(i).setLesName(teacher.get(i).getLesson().getLesName());
+            teacher.get(i).setClassName(teacher.get(i).getaClass().getClassName());
+
+        }
+        return teacher;
+    }
+
+    @Override
     public List<TeacherEx> addTeacher(Teacher teacher) {
 
         teacherManageMapper.addTeacher(teacher);

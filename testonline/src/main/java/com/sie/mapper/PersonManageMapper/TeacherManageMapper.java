@@ -14,6 +14,8 @@ public interface TeacherManageMapper {
 
     public List<TeacherEx> findTeacherByNum(String num);
 
+    public List<TeacherEx> findTeacherByClass(TeacherEx teacherEx);
+
     public List<TeacherEx> findAllTeacher();
 
     public int findCount();

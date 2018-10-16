@@ -181,6 +181,11 @@ public class ScoreTest {
 //                "成绩："+byStuNum.getTotalscore());
     }
 
-
+    @Test
+    public void  delete() throws  Exception{
+        Student student = new Student();
+        student.setStuId(11);
+        scoreMapper.deleteScoreByStuId(student);
+    }
 
 }

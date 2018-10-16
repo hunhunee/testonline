@@ -35,4 +35,5 @@ public interface ScoreMapper {
 
     public List<StudentAnswer> findScoreByStuIdAndLesName(StudentAnswer studentAnswer);
 
+    public void deleteScoreByStuId(Student student);
 }

@@ -198,7 +198,18 @@
               examList:examList
             }
              this.$store.dispatch('addExamResult',{data});
-             
+
+
+
+             setTimeout(()=>{
+              let student={
+                 //从本地获取学生的学号
+                 stuNum:localStorage.getItem("usernum"),
+
+               }
+              this.$store.dispatch('findStudnetScore',{student})
+            },1000)
+
           }
 
         },

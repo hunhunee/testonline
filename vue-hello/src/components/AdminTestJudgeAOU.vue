@@ -37,7 +37,7 @@
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
-            <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+          
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
@@ -157,7 +157,14 @@ export default {
                          }
                          this.$store.dispatch('updateTest',{data});
                        }
-                     }
+                     },
+                     clearable(){
+                       this.formInline.testContent='',
+                       this.formInline.testAns1='',
+                       this.formInline.testAns2='',
+                       this.formInline.rightans1=''
+
+                    }
 
         },
 
@@ -169,14 +176,8 @@ export default {
 
             getTestType:function(){
               return this.$store.getters.getTestType
-            },
-            clearable(){
-              this.formInline.testContent='',
-              this.formInline.testAns1='',
-              this.formInline.testAns2='',
-              this.formInline.rightans1=''
+            }
 
-           }
         }
     }
 </script>

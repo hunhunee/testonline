@@ -52,7 +52,7 @@ export default {
                 },
                 ruleInline: {
                     user: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur'  }
+                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
                     ],
                     password: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
@@ -64,29 +64,23 @@ export default {
         methods: {
 
               handleSubmit(name) {
-                this.$refs[name].validate((valid) => {
-                   if (valid) {
-                       this.$Message.success('Success!');
-                   } else {
-                       this.$Message.error('Fail!');
-                   }
-               });
+
                 const axios = require('axios');
                 let data = {
                     "usernum": this.formInline.user,
                     "password":this.formInline.password,
                     "identity":this.formInline.radio
+
                 }
-                      //
-                      // this.$api.login(data)
-                      // .then((response) => {
-                      //    console.log(response)
-                      // }).catch(
-                      //   (error)=>{
-                      //     console.log(error)
-                      //   }
-                      // );
+
             this.$store.dispatch('userLogin',{data});
+            this.$refs[name].validate((valid) => {
+               if (valid) {
+                   this.$Message.success('Success!');
+               } else {
+                   this.$Message.error('Fail!');
+               }
+           });
 
             }
         }

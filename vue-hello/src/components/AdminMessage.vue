@@ -5,7 +5,7 @@
         个人信息维护--修改密码
     </div>
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" >
      <FormItem prop="password">
        原密码:
       <Input type="password" v-model="formInline.password" placeholder="请输入原密码" style="width: 200px" clearable>

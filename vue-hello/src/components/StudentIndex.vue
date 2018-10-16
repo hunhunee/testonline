@@ -99,7 +99,7 @@
                         </div>
                     </Card>
                 </Content>
-                  <Footer class="layout-footer-center">2018 &copy; TalkingData</Footer>
+                <Footer class="layout-footer-center">2018-9&copy;第二小组出版，版权归己所有，拒绝侵权 </Footer>
             </Layout>
         </Layout>
     </div>

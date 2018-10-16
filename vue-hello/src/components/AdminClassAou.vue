@@ -5,7 +5,7 @@
     <Form ref="formInline" :model="formInline" :rules="ruleInline">
 
           <FormItem prop="classId" >
-            <Input type="text"  v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
+            <Input type="text" disabled v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
             </Input>
           </FormItem>
           <FormItem   prop="className">

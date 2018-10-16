@@ -38,6 +38,7 @@
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+            <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
       <Modal
@@ -166,7 +167,14 @@ export default {
             },
             cancel:function(){
 
-            }
+            },
+            clearable(){
+              this.formInline.teaName='',
+              this.formInline.teaNum='',
+              this.formInline.teaCourse='',
+              this.formInline.teaClass=''
+
+           }
 
         }
     }

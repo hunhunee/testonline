@@ -8,12 +8,15 @@
 <div class="layout">
     欢迎使用在线考试系统！
 </div>
+
+
 </template>
 <script>
     export default {
+  
         data () {
             return {
-              
+
 
             };
         }

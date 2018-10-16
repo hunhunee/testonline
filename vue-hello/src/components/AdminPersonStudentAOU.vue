@@ -32,6 +32,7 @@
       <FormItem>
         <Button type="primary" @click="handleSubmit()">Submit</Button>
         <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+        <Button @click="clearable" style="margin-left: 8px">Reset</Button>
       </FormItem>
     </Form>
 
@@ -80,7 +81,7 @@
                     this.classIdString=localStorage.getItem("classIdList");
                     this.classNameString=localStorage.getItem("classNameList");
 
-                   
+
                    for (var i = 0; i < this.classNameString.split(',').length; i++) {
                      this.classList.push({
                        value:this.classIdString.split(',')[i],
@@ -118,7 +119,14 @@
           router.push({ path: '/admin_index/admin_person_student' });
         }
 
-      }
+      },
+      clearable(){
+        this.formInline.stuName='',
+        this.formInline.stuNum='',
+        this.formInline.stuSex='',
+        this.formInline.stuClass=''
+  
+     }
     }
   }
 </script>

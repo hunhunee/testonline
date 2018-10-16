@@ -4,7 +4,7 @@
           <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
           在线考试系统登录界面
 
-          <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-position="center">
+            <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-position="center">
 
                 <FormItem prop="user" >
                     登录名：
@@ -13,6 +13,7 @@
                     </Input>
 
                 </FormItem>
+
                 <FormItem prop="password">
                   密 码：
                     <Input type="password" v-model="formInline.password" placeholder="Password" style="width: 200px" clearable>
@@ -51,7 +52,7 @@ export default {
                 },
                 ruleInline: {
                     user: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the user name', trigger: 'blur'  }
                     ],
                     password: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
@@ -63,7 +64,13 @@ export default {
         methods: {
 
               handleSubmit(name) {
-
+                this.$refs[name].validate((valid) => {
+                   if (valid) {
+                       this.$Message.success('Success!');
+                   } else {
+                       this.$Message.error('Fail!');
+                   }
+               });
                 const axios = require('axios');
                 let data = {
                     "usernum": this.formInline.user,
@@ -97,7 +104,7 @@ export default {
      .text{
               font-size: 18px;
               text-align:center;
-              
+
                 /* background-color: #00FFFF; */
 
           }

@@ -61,6 +61,11 @@ public class ScoreServiceImpl implements ScoreService {
 
     }
 
+    @Override
+    public void deleteScoreByStuId(Student student) {
+        scoreMapper.deleteScoreByStuId(student);
+    }
+
     //查询最低成绩 、最高成绩、平均成绩 --教师
     @Override
     public ScoreEx findMinAndMaxAndAvgScore(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws Exception {

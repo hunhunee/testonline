@@ -4,7 +4,7 @@
           <Icon type="ios-person-outline"></Icon>
           欢迎来到在线考试系统
 
-          <Form ref="formInline" :model="formInline" :rules="ruleInline">
+          <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-position="center">
 
                 <FormItem prop="user" >
                     登录名：
@@ -55,7 +55,7 @@ export default {
                     ],
                     password: [
                         { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-
+                        { type: 'string', min: 1, message: '密码不能为空', trigger: 'blur' }
                     ]
                 }
             }

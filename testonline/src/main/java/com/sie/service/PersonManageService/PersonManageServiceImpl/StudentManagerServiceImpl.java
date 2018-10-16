@@ -35,6 +35,7 @@ public class StudentManagerServiceImpl implements StudentManagerService {
     public List<StudentEx> deleteStudentByStuNum(String num) {
         studentManageMapper.deleteStudentByStuNum(num);
         List<StudentEx> studentList = studentManageMapper.selectAllStudent();
+        System.out.println(studentList.size()+" : "+studentList.toString());
         for (int i = 0; i <studentList.size() ; i++) {
             studentList.get(i).setClassName(studentList.get(i).getaClass().getClassName());
         }

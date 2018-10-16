@@ -11,6 +11,16 @@
       <Button type="primary" @click="add">添加学生信息</Button>
     </div>
     <Table height="480" border :columns="columns7" :data="data6"></Table>
+    <Modal
+        v-model="modal"
+        title="message"
+
+        @on-ok="ok"
+        @on-cancel="cancel">
+        <p>
+          该学生有档案，是否删除其全部数据，请慎重选择！！！
+        </p>
+    </Modal>
   </div>
 </template>
 
@@ -73,7 +83,9 @@
           }
         ],
         data6: [],
-        num: ""
+        num: "",
+        id:"",
+        modal:false
       }
     },
     created: function () {
@@ -104,10 +116,28 @@
         router.push({path: '/admin_index/admin_person_student_aou'});
       },
       remove(index) {
-        let data = {
-          "num": this.data6[index].stuNum
+        let student = {
+          stuNum:this.data6[index].stuNum
         }
-        this.$store.dispatch('deleteStudent', {data});
+        this.$store.dispatch('findStudnetScore', {student});
+
+        setTimeout(()=>{
+          console.log("score.length");
+          console.log(this.$store.state.score.score.length);
+          if(this.$store.state.score.score.length>=1){
+              this.modal=true
+              console.log("modal:true");
+          }else{
+            let data = {
+              "num": this.data6[index].stuNum
+            }
+            this.$store.dispatch('deleteStudent', {data});
+          }
+        },1200)
+
+        this.id=this.data6[index].stuId;
+        this.num=this.data6[index].stuNum;
+
       },
       search () {
         let data = {
@@ -118,7 +148,28 @@
       add() {
         this.$store.dispatch('addBeforeStudent');
         router.push({ path: '/admin_index/admin_person_student_aou' });
+      },
+
+      ok:function(){
+        let data1 = {
+          "stuId": this.id
+        }
+        this.$store.dispatch('deleteStudnetScore', {data1});
+
+
+        setTimeout(()=>{
+          let data = {
+            "num": this.num
+          }
+          this.$store.dispatch('deleteStudent', {data});
+        },2000)
+
+
+      },
+      cancel:function(){
+
       }
+
     }
   }
 </script>

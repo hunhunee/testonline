@@ -40,7 +40,16 @@
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
+      <Modal
+          v-model="modal"
+          title="message"
 
+          @on-ok="ok"
+          @on-cancel="cancel">
+          <p>
+             该班级已经有了该科目的老师请重新选择班级！！！
+          </p>
+      </Modal>
   </div>
 
 </template>
@@ -73,8 +82,8 @@ export default {
                 lessonNameString:"",
                 classList: [],
                 classIdString:"",
-                classNameString:""
-
+                classNameString:"",
+                modal:false
             }
         },
         created: function () {
@@ -118,24 +127,52 @@ export default {
                   router.push({ path: '/admin_index/admin_person_teacher' });
                 }else{
                   const axios = require('axios');
-                  let data = {
+
+                  let teacher = {
                       "teaName": this.formInline.teaName,
                       "teaNum":this.formInline.teaNum,
                       "teaCourse":this.formInline.teaCourse,
                       "teaClass":this.formInline.teaClass,
                       "teaPassword":"123"
                   }
+                  this.$store.dispatch('findTeacherByClass',{teacher});
 
-               this.$store.dispatch('addTeacher',{data});
-               router.push({ path: '/admin_index/admin_person_teacher' });
+
+                  setTimeout(()=>{
+
+                    if (this.$store.state.person.teacher.length>=1) {
+                           this.modal=true
+                    }else{
+
+                      let data = {
+                          "teaName": this.formInline.teaName,
+                          "teaNum":this.formInline.teaNum,
+                          "teaCourse":this.formInline.teaCourse,
+                          "teaClass":this.formInline.teaClass,
+                          "teaPassword":"123"
+                      }
+
+                     this.$store.dispatch('addTeacher',{data});
+                    }
+
+                  },1200)
+
                 }
 
+            },
+
+            ok:function(){
+             this.modal=false
+            },
+            cancel:function(){
+
             }
+
         }
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .userLogin{
 text-align: center;

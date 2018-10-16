@@ -81,6 +81,19 @@ export default {
 
   });
 },
+
+
+findTeacherByClass: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/personManage/findTeacherByClass',
+   data:Qs.stringify(data)
+
+ });
+},
   //----查询单个学生----
   findStudent: function (data) {
     return axios({
@@ -263,6 +276,18 @@ return axios({
       },
       method: 'post',
       url: '/api/score/findStudentScore',
+      data:Qs.stringify(data)
+    });
+  },
+
+  deleteStudnetScore: function (data) {
+    console.log(data)
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/score/deleteStudentScore',
       data:Qs.stringify(data)
     });
   },

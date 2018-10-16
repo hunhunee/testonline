@@ -17,15 +17,20 @@
         </association>
 
         <association property="aClass" javaType="com.sie.domain.Class_">
-            <id column="class_id" property="classId"/>
-            <result column="class_name" property="className"/>
+        <id column="class_id" property="classId"/>
+        <result column="class_name" property="className"/>
 
-        </association>
+    </association>
 
     </resultMap>
     <select id="findTeacherByNum" parameterType="string" resultMap="personResultMap">
        select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name,class_name from teacher t,lesson l ,class c where t.tea_course=l.les_id and t.tea_class=c.class_id
     AND tea_num like '%${value}%'
+    </select>
+
+    <select id="findTeacherByClass" parameterType="com.sie.domain.TeacherEx" resultMap="personResultMap">
+        select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name,class_name from teacher t,lesson l ,class c where t.tea_course=l.les_id and t.tea_class=c.class_id
+        AND tea_course=#{teaCourse} AND  tea_class=#{teaClass}
     </select>
 
     <select id="findAllTeacher"  resultMap="personResultMap">

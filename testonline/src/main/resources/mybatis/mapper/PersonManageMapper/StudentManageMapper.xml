@@ -25,8 +25,8 @@
 
     <!--根据学生的学号来删除-->
     <delete id="deleteStudentByStuNum" parameterType="java.lang.String">
-          DELETE FROM student WHERE stu_num = #{value}
-        </delete>
+      DELETE FROM student WHERE stu_num = #{value}
+    </delete>
 
     <!--修改学生信息-->
     <update id="updateStudentByStuNum" parameterType="student">

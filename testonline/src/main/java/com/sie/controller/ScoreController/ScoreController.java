@@ -49,6 +49,12 @@ public class ScoreController {
         return scoreScope;
     }
 
+    @PostMapping("/deleteStudentScore")
+    public void deleteStudentScore(Student student){
+         scoreService.deleteScoreByStuId(student);
+
+    }
+
 //    //查询平均成绩  -- 教师模块
 //    @PostMapping("/findAvgScore")
 //    public ScoreEx findAvgScore(@Param("value1")String value1, @Param("value2")String value2)  throws  Exception{

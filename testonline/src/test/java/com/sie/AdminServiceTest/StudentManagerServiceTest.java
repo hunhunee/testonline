@@ -31,7 +31,7 @@ public class StudentManagerServiceTest {
     //删除测试
     @Test
     public void testDeleteStudent(){
-        studentManagerService.deleteStudentByStuNum("1111");
+        studentManagerService.deleteStudentByStuNum("s003");
         System.out.println("删除成功!!!");
     }
 

@@ -20,9 +20,11 @@ public class LessonManageMapperTest {
     @Test
     public  void addLesson(){
         com.sie.domain.Lesson les = new com.sie.domain.Lesson();
-        les.setLesName("java");
+        les.setLesId(11);
+        les.setLesName("ss");
        lessonManageMapper.addLesson(les);
     }
+
     @Test
     public void deleteLesson() {
         com.sie.domain.Lesson les = new com.sie.domain.Lesson();

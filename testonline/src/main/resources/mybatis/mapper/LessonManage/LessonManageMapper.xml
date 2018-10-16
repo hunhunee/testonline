@@ -23,6 +23,6 @@
     </delete>
 
     <insert id="addLesson" parameterType="com.sie.domain.Lesson">
-        INSERT INTO lesson (les_name) VALUES (#{lesName});
+        INSERT INTO lesson (les_id,les_name) VALUES (#{lesId},#{lesName});
     </insert>
 </mapper>

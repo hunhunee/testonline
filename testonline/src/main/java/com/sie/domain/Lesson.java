@@ -3,21 +3,19 @@ package com.sie.domain;
 import java.util.Date;
 
 public class Lesson {
-    private Integer lesId;
+    private int lesId;
 
     private String lesName;
-
-
 
     private String lesXxx1;
 
     private String lesXxx2;
 
-    public Integer getLesId() {
+    public int getLesId() {
         return lesId;
     }
 
-    public void setLesId(Integer lesId) {
+    public void setLesId(int lesId) {
         this.lesId = lesId;
     }
 

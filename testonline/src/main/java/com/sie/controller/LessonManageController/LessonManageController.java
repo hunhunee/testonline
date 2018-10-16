@@ -15,11 +15,17 @@ public class LessonManageController {
     @Autowired
     private LessonManagerService lessonManagerService;
 
-    @PostMapping("/addLesson")
-    public  void addLesson(Lesson lesson){
-        System.out.println("增加科目："+lesson.getLesName());
-        lessonManagerService.addLesson(lesson);
-    }
+//    @PostMapping("/addLesson")
+//    public  void addLesson(Lesson lesson){
+//        System.out.println("增加科目："+lesson.getLesName());
+//        lessonManagerService.addLesson(lesson);
+//    }
+            @PostMapping("/addLesson")
+            public  List<Lesson> addLesson(Lesson lesson){
+                System.out.println("增加科目："+lesson.getLesName());
+                List<Lesson> lessonList = lessonManagerService.addLesson(lesson);
+                return lessonList;
+}
 
     @PostMapping("/deleteLesson")
     public List<Lesson> deleteLesson(Lesson lesson){

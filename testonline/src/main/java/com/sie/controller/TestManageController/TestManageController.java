@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -17,20 +18,20 @@ public class TestManageController {
     private TestManageService testManageService;
 
     @PostMapping("/add")
-    public List<TestEx> addTest(Test test){
+    public List<TestEx> addTest(Test test, HttpSession session){
         System.out.println("增加题目类容："+test.getTestContent());
 
-        List<TestEx> testList = testManageService.addTest(test);
+        List<TestEx> testList = testManageService.addTest(test,session);
         System.out.println(testList.size());
         return testList;
     }
 
     @PostMapping("/delete")
-    public List<TestEx> deleteTest(Test test){
+    public List<TestEx> deleteTest(Test test, HttpSession session){
         System.out.println("testid"+test.getTestId());
         if(test.getTestId()!=null){
 
-          List<TestEx> testList= testManageService.deleteTest(test);
+          List<TestEx> testList= testManageService.deleteTest(test,session);
             System.out.println(testList.size());
           return testList;
         }
@@ -38,8 +39,8 @@ public class TestManageController {
     }
 
     @PostMapping("/update")
-    public List<TestEx> updateTest(Test test){
-       List<TestEx> testList = testManageService.updateTest(test);
+    public List<TestEx> updateTest(Test test, HttpSession session){
+       List<TestEx> testList = testManageService.updateTest(test,session);
 
         return testList;
     }
@@ -47,7 +48,7 @@ public class TestManageController {
     @PostMapping("/find")
     public List<TestEx> findTest(Test test){
        List<TestEx> testList= testManageService.findTest(test);
-        System.out.println("查找的题型："+test.getTestType()+"数量："+testList.size());
+
         return testList;
     }
 

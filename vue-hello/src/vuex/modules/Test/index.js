@@ -213,7 +213,7 @@ updateTest({commit},{data}){
       state.test.length=data.data.length
       for (var i = 0; i < data.data.length; i++) {
         state.test[i]=data.data[i]
-        console.log(state.test[i]);
+
       }
 
       console.log("用户类型：");

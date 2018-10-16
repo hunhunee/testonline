@@ -21,7 +21,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public User login(User user, HttpServletRequest request){
-
+        HttpSession session =request.getSession();
         User u=new User();
          if(user.getIdentity().equals("1")){
             Admin admin= loginService.findAdminByNumAndPwd(user);
@@ -31,6 +31,7 @@ public class LoginController {
                 u.setPassword(admin.getAdmPassword());
                 u.setUsernum(admin.getAdmNum());
                 u.setIdentity("1");
+
             }
 
          }else if(user.getIdentity().equals("2")){
@@ -60,6 +61,8 @@ public class LoginController {
                   u.setIdentity("3");
               }
          }
+
+         session.setAttribute("user",u);
         return u;
     }
 }

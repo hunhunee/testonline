@@ -2,11 +2,13 @@ package com.sie.service.TestManageService.TestManageServiceImpl;
 
 import com.sie.domain.Test;
 import com.sie.domain.TestEx;
+import com.sie.domain.User;
 import com.sie.mapper.TestManageMapper.TestManageMapper;
 import com.sie.service.TestManageService.TestManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +20,16 @@ public class TestManageServiceImpl implements TestManageService{
 
 
     @Override
-    public List<TestEx> addTest(Test test) {
+    public List<TestEx> addTest(Test test,HttpSession session) {
         testManageMapper.addTest(test);
-        List<TestEx> testList =testManageMapper.findAllTest(test);
+        User user = (User) session.getAttribute("user");
+        List<TestEx> testList=null;
+        if (user.getIdentity().equals("2")){
+            testList=testManageMapper.findTest(test);
+
+        }else{
+            testList =testManageMapper.findAllTest(test);
+        }
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
             if(testList.get(i).getTestType().equals("1")){
@@ -43,10 +52,19 @@ public class TestManageServiceImpl implements TestManageService{
     }
 
     @Override
-    public List<TestEx> deleteTest(Test test) {
+    public List<TestEx> deleteTest(Test test, HttpSession session) {
+
 
         testManageMapper.deleteTest(test);
-        List<TestEx> testList =testManageMapper.findAllTest(test);
+        User user = (User) session.getAttribute("user");
+        List<TestEx> testList=null;
+        if (user.getIdentity().equals("2")){
+            testList=testManageMapper.findTest(test);
+
+        }else{
+            testList =testManageMapper.findAllTest(test);
+        }
+
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
             if(testList.get(i).getTestType().equals("1")){
@@ -62,17 +80,26 @@ public class TestManageServiceImpl implements TestManageService{
             if (testList.get(i).getTestStatus().equals("0")){
                 testList.get(i).setTestStatusName("随机");
             }else{
-                testList.get(i).setTestStatusName("固定");
+                testList.get(i).setTestStatusName("必考");
             }
         }
         return testList;
     }
 
     @Override
-    public List<TestEx> updateTest(Test test) {
+    public List<TestEx> updateTest(Test test,HttpSession session) {
 
         testManageMapper.updateTest(test);
-        List<TestEx> testList= testManageMapper.findAllTest(test);
+
+        User user = (User) session.getAttribute("user");
+        List<TestEx> testList=null;
+        if (user.getIdentity().equals("2")){
+            testList=testManageMapper.findTest(test);
+
+        }else{
+            testList =testManageMapper.findAllTest(test);
+        }
+
         for (int i = 0; i <testList.size() ; i++) {
             testList.get(i).setLesName(testList.get(i).getLesson().getLesName());
             if(testList.get(i).getTestType().equals("1")){
@@ -88,7 +115,7 @@ public class TestManageServiceImpl implements TestManageService{
             if (testList.get(i).getTestStatus().equals("0")){
                 testList.get(i).setTestStatusName("随机");
             }else{
-                testList.get(i).setTestStatusName("固定");
+                testList.get(i).setTestStatusName("必考");
             }
         }
         return testList;
@@ -113,7 +140,7 @@ public class TestManageServiceImpl implements TestManageService{
             if (testList.get(i).getTestStatus().equals("0")){
                 testList.get(i).setTestStatusName("随机");
             }else{
-                testList.get(i).setTestStatusName("固定");
+                testList.get(i).setTestStatusName("必考");
             }
         }
         return testList;
@@ -138,7 +165,7 @@ public class TestManageServiceImpl implements TestManageService{
             if (testList.get(i).getTestStatus().equals("0")){
                 testList.get(i).setTestStatusName("随机");
             }else{
-                testList.get(i).setTestStatusName("固定");
+                testList.get(i).setTestStatusName("必考");
             }
         }
         return testList;

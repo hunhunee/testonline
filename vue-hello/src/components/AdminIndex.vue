@@ -42,7 +42,7 @@
   <div class="layout">
     <Layout :style="{minHeight: '100vh'}">
       <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-        <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
+        <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
           <Submenu name="1-1">
             <template slot="title">
               <Icon type="ios-body"/>

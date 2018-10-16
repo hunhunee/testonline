@@ -52,7 +52,7 @@ export default {
     );
    },
 
- 
+
   },
   mutations:{
     findExamPaper_m(state,data){

@@ -43,7 +43,7 @@
     <div class="layout">
         <Layout :style="{minHeight: '100vh'}">
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-                <Menu  active-name="1-3" theme="dark" width="auto" :class="menuitemClasses" @on-select="test">
+                <Menu  active-name="1-3" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
                   <Submenu name="1-1">
                       <template slot="title">
                           <Icon type="ios-filing" />
@@ -166,7 +166,7 @@ import router from '@/router/index'
             let data =this.data;
             let student =this.student;
             switch (name) {
-             
+
               case "1-2":
                 this.$store.dispatch('findStudnetScore',{student});
                 break;

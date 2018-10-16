@@ -198,6 +198,7 @@
               examList:examList
             }
              this.$store.dispatch('addExamResult',{data});
+             
           }
 
         },

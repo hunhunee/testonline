@@ -49,7 +49,7 @@
         <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
           <Submenu name="1-1">
             <template slot="title">
-              <Icon type="ios-body"/>
+            <Icon type="md-person-add" />
               用户管理
             </template>
             <MenuItem name="1-1-1">教师管理</MenuItem>
@@ -58,7 +58,7 @@
 
           <Submenu name="1-2">
             <template slot="title">
-              <Icon type="ios-search"/>
+            <Icon type="ios-paper-outline" />
               试题管理
             </template>
             <MenuItem name="1-2-1">单选题</MenuItem>
@@ -67,20 +67,20 @@
             <MenuItem name="1-2-4">计算题</MenuItem>
           </Submenu>
 
-
-          <MenuItem name="1-3">
-            <Icon type="md-person-add"/>
-            <span>个人信息</span>
-          </MenuItem>
-
           <MenuItem name="1-4">
-            <Icon type="md-person-add"/>
+          <Icon type="md-book" />
             <span>科目管理</span>
           </MenuItem>
           <MenuItem name="1-5">
-            <Icon type="md-person-add"/>
+          <Icon type="md-school" />
             <span>班级管理</span>
           </MenuItem>
+
+          <MenuItem name="1-3">
+          <Icon type="md-person" />
+            <span>个人信息</span>
+          </MenuItem>
+
         </Menu>
       </Sider>
       <Layout>
@@ -90,7 +90,7 @@
             <Menu mode="horizontal" theme="dark" @on-select="test">
 
               <MenuItem name="h-1-1">
-                <Icon type="md-person-add"/>
+                <Icon type="md-person" />
                 <span>注销</span>
               </MenuItem>
 
@@ -99,11 +99,7 @@
 
         </Header>
         <Content :style="{padding: '0 16px 16px'}">
-            <Breadcrumb :style="{margin: '16px 0'}">
-              <BreadcrumbItem>Home 主页</BreadcrumbItem>
-              <BreadcrumbItem>Components 上一页</BreadcrumbItem>
-              <BreadcrumbItem>Layout 当前页面</BreadcrumbItem>
-            </Breadcrumb>
+        
             <Card>
                 <div style="height: 600px">
                   <router-view/>

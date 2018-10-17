@@ -80,14 +80,14 @@
                 <Menu mode="horizontal" theme="dark" @on-select="test">
 
                   <MenuItem name="h-1-1" >
-                    <Icon type="md-person" />
+                    <Icon type="ios-power" />
                       <span>注销</span>
                   </MenuItem>
                  </Menu>
               </div>
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
-                
+
                     <Card>
                         <div style="height: 600px">
                           <router-view/>

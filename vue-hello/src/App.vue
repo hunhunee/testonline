@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <div class="img1"></div> -->
     <router-view/>
   </div>
 </template>
@@ -10,15 +11,13 @@ export default {
    name: 'App'
 
 }
+
+
 </script>
 
 <style>
 #app {
-  /* text-align: center;
-  margin-top: auto;
-  color: #2c3e50;
-  /* -moz-osx-font-smoothing: */
-  /* font-family:'Avenir',Helvetica,Arial,sans-serif; */
 
 }
+
 </style>

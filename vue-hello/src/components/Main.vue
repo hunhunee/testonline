@@ -2,28 +2,26 @@
     .layout{
         text-align: center;
         font-size: 25px;
-      line-height: 210px;
+        line-height: 120px;
 
     }
 </style>
 <template>
 <div class="layout">
-
     欢迎使用在线考试系统！
-
 
     <Carousel autoplay v-model="value" loop>
             <CarouselItem>
-                <div class="demo-carousel">1.可以添加图片来进行装饰</div>
+                <div class="demo-carousel"><img src="~@/assets/chengshi.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel">2.也可以添加一些文字</div>
+                <div class="demo-carousel"><img src="~@/assets/13.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel">3.欢迎使用本系统</div>
+                <div class="demo-carousel"><img src="~@/assets/xingkong.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel">4.祝考试愉快</div>
+                <div class="demo-carousel"><img src="~@/assets/15.jpg" height="400"></div>
             </CarouselItem>
         </Carousel>
 </div>
@@ -33,7 +31,7 @@
     export default {
         data () {
             return {
-                value: 0
+                value: 1
 
 
             };

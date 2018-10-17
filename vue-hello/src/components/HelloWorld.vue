@@ -5,7 +5,6 @@
           在线考试系统登录界面
 
             <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-position="center">
-
                 <FormItem prop="user" >
                     登录名：
                     <Input type="text"  v-model="formInline.user" placeholder="Username" style="width: 200px" clearable>
@@ -34,8 +33,8 @@
                     <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
                 </FormItem>
             </Form>
-          <Footer class="layout-footer-center">2018-9&copy;第二小组出版，版权归己所有，拒绝侵权 </Footer>
-          </div>
+          2018-9&copy;第二小组出版，版权归己所有，拒绝侵权
+        </div>
   </div>
 </template>
 
@@ -74,13 +73,6 @@ export default {
                 }
 
             this.$store.dispatch('userLogin',{data});
-            this.$refs[name].validate((valid) => {
-               if (valid) {
-                   this.$Message.success('Success!');
-               } else {
-                   this.$Message.error('Fail!');
-               }
-           });
 
             }
         }
@@ -92,20 +84,15 @@ export default {
 
 .userLogin{
     text-align: center;
-    line-height: 150px;
-    
+    line-height: 200px;
+    background: url('~@/assets/13.jpg');
+    background-size: cover;
+
      }
      .text{
               font-size: 18px;
               text-align:center;
-
-                /* background-color: #00FFFF; */
-
           }
-          .layout-footer-center{
-            text-align: center;
-              line-height: 210px;
-            /* background-color: #00FFFF; */
-        }
+
 
 </style>

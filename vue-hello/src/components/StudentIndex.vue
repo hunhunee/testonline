@@ -46,7 +46,7 @@
                 <Menu  active-name="1-3" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
                   <Submenu name="1-1">
                       <template slot="title">
-                          <Icon type="ios-filing" />
+                        <Icon type="ios-create-outline" />
                           参加考试
                       </template>
 
@@ -59,7 +59,7 @@
                         <span>查看成绩</span>
                     </MenuItem>
                     <MenuItem name="1-3">
-                        <Icon type="md-person-add" />
+                      <Icon type="md-person" />
                         <span>个人信息</span>
                     </MenuItem>
 
@@ -81,18 +81,14 @@
                 <Menu mode="horizontal" theme="dark" @on-select="test">
 
                   <MenuItem name="h-1-1" >
-                      <Icon type="md-person-add" />
+                      <Icon type="md-person" />
                       <span>注销</span>
                   </MenuItem>
                  </Menu>
               </div>
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
-                    <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>Home 主页</BreadcrumbItem>
-                        <BreadcrumbItem>Components 上一页</BreadcrumbItem>
-                        <BreadcrumbItem>Layout 当前页面</BreadcrumbItem>
-                    </Breadcrumb>
+
                     <Card>
                         <div style="height: 600px">
                             <router-view/>
@@ -151,7 +147,7 @@ import router from '@/router/index'
              console.log(error);
             }
           );
-
+          
           this.$router.push('/student_index/main'); //跳转到指定页面
 
        },

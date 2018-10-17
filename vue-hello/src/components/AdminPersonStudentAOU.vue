@@ -31,10 +31,21 @@
 
       <FormItem>
         <Button type="primary" @click="handleSubmit()">Submit</Button>
-      
+
         <Button @click="clearable" style="margin-left: 8px">Reset</Button>
       </FormItem>
     </Form>
+
+    <Modal
+        v-model="modal1"
+        title="message"
+
+        @on-ok="ok"
+        @on-cancel="cancel">
+        <p>
+           该学号已经存在，请重新输入！！！
+        </p>
+    </Modal>
 
   </div>
 
@@ -68,7 +79,8 @@
         },
         classList: [],
         classIdString:"",
-        classNameString:""
+        classNameString:"",
+        modal1:false
 
       }
     },
@@ -107,6 +119,18 @@
           router.push({ path: '/admin_index/admin_person_student' });
         }else{
           const axios = require('axios');
+
+          localStorage.setItem("check",1);
+          let data = {
+              "num": this.formInline.stuNum
+          }
+          this.$store.dispatch('findStudent',{data});
+
+          setTimeout(()=>{
+           if(this.$store.state.person.student.length>=1){
+             this.modal1=true
+           }else{
+
           let data = {
             "stuName": this.formInline.stuName,
             "stuNum":this.formInline.stuNum,
@@ -118,7 +142,8 @@
           this.$store.dispatch('addStudent',{data});
           router.push({ path: '/admin_index/admin_person_student' });
         }
-
+      },1200)
+         }
       },
       clearable(){
         this.formInline.stuName='',

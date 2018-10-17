@@ -126,10 +126,12 @@
     },
     // 创建完成时
     created() {
-
+    localStorage.setItem("load",1);
     this.$store.dispatch('findAllLesson');
     this.$store.dispatch('findAllClass');
-    this.$router.push('/admin_index/main'); //跳转到指定页面
+     this.$router.push('/admin_index/main'); //跳转到指定页面
+
+
 
     },
 
@@ -173,9 +175,11 @@
             this.$store.dispatch('userLoginOut');
             break;
           case"1-4":
+            localStorage.setItem("load",0);
             this.$store.dispatch('findAllLesson');
             break;
           case"1-5":
+              localStorage.setItem("load",0);
               this.$store.dispatch('findAllClass');
               break;
             default:

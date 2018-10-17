@@ -122,10 +122,13 @@ updateClass({commit},{data}){
         console.log(state.className[i]);
       }
      localStorage.setItem("classIdList",state.classId),
-     localStorage.setItem("classNameList",state.className),
+     localStorage.setItem("classNameList",state.className)
 
 
-      router.push({ path: '/admin_index/admin_Class' });
+          if (localStorage.getItem("load")==0) {
+            router.push({ path: '/admin_index/admin_Class' });
+          }
+
     },
 
 

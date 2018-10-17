@@ -48,6 +48,13 @@ public class ClassManagerServiceImpl implements ClassManagerService {
 
    }
 
+   @Override
+   public List<Class_> findClassById(Class_ class_) {
+      List<Class_> lessonList=classManageMapper.findClassById(class_);
+
+      return lessonList;
+   }
+
 
    public List<Class_> findAllClass() {
 

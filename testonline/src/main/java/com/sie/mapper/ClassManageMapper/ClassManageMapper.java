@@ -14,6 +14,8 @@ public interface ClassManageMapper {
 
     public List<Class_> findClassByName(Class_ class_);
 
+    public List<Class_> findClassById(Class_ class_);
+
     public List<Class_> findAllClass();
 
 

@@ -56,9 +56,7 @@ public class StudentManagerServiceImpl implements StudentManagerService {
 //    @Override
    public List<StudentEx> findStudentByClass(StudentEx studentEx) {
        List<StudentEx> student = studentManageMapper.findStudentByClass(studentEx);
-       for (int i = 0; i < student.size(); i++) {
-           student.get(i).setClassName(student.get(i).getaClass().getClassName());
-       }
+
        return student;
    }
 

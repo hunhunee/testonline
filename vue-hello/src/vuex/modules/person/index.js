@@ -97,6 +97,19 @@ export default {
           }
         );
     },
+
+    findStudentByClass({commit}, {student}) {
+      console.log("findStudentByClass");
+      console.log(student);
+      api.findStudentByClass(student)
+        .then((response) => {
+          commit('findStudentByClass_m', response);
+        })
+        .catch((error) => {
+            console.log(error);
+          }
+        );
+    },
     //----查询学生----
      findStudent({commit}, {data}) {
       console.log("findStudent");
@@ -242,10 +255,21 @@ export default {
 
     findTeacherByClass_m(state, data) {
       console.log("findTeacherByClass_m");
+
       state.teacher.length = data.data.length;
       for (var i = 0; i < data.data.length; i++) {
         state.teacher[i] = data.data[i];
         console.log(state.teacher[i]);
+      }
+
+    },
+    findStudentByClass_m(state, data) {
+      console.log("findStudentByClass_m");
+      console.log( data.data.length);
+      state.STUDENT.length = data.data.length;
+      for (var i = 0; i < data.data.length; i++) {
+        state.student[i] = data.data[i];
+        console.log(state.student[i]);
       }
 
     },

@@ -88,7 +88,7 @@
               </div>
             </Header>
                 <Content :style="{padding: '0 16px 16px'}">
-              
+
                     <Card>
                         <div style="height: 600px">
                             <router-view/>
@@ -147,7 +147,7 @@ import router from '@/router/index'
              console.log(error);
             }
           );
-
+          
           this.$router.push('/student_index/main'); //跳转到指定页面
 
        },

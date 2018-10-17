@@ -112,9 +112,9 @@ updateLesson({commit},{data}){
      localStorage.setItem("lessonIdList",state.lessonId),
      localStorage.setItem("lessonNameList",state.lessonName)
      if(localStorage.getItem("identity")=="1"){
-
-          router.push({ path: '/admin_index/admin_Lesson' });
-     }else{
+          if (localStorage.getItem("load")==0) {
+            router.push({ path: '/admin_index/admin_Lesson' });
+          }
 
      }
 

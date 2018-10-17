@@ -4,7 +4,7 @@
           <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
           在线考试系统登录界面
 
-            <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-position="center">
+            <Form ref="formInline" :model="formInline" :rules="ruleInline" >
                 <FormItem prop="user" >
                     登录名：
                     <Input type="text"  v-model="formInline.user" placeholder="Username" style="width: 200px" clearable>
@@ -54,11 +54,17 @@ export default {
                         { required: true, message: 'Please fill in the user name', trigger: 'blur' }
                     ],
                     password: [
-                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-                        { type: 'string', min: 1, message: '密码不能为空', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the password.', trigger: 'blur' }
                     ]
                 }
             }
+        },
+
+
+
+        created() {
+          console.log("login created");
+          localStorage.setItem("login_message",0)
         },
         methods: {
 
@@ -74,6 +80,16 @@ export default {
 
                         }
                         this.$store.dispatch('userLogin',{data});
+                       setTimeout(()=>{
+                         console.log(localStorage.getItem("login_message"));
+                         if(localStorage.getItem("login_message")==1){
+                           this.$Message.error('您的学号或密码有误，请重新输入！');
+                         }
+
+                       },1200)
+
+
+
                     } else {
                         this.$Message.error('请填写必要信息！');
                     }

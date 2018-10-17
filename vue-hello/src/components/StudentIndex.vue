@@ -147,7 +147,7 @@ import router from '@/router/index'
              console.log(error);
             }
           );
-          
+
           this.$router.push('/student_index/main'); //跳转到指定页面
 
        },
@@ -174,10 +174,11 @@ import router from '@/router/index'
               this.$api.findByStuNum(data)
                 .then((response) => {
                    if(response.data.length>=1){
-                      alert("您已经进行过一次考试了，请不要重复考试！")
+                      this.$Message.error('您已经进行过一次考试了，请不要重复考试！');
                    }else{
                      this.data.testCourse=name;
                      this.modal=true
+
                    }
                 })
                 .catch((error) => {

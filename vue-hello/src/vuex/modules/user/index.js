@@ -57,6 +57,7 @@ export default {
                  localStorage.setItem("identity",data.data.identity);
                  localStorage.setItem("userid",data.data.userid);
                  localStorage.setItem("usernum",data.data.usernum);
+                 localStorage.setItem("login_message",0)
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
@@ -75,6 +76,7 @@ export default {
                  localStorage.setItem("_class",data.data._class);
                  localStorage.setItem("usernum",data.data.usernum);
                  localStorage.setItem("lesson",data.data.lesson);
+                 localStorage.setItem("login_message",0)
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
@@ -94,7 +96,7 @@ export default {
                  localStorage.setItem("userid",data.data.userid);
                  localStorage.setItem("usernum",data.data.usernum);
                  localStorage.setItem("_class",data.data._class);
-
+                 localStorage.setItem("login_message",0)
                  state.sex=data.data.sex,
                  state._class=data.data._class,
                  state.name=data.data.name,
@@ -103,7 +105,9 @@ export default {
                  router.push({ path: '/student_index' }) ;
                  break;
                default:
-                 alert("对不起，您输入的密码或账户有误，请重新输入！")
+                 //alert("对不起，您输入的密码或账户有误，请重新输入！")
+                localStorage.setItem("login_message",1)
+                console.log(localStorage.getItem("login_message"));
              }
 
     },

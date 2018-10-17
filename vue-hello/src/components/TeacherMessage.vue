@@ -69,20 +69,37 @@
             }
         },
         methods: {
-          handleSubmit(){
-            const axios = require('axios');
-            if (this.formInline.newpassword==this.formInline.repassword) {
-              let data = {
-                  "password":this.formInline.password,
-                  "newpassword":this.formInline.newpassword,
-                  "repassword":this.formInline.repassword,
-                  "identity":this.formInline.radio,
-                  "userid":localStorage.getItem("userid")
-              }
-              this.$store.dispatch('userLayout',{data});
-            }else{
-                alert("两次密码不相同，请重新输入！")
-            }
+          handleSubmit(name){
+            this.$refs[name].validate((valid) => {
+                                if (valid) {
+
+                                  const axios = require('axios');
+                                  if (this.formInline.newpassword==this.formInline.repassword) {
+                                    let data = {
+                                        "password":this.formInline.password,
+                                        "newpassword":this.formInline.newpassword,
+                                        "repassword":this.formInline.repassword,
+                                        "identity":this.formInline.radio,
+                                        "userid":localStorage.getItem("userid")
+                                    }
+                                    this.$store.dispatch('userLayout',{data});
+
+
+                                    setTimeout(()=>{
+                                     
+                                        this.$Message.error(this.$store.state.info.message);
+                                    },1200)
+
+                                  }else{
+                                      this.$Message.error('两次密码不相同，请重新输入！');
+                                  }
+
+                                } else {
+                                    this.$Message.error('Fail!');
+                                }
+                            })
+
+
 
           }
 

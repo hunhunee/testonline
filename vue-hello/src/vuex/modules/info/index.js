@@ -12,7 +12,7 @@ export default {
       name:"",
       usernum:"",
       admpassword:'',
-
+      message:""
   },
   getters: {
     getIdentity: state => {//通过方法访问
@@ -35,9 +35,11 @@ export default {
     userLayout_m(state,data){
       //第一个参数state是这个模块的state 第二个参数是传进来的数据
       console.log("userLayout_m");
-      console.log(data)
+
       if(data.data!=null){
-        alert(data.data);
+         this.state.message=data.data
+         console.log(this.state.message);
+
       }
 
     }

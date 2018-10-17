@@ -93,7 +93,7 @@ export default {
 .userLogin{
     text-align: center;
     line-height: 150px;
-
+    
      }
      .text{
               font-size: 18px;

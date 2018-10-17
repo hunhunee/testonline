@@ -25,12 +25,11 @@
       <FormItem   prop="stuClass">
         <Select v-model="formInline.stuClass" placeholder="Select your class" style="width: 200px">
           <Option v-for="item in classList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-
         </Select>
       </FormItem>
 
       <FormItem>
-        <Button type="primary" @click="handleSubmit()">Submit</Button>
+        <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
 
         <Button @click="clearable" style="margin-left: 8px">Reset</Button>
       </FormItem>
@@ -105,45 +104,55 @@
 
     methods: {
 
-      handleSubmit() {
+      handleSubmit(name) {
 
-        if(this.$store.state.person.utaction=="2"){
-          let data = {
-            "stuName": this.formInline.stuName,
-            "stuNum":this.formInline.stuNum,
-            "stuSex":this.formInline.stuSex,
-            "stuClass":this.formInline.stuClass,
-            "stuPassword":this.$store.state.person.ustudent.stuPassword
-          }
-          this.$store.dispatch('updateStudent',{data});
-          router.push({ path: '/admin_index/admin_person_student' });
-        }else{
-          const axios = require('axios');
+        this.$refs[name].validate((valid) => {
+                          if (valid) {
 
-          localStorage.setItem("check",1);
-          let data = {
-              "num": this.formInline.stuNum
-          }
-          this.$store.dispatch('findStudent',{data});
+                            if(this.$store.state.person.utaction=="2"){
+                              let data = {
+                                "stuName": this.formInline.stuName,
+                                "stuNum":this.formInline.stuNum,
+                                "stuSex":this.formInline.stuSex,
+                                "stuClass":this.formInline.stuClass,
+                                "stuPassword":this.$store.state.person.ustudent.stuPassword
+                              }
+                              this.$store.dispatch('updateStudent',{data});
+                              router.push({ path: '/admin_index/admin_person_student' });
+                            }else{
+                              const axios = require('axios');
 
-          setTimeout(()=>{
-           if(this.$store.state.person.student.length>=1){
-             this.modal1=true
-           }else{
+                              localStorage.setItem("check",1);
+                              let data = {
+                                  "num": this.formInline.stuNum
+                              }
+                              this.$store.dispatch('findStudent',{data});
 
-          let data = {
-            "stuName": this.formInline.stuName,
-            "stuNum":this.formInline.stuNum,
-            "stuSex":this.formInline.stuSex,
-            "stuClass":this.formInline.stuClass,
-            "stuPassword":"123"
-          }
+                              setTimeout(()=>{
+                               if(this.$store.state.person.student.length>=1){
+                                 this.modal1=true
+                               }else{
 
-          this.$store.dispatch('addStudent',{data});
-          router.push({ path: '/admin_index/admin_person_student' });
-        }
-      },1200)
-         }
+                              let data = {
+                                "stuName": this.formInline.stuName,
+                                "stuNum":this.formInline.stuNum,
+                                "stuSex":this.formInline.stuSex,
+                                "stuClass":this.formInline.stuClass,
+                                "stuPassword":"123"
+                              }
+
+                              this.$store.dispatch('addStudent',{data});
+                              router.push({ path: '/admin_index/admin_person_student' });
+                            }
+                          },1200)
+                             }
+
+                          } else {
+                              this.$Message.error('Fail!');
+                          }
+                      })
+
+
       },
       clearable(){
         this.formInline.stuName='',

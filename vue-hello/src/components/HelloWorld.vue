@@ -62,18 +62,22 @@ export default {
         },
         methods: {
 
-              handleSubmit(name) {
+          handleSubmit (name) {
+                this.$refs[name].validate((valid) => {
+                    if (valid) {
 
-                const axios = require('axios');
-                let data = {
-                    "usernum": this.formInline.user,
-                    "password":this.formInline.password,
-                    "identity":this.formInline.radio
+                        const axios = require('axios');
+                        let data = {
+                            "usernum": this.formInline.user,
+                            "password":this.formInline.password,
+                            "identity":this.formInline.radio
 
-                }
-
-            this.$store.dispatch('userLogin',{data});
-
+                        }
+                        this.$store.dispatch('userLogin',{data});
+                    } else {
+                        this.$Message.error('请填写必要信息！');
+                    }
+                })
             }
         }
     }

@@ -6,7 +6,6 @@
 
           <FormItem prop="teaName" >
               <Input type="text"  v-model="formInline.teaName" placeholder="UserName" style="width: 200px" clearable>
-
               </Input>
           </FormItem>
 
@@ -36,7 +35,7 @@
       </FormItem>
 
           <FormItem>
-            <Button type="primary" @click="handleSubmit()">Submit</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
 
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
@@ -87,6 +86,9 @@ export default {
                     teaClass: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
                     ],
+                    teaCourse: [
+                        { required: true, message: 'Please fill in the course.', trigger: 'blur' }
+                    ]
                 },
                 lessonList: [],
                 lessonIdString:"",
@@ -124,70 +126,77 @@ export default {
        },
         methods: {
 
-              handleSubmit() {
+              handleSubmit(name) {
 
-                if(this.$store.state.person.utaction=="2"){
+                this.$refs[name].validate((valid) => {
+                  if (valid) {
 
-                  let data = {
-                      "teaName": this.formInline.teaName,
-                      "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
-                      "teaClass":this.formInline.teaClass,
-                      "teaPassword":this.$store.state.person.uteacher.teaPassword
-                  }
-                  this.$store.dispatch('updateTeacher',{data});
-                  router.push({ path: '/admin_index/admin_person_teacher' });
-                }else{
-                  const axios = require('axios');
+                    if(this.$store.state.person.utaction=="2"){
 
-                  localStorage.setItem("check",1);
-                  let data = {
-                      "num": this.formInline.teaNum
-                  }
-                  this.$store.dispatch('findTeacher',{data});
+                      let data = {
+                          "teaName": this.formInline.teaName,
+                          "teaNum":this.formInline.teaNum,
+                          "teaCourse":this.formInline.teaCourse,
+                          "teaClass":this.formInline.teaClass,
+                          "teaPassword":this.$store.state.person.uteacher.teaPassword
+                      }
+                      this.$store.dispatch('updateTeacher',{data});
+                      router.push({ path: '/admin_index/admin_person_teacher' });
+                    }else{
+                      const axios = require('axios');
 
-                 setTimeout(()=>{
-                   if(this.$store.state.person.teacher.length>=1){
-                     this.modal1=true
-                   }else{
-
-
-                     let teacher = {
-                         "teaName": this.formInline.teaName,
-                         "teaNum":this.formInline.teaNum,
-                         "teaCourse":this.formInline.teaCourse,
-                         "teaClass":this.formInline.teaClass,
-                         "teaPassword":"123"
-                     }
-                     this.$store.dispatch('findTeacherByClass',{teacher});
-
+                      localStorage.setItem("check",1);
+                      let data = {
+                          "num": this.formInline.teaNum
+                      }
+                      this.$store.dispatch('findTeacher',{data});
 
                      setTimeout(()=>{
-
-                       if (this.$store.state.person.teacher.length>=1) {
-                              this.modal=true
+                       if(this.$store.state.person.teacher.length>=1){
+                         this.modal1=true
                        }else{
 
-                         let data = {
+
+                         let teacher = {
                              "teaName": this.formInline.teaName,
                              "teaNum":this.formInline.teaNum,
                              "teaCourse":this.formInline.teaCourse,
                              "teaClass":this.formInline.teaClass,
                              "teaPassword":"123"
                          }
+                         this.$store.dispatch('findTeacherByClass',{teacher});
 
-                        this.$store.dispatch('addTeacher',{data});
+
+                         setTimeout(()=>{
+
+                           if (this.$store.state.person.teacher.length>=1) {
+                                  this.modal=true
+                           }else{
+
+                             let data = {
+                                 "teaName": this.formInline.teaName,
+                                 "teaNum":this.formInline.teaNum,
+                                 "teaCourse":this.formInline.teaCourse,
+                                 "teaClass":this.formInline.teaClass,
+                                 "teaPassword":"123"
+                             }
+
+                            this.$store.dispatch('addTeacher',{data});
+                           }
+
+                         },1200)
+
                        }
-
                      },1200)
 
-                   }
-                 },1200)
+                    }
+
+                  } else {
+                      this.$Message.error('Fail!');
+                  }
+              })
 
 
-
-
-                }
 
             },
 

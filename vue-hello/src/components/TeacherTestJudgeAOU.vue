@@ -24,15 +24,15 @@
 
               </Input>
           </FormItem>
-          <FormItem>
-            <Select v-model="status" style="width:200px" placeholder="testStatus">
+          <FormItem prop="status">
+            <Select v-model="formInline.status" style="width:200px" placeholder="testStatus">
               <Option v-for="item in statusList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
           </FormItem>
 
           <FormItem>
-            <Button type="primary" @click="handleSubmit()">Submit</Button>
-            
+            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
+
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
@@ -52,22 +52,25 @@ export default {
                  testContent:this.$store.state.test.utest.testContent,
                  testAns1:this.$store.state.test.utest.testAns1,
                  testAns2:this.$store.state.test.utest.testAns2,
-                 rightans1:this.$store.state.test.utest.rightans1
-
+                 rightans1:this.$store.state.test.utest.rightans1,
+                 status:this.$store.state.test.utest.testStatus,
                 },
                 ruleInline: {
                     testContent: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the testContent', trigger: 'blur' }
                     ],
                     testAns1: [
-                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the testAns1.', trigger: 'blur' },
                     ],
                     testAns2: [
-                        { required: true, message: 'Please fill in the course.', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the testAns2.', trigger: 'blur' },
                     ],
 
                     rightans1: [
-                        { required: true, message: 'Please fill in the class.', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the rightans1.', trigger: 'blur' }
+                    ],
+                    status: [
+                        { required: true, message: 'Please fill in the status.', trigger: 'blur' }
                     ],
                 },
 
@@ -83,42 +86,52 @@ export default {
 
                   ],
                   lesson:localStorage.getItem("lesson"),
-                status:this.$store.state.test.utest.testStatus,
+
             }
         },
         methods: {
 
-              handleSubmit() {
+              handleSubmit(name) {
 
-                console.log("操作类型");
-                console.log(this.$store.state.test.action);
-               if(this.$store.state.test.action=="1"){
-                 let data = {
+                this.$refs[name].validate((valid) => {
+                  if (valid) {
 
-                   testContent:this.formInline.testContent,
-                   testAns1:this.formInline.testAns1,
-                   testAns2:this.formInline.testAns2,
-                   rightans1:this.formInline.rightans1,
-                   testType:this.getTestType,
-                   testCourse:this.lesson,
-                   testStatus:this.status,
-                 }
-                 this.$store.dispatch('addTest',{data});
+                    console.log("操作类型");
+                    console.log(this.$store.state.test.action);
+                    if(this.$store.state.test.action=="1"){
+                     let data = {
 
-               }else{
-                  const axios = require('axios');
-                  let data = {
-                      testId:this.$store.state.test.utest.testId,
-                      testContent:this.formInline.testContent,
-                      testAns1:this.formInline.testAns1,
-                      testAns2:this.formInline.testAns2,
-                      rightans1:this.formInline.rightans1,
-                      testType:this.getTestType,
-                      testCourse:this.lesson,
-                      testStatus:this.status,
+                       testContent:this.formInline.testContent,
+                       testAns1:this.formInline.testAns1,
+                       testAns2:this.formInline.testAns2,
+                       rightans1:this.formInline.rightans1,
+                       testType:this.getTestType,
+                       testCourse:this.lesson,
+                       testStatus:this.formInline.status,
+                     }
+                     this.$store.dispatch('addTest',{data});
+
+                    }else{
+                      const axios = require('axios');
+                      let data = {
+                          testId:this.$store.state.test.utest.testId,
+                          testContent:this.formInline.testContent,
+                          testAns1:this.formInline.testAns1,
+                          testAns2:this.formInline.testAns2,
+                          rightans1:this.formInline.rightans1,
+                          testType:this.getTestType,
+                          testCourse:this.lesson,
+                          testStatus:this.formInline.status,
+                      }
+                      this.$store.dispatch('updateTest',{data});
+                    }
+
+                  } else {
+                      this.$Message.error('Fail!');
                   }
-                  this.$store.dispatch('updateTest',{data});
-                }
+              })
+
+
             },
 
             clearable(){

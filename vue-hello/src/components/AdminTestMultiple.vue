@@ -178,17 +178,17 @@ import router from '@/router/index'
         methods:{
           change (index) {
             let data = {
-              testId:this.data[index].testId,
-              testContent:this.data[index].testContent,
-              testAns1:this.data[index].testAns1,
-              testAns2:this.data[index].testAns2,
-              testAns3:this.data[index].testAns3,
-              testAns4:this.data[index].testAns4,
-              rightans1:this.data[index].rightans1,
-              rightans2:this.data[index].rightans2,
-              testCourse:this.data[index].testCourse,
-              testType:this.data[index].testType,
-              testStatus:this.data[index].testStatus
+              testId:this.data2[index].testId,
+              testContent:this.data2[index].testContent,
+              testAns1:this.data2[index].testAns1,
+              testAns2:this.data2[index].testAns2,
+              testAns3:this.data2[index].testAns3,
+              testAns4:this.data2[index].testAns4,
+              rightans1:this.data2[index].rightans1,
+              rightans2:this.data2[index].rightans2,
+              testCourse:this.data2[index].testCourse,
+              testType:this.data2[index].testType,
+              testStatus:this.data2[index].testStatus
             }
             this.$store.dispatch('updateBeforeTest',{data});
             router.push({ path: '/admin_index/admin_test_multiple_aou' });

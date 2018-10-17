@@ -22,7 +22,7 @@
             </Input>
           </FormItem>
           <FormItem>
-            <Button type="primary" @click="handleSubmit()">Submit</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
@@ -64,39 +64,50 @@ export default {
         },
         methods: {
 
-              handleSubmit() {
+              handleSubmit(name) {
 
-                if(this.$store.state.Class.utaction=="2"){
-                  let data = {
-                      "classId": this.formInline.classId,
-                      "className":this.formInline.className,
-                  }
-                  this.$store.dispatch('updateClass',{data});
-                  router.push({ path: '/admin_index/admin_Class' });
-                }else{
-                  const axios = require('axios');
-                  let data = {
-                  "classId":this.formInline.classId,
-                  "className":this.formInline.className
-                  }
+                this.$refs[name].validate((valid) => {
+                   if (valid) {
 
-                  this.$store.dispatch('findClassById',{data});
+                     if(this.$store.state.Class.utaction=="2"){
+                       let data = {
+                           "classId": this.formInline.classId,
+                           "className":this.formInline.className,
+                       }
+                       this.$store.dispatch('updateClass',{data});
+                       router.push({ path: '/admin_index/admin_Class' });
+                     }else{
+                       const axios = require('axios');
+                       let data = {
+                       "classId":this.formInline.classId,
+                       "className":this.formInline.className
+                       }
 
-                  setTimeout(()=>{
-                   console.log("class.length");
-                   console.log(this.$store.state.Class.class.length);
-                   if (this.$store.state.Class.class.length>=1) {
-                        console.log("modal=true");
-                          this.modal=true
-                   }else{
+                       this.$store.dispatch('findClassById',{data});
 
-                    this.$store.dispatch('addClass',{data});
+                       setTimeout(()=>{
+                        console.log("class.length");
+                        console.log(this.$store.state.Class.class.length);
+                        if (this.$store.state.Class.class.length>=1) {
+                             console.log("modal=true");
+                               this.modal=true
+                        }else{
+
+                         this.$store.dispatch('addClass',{data});
+                        }
+
+                      },1500)
+                     // this.$store.dispatch('addClass',{data});
+                     // router.push({ path: '/admin_index/admin_Class' });
+                         }
+
+
+                   } else {
+                       this.$Message.error('Fail!');
                    }
+               })
 
-                 },1500)
-               // this.$store.dispatch('addClass',{data});
-               // router.push({ path: '/admin_index/admin_Class' });
-                    }
+
             },
             clearable(){
               this.formInline.classId='',

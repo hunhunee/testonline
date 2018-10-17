@@ -53,6 +53,13 @@ public class StudentManagerServiceImpl implements StudentManagerService {
         return studentList;
     }
 
+//    @Override
+   public List<StudentEx> findStudentByClass(StudentEx studentEx) {
+       List<StudentEx> student = studentManageMapper.findStudentByClass(studentEx);
+
+       return student;
+   }
+
     //根据学号来查询学生
     @Override
     public List<StudentEx> selectStudentByStuNum(String num) {

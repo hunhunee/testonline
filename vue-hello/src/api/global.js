@@ -94,6 +94,18 @@ return axios({
 
  });
 },
+
+findStudentByClass: function (data) {
+return axios({
+   headers: {
+       'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+   },
+   method: 'post',
+   url: '/api/personManage/findStudentByClass',
+   data:Qs.stringify(data)
+
+ });
+},
   //----查询单个学生----
   findStudent: function (data) {
     return axios({
@@ -416,7 +428,16 @@ return axios({
      data:Qs.stringify(data)
    });
   },
-
+  findClassById: function (data) {
+  return axios({
+     headers: {
+         'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+     },
+     method: 'post',
+     url: '/api/ClassManage/findClassById',
+     data:Qs.stringify(data)
+   });
+  },
 
   addClass: function (data) {
   return axios({

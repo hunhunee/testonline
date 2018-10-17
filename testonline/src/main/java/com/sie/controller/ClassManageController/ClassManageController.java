@@ -48,6 +48,12 @@ public class ClassManageController {
         return class1;
     }
 
+    @PostMapping("/findClassById")
+    public  List<Class_>  findClassByIdTest(Class_ class_){
+        System.out.println("查找的班级ID："+class_.getClassId());
+        List<Class_> class1=classManagerService.findClassById(class_);
+        return class1;
+    }
     @PostMapping("/findAllClass")
     public List<Class_> findAllClassTest(){
       List<Class_> classList=classManagerService.findAllClass();

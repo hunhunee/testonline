@@ -14,6 +14,16 @@
       </div>
 
     <Table height="480" border :columns="columns7" :data="data6"></Table>
+    <Modal
+        v-model="modal"
+        title="message"
+
+        @on-ok="ok"
+        @on-cancel="cancel">
+        <p>
+           该班级还有同学在学习，不能够删除！！！
+        </p>
+    </Modal>
     </div>
 </template>
 <script>
@@ -70,7 +80,8 @@ export default {
                }
            ],
            data6:[],
-          className:""
+          className:"",
+          modal:false
        }
    },
 
@@ -105,10 +116,26 @@ export default {
          router.push({ path: '/admin_index/admin_Class_aou' });
        },
        remove (index) {
-         let data = {
-             "className": this.data6[index].className
-         }
-        this.$store.dispatch('deleteClass',{data});
+          let student={
+           "stuClass":this.data6[index].classId
+          }
+         this.$store.dispatch('findStudentByClass',{student});
+
+         setTimeout(()=>{
+
+           if (this.$store.state.person.student.length>=1) {
+                  this.modal=true
+           }else{
+
+             let data = {
+                 "className": this.data6[index].className
+             }
+            this.$store.dispatch('deleteClass',{data});
+           }
+
+         },2000)
+
+
       },
       search () {
         let data = {
@@ -122,7 +149,13 @@ export default {
       add() {
         this.$store.dispatch('addBeforeClass');
         router.push({ path: '/admin_index/admin_Class_aou' });
-      }
+      },
+      ok:function(){
+       this.modal=false
+      },
+      cancel:function(){
+
+      },
 
    }
 }

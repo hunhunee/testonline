@@ -26,7 +26,16 @@
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
+      <Modal
+          v-model="modal"
+          title="message"
 
+          @on-ok="ok"
+          @on-cancel="cancel">
+          <p>
+             该班级名或者班级ID已存在，不能够重复添加！！！
+          </p>
+      </Modal>
   </div>
 
 </template>
@@ -49,7 +58,8 @@ export default {
                         { required: true, message: 'Please fill in the class Name.', trigger: 'blur' },
                     ],
 
-                }
+                },
+                modal:false
             }
         },
         methods: {
@@ -70,10 +80,23 @@ export default {
                   "className":this.formInline.className
                   }
 
-               this.$store.dispatch('addClass',{data});
-               router.push({ path: '/admin_index/admin_Class' });
-                }
+                  this.$store.dispatch('findClassById',{data});
 
+                  setTimeout(()=>{
+                   console.log("class.length");
+                   console.log(this.$store.state.Class.class.length);
+                   if (this.$store.state.Class.class.length>=1) {
+                        console.log("modal=true");
+                          this.modal=true
+                   }else{
+
+                    this.$store.dispatch('addClass',{data});
+                   }
+
+                 },1500)
+               // this.$store.dispatch('addClass',{data});
+               // router.push({ path: '/admin_index/admin_Class' });
+                    }
             },
             clearable(){
               this.formInline.classId='',

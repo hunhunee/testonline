@@ -32,6 +32,18 @@ export default {
      );
    },
 
+   findClassById({commit},{data}){
+     console.log("findClassById");
+     console.log(data);
+    api.findClassById(data)
+    .then((response) => {
+       commit('findClassById_m',response);
+    })
+    .catch((error)=>{
+       console.log(error);
+      }
+    );
+  },
 
 
    deleteClass({commit},{data}){
@@ -150,6 +162,17 @@ updateClass({commit},{data}){
         console.log(data.data);
         router.push({ path: '/admin_index/admin_Class' });
     },
+    findClassById_m(state,data){
+        console.log("findClassById_m");
+        console.log(data.data.length);
+        state.class.length=data.data.length;
+        for (var i = 0; i < data.data.length; i++) {
+          state.class[i]=data.data[i];
+
+        }
+
+
+    },
     addClass_m(state,data){
       console.log("addClass_m");
       console.log(data.data);
@@ -166,10 +189,10 @@ updateClass({commit},{data}){
      localStorage.setItem("classIdList",state.classId),
      localStorage.setItem("classNameList",state.className)
 
-      if(state.class.length==data.data.lesson){
+      //if(state.class.length==data.data.lesson){
         console.log("跳转到admin班级 class");
           router.push({ path: '/admin_index/admin_Class' });
-      }
+      //}
 
     },
     addBeforeClass_m(state){

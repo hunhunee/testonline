@@ -19,6 +19,9 @@ public interface StudentManageMapper {
     //查询学生
     public List<StudentEx> selectStudentByStuNum(String num);
 
+    //查询学生
+    public  List<StudentEx> findStudentByClass(StudentEx studentEx);
+
     //查询所有学生
     public List<StudentEx> selectAllStudent();
 }

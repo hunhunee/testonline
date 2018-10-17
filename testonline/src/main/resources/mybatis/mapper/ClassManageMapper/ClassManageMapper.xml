@@ -7,6 +7,9 @@
       SELECT * FROM class WHERE class_name like '%${className}%';
     </select>
 
+    <select id="findClassById" parameterType="com.sie.domain.Class_" resultType="com.sie.domain.Class_">
+        SELECT * FROM class WHERE class_name=#{className} OR class_id=#{classId}
+    </select>
 
     <select id="findAllClass"  resultType="com.sie.domain.Class_">
       SELECT * FROM class;

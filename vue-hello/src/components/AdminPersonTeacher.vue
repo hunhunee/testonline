@@ -123,6 +123,7 @@ export default {
 
       },
       search () {
+        localStorage.setItem("check",0);
         let data = {
             "num": this.num
         }

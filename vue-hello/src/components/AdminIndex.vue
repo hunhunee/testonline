@@ -130,9 +130,10 @@
     },
     // 创建完成时
     created() {
- this.$router.push('/admin_index/main'); //跳转到指定页面
-  //  this.$store.dispatch('findAllLesson');
-    //this.$store.dispatch('findAllClass');
+
+    this.$store.dispatch('findAllLesson');
+    this.$store.dispatch('findAllClass');
+    this.$router.push('/admin_index/main'); //跳转到指定页面
 
     },
 

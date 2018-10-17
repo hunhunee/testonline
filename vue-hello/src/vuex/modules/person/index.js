@@ -249,7 +249,12 @@ export default {
       }
       // state.teacher[0] = data.data
       // console.log(state.teacher[0]);
-      router.push({path: '/admin_index/admin_person_teacher'});
+      console.log("localStorage.getItem check");
+      console.log(localStorage.getItem("check"));
+      if(localStorage.getItem("check")==0){
+          router.push({path: '/admin_index/admin_person_teacher'});
+      }
+
     },
 
 
@@ -283,7 +288,12 @@ export default {
       }
     //state.student[0] = data.data
     //console.log(state.student[0]);
-      router.push({path: '/admin_index/admin_person_student'});
+      console.log("localStorage.getItem check");
+      console.log(localStorage.getItem("check"));
+      if(localStorage.getItem("check")==0){
+          router.push({path: '/admin_index/admin_person_student'});
+      }
+
     },
     addTeacher_m(state, data) {
       console.log("addTeacher_m");

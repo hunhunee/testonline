@@ -37,10 +37,20 @@
 
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
-          
+
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
+      <Modal
+          v-model="modal1"
+          title="message"
+
+          @on-ok="ok"
+          @on-cancel="cancel">
+          <p>
+             该工号已经存在，请重新输入！！！
+          </p>
+      </Modal>
       <Modal
           v-model="modal"
           title="message"
@@ -84,7 +94,8 @@ export default {
                 classList: [],
                 classIdString:"",
                 classNameString:"",
-                modal:false
+                modal:false,
+                modal1:false
             }
         },
         created: function () {
@@ -129,34 +140,52 @@ export default {
                 }else{
                   const axios = require('axios');
 
-                  let teacher = {
-                      "teaName": this.formInline.teaName,
-                      "teaNum":this.formInline.teaNum,
-                      "teaCourse":this.formInline.teaCourse,
-                      "teaClass":this.formInline.teaClass,
-                      "teaPassword":"123"
+                  localStorage.setItem("check",1);
+                  let data = {
+                      "num": this.formInline.teaNum
                   }
-                  this.$store.dispatch('findTeacherByClass',{teacher});
+                  this.$store.dispatch('findTeacher',{data});
+
+                 setTimeout(()=>{
+                   if(this.$store.state.person.teacher.length>=1){
+                     this.modal1=true
+                   }else{
 
 
-                  setTimeout(()=>{
+                     let teacher = {
+                         "teaName": this.formInline.teaName,
+                         "teaNum":this.formInline.teaNum,
+                         "teaCourse":this.formInline.teaCourse,
+                         "teaClass":this.formInline.teaClass,
+                         "teaPassword":"123"
+                     }
+                     this.$store.dispatch('findTeacherByClass',{teacher});
 
-                    if (this.$store.state.person.teacher.length>=1) {
-                           this.modal=true
-                    }else{
 
-                      let data = {
-                          "teaName": this.formInline.teaName,
-                          "teaNum":this.formInline.teaNum,
-                          "teaCourse":this.formInline.teaCourse,
-                          "teaClass":this.formInline.teaClass,
-                          "teaPassword":"123"
-                      }
+                     setTimeout(()=>{
 
-                     this.$store.dispatch('addTeacher',{data});
-                    }
+                       if (this.$store.state.person.teacher.length>=1) {
+                              this.modal=true
+                       }else{
 
-                  },1200)
+                         let data = {
+                             "teaName": this.formInline.teaName,
+                             "teaNum":this.formInline.teaNum,
+                             "teaCourse":this.formInline.teaCourse,
+                             "teaClass":this.formInline.teaClass,
+                             "teaPassword":"123"
+                         }
+
+                        this.$store.dispatch('addTeacher',{data});
+                       }
+
+                     },1200)
+
+                   }
+                 },1200)
+
+
+
 
                 }
 

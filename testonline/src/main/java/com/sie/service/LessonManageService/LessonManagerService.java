@@ -13,4 +13,6 @@ public interface LessonManagerService {
 
     public List<Lesson> findAllLessonr();
 
+    public List<Lesson> findLessonByLesNameAndByLesId(Lesson lesson);
+
 }

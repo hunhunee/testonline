@@ -14,6 +14,16 @@
       </div>
 
     <Table height="480" border :columns="columns7" :data="data6"></Table>
+      <Modal
+        v-model="modal"
+        title="message"
+
+        @on-ok="ok"
+        @on-cancel="cancel">
+        <p>
+          该科目有教师所教，不能删除数据，请慎重选择！！！
+        </p>
+      </Modal>
     </div>
 </template>
 <script>
@@ -70,7 +80,8 @@ export default {
                }
            ],
            data6:[],
-          lesName:""
+          lesName:"",
+          modal:false
        }
    },
 
@@ -105,11 +116,31 @@ export default {
          router.push({ path: '/admin_index/admin_Lesson_aou' });
        },
        remove (index) {
-         let data = {
-             "lesName": this.data6[index].lesName
+         let teacher = {
+           value:this.data6[index].lesId
          }
-        this.$store.dispatch('deleteLesson',{data});
+         this.$store.dispatch('findTeacherByLesson', {teacher});
+         setTimeout(()=>{
+           console.log("score.length");
+           console.log(this.$store.state.person.teacher.length);
+           if(this.$store.state.person.teacher.length>=1){
+             this.modal=true
+             console.log("modal:true");
+           }else{
+             let data = {
+               "lesName": this.data6[index].lesName
+             }
+             this.$store.dispatch('deleteLesson',{data});
+
+           }
+         },1200)
+        //  let data = {
+        //      "lesName": this.data6[index].lesName
+        //  }
+        // this.$store.dispatch('deleteLesson',{data});
       },
+
+
       search () {
         let data = {
             "lesName": this.lesName
@@ -122,7 +153,15 @@ export default {
       add() {
         this.$store.dispatch('addBeforeLesson');
         router.push({ path: '/admin_index/admin_Lesson_aou' });
-      }
+      },
+     ok:function(){
+       this.modal = false
+
+
+     },
+     cancel:function(){
+
+     }
 
    }
 }

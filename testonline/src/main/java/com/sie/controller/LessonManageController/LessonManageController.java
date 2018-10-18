@@ -57,4 +57,11 @@ public class LessonManageController {
       return lessonList;
 
     }
+
+    //<!--科目增加之前的判断是否已存在-->
+    @PostMapping("/findLessonByLesNameAndByLesId")
+    public List<Lesson> findLessonByLesNameAndByLesId(Lesson lesson){
+        List<Lesson> lessonByLesNameAndByLesId = lessonManagerService.findLessonByLesNameAndByLesId(lesson);
+        return lessonByLesNameAndByLesId;
+    }
 }

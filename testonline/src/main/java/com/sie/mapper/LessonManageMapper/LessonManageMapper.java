@@ -15,5 +15,7 @@ public interface LessonManageMapper {
 
     public List<Lesson> findAllLesson();
 
+    public List<Lesson> findLessonByLesNameAndByLesId(Lesson lesson);
+
 
 }

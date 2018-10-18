@@ -34,6 +34,19 @@ export default {
           }
         );
     },
+    //科目老师
+    findTeacherByLesson({commit},{teacher}) {
+      console.log("findTeacherByLesson")
+      console.log(teacher)
+      api.findTeacherByLesson(teacher)
+        .then((response) => {
+          commit('findTeacherByLesson_m', response);
+        })
+        .catch((error) => {
+            console.log(error);
+          }
+        );
+    },
     //------查询所有学生-------
     findAllStudent({commit}) {
       api.findAllStudent()
@@ -257,6 +270,16 @@ export default {
 
     },
 
+    //删除科目信息之前，先判断有没有老师所教
+    findTeacherByLesson_m(state, data) {
+      console.log("findTeacherByLesson_m");
+      console.log(data.data);
+      state.teacher.length = data.data.length;
+      for (var i = 0; i < data.data.length; i++) {
+        state.teacher[i] = data.data[i];
+        console.log(state.teacher[i]);
+      }
+    },
 
     findTeacherByClass_m(state, data) {
       console.log("findTeacherByClass_m");

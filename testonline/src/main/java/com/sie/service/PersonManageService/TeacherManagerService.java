@@ -1,5 +1,6 @@
 package com.sie.service.PersonManageService;
 
+import com.sie.domain.Lesson;
 import com.sie.domain.Teacher;
 import com.sie.domain.TeacherEx;
 
@@ -18,4 +19,6 @@ public interface TeacherManagerService {
     public List<TeacherEx> updateTeacher(Teacher teacher);
 
     public List<TeacherEx> deleteTeacher(String num);
+
+    public List<Teacher> findTeacherByLesson(String value);
 }

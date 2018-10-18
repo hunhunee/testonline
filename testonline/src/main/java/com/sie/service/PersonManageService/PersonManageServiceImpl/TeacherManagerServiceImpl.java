@@ -1,5 +1,6 @@
 package com.sie.service.PersonManageService.PersonManageServiceImpl;
 
+import com.sie.domain.Lesson;
 import com.sie.domain.Teacher;
 import com.sie.domain.TeacherEx;
 import com.sie.mapper.PersonManageMapper.TeacherManageMapper;
@@ -82,5 +83,10 @@ public class TeacherManagerServiceImpl implements TeacherManagerService{
              teacherList.get(i).setClassName(teacherList.get(i).getaClass().getClassName());
         }
         return teacherList;
+    }
+
+    public List<Teacher> findTeacherByLesson(String value){
+        List<Teacher> teacherByLesson = teacherManageMapper.findTeacherByLesson(value);
+        return teacherByLesson;
     }
 }

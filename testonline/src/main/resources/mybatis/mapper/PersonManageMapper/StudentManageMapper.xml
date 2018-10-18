@@ -23,31 +23,33 @@
               VALUES(#{stuName},#{stuPassword},#{stuSex},#{stuNum},#{stuClass});
        </insert>
 
+    <!--根据学生的学号来删除-->
+    <delete id="deleteStudentByStuNum"
+        parameterType="java.lang.String">
+        DELETE FROM student WHERE stu_num = #{value}
+    </delete>
+
     <!--根据班级来查询-->
     <select id="findStudentByClass" parameterType="com.sie.domain.StudentEx" resultType="com.sie.domain.StudentEx">
         select stu_class,stu_id,stu_name,stu_num,stu_password,stu_sex,class_name from student s,class c where s.stu_class=c.class_id
         AND  stu_class=#{stuClass}
     </select>
 
-    <!--根据学生的学号来删除-->
-    <delete id="deleteStudentByStuNum" parameterType="java.lang.String">
-      DELETE FROM student WHERE stu_num = #{value}
-    </delete>
 
     <!--修改学生信息-->
     <update id="updateStudentByStuNum" parameterType="student">
           UPDATE student SET stu_name=#{stuName},stu_password=#{stuPassword},stu_sex=#{stuSex},stu_class=#{stuClass}
               WHERE stu_num = #{stuNum}
-        </update>
+    </update>
 
     <!--模糊查询单个学生-->
     <select id="selectStudentByStuNum" parameterType="java.lang.String" resultMap="BaseResultMap">
           SELECT stu_id,stu_name,stu_password,stu_sex,stu_num,stu_class,class_name FROM student,class WHERE stu_class=class_id AND stu_num like '%${value}%'
-
-        </select>
+    </select>
 
     <!--查询所有学生-->
     <select id="selectAllStudent" resultMap="BaseResultMap">
           SELECT  stu_id,stu_name,stu_password,stu_sex,stu_num,stu_class,class_name FROM student ,class WHERE stu_class=class_id
-        </select>
+    </select>
+
 </mapper>

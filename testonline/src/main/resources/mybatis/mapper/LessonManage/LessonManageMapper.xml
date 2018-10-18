@@ -7,6 +7,11 @@
       SELECT * FROM lesson WHERE les_name like '%${lesName}%';
     </select>
 
+    <!--科目增加之前的判断是否已存在-->
+    <select id="findLessonByLesNameAndByLesId" parameterType="com.sie.domain.Lesson" resultType="com.sie.domain.Lesson">
+      SELECT * FROM lesson WHERE les_name=#{lesName} OR les_id = #{lesId};
+    </select>
+
 
     <select id="findAllLesson"  resultType="com.sie.domain.Lesson">
       SELECT * FROM lesson;

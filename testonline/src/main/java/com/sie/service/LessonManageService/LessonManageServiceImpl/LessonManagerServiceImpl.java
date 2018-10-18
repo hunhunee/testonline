@@ -4,8 +4,10 @@ import com.sie.domain.Lesson;
 import com.sie.mapper.LessonManageMapper.LessonManageMapper;
 import com.sie.service.LessonManageService.LessonManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.NullLiteral;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Null;
 import java.util.List;
 
 @Service
@@ -49,5 +51,14 @@ public class LessonManagerServiceImpl implements LessonManagerService{
    public List<Lesson> findAllLessonr() {
 
       return lessonManageMapper.findAllLesson();
+   }
+
+   //<!--科目增加之前的判断是否已存在-->
+   public List<Lesson> findLessonByLesNameAndByLesId(Lesson lesson){
+      List<Lesson> lessonByLesNameAndByLesId = lessonManageMapper.findLessonByLesNameAndByLesId(lesson);
+      if (lessonByLesNameAndByLesId.size() != 0 ){
+         return lessonByLesNameAndByLesId;
+      }
+      return null;
    }
 }

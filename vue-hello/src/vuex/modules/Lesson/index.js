@@ -33,6 +33,18 @@ export default {
    },
 
 
+//在添加科目信息之前，先判断科目是否已存在
+ findLessonByLesNameAndByLesId({commit},{data}){
+    console.log(data);
+    api.findLessonByLesNameAndByLesId(data)
+      .then((response) => {
+        commit('findLessonByLesNameAndByLesId_m',response);
+      })
+      .catch((error)=>{
+          console.log(error);
+        }
+      );
+  },
 
    deleteLesson({commit},{data}){
      console.log(data);
@@ -98,6 +110,19 @@ updateLesson({commit},{data}){
 }
   },
   mutations:{
+
+    //在添加科目信息之前，先判断科目是否已存在
+    findLessonByLesNameAndByLesId_m(state,data){
+      console.log("findLessonByLesNameAndByLesId_m");
+      console.log(data.data.length);
+      state.lesson.length=data.data.length;
+      for (var i = 0; i < data.data.length; i++) {
+        state.lesson[i]=data.data[i];
+      }
+    },
+
+
+
     findAllLesson_m(state,data){
       console.log("findAllLesson_m");
 
@@ -152,6 +177,7 @@ updateLesson({commit},{data}){
         console.log(data.data);
         router.push({ path: '/admin_index/admin_Lesson' });
     },
+
     addLesson_m(state,data){
       console.log("addLesson_m");
       state.lesson.length=data.data.length;
@@ -167,10 +193,10 @@ updateLesson({commit},{data}){
      localStorage.setItem("lessonIdList",state.lessonId),
      localStorage.setItem("lessonNameList",state.lessonName)
 
-      if(state.lesson.length==data.data.lesson){
+      // if(state.lesson.length==data.data.lesson){
         console.log("跳转到admin科目 Lesson");
           router.push({ path: '/admin_index/admin_Lesson' });
-      }
+      // }
 
     },
     addBeforeLesson_m(state){

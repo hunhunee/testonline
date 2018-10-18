@@ -26,7 +26,16 @@
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
+      <Modal
+        v-model="modal"
+        title="message"
 
+        @on-ok="ok"
+        @on-cancel="cancel">
+        <p>
+          该科目编号已经存在或者科目名称重复，请重新输入！！！
+        </p>
+      </Modal>
   </div>
 
 </template>
@@ -49,7 +58,8 @@ export default {
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },
                     ],
 
-                }
+                },
+              modal:false
             }
         },
         methods: {
@@ -70,14 +80,37 @@ export default {
                   "lesName":this.formInline.lesName
                   }
 
-               this.$store.dispatch('addLesson',{data});
-               router.push({ path: '/admin_index/admin_Lesson' });
+                  this.$store.dispatch('findLessonByLesNameAndByLesId',{data});
+
+                  setTimeout(()=>{
+                    console.log("lesson.length");
+                    console.log(this.$store.state.lesson.lesson.length);
+                    if (this.$store.state.lesson.lesson.length>=1) {
+                      console.log("modal=true");
+                      this.modal=true
+                    }else{
+                      this.$store.dispatch('addLesson',{data});
+                    }
+
+                  },1200)
+
+
+
              }
         },
         clearable(){
           this.formInline.lesId='',
           this.formInline.lesName=''
-       }
+       },
+          ok:function(){
+            this.modal = false
+
+
+          },
+          cancel:function(){
+
+          }
+
     }
   }
 </script>

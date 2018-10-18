@@ -1,5 +1,6 @@
 package com.sie.AdminMapperTest;
 
+import com.sie.domain.Lesson;
 import com.sie.domain.Teacher;
 import com.sie.domain.TeacherEx;
 import com.sie.mapper.PersonManageMapper.TeacherManageMapper;
@@ -67,6 +68,12 @@ import java.util.List;
             teacher.setTeaPassword("123");
 
             //teacherManageMapper.addTeacher(teacher);
+        }
+
+        @Test
+        public void TeacherBylessonTest(){
+            List<Teacher> teacher = teacherManageMapper.findTeacherByLesson("1");
+            System.out.println(teacher.get(0).getTeaName());
         }
 
 }

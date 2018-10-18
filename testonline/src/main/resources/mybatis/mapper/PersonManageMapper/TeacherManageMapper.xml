@@ -23,6 +23,13 @@
     </association>
 
     </resultMap>
+    <!-- 对科目进行判断，有教师所教的科目不能删除-->
+    <select id="findTeacherByLesson" parameterType="string" resultType="com.sie.domain.Teacher">
+        select tea_name
+            from lesson l, teacher t
+            where t.tea_course = #{value} and l.les_id = t.tea_course
+    </select>
+
     <select id="findTeacherByNum" parameterType="string" resultMap="personResultMap">
        select tea_class,tea_course,tea_id,tea_name,tea_num,tea_password,les_id,les_name,class_name from teacher t,lesson l ,class c where t.tea_course=l.les_id and t.tea_class=c.class_id
     AND tea_num like '%${value}%'

@@ -1,5 +1,6 @@
 package com.sie.controller.PersonManageController;
 
+import com.sie.domain.Lesson;
 import com.sie.domain.Teacher;
 import com.sie.domain.TeacherEx;
 import com.sie.service.PersonManageService.TeacherManagerService;
@@ -48,5 +49,10 @@ public class TeacherManageController {
     @PostMapping("/findAllTeacher")
     public List<TeacherEx> findAllTeacher(){
       return teacherManagerService.findAllTeacher();
+    }
+
+    @PostMapping("/findTeacherByLesson")
+    public List<Teacher> findTeacherByLesson(String value){
+      return teacherManagerService.findTeacherByLesson(value);
     }
 }

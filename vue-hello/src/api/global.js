@@ -56,19 +56,6 @@ export default {
 
     });
   },
-  //---------------删除学生-----------
-  deleteStudent: function (data) {
-    return axios({
-      headers: {
-        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
-      },
-      method: 'post',
-      url: '/api/personManage/deleteStudent',
-      data:Qs.stringify(data)
-
-    });
-  },
-
 
  findTeacher: function (data) {
  return axios({
@@ -81,6 +68,29 @@ export default {
 
   });
 },
+
+  //删除科目信息之前，先判断有没有老师所教
+  findTeacherByLesson: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/personManage/findTeacherByLesson',
+      data:Qs.stringify(data)
+    });
+  },
+  //在添加科目信息之前，先判断科目是否已存在
+  findLessonByLesNameAndByLesId: function (data) {
+    return axios({
+      headers: {
+        'deviceCode': 'A95ZEF1-47B5-AC90BF3'
+      },
+      method: 'post',
+      url: '/api/LessonManage/findLessonByLesNameAndByLesId',
+      data:Qs.stringify(data)
+    });
+  },
 
 
 findTeacherByClass: function (data) {

@@ -1,7 +1,7 @@
 <template>
   <div class="userLogin">
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" label-width="400">
 
           <FormItem prop="testContent" >
               <Input type="textarea"  v-model="formInline.testContent" placeholder="testContent" style="width: 200px" clearable>
@@ -63,17 +63,17 @@ export default {
                 },
                 ruleInline: {
                     testContent: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the testContent', trigger: 'blur' }
                     ],
                     testAns1: [
-                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the testAns1.', trigger: 'blur' },
                     ],
                     testAns2: [
-                        { required: true, message: 'Please fill in the course.', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the testAns2.', trigger: 'blur' },
                     ],
 
                     rightans1: [
-                        { required: true, message: 'Please fill in the class.', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the rightans1.', trigger: 'blur' }
                     ],
                     lesson: [
                         { required: true, message: 'Please fill in the lesson.', trigger: 'blur' }
@@ -202,7 +202,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .userLogin{
-text-align: center;
+text-align: left;
 background-color: inherit;
  }
 

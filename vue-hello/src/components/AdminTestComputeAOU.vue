@@ -1,7 +1,7 @@
 <template>
   <div class="userLogin">
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" label-width="400">
 
           <FormItem prop="testContent" >
               <Input type="textarea"  v-model="formInline.testContent" placeholder="testContent" style="width: 200px" clearable>
@@ -14,7 +14,7 @@
 
               </Input>
           </FormItem >
-          
+
           <FormItem prop="lesson">
             <Select v-model="formInline.lesson" style="width:200px" placeholder="LessonName">
               <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
@@ -55,10 +55,10 @@ export default {
                 },
                 ruleInline: {
                     testContent: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the testContent', trigger: 'blur' }
                     ],
                     rightans1: [
-                        { required: true, message: 'Please fill in the rightans', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the rightans1', trigger: 'blur' }
                     ],
                    lesson: [
                         { required: true, message: 'Please fill in the lesson', trigger: 'blur' }
@@ -185,7 +185,7 @@ export default {
 
 <style scoped>
 .userLogin{
-text-align: center;
+text-align: left;
 background-color: inherit;
  }
 

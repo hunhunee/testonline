@@ -1,8 +1,10 @@
 
 <template>
   <div class="userLogin">
-
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <div class="text" >
+        用户管理-----添加教师信息
+    </div>
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" label-width="400">
 
           <FormItem prop="teaName" >
               <Input type="text"  v-model="formInline.teaName" placeholder="UserName" style="width: 200px" clearable>
@@ -221,9 +223,12 @@ export default {
 
 <style scoped>
 .userLogin{
-text-align: center;
+text-align: left;
 background-color: inherit;
  }
 
+ .text{
 
+         text-align:left;
+      }
 </style>

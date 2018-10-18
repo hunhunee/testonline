@@ -1,8 +1,10 @@
 
 <template>
   <div class="userLogin">
-
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <div class="text" >
+        用户管理-----添加学生信息
+    </div>
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
 
       <FormItem prop="stuName" >
         <Input type="text"  v-model="formInline.stuName" placeholder="UserName" style="width: 200px" clearable>
@@ -168,9 +170,12 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .userLogin{
-    text-align: center;
+    text-align: left;
     background-color: inherit;
   }
+  .text{
 
+          text-align:left;
+       }
 
 </style>

@@ -5,7 +5,7 @@
         个人信息维护--修改密码
     </div>
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
      <FormItem prop="password">
          原密码:
       <Input type="password" v-model="formInline.password" placeholder="请输入原密码" style="width: 200px" clearable>
@@ -107,7 +107,7 @@
 
 <style scoped>
  .userLayout{
-           text-align:center;
+           text-align:left;
            background-color: inherit;
       }
       .text{

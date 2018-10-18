@@ -1,7 +1,7 @@
 <template>
   <div class="userLogin">
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" label-width="400">
 
           <FormItem prop="testContent" >
               <Input type="textarea"  v-model="formInline.testContent" placeholder="testContent" style="width: 200px" clearable>
@@ -186,7 +186,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .userLogin{
-text-align: center;
+text-align: left;
 background-color: inherit;
  }
 

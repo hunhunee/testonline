@@ -24,7 +24,7 @@
             </Input>
           </FormItem>
           <FormItem>
-            <Button type="primary" @click="handleSubmit()">Submit</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
             <Button @click="clearable" style="margin-left: 8px">Reset</Button>
         </FormItem>
       </Form>
@@ -54,7 +54,8 @@ export default {
                 },
                 ruleInline: {
                     lesId: [
-                        { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' },
+                        { type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
                     ],
                     lesName: [
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },
@@ -66,39 +67,49 @@ export default {
         },
         methods: {
 
-              handleSubmit() {
+              handleSubmit(name) {
 
-                if(this.$store.state.lesson.utaction=="2"){
-                  let data = {
-                      "lesId": this.formInline.lesId,
-                      "lesName":this.formInline.lesName,
-                  }
-                  this.$store.dispatch('updateLesson',{data});
-                  router.push({ path: '/admin_index/admin_Lesson' });
-                }else{
-                  const axios = require('axios');
-                  let data = {
-                  "lesId":this.formInline.lesId,
-                  "lesName":this.formInline.lesName
-                  }
+                this.$refs[name].validate((valid) => {
+                    if (valid) {
 
-                  this.$store.dispatch('findLessonByLesNameAndByLesId',{data});
+                      if(this.$store.state.lesson.utaction=="2"){
+                        let data = {
+                            "lesId": this.formInline.lesId,
+                            "lesName":this.formInline.lesName,
+                        }
+                        this.$store.dispatch('updateLesson',{data});
+                        router.push({ path: '/admin_index/admin_Lesson' });
+                      }else{
+                        const axios = require('axios');
+                        let data = {
+                        "lesId":this.formInline.lesId,
+                        "lesName":this.formInline.lesName
+                        }
 
-                  setTimeout(()=>{
-                    console.log("lesson.length");
-                    console.log(this.$store.state.lesson.lesson.length);
-                    if (this.$store.state.lesson.lesson.length>=1) {
-                      console.log("modal=true");
-                      this.modal=true
-                    }else{
-                      this.$store.dispatch('addLesson',{data});
+                        this.$store.dispatch('findLessonByLesNameAndByLesId',{data});
+
+                        setTimeout(()=>{
+                          console.log("lesson.length");
+                          console.log(this.$store.state.lesson.lesson.length);
+                          if (this.$store.state.lesson.lesson.length>=1) {
+                            console.log("modal=true");
+                            this.modal=true
+                          }else{
+                            this.$store.dispatch('addLesson',{data});
+                          }
+
+                        },1200)
+
+
+
+                      }
+
+                    } else {
+                        this.$Message.error('表单数据不能为空!');
                     }
-
-                  },1200)
-
+                })
 
 
-             }
         },
         clearable(){
           this.formInline.lesId='',

@@ -86,16 +86,23 @@
 
 
                                     setTimeout(()=>{
+                                     if(localStorage.getItem("pwd_message")==0){
+                                       this.$Message.error('旧密码错误，请重新输入!');
+                                     }else{
+                                       this.$Message.success('您修改密码已经成功!');
+                                       this.formInline.password='',
+                                       this.formInline.newpassword='',
+                                       this.formInline.repassword=''
+                                     }
 
-                                        this.$Message.error(this.$store.state.info.message);
-                                    },1200)
+                                    },1500)
 
                                   }else{
                                       this.$Message.error('两次密码不相同，请重新输入！');
                                   }
 
                                 } else {
-                                    this.$Message.error('Fail!');
+                                    this.$Message.error('表单数据不能为空!');
                                 }
                             })
 

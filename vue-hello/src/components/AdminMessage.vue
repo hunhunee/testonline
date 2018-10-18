@@ -85,9 +85,17 @@
                                     }
                                     this.$store.dispatch('userLayout',{data});
 
-                                    setTimeout(()=>{
 
-                                      this.$Message.error(this.$store.state.info.message);
+                                    setTimeout(()=>{
+                                     if(localStorage.getItem("pwd_message")==0){
+                                       this.$Message.error('旧密码错误，请重新输入!');
+                                     }else{
+                                       this.$Message.success('您修改密码已经成功!');
+                                       this.formInline.password='',
+                                       this.formInline.newpassword='',
+                                       this.formInline.repassword=''
+                                     }
+
                                     },1500)
 
                                   }else{
@@ -96,7 +104,7 @@
 
 
                                 } else {
-                                    this.$Message.error('Fail!');
+                                  this.$Message.error('表单数据不能为空!');
                                 }
                             })
 

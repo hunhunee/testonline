@@ -37,8 +37,13 @@ export default {
       console.log("userLayout_m");
 
       if(data.data!=null){
-         this.state.message=data.data
-         console.log(this.state.message);
+        console.log(data.data);
+        if("0"==data.data){
+          console.log("error");
+          localStorage.setItem("pwd_message",0)
+        }else{
+          localStorage.setItem("pwd_message",1)
+        }
 
       }
 

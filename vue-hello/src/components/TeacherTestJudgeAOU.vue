@@ -127,7 +127,7 @@ export default {
                     }
 
                   } else {
-                      this.$Message.error('Fail!');
+                      this.$Message.error('表单数据不能为空!');
                   }
               })
 

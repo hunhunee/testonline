@@ -23,7 +23,7 @@
 
 
 
-          <FormItem>
+          <FormItem prop="teaCourse">
             <Select v-model="formInline.teaCourse" style="width:200px" placeholder="Select your lesson">
               <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
@@ -135,6 +135,19 @@ export default {
 
                     if(this.$store.state.person.utaction=="2"){
 
+                      let teacher = {
+                          "teaName": this.formInline.teaName,
+                          "teaNum":this.formInline.teaNum,
+                          "teaCourse":this.formInline.teaCourse,
+                          "teaClass":this.formInline.teaClass,
+                          "teaPassword":"123"
+                      }
+                      this.$store.dispatch('findTeacherByClass',{teacher});
+
+                 setTimeout(()=>{
+                  if (this.$store.state.person.teacher.length>=1) {
+                          this.$Message.error('该班级已经有了该科目的老师请重新选择班级');
+                  }else{
                       let data = {
                           "teaName": this.formInline.teaName,
                           "teaNum":this.formInline.teaNum,
@@ -143,7 +156,9 @@ export default {
                           "teaPassword":this.$store.state.person.uteacher.teaPassword
                       }
                       this.$store.dispatch('updateTeacher',{data});
-                      router.push({ path: '/admin_index/admin_person_teacher' });
+                    }
+                   },1200)
+
                     }else{
                       const axios = require('axios');
 
@@ -194,7 +209,7 @@ export default {
                     }
 
                   } else {
-                      this.$Message.error('Fail!');
+                      this.$Message.error('表单数据不能为空!');
                   }
               })
 

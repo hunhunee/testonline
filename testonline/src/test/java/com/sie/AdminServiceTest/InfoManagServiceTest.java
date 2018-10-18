@@ -20,32 +20,26 @@ public class InfoManagServiceTest {
         //测试管理员密码是否正确
          Info info = new Info();
          info.setUserid(1);
-         info.setPassword("12");
-         info.setNewpassword("12");
+         info.setPassword("234");
+         info.setNewpassword("234");
         infoManagerService.updateAdmin(info);
     }
 
     @Test
     public void updateTeachertest(){
-        Teacher teacher = new Teacher();
-        teacher.setTeaNum("t001");
-        teacher.setTeaName("李四");
-        teacher.setTeaPassword("123456");
-       // infoManagerService.updateTeacher(teacher);
-        System.out.println("编号："+teacher.getTeaNum());
-        System.out.println("姓名:"+teacher.getTeaName());
-        System.out.println("密码:"+teacher.getTeaPassword());
+        Info info = new Info();
+        info.setUserid(1);
+        info.setPassword("123");
+        info.setNewpassword("123");
+        infoManagerService.updateTeacher(info);
 
     }
     @Test
     public void updateStudenttest(){
-        Student student = new Student();
-        student.setStuNum("s001");
-        student.setStuName("李明");
-        student.setStuPassword("123456");
-       // infoManagerService.updateStudent(student);
-        System.out.println("编号："+student.getStuNum());
-        System.out.println("姓名:"+student.getStuName());
-        System.out.println("密码:"+student.getStuPassword());
+        Info info = new Info();
+        info.setUserid(14);
+        info.setPassword("123");
+        info.setNewpassword("123");
+        infoManagerService.updateStudent(info);
     }
 }

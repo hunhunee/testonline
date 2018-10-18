@@ -96,14 +96,10 @@
 
 
                                 } else {
-                                    this.$Message.error('Fail!');
+                                    this.$Message.error('密码不能为空，请重新输入!');
                                 }
                             })
-
-
           }
-
-
         }
         }
 

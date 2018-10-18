@@ -89,17 +89,15 @@
 
                                       this.$Message.error(this.$store.state.info.message);
                                     },1500)
-                                      
+
                                   }else{
                                       this.$Message.error('两次密码不相同，请重新输入!');
                                   }
 
-
                                 } else {
-                                    this.$Message.error('Fail!');
+                                    this.$Message.error('密码不能为空，请重新输入!');
                                 }
                             })
-
 
           }
 

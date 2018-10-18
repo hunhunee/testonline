@@ -86,7 +86,7 @@
 
 
                                     setTimeout(()=>{
-                                     
+
                                         this.$Message.error(this.$store.state.info.message);
                                     },1200)
 
@@ -95,15 +95,11 @@
                                   }
 
                                 } else {
-                                    this.$Message.error('Fail!');
+                                    this.$Message.error('密码不能为空，请重输入!');
                                 }
                             })
 
-
-
           }
-
-
 
         }
         }

@@ -109,6 +109,14 @@ export default {
 
 
             },
+            ok:function(){
+              this.modal = false
+
+
+            },
+            cancel:function(){
+
+            },
             clearable(){
               this.formInline.classId='',
               this.formInline.className=''

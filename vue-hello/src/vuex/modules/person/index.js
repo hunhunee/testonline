@@ -294,7 +294,7 @@ export default {
     findStudentByClass_m(state, data) {
       console.log("findStudentByClass_m");
       console.log( data.data.length);
-      state.STUDENT.length = data.data.length;
+      state.student.length = data.data.length;
       for (var i = 0; i < data.data.length; i++) {
         state.student[i] = data.data[i];
         console.log(state.student[i]);

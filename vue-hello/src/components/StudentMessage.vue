@@ -103,14 +103,10 @@
 
 
                                 } else {
-                                  this.$Message.error('表单数据不能为空!');
+                                    this.$Message.error('密码不能为空，请重新输入!');
                                 }
                             })
-
-
           }
-
-
         }
         }
 

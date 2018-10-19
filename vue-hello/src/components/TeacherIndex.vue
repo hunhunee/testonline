@@ -52,7 +52,7 @@
                     <!--</MenuItem>-->
                   <Submenu name="1-1">
                     <template slot="title" >
-                      <Icon type="ios-search" />            
+                      <Icon type="ios-search" />
                       <span>考试结果</span>
                     </template>
                     <MenuItem name="1-1-1">成绩分析</MenuItem>
@@ -66,7 +66,7 @@
                     <MenuItem name="1-2-1">单选题</MenuItem>
                     <MenuItem name="1-2-2">多选题</MenuItem>
                     <MenuItem name="1-2-3">判断题</MenuItem>
-                    <MenuItem name="1-2-4">计算题</MenuItem>
+                    <MenuItem name="1-2-4">综合题</MenuItem>
                    </Submenu>
                     <MenuItem name="1-3">
                       <Icon type="md-person" />

@@ -49,7 +49,7 @@
         <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
           <Submenu name="1-1">
             <template slot="title">
-            <Icon type="md-person-add" />      
+            <Icon type="md-person-add" />
               <span>用户管理</span>
             </template>
             <MenuItem name="1-1-1">教师管理</MenuItem>
@@ -64,7 +64,7 @@
             <MenuItem name="1-2-1">单选题</MenuItem>
             <MenuItem name="1-2-2">多选题</MenuItem>
             <MenuItem name="1-2-3">判断题</MenuItem>
-            <MenuItem name="1-2-4">计算题</MenuItem>
+            <MenuItem name="1-2-4">综合题</MenuItem>
           </Submenu>
 
           <MenuItem name="1-4">

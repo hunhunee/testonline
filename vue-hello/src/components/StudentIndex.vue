@@ -42,6 +42,9 @@
 <template>
     <div class="layout">
         <Layout :style="{minHeight: '100vh'}">
+
+
+
             <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
                 <Menu  active-name="1-3" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
                   <Submenu name="1-1">
@@ -50,7 +53,7 @@
                           <span>参加考试</span>
                       </template>
 
-                          <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
+              <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
 
                   </Submenu>
 
@@ -154,37 +157,45 @@ import router from '@/router/index'
         methods:{
 
           test(name){
-            let data =this.data;
-            let student =this.student;
-            switch (name) {
 
-              case "1-2":
-                this.$store.dispatch('findStudnetScore',{student});
-                break;
-              case "1-3":
-             router.push({ path: '/student_index/student_message' });
-                break;
+            if(localStorage.getItem("isExam")==1){
+                  this.$Message.error('正在考试，无法进行其他操作！');
+            }else{
 
-              case "h-1-1":
-              this.$store.dispatch('userLoginOut');
-                break;
+              let data =this.data;
+              let student =this.student;
+              switch (name) {
 
-              default:
-              this.data.testCourse=name;
-              this.$api.findByStuNum(data)
-                .then((response) => {
-                   if(response.data.length>=1){
-                      this.$Message.error('您已经进行过一次考试了，请不要重复考试！');
-                   }else{
-                     this.data.testCourse=name;
-                     this.modal=true
+                case "1-2":
+                  this.$store.dispatch('findStudnetScore',{student});
+                  break;
+                case "1-3":
+               router.push({ path: '/student_index/student_message' });
+                  break;
 
-                   }
-                })
-                .catch((error) => {
-                    console.log(error);
-                  }
-                );
+                case "h-1-1":
+                this.$store.dispatch('userLoginOut');
+                  break;
+
+                default:
+                this.data.testCourse=name;
+                this.$api.findByStuNum(data)
+                  .then((response) => {
+                     if(response.data.length>=1){
+                        this.$Message.error('您已经进行过一次考试了，请不要重复考试！');
+                     }else{
+                       this.data.testCourse=name;
+                       this.modal=true
+
+                     }
+                  })
+                  .catch((error) => {
+                      console.log(error);
+                    }
+                  );
+
+            }
+
 
 
 

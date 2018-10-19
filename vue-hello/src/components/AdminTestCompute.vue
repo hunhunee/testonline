@@ -266,7 +266,7 @@ import router from '@/router/index'
 
          detail (index) {
                          this.$Modal.info({
-                             title: 'Test Details',
+                             title: '试题详情',
                              content: `试题内容：${this.data2[index].testContent}<br>
 
                                        正确答案: ${this.data2[index].rightans1}<br>

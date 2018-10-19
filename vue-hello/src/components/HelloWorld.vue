@@ -52,15 +52,15 @@ export default {
                     user: '',
                     password: '',
                     radio:'1'
+                },
+                ruleInline: {
+                    user: [
+                        { required: true, message: ' ', trigger: 'blur' }
+                    ],
+                    password: [
+                        { required: true, message: ' ', trigger: 'blur' }
+                    ]
                 }
-                // ruleInline: {
-                //     user: [
-                //         { required: true, message: 'Please fill in the user name', trigger: 'blur' }
-                //     ],
-                //     password: [
-                //         { required: true, message: 'Please fill in the password.', trigger: 'blur' }
-                //     ]
-                // }
             }
         },
 
@@ -118,7 +118,7 @@ export default {
               color: #ffffff;
           }
       .corp{
-        text-align: right;
+        text-align:center;
         font-size: 18px;
       }
       .inwar{

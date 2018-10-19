@@ -21,8 +21,8 @@ public class ExamPaperTest {
     @Test
     public void findPriorExamPaperTest(){
         TestEx testEx = new TestEx();
-        testEx.setTestType("1");
-        testEx.setTestCourse("2");
+        testEx.setTestType("4");
+        testEx.setTestCourse("1");
         List<TestEx> testExList =examPaperMapper.findPriorExamPaper(testEx);
         System.out.println(testExList.size());
     }

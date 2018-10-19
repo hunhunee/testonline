@@ -16,9 +16,6 @@ public class ClassManagerServiceImpl implements ClassManagerService {
 
    @Autowired
    private ClassManageMapper classManageMapper;
-
-
-
    public List<Class_> addClass(Class_ class_) {
       classManageMapper.addClass(class_);
       List<Class_> lessonList=classManageMapper.findAllClass();

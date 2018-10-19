@@ -81,7 +81,7 @@
                 <Menu mode="horizontal" theme="dark" @on-select="test">
 
                   <MenuItem name="h-1-1" >
-                      <Icon type="md-person" />
+                      <Icon type="ios-power" />
                       <span>注销</span>
                   </MenuItem>
                  </Menu>

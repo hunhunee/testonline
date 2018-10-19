@@ -12,16 +12,16 @@
 
     <Carousel autoplay v-model="value" loop>
             <CarouselItem>
-                <div class="demo-carousel"><img src="~@/assets/chengshi.jpg" height="400"></div>
+                <div class="demo-carousel"><img src="~@/assets/zaixian.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel"><img src="~@/assets/13.jpg" height="400"></div>
+                <div class="demo-carousel"><img src="~@/assets/blackbok.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel"><img src="~@/assets/xingkong.jpg" height="400"></div>
+                <div class="demo-carousel"><img src="~@/assets/jiayou.jpg" height="400"></div>
             </CarouselItem>
             <CarouselItem>
-                <div class="demo-carousel"><img src="~@/assets/15.jpg" height="400"></div>
+                <div class="demo-carousel"><img src="~@/assets/write.jpg" height="400"></div>
             </CarouselItem>
         </Carousel>
 </div>

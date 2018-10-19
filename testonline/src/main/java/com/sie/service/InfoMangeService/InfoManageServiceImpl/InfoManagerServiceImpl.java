@@ -17,11 +17,11 @@ public class InfoManagerServiceImpl implements InfoManagerService {
         if(oldPwd.equals(info.getPassword())){
             System.out.println("密码正确！");
             infoMangeMapper.updateAdmin(info);
-            return "修改密码成功！";
+            return "1";
         }
         else{
             System.out.println("您输入的旧密码不正确！");
-            return "您输入的旧密码不正确！";
+            return "0";
         }
     }
     @Override
@@ -30,10 +30,10 @@ public class InfoManagerServiceImpl implements InfoManagerService {
         if(oldPwd.equals(info.getPassword())){
             System.out.println("密码正确!");
             infoMangeMapper.updateTeacher(info);
-            return "修改密码成功！";
+            return "1";
         }else {
             System.out.println("您输入的旧密码不正确！");
-            return "您输入的旧密码不正确！";
+            return "0";
         }
     }
     @Override
@@ -42,10 +42,10 @@ public class InfoManagerServiceImpl implements InfoManagerService {
         if(oldPwd.equals(info.getPassword())){
             System.out.println("密码正确!");
             infoMangeMapper.updateStudent(info);
-            return "修改密码成功！";
+            return "1";
         }else {
             System.out.println("您输入的旧密码不正确！");
-            return "您输入的旧密码不正确！";
+            return "0";
         }
 
 

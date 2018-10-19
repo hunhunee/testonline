@@ -31,9 +31,9 @@
           </FormItem>
 
           <FormItem>
-            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
 
-            <Button @click="clearable" style="margin-left: 8px">Reset</Button>
+            <Button @click="clearable" style="margin-left: 8px">删除</Button>
         </FormItem>
       </Form>
 
@@ -127,7 +127,7 @@ export default {
                     }
 
                   } else {
-                      this.$Message.error('Fail!');
+                      this.$Message.error('表单数据不能为空!');
                   }
               })
 

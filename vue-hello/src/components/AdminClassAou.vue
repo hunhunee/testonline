@@ -24,8 +24,8 @@
             </Input>
           </FormItem>
           <FormItem>
-            <Button type="primary" @click="handleSubmit('formInline')">Submit</Button>
-            <Button @click="clearable" style="margin-left: 8px">Reset</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
+            <Button @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -54,7 +54,8 @@ export default {
                 },
                 ruleInline: {
                     classId: [
-                        { required: true, message: 'Please fill in the class Id', trigger: 'blur' }
+                        { required: true, message: 'Please fill in the class Id', trigger: 'blur' },
+                        { type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
                     ],
                     className: [
                         { required: true, message: 'Please fill in the class Name.', trigger: 'blur' },
@@ -105,7 +106,7 @@ export default {
 
 
                    } else {
-                       this.$Message.error('Fail!');
+                       this.$Message.error('表单数据不能为空!');
                    }
                })
 

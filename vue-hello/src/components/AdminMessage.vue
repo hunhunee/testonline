@@ -24,7 +24,7 @@
 
      <FormItem prop="repassword">
       确认密码:
-      <Input type="password" v-model="formInline.repassword" placeholder="请再次输入新密码" style="width: 200px" clearable>
+      <Input type="password" v-model="formInline.repassword" placeholder="请再次输入新密码" style="width: 190px" clearable>
         <Icon type="ios-person-outline" slot="center"></Icon>
       </Input>
 
@@ -85,21 +85,27 @@
                                     }
                                     this.$store.dispatch('userLayout',{data});
 
-                                    setTimeout(()=>{
 
-                                      this.$Message.error(this.$store.state.info.message);
+                                    setTimeout(()=>{
+                                     if(localStorage.getItem("pwd_message")==0){
+                                       this.$Message.error('旧密码错误，请重新输入!');
+                                     }else{
+                                       this.$Message.success('您修改密码已经成功!');
+                                       this.formInline.password='',
+                                       this.formInline.newpassword='',
+                                       this.formInline.repassword=''
+                                     }
+
                                     },1500)
 
                                   }else{
                                       this.$Message.error('两次密码不相同，请重新输入!');
                                   }
 
-
                                 } else {
-                                    this.$Message.error('Fail!');
+                                    this.$Message.error('密码不能为空，请重新输入!');
                                 }
                             })
-
 
           }
 

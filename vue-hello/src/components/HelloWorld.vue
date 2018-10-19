@@ -95,7 +95,7 @@ export default {
 
 
                     } else {
-                        this.$Message.error('请填写必要信息！');
+                        this.$Message.error('表单数据不能为空!');
                     }
                 })
             }

@@ -49,7 +49,7 @@
         <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" @on-select="test" accordion>
           <Submenu name="1-1">
             <template slot="title">
-            <Icon type="md-person-add" />      
+            <Icon type="md-person-add" />
               <span>用户管理</span>
             </template>
             <MenuItem name="1-1-1">教师管理</MenuItem>

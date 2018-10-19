@@ -47,7 +47,7 @@
                   <Submenu name="1-1">
                       <template slot="title">
                         <Icon type="ios-create-outline" />
-                          参加考试
+                          <span>参加考试</span>
                       </template>
 
                           <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
@@ -81,7 +81,7 @@
                 <Menu mode="horizontal" theme="dark" @on-select="test">
 
                   <MenuItem name="h-1-1" >
-                      <Icon type="md-person" />
+                      <Icon type="ios-power" />
                       <span>注销</span>
                   </MenuItem>
                  </Menu>
@@ -196,6 +196,11 @@ import router from '@/router/index'
                  let data =this.data;
                 //alert(this.data.testCourse)
                 this.$store.dispatch('findExamPaper',{data});
+                setTimeout(()=>{
+                  if(this.$store.state.exam.exam_paper_message=="1"){
+                    this.$Message.error('抱歉，该科目试题不足，无法进行考试！');
+                  }
+                },1200)
           },
           cancel:function(){
 

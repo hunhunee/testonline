@@ -9,7 +9,8 @@ export default {
    examMultipleList:[],
    examJudgeList:[],
    examComputeList:[],
-   examSingle:{}
+   examSingle:{},
+   exam_paper_message:""
   },
   getters: {
 
@@ -93,7 +94,7 @@ export default {
         console.log(state.examJudgeList.length);
         console.log("examComputeList");
         console.log(state.examComputeList.length);
-
+        state.exam_paper_message="0"
         router.push({ path: '/student_index/student_test' });
       }else{
         console.log(data.data.length);
@@ -134,7 +135,7 @@ export default {
         console.log("examComputeList");
         console.log(state.examComputeList.length);
 
-        alert("抱歉，该科目试题不足，不能进行考试");
+        state.exam_paper_message="1"
       }
 
 

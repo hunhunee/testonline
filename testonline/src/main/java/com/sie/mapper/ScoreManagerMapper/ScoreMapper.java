@@ -12,7 +12,6 @@ public interface ScoreMapper {
     //查询学生的各科成绩
     public List<Student> findScoreByStuId(String stuNum) throws Exception;
 
-
     //查询最低成绩、最高成绩、平均成绩
     public  ScoreEx findMinAndMaxAndAvgScore(@Param("teaClass") String teaClass, @Param("teaCourse")String teaCourse) throws  Exception;
 

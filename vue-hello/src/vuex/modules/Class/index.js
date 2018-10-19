@@ -45,7 +45,6 @@ export default {
     );
   },
 
-
    deleteClass({commit},{data}){
      console.log(data);
     api.deleteClass(data)

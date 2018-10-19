@@ -95,6 +95,7 @@ export default {
         console.log("examComputeList");
         console.log(state.examComputeList.length);
         state.exam_paper_message="0"
+        localStorage.setItem("isExam",1);
         router.push({ path: '/student_index/student_test' });
       }else{
         console.log(data.data.length);

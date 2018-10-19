@@ -120,24 +120,24 @@
           // console.log(this.examSingleList);
 
           setInterval(()=>{
-             this.examSingleList.length=this.$store.state.exam.examSingleList.length;
-             this.examMultipleList.length=this.$store.state.exam.examMultipleList.length;
-             this.examJudgeList.length=this.$store.state.exam.examJudgeList.length;
-             this.examComputeList.length=this.$store.state.exam.examComputeList.length;
+             this.examSingleList.length=15;
+             this.examMultipleList.length=10;
+             this.examJudgeList.length=10;
+             this.examComputeList.length=2;
 
-             for (var i = 0; i < this.$store.state.exam.examSingleList.length; i++) {
+             for (var i = 0; i < 15; i++) {
                this.$set(this.examSingleList,i,this.$store.state.exam.examSingleList[i])
              }
 
-             for (var i = 0; i < this.$store.state.exam.examMultipleList.length; i++) {
+             for (var i = 0; i < 10; i++) {
                this.$set(this.examMultipleList,i,this.$store.state.exam.examMultipleList[i])
              }
 
-             for (var i = 0; i < this.$store.state.exam.examJudgeList.length; i++) {
+             for (var i = 0; i < 10; i++) {
                this.$set(this.examJudgeList,i,this.$store.state.exam.examJudgeList[i])
              }
 
-             for (var i = 0; i < this.$store.state.exam.examComputeList.length; i++) {
+             for (var i = 0; i < 2; i++) {
                this.$set(this.examComputeList,i,this.$store.state.exam.examComputeList[i])
              }
           }, 1000);
@@ -207,6 +207,7 @@
                  stuNum:localStorage.getItem("usernum"),
 
                }
+               localStorage.setItem("isExam",0);
               this.$store.dispatch('findStudnetScore',{student})
             },1000)
 

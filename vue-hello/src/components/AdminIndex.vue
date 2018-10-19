@@ -64,7 +64,7 @@
             <MenuItem name="1-2-1">单选题</MenuItem>
             <MenuItem name="1-2-2">多选题</MenuItem>
             <MenuItem name="1-2-3">判断题</MenuItem>
-            <MenuItem name="1-2-4">计算题</MenuItem>
+            <MenuItem name="1-2-4">综合题</MenuItem>
           </Submenu>
 
           <MenuItem name="1-4">

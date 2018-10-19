@@ -62,13 +62,13 @@ import router from '@/router/index'
                                           this.detail(params.index)
                                       }
                                   }
-                              }, 'detail'),
+                              }, '详情'),
 
                           ]);
                       }
                   },
                   {
-                      title: 'Action',
+                      title: '信息管理',
                       key: 'action',
                       width: 150,
                       align: 'center',
@@ -87,7 +87,7 @@ import router from '@/router/index'
                                           this.change(params.index)
                                       }
                                   }
-                              }, 'edit'),
+                              }, '编辑'),
                               h('Button', {
                                   props: {
                                       type: 'error',
@@ -98,7 +98,7 @@ import router from '@/router/index'
                                           this.remove(params.index)
                                       }
                                   }
-                              }, 'Delete')
+                              }, '删除')
                           ]);
                       }
                   }
@@ -279,7 +279,7 @@ import router from '@/router/index'
 
          detail (index) {
                          this.$Modal.info({
-                             title: 'Test Details',
+                             title: '试题详情',
                              content: `试题内容：${this.data2[index].testContent}<br>
                                        试题答案1: ${this.data2[index].testAns1}<br>
                                        试题答案2: ${this.data2[index].testAns2}<br>

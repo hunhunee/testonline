@@ -47,7 +47,7 @@
             key: 'className'
           },
           {
-            title: 'Action',
+            title: '信息管理',
             key: 'action',
             width: 150,
             align: 'center',
@@ -66,7 +66,7 @@
                       this.change(params.index)
                     }
                   }
-                }, 'change'),
+                }, '修改'),
                 h('Button', {
                   props: {
                     type: 'error',
@@ -77,7 +77,7 @@
                       this.remove(params.index)
                     }
                   }
-                }, 'Delete')
+                }, '删除')
               ]);
             }
           }

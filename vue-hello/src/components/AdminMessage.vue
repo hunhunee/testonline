@@ -24,7 +24,7 @@
 
      <FormItem prop="repassword">
       确认密码:
-      <Input type="password" v-model="formInline.repassword" placeholder="请再次输入新密码" style="width: 200px" clearable>
+      <Input type="password" v-model="formInline.repassword" placeholder="请再次输入新密码" style="width: 190px" clearable>
         <Icon type="ios-person-outline" slot="center"></Icon>
       </Input>
 

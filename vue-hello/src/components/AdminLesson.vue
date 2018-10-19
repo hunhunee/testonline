@@ -44,7 +44,7 @@ export default {
                },
 
                {
-                   title: 'Action',
+                   title: '信息管理',
                    key: 'action',
                    width: 150,
                    align: 'center',
@@ -63,7 +63,7 @@ export default {
                                        this.change(params.index)
                                    }
                                }
-                           }, "change"),
+                           }, "修改"),
                            h('Button', {
                                props: {
                                    type: 'error',
@@ -74,7 +74,7 @@ export default {
                                        this.remove(params.index)
                                    }
                                }
-                           }, 'Delete')
+                           }, '删除')
                        ]);
                    }
                }

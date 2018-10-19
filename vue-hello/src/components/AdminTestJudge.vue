@@ -64,13 +64,13 @@ import router from '@/router/index'
                                           this.detail(params.index)
                                       }
                                   }
-                              }, 'detail'),
+                              }, '详情'),
 
                           ]);
                       }
                   },
                   {
-                      title: 'Action',
+                      title: '信息管理',
                       key: 'action',
                       width: 150,
                       align: 'center',
@@ -89,7 +89,7 @@ import router from '@/router/index'
                                           this.change(params.index)
                                       }
                                   }
-                              }, 'edit'),
+                              }, '编辑'),
                               h('Button', {
                                   props: {
                                       type: 'error',
@@ -100,7 +100,7 @@ import router from '@/router/index'
                                           this.remove(params.index)
                                       }
                                   }
-                              }, 'Delete')
+                              }, '删除')
                           ]);
                       }
                   }

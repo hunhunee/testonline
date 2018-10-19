@@ -53,7 +53,7 @@
                           <span>参加考试</span>
                       </template>
 
-                          <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
+              <MenuItem v-for="item in lessonList" :name="item.value" :value="item.value" :key="item.value">{{ item.label }}</MenuItem>
 
                   </Submenu>
 

@@ -50,7 +50,7 @@ public class ExamPaperServiceImpl implements ExamPaperService {
             multiplePaperList.addAll(multiplePriorList);
         } else if (multiplePriorList.size() > 10) {
             for (int i = 0; i < 10; i++) {
-                multiplePaperList.add(multiplePaperList.get(i));
+                multiplePaperList.add(multiplePriorList.get(i));
             }
         } else {
             multipleTestEx.setTestRandomNum(10 - multiplePriorList.size());

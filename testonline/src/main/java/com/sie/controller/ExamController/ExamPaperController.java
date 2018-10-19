@@ -26,6 +26,7 @@ public class ExamPaperController {
 
     @PostMapping("/findExamPaper")
     public List<TestEx> findExamPaper(TestEx testEx){
+        System.out.println("试卷科目："+testEx.getTestCourse());
         List<TestEx> testExList = examPaperService.findExamPaper(testEx);
         return testExList;
     }

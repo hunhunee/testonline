@@ -20,7 +20,7 @@ public class ExamPaperServiceTest {
     @Test
     public void findExamPaperTest(){
         TestEx testEx = new TestEx();
-        testEx.setTestCourse("2");
+        testEx.setTestCourse("２");
         List<TestEx> testExList =examPaperService.findExamPaper(testEx);
     }
 

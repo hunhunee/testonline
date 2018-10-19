@@ -9,13 +9,8 @@
 
 
     <select id="findRandomExamPaper" parameterType="com.sie.domain.TestEx" resultType="com.sie.domain.TestEx">
-        SELECT *
-
-        FROM test
-
-        WHERE test_id >= (SELECT FLOOR( MAX(test_id) * RAND()) FROM test ) AND test_status=0 AND test_type=#{testType} and test_course=#{testCourse}
-
-        ORDER BY test_id LIMIT #{testRandomNum};
+        SELECT * FROM test WHERE test_id >= (SELECT FLOOR( MAX(test_id) * RAND()) FROM test ) AND test_status=0 AND test_type=#{testType} and test_course=#{testCourse}
+       ORDER BY test_id LIMIT #{testRandomNum};
     </select>
 
     <insert id="addExamResult" parameterType="com.sie.domain.StudentAnswer">

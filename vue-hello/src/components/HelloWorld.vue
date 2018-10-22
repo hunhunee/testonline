@@ -2,7 +2,7 @@
 
   <div class="userLogin">
       <div class="text" >
-          <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+         <Avatar style="color: #f56a00;background-color: #fde3cf">U</Avatar>
           在线考试系统登录界面
       </div>
     <div class="inwar">

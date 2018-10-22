@@ -49,7 +49,7 @@
     </select>
 
     <update id="updateTeacher" parameterType="teacher" >
-        UPDATE teacher set tea_name=#{teaName},tea_password=#{teaPassword},tea_course=#{teaCourse} where tea_num=#{teaNum};
+        UPDATE teacher set tea_name=#{teaName},tea_password=#{teaPassword},tea_course=#{teaCourse},tea_class=#{teaClass} where tea_num=#{teaNum};
     </update>
 
 

@@ -7,7 +7,7 @@
       <Select @on-change="find" v-model="lesson" style="width:200px" placeholder="LessonName">
         <Option v-for="item in lessonList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select>
-    <Button type="primary" @click="search">查询单选题</Button>
+    <Button type="primary" @click="search" disabled>查询单选题</Button>
       <div class="add">
         <Button type="primary" @click="add">添加单选题</Button>
       </div>

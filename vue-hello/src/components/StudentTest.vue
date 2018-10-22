@@ -164,7 +164,7 @@
                       examList:examList
                     }
                      this.$store.dispatch('addExamResult',{data});
-
+                     localStorage.setItem("isExam",0);
                   this.$router.push('/student_index/student_end'); //跳转到指定页面
 
                 }else if (THIS.minutes >= 0) {

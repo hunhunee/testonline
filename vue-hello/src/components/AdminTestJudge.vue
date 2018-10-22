@@ -256,7 +256,7 @@ import router from '@/router/index'
            }
 
            setTimeout(()=>{
-              this.page(Math.ceil(this.currentPage))
+              this.page(1)
            },1200)
 
          },

@@ -2,7 +2,7 @@
 <template>
   <div class="userLogin">
     <div class="text" >
-      科目设置----添加科目
+      科目设置----添加、修改科目信息
     </div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
 
@@ -25,7 +25,8 @@
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-            <Button @click="clearable" style="margin-left: 8px">重置</Button>
+            <Button v-if="this.$store.state.lesson.utaction=='2'" @click="clearable_update" style="margin-left: 8px">重置</Button>
+            <Button v-else @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -54,25 +55,38 @@ export default {
                 },
                 ruleInline: {
                     lesId: [
-                        { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' },
-                        //{ type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
+
+                       { required: true, message: 'Please fill in the lesson Id.', trigger: 'blur' },
+                        { validator: this.validateMobile,trigger: 'blur' }
                     ],
                     lesName: [
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },
                     ],
 
                 },
-              modal:false
+              modal:false,
+
             }
         },
         methods: {
+          validateMobile :(rule, value, callback) => {
+
+           if (!Number.isInteger(+value)) {
+               callback(new Error('请输入数字值'));
+           } else {
+               callback();
+           }
+       },
 
               handleSubmit(name) {
 
                 this.$refs[name].validate((valid) => {
+                    console.log(this.formInline.lesId);
+                    console.log();
                     if (valid) {
 
                       if(this.$store.state.lesson.utaction=="2"){
+
                         let data = {
                             "lesId": this.formInline.lesId,
                             "lesName":this.formInline.lesName,
@@ -99,11 +113,7 @@ export default {
                           }
 
                         },1200)
-
-
-
                       }
-
                     } else {
                         this.$Message.error('表单数据不能为空!');
                     }
@@ -115,13 +125,13 @@ export default {
           this.formInline.lesId='',
           this.formInline.lesName=''
        },
+       clearable_update(){
+         this.formInline.lesName=''
+      },
           ok:function(){
             this.modal = false
-
-
           },
           cancel:function(){
-
           }
 
     }

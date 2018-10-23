@@ -5,7 +5,7 @@
 
     <div class="layout">
       <div class="add">
-        <Button type="primary" @click="add">添加计算题</Button>
+        <Button type="primary" @click="add">添加综合</Button>
       </div>
     <Table height="480" border :columns="columns" :data="data2"></Table>
     <Page :total="this.data.length" show-elevator   show-total @on-change="page"/>

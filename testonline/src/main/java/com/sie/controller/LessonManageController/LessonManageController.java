@@ -44,9 +44,9 @@ public class LessonManageController {
     }
 
     @PostMapping("/findLessonByName")
-    public  Lesson  findLessonByNameTest(Lesson lesson){
+    public  List<Lesson>  findLessonByNameTest(Lesson lesson){
        System.out.println("查找的科目名："+lesson.getLesName());
-       Lesson lesson1=lessonManagerService.findLessonByName(lesson);
+        List<Lesson> lesson1=lessonManagerService.findLessonByName(lesson);
 
         return lesson1;
     }

@@ -172,9 +172,13 @@ updateLesson({commit},{data}){
 
     findLesson_m(state,data){
         console.log("findLesson_m");
-        state.lesson.length=1;
-        state.lesson[0]=data.data
-        console.log(data.data);
+        state.lesson.length=data.data.length;
+        for (var i = 0; i < data.data.length; i++) {
+          state.lesson[i]=data.data[i];
+
+          console.log(state.lesson[i]);
+        }
+
         router.push({ path: '/admin_index/admin_Lesson' });
     },
 

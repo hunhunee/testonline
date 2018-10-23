@@ -44,8 +44,8 @@ public class LessonManageMapperTest {
          public  void findLessonByNameTest(){
             com.sie.domain.Lesson les = new com.sie.domain.Lesson();
             les.setLesName("java1");
-            les=lessonManageMapper.findLessonByName(les);
-            if(les!=null){
+            List<Lesson> l=lessonManageMapper.findLessonByName(les);
+            if(l!=null){
                 System.out.println("yes");
             }else{
                 System.out.println("no");

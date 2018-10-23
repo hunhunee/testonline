@@ -11,7 +11,7 @@ public interface LessonManageMapper {
 
     public void  updateLesson(Lesson lesson);
 
-    public Lesson findLessonByName(Lesson lesson);
+    public List<Lesson> findLessonByName(Lesson lesson);
 
     public List<Lesson> findAllLesson();
 

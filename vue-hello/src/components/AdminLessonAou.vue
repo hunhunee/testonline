@@ -71,8 +71,8 @@ export default {
               handleSubmit(name) {
 
                 this.$refs[name].validate((valid) => {
-                    if (valid) {
 
+                    if (valid) {
                       if(this.$store.state.lesson.utaction=="2"){
                         let data = {
                             "lesId": this.formInline.lesId,

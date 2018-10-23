@@ -19,8 +19,8 @@
 
       <FormItem  prop="stuSex">
         <Select v-model="formInline.stuSex" placeholder="Select your gender" style="width: 200px">
-          <Option value="1">男</Option>
-          <Option value="2">女</Option>
+          <Option value="male">男</Option>
+          <Option value="female">女</Option>
         </Select>
       </FormItem>
 

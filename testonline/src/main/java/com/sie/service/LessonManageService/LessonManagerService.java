@@ -9,7 +9,7 @@ public interface LessonManagerService {
 
     public List<Lesson> updateLesson(Lesson lesson);
 
-    public  Lesson  findLessonByName(Lesson lesson);
+    public  List<Lesson>  findLessonByName(Lesson lesson);
 
     public List<Lesson> findAllLessonr();
 

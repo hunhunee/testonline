@@ -40,8 +40,8 @@ public class LessonManagerServiceImpl implements LessonManagerService{
    }
 
 @Override
-   public  Lesson  findLessonByName(Lesson lesson ) {
-        Lesson lessonList=lessonManageMapper.findLessonByName(lesson);
+   public  List<Lesson>  findLessonByName(Lesson lesson ) {
+   List<Lesson> lessonList=lessonManageMapper.findLessonByName(lesson);
 
         return lessonList;
 

@@ -50,7 +50,7 @@
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
 
-            <Button @click="clearable" style="margin-left: 8px">删除</Button>
+            <Button @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
 

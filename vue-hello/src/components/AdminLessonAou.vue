@@ -55,7 +55,7 @@ export default {
                 ruleInline: {
                     lesId: [
                         { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' },
-                        { type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
+                        //{ type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
                     ],
                     lesName: [
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },

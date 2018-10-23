@@ -60,9 +60,9 @@ export default {
 
                  testContent:this.$store.state.test.utest.testContent,
                  testAns1:this.$store.state.test.utest.testAns1,
-                 testAns2:this.$store.state.test.utest.testAns1,
-                 testAns3:this.$store.state.test.utest.testAns1,
-                 testAns4:this.$store.state.test.utest.testAns1,
+                 testAns2:this.$store.state.test.utest.testAns2,
+                 testAns3:this.$store.state.test.utest.testAns3,
+                 testAns4:this.$store.state.test.utest.testAns4,
                  rightans1:this.$store.state.test.utest.rightans1,
                  status:this.$store.state.test.utest.testStatus,
 

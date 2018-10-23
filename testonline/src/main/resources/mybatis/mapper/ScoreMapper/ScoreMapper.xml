@@ -7,6 +7,7 @@
        <id property="stuNum" column="stu_num"></id>
        <result property="stuName" column="stu_name"></result>
        <collection property="studentAnswer" ofType="com.sie.domain.StudentAnswer">
+           <id property="stuAnsId" column="stu_ans_id"></id>
            <result property="stuClass" column="stu_class"></result>
            <result property="totalscore" column="totalscore"></result>
            <association property="lesson" javaType="com.sie.domain.Lesson">
@@ -34,10 +35,10 @@
 
     <!--查询学生各科的成绩-->
     <select id="findScoreByStuId" parameterType="java.lang.String" resultMap="BaseScoreResultMap">
-  SELECT student.stu_name ,student.stu_num,student_answer.stu_class , lesson.les_name ,totalscore,class.class_name
+  SELECT student.stu_name ,student.stu_num,student_answer.stu_class , lesson.les_name ,lesson.les_id,student_answer.totalscore,class.class_name,class.class_id
         FROM student_answer,student,lesson,class
         WHERE lesson.les_name IN (SELECT lesson.les_name FROM lesson GROUP BY lesson.les_name) AND
-        student.stu_id = student_answer.stu_id AND student.stu_num =  's001' AND student_answer.les_name = lesson.les_id
+        student.stu_id = student_answer.stu_id AND student.stu_num =#{stuNum} AND student_answer.les_name = lesson.les_id
         AND   student_answer.stu_class= class.class_id
     </select>
 

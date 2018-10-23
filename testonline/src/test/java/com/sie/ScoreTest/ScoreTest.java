@@ -30,8 +30,11 @@ public class ScoreTest {
     //学生service
     @Test
     public void testStudentScore() throws  Exception{
-        List<Student> list = scoreService.findScoreByStuId("s001");
-        System.out.println(list);
+        List<Student> list = scoreMapper.findScoreByStuId("s002");
+//        for (int i = 0; i <list.get(0).getStudentAnswer().size() ; i++) {
+//            list.get(0).getStudentAnswer().get(i).getTotalscore();
+//        }
+        System.out.println(list.get(0).getStudentAnswer().size());
     }
 
 //    //学生controller

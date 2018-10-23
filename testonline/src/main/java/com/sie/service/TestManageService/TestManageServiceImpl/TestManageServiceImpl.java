@@ -39,7 +39,7 @@ public class TestManageServiceImpl implements TestManageService{
             }else if(testList.get(i).getTestType().equals("3")){
                 testList.get(i).setTestTypeName("判断题");
             }else{
-                testList.get(i).setTestTypeName("计算题");
+                testList.get(i).setTestTypeName("综合题");
             }
 
             if (testList.get(i).getTestStatus().equals("0")){
@@ -74,7 +74,7 @@ public class TestManageServiceImpl implements TestManageService{
             }else if(testList.get(i).getTestType().equals("3")){
                 testList.get(i).setTestTypeName("判断题");
             }else{
-                testList.get(i).setTestTypeName("计算题");
+                testList.get(i).setTestTypeName("综合题");
             }
 
             if (testList.get(i).getTestStatus().equals("0")){
@@ -109,7 +109,7 @@ public class TestManageServiceImpl implements TestManageService{
             }else if(testList.get(i).getTestType().equals("3")){
                 testList.get(i).setTestTypeName("判断题");
             }else{
-                testList.get(i).setTestTypeName("计算题");
+                testList.get(i).setTestTypeName("综合题");
             }
 
             if (testList.get(i).getTestStatus().equals("0")){
@@ -134,7 +134,7 @@ public class TestManageServiceImpl implements TestManageService{
             }else if(testList.get(i).getTestType().equals("3")){
                 testList.get(i).setTestTypeName("判断题");
             }else{
-                testList.get(i).setTestTypeName("计算题");
+                testList.get(i).setTestTypeName("综合题");
             }
 
             if (testList.get(i).getTestStatus().equals("0")){
@@ -159,7 +159,7 @@ public class TestManageServiceImpl implements TestManageService{
             }else if(testList.get(i).getTestType().equals("3")){
                 testList.get(i).setTestTypeName("判断题");
             }else{
-                testList.get(i).setTestTypeName("计算题");
+                testList.get(i).setTestTypeName("综合题");
             }
 
             if (testList.get(i).getTestStatus().equals("0")){

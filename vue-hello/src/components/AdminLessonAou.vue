@@ -25,7 +25,8 @@
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-            <Button @click="clearable" style="margin-left: 8px">重置</Button>
+            <Button v-if="this.$store.state.lesson.utaction=='2'" @click="clearable_update" style="margin-left: 8px">重置</Button>
+            <Button v-else @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -123,6 +124,9 @@ export default {
           this.formInline.lesId='',
           this.formInline.lesName=''
        },
+       clearable_update(){
+         this.formInline.lesName=''
+      },
           ok:function(){
             this.modal = false
           },

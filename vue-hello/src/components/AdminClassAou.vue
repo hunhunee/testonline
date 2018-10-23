@@ -11,11 +11,13 @@
             </Input>
           </FormItem> -->
 
-          <FormItem prop="classId" >
-                <Input v-if="this.$store.state.Class.utaction=='2'" disabled type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px">
+          <FormItem prop="classId" v-if="this.$store.state.Class.utaction=='1'">
+                <Input  clearable type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px">
                 </Input>
+          </FormItem>
 
-                <Input  v-else type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px" clearable>
+          <FormItem v-else >
+                <Input   disabled type="text" v-model="formInline.classId" placeholder="classId" style="width: 200px">
                 </Input>
           </FormItem>
 

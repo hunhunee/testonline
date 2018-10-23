@@ -2,7 +2,7 @@
 <template>
   <div class="userLogin">
     <div class="text" >
-      科目设置----添加、修改科目信息
+      科目设置----添加科目
     </div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
 
@@ -11,11 +11,13 @@
             </Input>
           </FormItem> -->
 
-          <FormItem prop="lesId" >
-                <Input v-if="this.$store.state.lesson.utaction=='2'" disabled type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px">
+          <FormItem v-if="this.$store.state.lesson.utaction=='1'" prop="lesId" >
+                <Input type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px" clearable>
                 </Input>
+          </FormItem>
 
-                <Input  v-else type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px" clearable>
+          <FormItem  v-else >
+                <Input  disabled  type="text" v-model="formInline.lesId" placeholder="lessonId" style="width: 200px"  >
                 </Input>
           </FormItem>
 
@@ -55,19 +57,19 @@ export default {
                 },
                 ruleInline: {
                     lesId: [
-                       { required: true, message: 'Please fill in the lesson Id.', trigger: 'blur' },
-                        { validator: this.validateMobile,trigger: 'blur' }
+                        { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' },
+                        { validator: this.validateMobile,trigger: 'blur'}
                     ],
                     lesName: [
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },
                     ],
 
                 },
-              modal:false,
-
+              modal:false
             }
         },
         methods: {
+
           validateMobile :(rule, value, callback) => {
 
            if (!Number.isInteger(+value)) {
@@ -80,12 +82,9 @@ export default {
               handleSubmit(name) {
 
                 this.$refs[name].validate((valid) => {
-                    console.log(this.formInline.lesId);
-                    console.log();
+
                     if (valid) {
-
                       if(this.$store.state.lesson.utaction=="2"){
-
                         let data = {
                             "lesId": this.formInline.lesId,
                             "lesName":this.formInline.lesName,
@@ -112,7 +111,11 @@ export default {
                           }
 
                         },1200)
+
+
+
                       }
+
                     } else {
                         this.$Message.error('表单数据不能为空!');
                     }
@@ -129,8 +132,11 @@ export default {
       },
           ok:function(){
             this.modal = false
+
+
           },
           cancel:function(){
+
           }
 
     }

@@ -55,7 +55,7 @@ export default {
                 },
                 ruleInline: {
                     lesId: [
-                       { required: true, message: 'Id 不可修改', trigger: 'blur' },
+                       { required: true, message: 'Please fill in the lesson Id.', trigger: 'blur' },
                         { validator: this.validateMobile,trigger: 'blur' }
                     ],
                     lesName: [

@@ -2,7 +2,7 @@
 <template>
   <div class="userLogin">
     <div class="text" >
-        用户管理-----添加学生信息
+        用户管理-----添加、修改学生信息
     </div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
 
@@ -32,7 +32,6 @@
 
       <FormItem>
         <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-
         <Button @click="clearable" style="margin-left: 8px">重置</Button>
       </FormItem>
     </Form>
@@ -66,10 +65,10 @@
         },
         ruleInline: {
           stuName: [
-            { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+            { required: true, message: 'Please fill in the student name', trigger: 'blur' }
           ],
           stuNum: [
-            { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+            { required: true, message: 'Please fill in the student Num.', trigger: 'blur' },
           ],
           stuSex: [
             { required: true, message: 'Please fill in the course.', trigger: 'blur' },
@@ -161,8 +160,7 @@
         this.formInline.stuNum='',
         this.formInline.stuSex='',
         this.formInline.stuClass=''
-
-     }
+      },
     }
   }
 </script>

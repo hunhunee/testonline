@@ -25,7 +25,8 @@
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-            <Button @click="clearable" style="margin-left: 8px">重置</Button>
+            <Button v-if="this.$store.state.Class.utaction=='2'" @click="clearable_update" style="margin-left: 8px">重置</Button>
+            <Button v-else @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -54,7 +55,7 @@ export default {
                 },
                 ruleInline: {
                     classId: [
-                        { required: true, message: 'Id不可修改', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the class Id.', trigger: 'blur' },
                         { validator: this.validateMobile,trigger: 'blur'}
                     ],
                     className: [
@@ -110,27 +111,24 @@ export default {
                      // this.$store.dispatch('addClass',{data});
                      // router.push({ path: '/admin_index/admin_Class' });
                          }
-
-
                    } else {
                        this.$Message.error('表单数据不能为空!');
                    }
                })
-
-
             },
             ok:function(){
               this.modal = false
-
-
             },
             cancel:function(){
-
             },
             clearable(){
               this.formInline.classId='',
               this.formInline.className=''
-           }
+           },
+           clearable_update(){
+             this.formInline.className=''
+          }
+
         }
     }
 </script>

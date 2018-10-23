@@ -2,7 +2,7 @@
 <template>
   <div class="userLogin">
     <div class="text" >
-        用户管理-----添加教师信息
+        用户管理-----添加、修改教师信息
     </div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" label-width="400">
 
@@ -13,15 +13,9 @@
 
 
           <FormItem prop="teaNum" >
-                <Input v-if="this.$store.state.person.utaction=='2'" disabled type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px">
-                </Input>
-
-                <Input  v-else type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
+                <Input  type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
                 </Input>
           </FormItem>
-
-
-
 
           <FormItem prop="teaCourse">
             <Select v-model="formInline.teaCourse" style="width:200px" placeholder="Select your lesson">
@@ -39,7 +33,7 @@
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
 
-            <Button @click="clearable" style="margin-left: 8px">重置</Button>
+            <Button  @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -83,7 +77,7 @@ export default {
                         { required: true, message: 'Please fill in the user name', trigger: 'blur' }
                     ],
                     teaNum: [
-                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                        { required: true, message: 'Please fill in the userNum', trigger: 'blur' },
                     ],
                     teaClass: [
                         { required: true, message: 'Please fill in the class.', trigger: 'blur' }
@@ -229,7 +223,7 @@ export default {
               this.formInline.teaCourse='',
               this.formInline.teaClass=''
 
-           }
+           },
 
         }
     }

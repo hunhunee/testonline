@@ -2,7 +2,7 @@
 <template>
   <div class="userLogin">
     <div class="text" >
-      班级管理----添加班级
+      班级管理----添加、修改班级信息
     </div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" :label-width="400">
 
@@ -54,8 +54,8 @@ export default {
                 },
                 ruleInline: {
                     classId: [
-                        { required: true, message: 'Please fill in the class Id', trigger: 'blur' },
-                        { type: 'number', min: 1, message: 'classId必须为数字', trigger: 'blur' }
+                        { required: true, message: 'Id不可修改', trigger: 'blur' },
+                        { validator: this.validateMobile,trigger: 'blur'}
                     ],
                     className: [
                         { required: true, message: 'Please fill in the class Name.', trigger: 'blur' },
@@ -66,7 +66,14 @@ export default {
             }
         },
         methods: {
+          validateMobile :(rule, value, callback) => {
 
+           if (!Number.isInteger(+value)) {
+               callback(new Error('请输入数字值'));
+           } else {
+               callback();
+           }
+       },
               handleSubmit(name) {
 
                 this.$refs[name].validate((valid) => {

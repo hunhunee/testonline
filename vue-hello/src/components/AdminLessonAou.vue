@@ -57,9 +57,8 @@ export default {
                 },
                 ruleInline: {
                     lesId: [
-
-                       { required: true, message: 'Please fill in the lesson Id.', trigger: 'blur' },
-                        { validator: this.validateMobile,trigger: 'blur' }
+                        { required: true, message: 'Please fill in the lesson Id', trigger: 'blur' },
+                        { validator: this.validateMobile,trigger: 'blur'}
                     ],
                     lesName: [
                         { required: true, message: 'Please fill in the lesson Name.', trigger: 'blur' },

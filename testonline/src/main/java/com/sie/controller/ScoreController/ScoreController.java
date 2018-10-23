@@ -38,6 +38,7 @@ public class ScoreController {
     @PostMapping("/findStudentScore")
     public List<Student> findStudentScore (String stuNum) throws Exception{
         List<Student> list = scoreService.findScoreByStuId(stuNum);
+        System.out.println(list.size());
         System.out.println(list.toString());
         return list;
     }

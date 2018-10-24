@@ -12,8 +12,13 @@
           </FormItem>
 
 
-          <FormItem prop="teaNum" >
+          <FormItem prop="teaNum" v-if="this.$store.state.person.utaction=='1'">
                 <Input  type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" clearable>
+                </Input>
+          </FormItem>
+
+          <FormItem v-else >
+                <Input  type="text" v-model="formInline.teaNum" placeholder="UserNum" style="width: 200px" disabled>
                 </Input>
           </FormItem>
 
@@ -32,8 +37,8 @@
 
           <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-
-            <Button  @click="clearable" style="margin-left: 8px">重置</Button>
+            <Button v-if="this.$store.state.person.utaction=='2'" @click="clearable_update" style="margin-left: 8px">重置</Button>
+            <Button v-else @click="clearable" style="margin-left: 8px">重置</Button>
         </FormItem>
       </Form>
       <Modal
@@ -139,18 +144,22 @@ export default {
                       this.$store.dispatch('findTeacherByClass',{teacher});
 
                  setTimeout(()=>{
+
                   if (this.$store.state.person.teacher.length>=1) {
-                          this.$Message.error('该班级已经有了该科目的老师请重新选择班级');
-                  }else{
-                      let data = {
-                          "teaName": this.formInline.teaName,
-                          "teaNum":this.formInline.teaNum,
-                          "teaCourse":this.formInline.teaCourse,
-                          "teaClass":this.formInline.teaClass,
-                          "teaPassword":this.$store.state.person.uteacher.teaPassword
-                      }
-                      this.$store.dispatch('updateTeacher',{data});
-                    }
+
+                          if(this.$store.state.person.teacher[0].teaCourse!=this.$store.state.person.uteacher.teaCourse){
+                            this.$Message.error('该班级已经有了该科目的老师请重新选择班级');
+                          }else{
+                              let data = {
+                                  "teaName": this.formInline.teaName,
+                                  "teaNum":this.formInline.teaNum,
+                                  "teaCourse":this.formInline.teaCourse,
+                                  "teaClass":this.formInline.teaClass,
+                                  "teaPassword":this.$store.state.person.uteacher.teaPassword
+                              }
+                              this.$store.dispatch('updateTeacher',{data});
+                            }
+                  }
                    },1200)
 
                     }else{
@@ -224,6 +233,11 @@ export default {
               this.formInline.teaClass=''
 
            },
+           clearable_update(){
+             this.formInline.teaName='',
+             this.formInline.teaCourse='',
+             this.formInline.teaClass=''
+          }
 
         }
     }

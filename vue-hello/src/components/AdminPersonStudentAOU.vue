@@ -11,8 +11,14 @@
 
         </Input>
       </FormItem>
-      <FormItem   prop="stuNum">
+      <FormItem v-if="this.$store.state.person.utaction=='1'"  prop="stuNum">
         <Input type="text" v-model="formInline.stuNum" placeholder="UserNum" style="width: 200px" clearable>
+
+        </Input>
+      </FormItem>
+
+      <FormItem  v-else>
+        <Input type="text" v-model="formInline.stuNum" placeholder="UserNum" style="width: 200px" disabled>
 
         </Input>
       </FormItem>
@@ -32,7 +38,8 @@
 
       <FormItem>
         <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
-        <Button @click="clearable" style="margin-left: 8px">重置</Button>
+        <Button v-if="this.$store.state.person.utaction=='2'" @click="clearable_update" style="margin-left: 8px">重置</Button>
+        <Button v-else @click="clearable" style="margin-left: 8px">重置</Button>
       </FormItem>
     </Form>
 
@@ -161,6 +168,11 @@
         this.formInline.stuSex='',
         this.formInline.stuClass=''
       },
+      clearable_update(){
+        this.formInline.stuName='',
+        this.formInline.stuSex='',
+        this.formInline.stuClass=''
+     }
     }
   }
 </script>

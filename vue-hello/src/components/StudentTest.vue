@@ -5,6 +5,7 @@
          }
 </style>
 <template>
+
   <div class="layout">
     <div class="text" >
       <h1>
@@ -85,7 +86,7 @@
      <Card style="width:1300px">
           <p slot="title">
               <Icon type="ios-film-outline"></Icon>
-              计算题   每题15分
+              综合题   每题15分
           </p>
           <ul>
               <li v-for="item in examComputeList">

@@ -54,14 +54,16 @@
               ruleInline: {
                   password: [
                       { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-
+                      { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
                   ],
                   newpassword: [
                       { required: true, message: 'Please fill in the newpassword.', trigger: 'blur' },
+                      { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
 
                   ],
                   repassword: [
                       { required: true, message: 'Please fill in the repassword.', trigger: 'blur' },
+                      { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
 
                   ]
               }

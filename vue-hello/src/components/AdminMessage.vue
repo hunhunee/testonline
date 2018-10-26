@@ -32,7 +32,7 @@
 
      <FormItem>
           <Button type="primary" @click="handleSubmit('formInline')">修改</Button>
-        
+
 
      </FormItem>
      </Form>
@@ -107,7 +107,7 @@
                                   }
 
                                 } else {
-                                    this.$Message.error('密码不能为空，请重新输入!');
+                                    this.$Message.error('密码不能为空或者输入的数值不符，请重新输入!');
                                 }
                             })
 

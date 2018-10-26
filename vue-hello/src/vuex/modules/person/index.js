@@ -283,7 +283,7 @@ export default {
 
     findTeacherByClass_m(state, data) {
       console.log("findTeacherByClass_m");
-
+      console.log(data.data);
       state.teacher.length = data.data.length;
       for (var i = 0; i < data.data.length; i++) {
         state.teacher[i] = data.data[i];

@@ -150,6 +150,7 @@ export default {
                           if(this.$store.state.person.teacher[0].teaCourse!=this.$store.state.person.uteacher.teaCourse){
                             this.$Message.error('该班级已经有了该科目的老师请重新选择班级');
                           }else{
+                             console.log("可以修改");
                               let data = {
                                   "teaName": this.formInline.teaName,
                                   "teaNum":this.formInline.teaNum,
@@ -159,6 +160,15 @@ export default {
                               }
                               this.$store.dispatch('updateTeacher',{data});
                             }
+                  }else{
+                    let data = {
+                        "teaName": this.formInline.teaName,
+                        "teaNum":this.formInline.teaNum,
+                        "teaCourse":this.formInline.teaCourse,
+                        "teaClass":this.formInline.teaClass,
+                        "teaPassword":this.$store.state.person.uteacher.teaPassword
+                    }
+                    this.$store.dispatch('updateTeacher',{data});
                   }
                    },1200)
 
